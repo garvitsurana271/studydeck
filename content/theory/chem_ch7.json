@@ -1,0 +1,54 @@
+{
+  "chapter": 7,
+  "name": "Alcohols, Phenols and Ethers",
+  "subject": "Chemistry",
+  "_source": "NCERT Class 12 Chem Ch 7 (Vol 2 Ch 2)",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "Classification and Nomenclature",
+      "body": "<p>Compounds with –OH on sp³ C are <b>alcohols</b> (R–OH); on sp² C of aromatic ring, <b>phenols</b> (Ar–OH). <b>Ethers</b> have R–O–R'.</p><p>Alcohols subdivided by the C bearing –OH:</p><ul><li>Primary (1°): –OH on C with one C neighbour (CH<sub>3</sub>CH<sub>2</sub>OH).</li><li>Secondary (2°): –OH on C with two C neighbours.</li><li>Tertiary (3°): –OH on C with three C neighbours.</li></ul><p>Also <b>monohydric, dihydric (glycols), trihydric (glycerol)</b> by number of –OH.</p><p>IUPAC: parent = longest chain containing –OH; suffix -ol; locant lowest for –OH. Phenols: hydroxy as prefix or use phenol/cresol etc. Ethers: the smaller R group + O is named alkoxy substituent (CH<sub>3</sub>OC<sub>2</sub>H<sub>5</sub> = methoxyethane).</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Preparation of Alcohols",
+      "body": "<p><b>From alkenes</b>:</p><ul><li><b>Acid-catalysed hydration</b> (Markovnikov): CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub>O / H<sub>2</sub>SO<sub>4</sub> → CH<sub>3</sub>CH<sub>2</sub>OH.</li><li><b>Hydroboration–oxidation</b> (anti-Markovnikov, syn): RCH=CH<sub>2</sub> →<sub>(i) B<sub>2</sub>H<sub>6</sub>; (ii) H<sub>2</sub>O<sub>2</sub>/OH⁻</sub> RCH<sub>2</sub>CH<sub>2</sub>OH.</li></ul><p><b>From carbonyl compounds</b> (reduction):</p><ul><li>Aldehyde → 1° alcohol; Ketone → 2° alcohol. Reagents: H<sub>2</sub>/Ni, NaBH<sub>4</sub>, LiAlH<sub>4</sub>.</li><li>Carboxylic acid/ester → 1° alcohol with LiAlH<sub>4</sub>.</li></ul><p><b>From Grignard reagents</b>: HCHO + RMgX → 1° alcohol; RCHO + R'MgX → 2° alcohol; R<sub>2</sub>CO + R'MgX → 3° alcohol; CO<sub>2</sub> + RMgX → carboxylic acid.</p><p><b>Phenol</b>:</p><ul><li>From <b>cumene</b> (Hock process): isopropylbenzene + O<sub>2</sub> → cumene hydroperoxide → phenol + acetone (industrial).</li><li>From haloarenes (<b>Dow process</b>): C<sub>6</sub>H<sub>5</sub>Cl + NaOH (300°C, 200 atm) → C<sub>6</sub>H<sub>5</sub>ONa →<sub>H⁺</sub> C<sub>6</sub>H<sub>5</sub>OH.</li><li>From benzene sulphonic acid: fuse with NaOH.</li><li>From diazonium salt: ArN<sub>2</sub>⁺ + H<sub>2</sub>O →<sub>warm</sub> ArOH + N<sub>2</sub>.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Physical Properties",
+      "body": "<p>Alcohols form <b>intermolecular hydrogen bonds</b>, giving anomalously high boiling points (compare CH<sub>3</sub>CH<sub>2</sub>OH 78 °C vs CH<sub>3</sub>OCH<sub>3</sub> −24 °C with same molecular weight). B.p. of alcohols rises with molecular weight; for isomers, decreases with branching (1° > 2° > 3°).</p><p><b>Solubility</b> in water: lower alcohols (C1–C3) are completely miscible due to H-bonding; solubility decreases with chain length (hydrocarbon part dominates). Phenols are slightly soluble in water.</p><p><b>Ethers</b> have no –OH, so no inter-molecular H-bonding; their boiling points are similar to alkanes of comparable mass and far lower than alcohols. They can H-bond with water (slight solubility).</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Acidic Character and Reactions Involving Cleavage of O–H",
+      "body": "<p>Order of acidity: <b>carboxylic acid > phenol > water > alcohol</b>. Phenols (pK<sub>a</sub> ≈ 10) are more acidic than alcohols (pK<sub>a</sub> ≈ 16) because the phenoxide ion is resonance-stabilised by the aromatic ring (negative charge delocalised onto ortho and para C atoms). Electron-withdrawing groups (–NO<sub>2</sub>, –Cl) increase acidity, especially at o/p positions; electron-donating groups (–CH<sub>3</sub>, –OCH<sub>3</sub>) decrease it.</p><p>Reactions of –OH:</p><ul><li>With Na: 2 R–OH + 2 Na → 2 R–O⁻Na⁺ + H<sub>2</sub> (alcohols and phenols).</li><li>With NaOH: only phenols react (alcohols too weak).</li><li><b>Esterification</b>: R–OH + R'COOH ⇌ R'COOR + H<sub>2</sub>O (acid-catalysed; reversible). With acid chlorides or anhydrides, irreversible. Phenols give esters with acyl chlorides/anhydrides in presence of pyridine or NaOH.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Reactions Involving Cleavage of C–O of Alcohols",
+      "body": "<p><b>Reaction with HX</b>: R–OH + HX → R–X + H<sub>2</sub>O. <b>Lucas test</b> (HCl/ZnCl<sub>2</sub>):</p><ul><li>3° alcohols give immediate cloudy solution.</li><li>2° alcohols give cloudiness within 5 min.</li><li>1° alcohols do not react at room T.</li></ul><p><b>Reaction with PX<sub>3</sub>, PCl<sub>5</sub>, SOCl<sub>2</sub></b>: same as Ch 6 prep of haloalkanes. SOCl<sub>2</sub> is preferred (gas byproducts).</p><p><b>Dehydration to alkenes</b>: R–OH →<sub>conc. H<sub>2</sub>SO<sub>4</sub>, heat</sub> alkene + H<sub>2</sub>O. Reactivity: 3° > 2° > 1° (carbocation mechanism). Saytzeff product dominates. Also achievable with anhyd. Al<sub>2</sub>O<sub>3</sub> at 350 °C (1°), with H<sub>3</sub>PO<sub>4</sub> at 440 °C (2°). With ethanol + conc. H<sub>2</sub>SO<sub>4</sub> at 140 °C, diethyl ether forms (intermolecular dehydration); at 170 °C ethene (intramolecular).</p><p><b>Oxidation</b>:</p><ul><li>1° alcohol → aldehyde → carboxylic acid (with strong oxidant like KMnO<sub>4</sub>/K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>). To stop at aldehyde, use PCC (pyridinium chlorochromate) in CH<sub>2</sub>Cl<sub>2</sub>, or Cu/573 K (gives aldehyde with dehydrogenation).</li><li>2° alcohol → ketone.</li><li>3° alcohol: no oxidation under normal conditions; with strong oxidant, ring/chain cleavage.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Phenol — Distinctive Reactions",
+      "body": "<p>Phenol's –OH is strongly <b>activating</b> and <b>ortho/para directing</b> in electrophilic aromatic substitution (lone pair donates into ring by resonance):</p><ul><li><b>Halogenation</b>: with Br<sub>2</sub>/H<sub>2</sub>O at room T → 2,4,6-tribromophenol (white precipitate). With Br<sub>2</sub>/CS<sub>2</sub> at low T → mono-bromophenol (mostly p-).</li><li><b>Nitration</b>: with dil. HNO<sub>3</sub> → o- and p-nitrophenol (separated by steam distillation; o-isomer steam-volatile due to intramolecular H-bond). With conc. HNO<sub>3</sub> → 2,4,6-trinitrophenol (picric acid).</li><li><b>Sulphonation</b>: with conc. H<sub>2</sub>SO<sub>4</sub>; o-product favoured at 298 K, p-product at 373 K (kinetic vs thermodynamic).</li><li><b>Kolbe's reaction</b>: phenoxide + CO<sub>2</sub> (4–7 atm, 400 K) → salicylic acid (o-hydroxybenzoic acid). Acetylation gives <b>aspirin</b>.</li><li><b>Reimer–Tiemann reaction</b>: phenoxide + CHCl<sub>3</sub> + NaOH → salicylaldehyde (after acidic workup). Mechanism via dichlorocarbene :CCl<sub>2</sub>.</li><li><b>Reaction with zinc dust</b>: C<sub>6</sub>H<sub>5</sub>OH + Zn → C<sub>6</sub>H<sub>6</sub> + ZnO.</li><li><b>Oxidation</b> with Na<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>/H<sub>2</sub>SO<sub>4</sub> → benzoquinone.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Ethers — Preparation and Reactions",
+      "body": "<p><b>Williamson synthesis</b>: best general method. R–O⁻Na⁺ + R'–X → R–O–R' + NaX. SN2 mechanism; works best with primary R'–X (3° gives elimination).</p><p>For unsymmetrical ethers, choose alkoxide of bulkier group + halide of smaller group: t-BuO⁻ + CH<sub>3</sub>I gives t-Bu–O–CH<sub>3</sub>; reverse (t-BuBr + CH<sub>3</sub>O⁻) gives mostly elimination → isobutylene.</p><p><b>From alcohols</b> (intermolecular dehydration): 2 C<sub>2</sub>H<sub>5</sub>OH + H<sub>2</sub>SO<sub>4</sub>, 140 °C → C<sub>2</sub>H<sub>5</sub>OC<sub>2</sub>H<sub>5</sub> + H<sub>2</sub>O. Only good for symmetrical 1° ethers.</p><p><b>Reactions of ethers</b>:</p><ul><li>Ethers are <b>relatively inert</b>: no reaction with bases, oxidants, or active metals at ordinary T.</li><li><b>Cleavage by HX</b> (HI > HBr > HCl): R–O–R' + HX → R–X + R'–OH (or two halides if excess HX). For mixed alkyl–aryl ether (anisole + HI), Ar–O bond is stronger so ArOH + RI form; not RO + ArI. For dialkyl ethers, more substituted side gives R–I via SN1; less substituted via SN2.</li><li><b>Electrophilic substitution on aryl ethers</b>: –OR is activator (o/p directing).</li></ul>",
+      "keyFormulae": []
+    }
+  ],
+  "summary": "Alcohols (R–OH) are 1°/2°/3° depending on the C bearing –OH; phenols have –OH on aromatic ring; ethers have R–O–R'. Alcohols are made from alkenes (acid hydration or hydroboration–oxidation), from carbonyls (NaBH_4, LiAlH_4), and via Grignard. Phenol is industrially made from cumene (Hock) and from chlorobenzene (Dow). H-bonding makes alcohols high-boiling and water-soluble; ethers behave like alkanes plus weak H-bond accept. Acidity order: carboxylic acid > phenol > water > alcohol; phenoxide is resonance-stabilised. Alcohols undergo Lucas test (3° > 2° > 1°), dehydration to alkenes (3° > 2° > 1°), oxidation (1° → ald → acid; 2° → ketone). Phenol is strongly activated for o/p EAS — Kolbe (→ salicylic acid) and Reimer–Tiemann (→ salicylaldehyde) are signature reactions. Ethers are made by Williamson synthesis (best with 1° halides) and cleaved by HX (HI > HBr).",
+  "pitfalls": [
+    "Saying alcohols are stronger acids than phenols — phenols win by resonance stabilisation of phenoxide.",
+    "Predicting LiAlH_4 will reduce a C=C double bond — it doesn't (only polar C=O, C=N, etc.).",
+    "Trying Williamson synthesis with 3° halide — gives elimination, not ether.",
+    "Forgetting that with HI, anisole gives PhOH + CH_3I (Ar–O bond stronger), not C_6H_5I.",
+    "Not distinguishing intramolecular (170°C, ethene) vs intermolecular (140°C, diethyl ether) ethanol dehydration.",
+    "Using Br_2/H_2O on phenol expecting monobromination — get 2,4,6-tribromophenol; for monobromo, use Br_2/CS_2 at low T.",
+    "Confusing Reimer–Tiemann (gives ortho aldehyde) with Kolbe (gives ortho carboxylic acid)."
+  ]
+}

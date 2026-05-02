@@ -1,0 +1,47 @@
+{
+  "chapter": 10,
+  "name": "Vector Algebra",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 10",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "10.1 Scalars vs Vectors",
+      "body": "<p>A <b>scalar</b> has only magnitude (mass, time, temperature). A <b>vector</b> has both magnitude and direction (displacement, velocity, force).</p><p>Vectors are represented by directed line segments. Two vectors are <b>equal</b> if they have the same magnitude and direction (no fixed location).</p><p>The <b>position vector</b> of a point $P(x,y,z)$ relative to the origin is $\\vec{OP}=x\\hat\\imath+y\\hat\\jmath+z\\hat k.$</p><p><b>Magnitude</b>: $|\\vec a|=\\sqrt{a_1^{2}+a_2^{2}+a_3^{2}}$ for $\\vec a=a_1\\hat\\imath+a_2\\hat\\jmath+a_3\\hat k$.</p>",
+      "keyFormulae": ["$|\\vec a|=\\sqrt{a_1^{2}+a_2^{2}+a_3^{2}}$"]
+    },
+    {
+      "heading": "10.2 Types of Vectors & Direction Cosines",
+      "body": "<ul><li><b>Zero vector</b> $\\vec 0$: zero magnitude; direction undefined.</li><li><b>Unit vector</b>: magnitude $=1$. The unit vector along $\\vec a$ is $\\hat a=\\dfrac{\\vec a}{|\\vec a|}$.</li><li><b>Coinitial</b>: same starting point. <b>Collinear</b>: parallel (same or opposite direction). <b>Equal</b>: same magnitude AND direction.</li><li><b>Negative</b> $-\\vec a$: same magnitude, opposite direction.</li></ul><p><b>Direction cosines.</b> If $\\vec a$ makes angles $\\alpha,\\beta,\\gamma$ with the $x,y,z$ axes, then $l=\\cos\\alpha,\\;m=\\cos\\beta,\\;n=\\cos\\gamma$ and $l^{2}+m^{2}+n^{2}=1.$</p><p><b>Direction ratios</b>: any triple $a:b:c$ proportional to $l:m:n$. From $\\vec a=a_1\\hat\\imath+a_2\\hat\\jmath+a_3\\hat k$: direction cosines $=\\dfrac{a_1}{|\\vec a|},\\dfrac{a_2}{|\\vec a|},\\dfrac{a_3}{|\\vec a|}$.</p>",
+      "keyFormulae": ["$l^{2}+m^{2}+n^{2}=1$", "$\\hat a=\\vec a/|\\vec a|$"]
+    },
+    {
+      "heading": "10.3 Addition, Subtraction, Scalar Multiplication",
+      "body": "<p><b>Triangle law:</b> if $\\vec a$ and $\\vec b$ are placed head-to-tail, then $\\vec a+\\vec b$ goes from the tail of $\\vec a$ to the head of $\\vec b$.</p><p><b>Parallelogram law:</b> if $\\vec a,\\vec b$ are coinitial, $\\vec a+\\vec b$ is the diagonal of the parallelogram from that common point.</p><p>Component-wise: $(a_1\\hat\\imath+a_2\\hat\\jmath+a_3\\hat k)+(b_1\\hat\\imath+b_2\\hat\\jmath+b_3\\hat k)=(a_1+b_1)\\hat\\imath+\\dots$</p><p><b>Scalar multiplication:</b> $\\lambda\\vec a$ has magnitude $|\\lambda||\\vec a|$ and direction same as (resp. opposite to) $\\vec a$ when $\\lambda>0$ (resp. $\\lambda<0$).</p><p><b>Section formula.</b> The point dividing $\\vec a,\\vec b$ in ratio $m:n$ internally is $\\dfrac{n\\vec a+m\\vec b}{m+n}$; externally, $\\dfrac{m\\vec b-n\\vec a}{m-n}$.</p>",
+      "keyFormulae": ["Internal: $\\dfrac{n\\vec a+m\\vec b}{m+n}$"]
+    },
+    {
+      "heading": "10.4 Dot (Scalar) Product",
+      "body": "<p>$\\vec a\\cdot\\vec b=|\\vec a||\\vec b|\\cos\\theta$ where $\\theta\\in[0,\\pi]$ is the angle between them.</p><p>Component form: $\\vec a\\cdot\\vec b=a_1 b_1+a_2 b_2+a_3 b_3.$</p><p>Properties: commutative ($\\vec a\\cdot\\vec b=\\vec b\\cdot\\vec a$); distributive over addition; $\\vec a\\cdot\\vec a=|\\vec a|^{2}$; $\\vec a\\perp\\vec b\\Leftrightarrow\\vec a\\cdot\\vec b=0$.</p><p><b>Projection.</b> Scalar projection of $\\vec a$ on $\\vec b$ is $\\dfrac{\\vec a\\cdot\\vec b}{|\\vec b|}$; the vector projection is $\\dfrac{\\vec a\\cdot\\vec b}{|\\vec b|^{2}}\\vec b$.</p>",
+      "keyFormulae": ["$\\vec a\\cdot\\vec b=|\\vec a||\\vec b|\\cos\\theta$", "$\\cos\\theta=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a||\\vec b|}$"]
+    },
+    {
+      "heading": "10.5 Cross (Vector) Product",
+      "body": "<p>$\\vec a\\times\\vec b=|\\vec a||\\vec b|\\sin\\theta\\,\\hat n$, where $\\hat n$ is a unit vector perpendicular to both $\\vec a$ and $\\vec b$ in the right-hand-rule direction.</p><p>Determinant form: $\\vec a\\times\\vec b=\\begin{vmatrix}\\hat\\imath&\\hat\\jmath&\\hat k\\\\a_1&a_2&a_3\\\\b_1&b_2&b_3\\end{vmatrix}.$</p><p>Properties: <b>not commutative</b>: $\\vec a\\times\\vec b=-\\vec b\\times\\vec a$. Distributive. $\\vec a\\times\\vec a=\\vec 0$. $\\vec a\\parallel\\vec b\\Leftrightarrow\\vec a\\times\\vec b=\\vec 0$.</p><p>Geometric interpretations:</p><ul><li><b>Area of parallelogram</b> with adjacent sides $\\vec a,\\vec b$: $|\\vec a\\times\\vec b|$.</li><li><b>Area of triangle</b> with sides $\\vec a,\\vec b$: $\\dfrac{1}{2}|\\vec a\\times\\vec b|$.</li><li>$\\sin\\theta=\\dfrac{|\\vec a\\times\\vec b|}{|\\vec a||\\vec b|}$.</li></ul>",
+      "keyFormulae": ["$\\vec a\\times\\vec b=-\\vec b\\times\\vec a$", "Triangle area $=\\tfrac{1}{2}|\\vec a\\times\\vec b|$"]
+    },
+    {
+      "heading": "10.6 Standard Identities and Examples",
+      "body": "<ul><li>$\\hat\\imath\\cdot\\hat\\imath=\\hat\\jmath\\cdot\\hat\\jmath=\\hat k\\cdot\\hat k=1$; $\\hat\\imath\\cdot\\hat\\jmath=\\hat\\jmath\\cdot\\hat k=\\hat k\\cdot\\hat\\imath=0$.</li><li>$\\hat\\imath\\times\\hat\\jmath=\\hat k$, $\\hat\\jmath\\times\\hat k=\\hat\\imath$, $\\hat k\\times\\hat\\imath=\\hat\\jmath$ (cyclic).</li><li>Lagrange identity: $|\\vec a\\times\\vec b|^{2}+(\\vec a\\cdot\\vec b)^{2}=|\\vec a|^{2}|\\vec b|^{2}$.</li></ul>",
+      "keyFormulae": ["$\\hat\\imath\\times\\hat\\jmath=\\hat k$ (cyclic)"]
+    }
+  ],
+  "summary": "Vectors carry magnitude and direction. Express via components $\\vec a=a_1\\hat\\imath+a_2\\hat\\jmath+a_3\\hat k$. Direction cosines satisfy $l^{2}+m^{2}+n^{2}=1$. Dot product $\\vec a\\cdot\\vec b=|\\vec a||\\vec b|\\cos\\theta$ measures projection and tests perpendicularity; cross product $\\vec a\\times\\vec b=|\\vec a||\\vec b|\\sin\\theta\\,\\hat n$ produces a perpendicular vector whose magnitude equals the parallelogram area. The cross product is anti-commutative; the dot product is commutative. Triangle area $=\\tfrac{1}{2}|\\vec a\\times\\vec b|$.",
+  "pitfalls": [
+    "Confusing the sign in $\\vec a\\times\\vec b=-\\vec b\\times\\vec a$.",
+    "Forgetting that $\\hat n$ in the cross product follows the right-hand rule.",
+    "Computing $|\\vec a||\\vec b|\\cos\\theta$ but using $\\theta$ outside $[0,\\pi]$.",
+    "Treating $\\vec a\\cdot\\vec b=0$ as $\\vec a=\\vec 0$ or $\\vec b=\\vec 0$ — actually means perpendicular.",
+    "Using the section formula with the wrong $m,n$ assignment for internal vs external division."
+  ]
+}

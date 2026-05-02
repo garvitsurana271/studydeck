@@ -1,0 +1,52 @@
+{
+  "chapter": 3,
+  "name": "Matrices",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 3",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "3.1 Matrix — Definition & Order",
+      "body": "<p>A <b>matrix</b> is a rectangular array of numbers (or functions) arranged in rows and columns. A matrix with $m$ rows and $n$ columns is said to have <b>order</b> $m\\times n$. We write $A=[a_{ij}]_{m\\times n}$ where $a_{ij}$ is the entry in row $i$, column $j$.</p><p>Two matrices are <b>equal</b> if they have the same order and corresponding entries are equal.</p>",
+      "keyFormulae": ["$A=[a_{ij}]_{m\\times n}$", "Order $m\\times n$ has $mn$ entries"]
+    },
+    {
+      "heading": "3.2 Types of Matrices",
+      "body": "<ul><li><b>Row matrix</b>: $1\\times n$. <b>Column matrix</b>: $m\\times 1$.</li><li><b>Square matrix</b>: $m=n$. Diagonal entries: $a_{ii}$.</li><li><b>Diagonal matrix</b>: square with $a_{ij}=0$ for $i\\neq j$.</li><li><b>Scalar matrix</b>: diagonal with all diagonal entries equal.</li><li><b>Identity matrix</b> $I_n$: scalar with diagonal entries $=1$.</li><li><b>Zero matrix</b> $O$: every entry $0$.</li><li><b>Symmetric</b>: $A^{T}=A$. <b>Skew-symmetric</b>: $A^{T}=-A$ (so diagonal entries $=0$).</li></ul>",
+      "keyFormulae": ["$I_n=[\\delta_{ij}]$", "Skew-symmetric $\\Rightarrow a_{ii}=0$"]
+    },
+    {
+      "heading": "3.3 Addition, Scalar Multiplication, Subtraction",
+      "body": "<p>For matrices of the <b>same order</b>:</p><ul><li>$(A+B)_{ij}=a_{ij}+b_{ij}$.</li><li>$(kA)_{ij}=k\\,a_{ij}$ for scalar $k$.</li><li>$A-B=A+(-1)B$.</li></ul><p>Properties: $A+B=B+A$, $(A+B)+C=A+(B+C)$, $A+O=A$, $A+(-A)=O$. Distributivity over addition: $k(A+B)=kA+kB$.</p>",
+      "keyFormulae": ["$(A+B)_{ij}=a_{ij}+b_{ij}$"]
+    },
+    {
+      "heading": "3.4 Matrix Multiplication",
+      "body": "<p>Product $AB$ is defined only when the number of columns of $A$ equals the number of rows of $B$. If $A$ is $m\\times p$ and $B$ is $p\\times n$, then $AB$ is $m\\times n$ with</p><p>$(AB)_{ij}=\\sum_{k=1}^{p} a_{ik}\\,b_{kj}.$</p><p>Properties:</p><ul><li><b>Associative</b>: $(AB)C=A(BC)$.</li><li><b>Distributive</b>: $A(B+C)=AB+AC$.</li><li><b>Not commutative</b> in general: $AB\\neq BA$.</li><li><b>Existence of identity</b>: $AI=IA=A$.</li><li>$AB=O$ does NOT imply $A=O$ or $B=O$.</li></ul>",
+      "keyFormulae": ["$(AB)_{ij}=\\sum_k a_{ik}b_{kj}$", "$AB$ defined iff cols$(A)=$rows$(B)$"]
+    },
+    {
+      "heading": "3.5 Transpose & Symmetric Decomposition",
+      "body": "<p>$A^{T}$ is obtained by interchanging rows and columns: $(A^{T})_{ij}=a_{ji}$.</p><p>Properties:</p><ul><li>$(A^{T})^{T}=A$.</li><li>$(A+B)^{T}=A^{T}+B^{T}$.</li><li>$(kA)^{T}=k\\,A^{T}$.</li><li>$(AB)^{T}=B^{T}A^{T}$ (reverse-order law).</li></ul><p><b>Symmetric/Skew decomposition.</b> Every square matrix can be expressed uniquely as $A=P+Q$ where $P=\\dfrac{1}{2}(A+A^{T})$ is symmetric and $Q=\\dfrac{1}{2}(A-A^{T})$ is skew-symmetric.</p>",
+      "keyFormulae": ["$(AB)^{T}=B^{T}A^{T}$", "$A=\\tfrac{1}{2}(A+A^{T})+\\tfrac{1}{2}(A-A^{T})$"]
+    },
+    {
+      "heading": "3.6 Elementary Row/Column Operations",
+      "body": "<p>Three elementary operations on a matrix:</p><ol><li>Interchange two rows: $R_i\\leftrightarrow R_j$.</li><li>Multiply a row by a non-zero scalar: $R_i\\to k\\,R_i$.</li><li>Add a multiple of one row to another: $R_i\\to R_i+k\\,R_j$.</li></ol><p>Same for columns. Used to reduce matrices to row-echelon form and to compute inverses by Gauss-Jordan.</p>",
+      "keyFormulae": ["$R_i\\leftrightarrow R_j$", "$R_i\\to R_i+kR_j$"]
+    },
+    {
+      "heading": "3.7 Invertible Matrix (by Elementary Operations)",
+      "body": "<p>A square matrix $A$ is <b>invertible</b> if there exists $B$ with $AB=BA=I$. Then $B=A^{-1}$ and is unique.</p><p><b>Method.</b> Write $A=IA$. Apply a sequence of row operations to the LHS until it becomes $I$; performing the SAME operations on the RHS converts $I$ into $A^{-1}$. Hence we obtain $I=A^{-1}A$.</p><p>Properties: $(A^{-1})^{-1}=A$, $(AB)^{-1}=B^{-1}A^{-1}$, $(A^{T})^{-1}=(A^{-1})^{T}$.</p>",
+      "keyFormulae": ["$A=IA\\Rightarrow$ row-reduce", "$(AB)^{-1}=B^{-1}A^{-1}$"]
+    }
+  ],
+  "summary": "A matrix is an array $[a_{ij}]_{m\\times n}$. Add/subtract entrywise (same order); multiply with the row-by-column rule which forces cols$(A)=$rows$(B)$. Multiplication is associative and distributive but not commutative. Transpose obeys $(AB)^{T}=B^{T}A^{T}$. Every square matrix splits uniquely into symmetric $+$ skew-symmetric parts via $\\tfrac12(A\\pm A^{T})$. Elementary row operations let you find $A^{-1}$ from $A=IA$.",
+  "pitfalls": [
+    "Multiplying matrices of incompatible orders — check cols$(A)=$rows$(B)$.",
+    "Assuming $AB=BA$ — almost never true.",
+    "Cancelling: $AB=AC$ does NOT give $B=C$ unless $A$ is invertible.",
+    "Forgetting reverse order: $(AB)^{T}=B^{T}A^{T}$, NOT $A^{T}B^{T}$.",
+    "Mixing row and column operations during a single inversion run — pick one mode."
+  ]
+}

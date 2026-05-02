@@ -1,0 +1,63 @@
+{
+  "chapter": 1,
+  "name": "Electric Charges and Fields",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 1",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. Electric Charge and its Properties",
+      "body": "<p>Electric charge is an intrinsic property of matter responsible for electromagnetic interactions. There are two kinds: <b>positive</b> (e.g. charge on glass rubbed with silk) and <b>negative</b> (e.g. on plastic rubbed with fur). Like charges repel; unlike charges attract.</p><p>Three fundamental properties:</p><ul><li><b>Additivity</b>: total charge of a system is the algebraic sum of individual charges.</li><li><b>Conservation</b>: net charge of an isolated system is constant; charge can be transferred but never created or destroyed.</li><li><b>Quantisation</b>: charge exists in integer multiples of the elementary charge $e = 1.602 \\times 10^{-19}$ C, so $q = ne$ for some integer $n$. Quarks carry $\\pm e/3$ or $\\pm 2e/3$ but are never isolated.</li></ul><p>SI unit of charge is the <b>coulomb (C)</b>. A body becomes charged by transfer of electrons; gaining electrons gives a negative charge, losing them gives a positive charge.</p>",
+      "keyFormulae": ["q = ne", "e = 1.602 \\times 10^{-19}\\ \\text{C}"]
+    },
+    {
+      "heading": "2. Coulomb's Law",
+      "body": "<p>The electrostatic force between two stationary point charges $q_1$ and $q_2$ separated by distance $r$ in vacuum is $$F = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q_1 q_2}{r^2}$$ directed along the line joining them. The proportionality constant $k = 1/(4\\pi\\varepsilon_0) \\approx 9 \\times 10^9\\ \\text{N m}^2/\\text{C}^2$, with $\\varepsilon_0 = 8.854 \\times 10^{-12}\\ \\text{C}^2/\\text{N m}^2$ the permittivity of free space.</p><p>In a medium of relative permittivity $\\varepsilon_r$ (dielectric constant $K$), the force becomes $F = \\dfrac{1}{4\\pi\\varepsilon_0\\varepsilon_r}\\dfrac{q_1 q_2}{r^2}$, weaker than in vacuum.</p><p>In vector form, the force on $q_2$ due to $q_1$ is $\\vec{F}_{21} = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q_1 q_2}{r^2}\\hat{r}_{21}$, where $\\hat{r}_{21}$ points from 1 to 2. Coulomb's law obeys Newton's third law: $\\vec{F}_{12} = -\\vec{F}_{21}$.</p>",
+      "keyFormulae": ["F = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q_1 q_2}{r^2}", "k = \\dfrac{1}{4\\pi\\varepsilon_0} \\approx 9\\times 10^9\\ \\text{N m}^2/\\text{C}^2"]
+    },
+    {
+      "heading": "3. Superposition Principle",
+      "body": "<p>The total force on a charge due to several other charges is the <b>vector sum</b> of forces exerted by each, computed pairwise as if the others were absent. For charge $q_1$ in the presence of $q_2, q_3, \\ldots q_n$: $$\\vec{F}_1 = \\sum_{i=2}^{n} \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q_1 q_i}{r_{1i}^2}\\hat{r}_{1i}$$ The principle holds because Coulomb's law is linear in charge.</p><p>For a continuous charge distribution, the sum becomes an integral over linear, surface, or volume charge densities $\\lambda$, $\\sigma$, $\\rho$ respectively.</p>",
+      "keyFormulae": ["\\vec{F}_1 = \\sum_i \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q_1 q_i}{r_{1i}^2}\\hat{r}_{1i}"]
+    },
+    {
+      "heading": "4. Electric Field",
+      "body": "<p>The electric field at a point is the force per unit positive test charge placed there: $$\\vec{E} = \\lim_{q_0 \\to 0} \\dfrac{\\vec{F}}{q_0}$$ The test charge must be small so it does not disturb the source distribution. Unit: N/C or V/m.</p><p>Field due to a point charge $q$ at distance $r$: $\\vec{E} = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q}{r^2}\\hat{r}$, pointing away from positive $q$ and toward negative $q$.</p><p>Field is a vector; superposition applies: $\\vec{E}_{\\text{total}} = \\sum_i \\vec{E}_i$. The field is independent of the test charge — it is a property of the source.</p>",
+      "keyFormulae": ["\\vec{E} = \\dfrac{\\vec{F}}{q_0}", "\\vec{E} = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q}{r^2}\\hat{r}"]
+    },
+    {
+      "heading": "5. Electric Field Lines",
+      "body": "<p>Electric field lines are imaginary curves whose tangent at every point gives the direction of $\\vec{E}$ there, and whose density represents field strength.</p><p><b>Properties:</b></p><ul><li>Begin on positive charges, end on negative charges (or extend to infinity).</li><li>Never form closed loops (electrostatic field is conservative).</li><li>Two field lines can never intersect — at intersection $\\vec{E}$ would have two directions.</li><li>For a uniform field, lines are parallel and equally spaced.</li><li>Density of lines is proportional to $|\\vec{E}|$.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "6. Electric Dipole",
+      "body": "<p>A pair of equal and opposite point charges $\\pm q$ separated by a small distance $2a$ forms an <b>electric dipole</b>. The <b>dipole moment</b> is $\\vec{p} = q \\cdot 2a\\,\\hat{n}$, directed from $-q$ to $+q$. Unit: C·m.</p><p><b>Field on the axial line</b> at distance $r$ from centre ($r \\gg a$): $$E_{\\text{axial}} = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{2p}{r^3}$$ along $\\vec{p}$.</p><p><b>Field on the equatorial line</b> at distance $r$: $$E_{\\text{eq}} = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{p}{r^3}$$ anti-parallel to $\\vec{p}$.</p><p>Note that dipole field falls off as $1/r^3$, faster than a point charge ($1/r^2$).</p>",
+      "keyFormulae": ["\\vec{p} = q(2\\vec{a})", "E_{\\text{axial}} = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{2p}{r^3}", "E_{\\text{eq}} = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{p}{r^3}"]
+    },
+    {
+      "heading": "7. Dipole in a Uniform External Field",
+      "body": "<p>A dipole in a uniform field $\\vec{E}$ experiences <b>zero net force</b> (forces on $\\pm q$ cancel) but a <b>torque</b>: $$\\vec{\\tau} = \\vec{p} \\times \\vec{E}, \\quad |\\tau| = pE\\sin\\theta$$ where $\\theta$ is the angle between $\\vec{p}$ and $\\vec{E}$. The torque tends to align $\\vec{p}$ with $\\vec{E}$.</p><p>Potential energy of orientation: $U = -\\vec{p}\\cdot\\vec{E} = -pE\\cos\\theta$. Minimum energy when $\\vec{p}\\parallel\\vec{E}$ (stable), maximum when antiparallel (unstable).</p>",
+      "keyFormulae": ["\\vec{\\tau} = \\vec{p} \\times \\vec{E}", "U = -\\vec{p}\\cdot\\vec{E}"]
+    },
+    {
+      "heading": "8. Electric Flux and Gauss's Law",
+      "body": "<p><b>Electric flux</b> through a surface: $\\Phi_E = \\int \\vec{E}\\cdot d\\vec{A}$. For uniform field through flat area $A$: $\\Phi = EA\\cos\\theta$. Unit: N m²/C or V·m.</p><p><b>Gauss's law</b>: the total flux through any closed surface equals $1/\\varepsilon_0$ times the net charge enclosed. $$\\oint \\vec{E}\\cdot d\\vec{A} = \\dfrac{q_{\\text{enc}}}{\\varepsilon_0}$$</p><p>Gauss's law is valid for any closed surface (Gaussian surface) and any charge distribution. It is most useful when the system has high symmetry (spherical, cylindrical, planar), where we can pull $E$ outside the integral.</p>",
+      "keyFormulae": ["\\Phi_E = \\oint \\vec{E}\\cdot d\\vec{A}", "\\oint \\vec{E}\\cdot d\\vec{A} = \\dfrac{q_{\\text{enc}}}{\\varepsilon_0}"]
+    },
+    {
+      "heading": "9. Applications of Gauss's Law",
+      "body": "<p><b>Infinite line charge</b> with linear density $\\lambda$: cylindrical Gaussian surface gives $$E = \\dfrac{\\lambda}{2\\pi\\varepsilon_0 r}$$ radially outward.</p><p><b>Infinite plane sheet</b> with surface density $\\sigma$: $$E = \\dfrac{\\sigma}{2\\varepsilon_0}$$ perpendicular to the sheet, independent of distance.</p><p><b>Uniformly charged spherical shell</b> of radius $R$, total charge $Q$:</p><ul><li>Outside ($r>R$): $E = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{Q}{r^2}$ — same as a point charge at the centre.</li><li>Inside ($r<R$): $E = 0$ (no enclosed charge).</li></ul><p>For a conductor's surface: $E = \\sigma/\\varepsilon_0$ just outside, and $E = 0$ inside.</p>",
+      "keyFormulae": ["E_{\\text{line}} = \\dfrac{\\lambda}{2\\pi\\varepsilon_0 r}", "E_{\\text{sheet}} = \\dfrac{\\sigma}{2\\varepsilon_0}", "E_{\\text{shell, outside}} = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{Q}{r^2}"]
+    }
+  ],
+  "summary": "Electric charge is quantised, conserved, and additive. Coulomb's law gives the inverse-square electrostatic force between point charges, modelled via the electric field $\\vec{E} = \\vec{F}/q_0$. A dipole experiences torque $\\vec{p}\\times\\vec{E}$ in a uniform field with energy $-\\vec{p}\\cdot\\vec{E}$. Gauss's law $\\oint\\vec{E}\\cdot d\\vec{A} = q_{\\text{enc}}/\\varepsilon_0$ exploits symmetry to compute fields of lines, sheets, and shells.",
+  "pitfalls": [
+    "Coulomb's law applies only to point charges (or spherically symmetric distributions). For other shapes, integrate.",
+    "Field lines never cross; if a problem asks why, the reason is single-valued direction of E.",
+    "Inside a uniformly charged spherical SHELL, E = 0; for a solid sphere, E grows linearly with r inside.",
+    "Gauss's law always holds, but is only USEFUL when symmetry lets you pull E out of the surface integral.",
+    "Dipole field falls as 1/r³, not 1/r²; many students forget the factor of 2 in axial vs equatorial.",
+    "Direction of dipole moment is from -q to +q (not +q to -q)."
+  ]
+}

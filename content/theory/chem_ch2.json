@@ -1,0 +1,73 @@
+{
+  "chapter": 2,
+  "name": "Electrochemistry",
+  "subject": "Chemistry",
+  "_source": "NCERT Class 12 Chem Ch 2",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "Galvanic (Voltaic) Cells",
+      "body": "<p>A <b>galvanic cell</b> converts the chemical energy of a spontaneous redox reaction into electrical energy. It has two half-cells: an <b>oxidation half (anode, −)</b> and a <b>reduction half (cathode, +)</b>, connected externally by a wire and internally by a salt bridge that maintains electrical neutrality.</p><p><b>Daniell cell</b>: Zn(s) | Zn²⁺(aq) || Cu²⁺(aq) | Cu(s). At the anode: Zn → Zn²⁺ + 2e⁻; at the cathode: Cu²⁺ + 2e⁻ → Cu. Cell reaction: Zn + Cu²⁺ → Zn²⁺ + Cu.</p><p>Cell potential E<sub>cell</sub> = E<sub>cathode</sub> − E<sub>anode</sub> (both as reduction potentials). When E<sub>cell</sub> > 0 the reaction is spontaneous.</p>",
+      "keyFormulae": [
+        "E_{cell} = E_{cathode}^\\circ - E_{anode}^\\circ",
+        "\\text{Anode: oxidation; Cathode: reduction}"
+      ]
+    },
+    {
+      "heading": "Standard Electrode Potential and SHE",
+      "body": "<p>The absolute potential of a single electrode cannot be measured; we measure relative to the <b>Standard Hydrogen Electrode (SHE)</b>: Pt | H<sub>2</sub>(g, 1 bar) | H⁺(aq, 1 M), assigned E° = 0 V.</p><p>The <b>standard electrode potential E°</b> is the potential when all species are at unit activity (1 M, 1 bar, 298 K). The series of E° values is the <b>electrochemical series</b>. More negative E° → stronger reducing agent (Li, K, Ca at top); more positive E° → stronger oxidising agent (F<sub>2</sub>, Au³⁺ at bottom).</p><p>Predicting reactions: a metal can displace another metal from its salt only if its E° is more negative (lower in the series).</p>",
+      "keyFormulae": [
+        "E^\\circ_{SHE} = 0 V",
+        "\\text{Stronger oxidiser} \\Rightarrow \\text{higher } E^\\circ_{red}"
+      ]
+    },
+    {
+      "heading": "Nernst Equation",
+      "body": "<p>The Nernst equation gives cell potential at non-standard conditions:</p><p>For an electrode M<sup>n+</sup> + n e⁻ → M:<br>E = E° − (RT / nF) · ln(1/[M<sup>n+</sup>]) = E° + (0.0591/n) · log[M<sup>n+</sup>] at 298 K.</p><p>For a complete cell: E<sub>cell</sub> = E°<sub>cell</sub> − (0.0591/n) · log Q, where Q is the reaction quotient.</p><p>At equilibrium, E<sub>cell</sub> = 0 and Q = K<sub>c</sub>: E°<sub>cell</sub> = (0.0591/n) · log K<sub>c</sub>.</p><p>Relation to free energy: <b>ΔG = −nFE</b>; ΔG° = −nFE°<sub>cell</sub> = −RT ln K<sub>c</sub>.</p>",
+      "keyFormulae": [
+        "E_{cell} = E^\\circ_{cell} - (0.0591/n)\\log Q",
+        "\\Delta G = -nFE",
+        "\\Delta G^\\circ = -RT\\ln K_c = -nFE^\\circ"
+      ]
+    },
+    {
+      "heading": "Conductance of Electrolytic Solutions",
+      "body": "<p><b>Conductance (G)</b> = 1/R, unit siemens (S). <b>Conductivity (κ)</b> = 1/ρ = G·(l/A), unit S m⁻¹. The factor (l/A) is the <b>cell constant</b>, found by calibration with a standard KCl solution.</p><p><b>Molar conductivity Λ<sub>m</sub></b> = κ/c (with c in mol m⁻³, Λ<sub>m</sub> in S m² mol⁻¹) or = κ × 1000/c (with c in mol L⁻¹).</p><p><b>Variation with concentration</b>:</p><ul><li><b>Strong electrolytes</b> (KCl, HCl): Λ<sub>m</sub> rises slowly as c → 0. <b>Debye–Hückel–Onsager equation</b>: Λ<sub>m</sub> = Λ<sub>m</sub>° − A·√c.</li><li><b>Weak electrolytes</b> (CH<sub>3</sub>COOH, NH<sub>4</sub>OH): Λ<sub>m</sub> rises sharply at low c due to increased dissociation.</li></ul><p><b>Kohlrausch's law of independent migration of ions</b>: Λ<sub>m</sub>° = ν<sub>+</sub>·λ°<sub>+</sub> + ν<sub>−</sub>·λ°<sub>−</sub>. Used to find Λ<sub>m</sub>° of weak electrolytes (e.g. Λ<sub>m</sub>°(CH<sub>3</sub>COOH) = Λ<sub>m</sub>°(CH<sub>3</sub>COONa) + Λ<sub>m</sub>°(HCl) − Λ<sub>m</sub>°(NaCl)).</p><p>Degree of dissociation α = Λ<sub>m</sub>/Λ<sub>m</sub>°. Dissociation constant K<sub>a</sub> = c·α²/(1 − α).</p>",
+      "keyFormulae": [
+        "\\kappa = G \\cdot (l/A)",
+        "\\Lambda_m = \\kappa \\cdot 1000 / c",
+        "\\Lambda_m^\\circ = \\nu_+ \\lambda_+^\\circ + \\nu_- \\lambda_-^\\circ",
+        "\\alpha = \\Lambda_m / \\Lambda_m^\\circ"
+      ]
+    },
+    {
+      "heading": "Electrolytic Cells and Faraday's Laws",
+      "body": "<p>An <b>electrolytic cell</b> uses electrical energy to drive a non-spontaneous redox reaction. Cathode is negative (where cations are reduced); anode is positive (where anions or the electrode are oxidised).</p><p><b>Faraday's First Law</b>: mass deposited m ∝ Q (charge passed): m = Z·I·t, where Z is the electrochemical equivalent.</p><p><b>Faraday's Second Law</b>: when same Q passes through different electrolytes, masses deposited are in ratio of their equivalent masses.</p><p>1 Faraday = 96485 C mol⁻¹ = charge of 1 mole of electrons. To deposit 1 mole of M<sup>n+</sup> requires n F of charge.</p><p><b>Products of electrolysis</b> depend on the species present and their reduction/oxidation potentials, plus overpotential. Aqueous NaCl gives H<sub>2</sub> at cathode and Cl<sub>2</sub> at anode (despite O<sub>2</sub> having lower E°, due to overpotential).</p>",
+      "keyFormulae": [
+        "Q = I \\cdot t",
+        "n_{electrons} = Q / F",
+        "m = (M / nF) \\cdot I \\cdot t"
+      ]
+    },
+    {
+      "heading": "Batteries — Primary and Secondary",
+      "body": "<p><b>Primary batteries</b> (irreversible, used once):</p><ul><li><b>Dry cell (Leclanché)</b>: Zn anode, MnO<sub>2</sub>+C cathode in NH<sub>4</sub>Cl/ZnCl<sub>2</sub> paste. ~1.5 V. Zn → Zn²⁺ + 2e⁻; MnO<sub>2</sub> + NH<sub>4</sub>⁺ + e⁻ → MnO(OH) + NH<sub>3</sub>.</li><li><b>Mercury cell</b>: Zn–Hg amalgam anode, HgO+C cathode in KOH paste. Steady ~1.35 V (used in hearing aids, watches).</li></ul><p><b>Secondary batteries</b> (rechargeable):</p><ul><li><b>Lead storage battery</b> (car battery): Pb anode, PbO<sub>2</sub> cathode in 38% H<sub>2</sub>SO<sub>4</sub>. Discharge: Pb + PbO<sub>2</sub> + 2H<sub>2</sub>SO<sub>4</sub> → 2PbSO<sub>4</sub> + 2H<sub>2</sub>O. Recharge reverses this.</li><li><b>Nickel–Cadmium cell</b>: Cd anode, NiO(OH) cathode. Longer life than lead cell but more expensive.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Fuel Cells and Corrosion",
+      "body": "<p><b>Fuel cells</b> convert fuel + O<sub>2</sub> directly to electricity. <b>Hydrogen–oxygen fuel cell</b> (Apollo missions): porous C electrodes with Pt/Pd catalyst in KOH electrolyte. Anode: 2H<sub>2</sub> + 4OH⁻ → 4H<sub>2</sub>O + 4e⁻. Cathode: O<sub>2</sub> + 2H<sub>2</sub>O + 4e⁻ → 4OH⁻. Overall: 2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O. ~70% efficient, pollution-free.</p><p><b>Corrosion</b> is electrochemical oxidation of metals. Iron rusting: at anodic site, Fe → Fe²⁺ + 2e⁻ (E° = −0.44 V); at cathodic site, O<sub>2</sub> + 4H⁺ + 4e⁻ → 2H<sub>2</sub>O. Fe²⁺ then oxidises further to Fe<sub>2</sub>O<sub>3</sub>·xH<sub>2</sub>O (rust).</p><p>Prevention: <b>barrier methods</b> (paint, oil, plating with Sn or Cr); <b>cathodic protection</b> (sacrificial Mg or Zn anode that corrodes preferentially); <b>galvanisation</b> (Zn coating).</p>",
+      "keyFormulae": []
+    }
+  ],
+  "summary": "Electrochemistry connects redox chemistry with electricity. Galvanic cells exploit spontaneous reactions: E_cell = E°_cathode − E°_anode and ΔG = −nFE. The Nernst equation, E = E° − (0.0591/n)log Q at 298 K, links potential to concentration; at equilibrium it gives K_c. Conductivity κ and molar conductivity Λ_m describe ion transport; Kohlrausch's law allows Λ_m° of weak electrolytes to be computed from limiting ionic conductivities. Electrolysis follows Faraday's laws (1 F = 96485 C deposits 1 equivalent). Practical applications include dry, mercury, lead-storage, Ni-Cd batteries, H_2–O_2 fuel cells, and corrosion control via cathodic protection.",
+  "pitfalls": [
+    "Forgetting that E°_cell uses both as reduction potentials (do not flip sign of anode and add).",
+    "Using log instead of ln in Nernst — the factor 0.0591 already absorbs (RT/F)·ln10 at 298 K.",
+    "Mixing up moles of electrons n in Nernst (per mole of reaction as balanced).",
+    "Forgetting overpotential — predicted product (e.g. O_2 at anode) may not be the actual product (Cl_2 in conc NaCl).",
+    "Confusing cathode/anode polarity: in galvanic cell anode is −; in electrolytic cell anode is +.",
+    "Using c in mol/L without converting in Λ_m = κ × 1000/c (when κ is in S/cm).",
+    "Forgetting to take overall n_electrons across whole reaction in Faraday calculations."
+  ]
+}

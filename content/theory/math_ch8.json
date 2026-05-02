@@ -1,0 +1,42 @@
+{
+  "chapter": 8,
+  "name": "Application of Integrals",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 8",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "8.1 Area Under a Simple Curve",
+      "body": "<p>The area bounded by the curve $y=f(x)\\geq 0$, the x-axis and the vertical lines $x=a$, $x=b$ is</p><p>$A=\\int_{a}^{b} y\\,dx=\\int_{a}^{b} f(x)\\,dx.$</p><p>If the curve lies below the x-axis ($f(x)<0$) on $[a,b]$, the integral is negative; the geometric area is its absolute value: $A=\\left|\\,\\int_a^b f(x)\\,dx\\,\\right|$.</p><p>If $f$ changes sign in $[a,b]$, split the integral at the zeros and add the absolute values: $A=\\int_a^c|f|\\,dx+\\int_c^b|f|\\,dx$.</p>",
+      "keyFormulae": ["$A=\\int_a^b y\\,dx$", "Split at zeros if $f$ changes sign"]
+    },
+    {
+      "heading": "8.2 Area Bounded by $x=g(y)$",
+      "body": "<p>If a curve is more naturally written $x=g(y)$ and the area is bounded between $y=c$ and $y=d$ and the y-axis, then</p><p>$A=\\int_{c}^{d} x\\,dy=\\int_{c}^{d} g(y)\\,dy.$</p><p>This is the right approach when the curve has horizontal tangents or wraps onto itself in $x$.</p>",
+      "keyFormulae": ["$A=\\int_c^d x\\,dy$"]
+    },
+    {
+      "heading": "8.3 Area Between Two Curves",
+      "body": "<p>If $f(x)\\geq g(x)$ on $[a,b]$, the area between $y=f(x)$ (upper) and $y=g(x)$ (lower) over this interval is</p><p>$A=\\int_{a}^{b}\\big[f(x)-g(x)\\big]\\,dx.$</p><p><b>Procedure.</b></p><ol><li>Find points of intersection by solving $f(x)=g(x)$.</li><li>Determine which curve is on top in each sub-interval (sketch or test a value).</li><li>Integrate (upper $-$ lower).</li><li>If the upper/lower roles swap, split and sum the appropriate absolute differences.</li></ol>",
+      "keyFormulae": ["$A=\\int_a^b (f_{\\text{upper}}-g_{\\text{lower}})\\,dx$"]
+    },
+    {
+      "heading": "8.4 Standard Geometric Examples",
+      "body": "<p><b>Circle.</b> Area of $x^{2}+y^{2}=a^{2}$ is $4\\!\\int_0^{a}\\!\\sqrt{a^{2}-x^{2}}\\,dx=\\pi a^{2}.$</p><p><b>Ellipse.</b> $\\dfrac{x^{2}}{a^{2}}+\\dfrac{y^{2}}{b^{2}}=1$ has area $4\\!\\int_0^{a}\\dfrac{b}{a}\\sqrt{a^{2}-x^{2}}\\,dx=\\pi ab.$</p><p><b>Parabola.</b> Area enclosed by $y^{2}=4ax$ and the line $x=h$ is $\\dfrac{8}{3}a^{1/2}h^{3/2}$.</p>",
+      "keyFormulae": ["Circle area $=\\pi a^{2}$", "Ellipse area $=\\pi ab$"]
+    },
+    {
+      "heading": "8.5 Worked Approach for Mixed Curves",
+      "body": "<p>For a region enclosed by, say, a parabola and a line:</p><ol><li>Solve simultaneously to find intersection points.</li><li>Sketch to identify the bounded region.</li><li>Decide whether to integrate w.r.t. $x$ or $y$ — pick the variable that avoids splitting the integral.</li><li>Set up $\\int(\\text{upper}-\\text{lower})$ between intersection abscissae (or ordinates).</li><li>Evaluate using standard techniques from Ch 7.</li></ol><p><b>Example.</b> Region bounded by $y^{2}=x$ and $y=x$ in the first quadrant: intersections at $(0,0)$ and $(1,1)$; area $=\\int_0^{1}(\\sqrt{x}-x)\\,dx=\\dfrac{1}{6}$.</p>",
+      "keyFormulae": ["Choose integration variable to avoid splitting"]
+    }
+  ],
+  "summary": "Definite integrals compute geometric areas. For $y=f(x)$ above the x-axis between $x=a$ and $x=b$ the area is $\\int_a^b f(x)dx$; below the axis use absolute value. Curves expressed as $x=g(y)$ are integrated w.r.t. $y$. The area enclosed between two curves is $\\int(\\text{upper}-\\text{lower})$. Classical results include circle $\\pi a^{2}$ and ellipse $\\pi ab$. Always sketch the region, find intersection points, and split the integral wherever the upper/lower roles swap.",
+  "pitfalls": [
+    "Forgetting the sign of $f$ — area is the absolute value of the integral when $f<0$.",
+    "Not splitting at points where the upper/lower curves swap.",
+    "Failing to find ALL intersection points before setting up integration limits.",
+    "Mixing up which variable to integrate w.r.t. — pick the one that lets you write a single integral.",
+    "Confusing area with arc length — only one is on the syllabus."
+  ]
+}

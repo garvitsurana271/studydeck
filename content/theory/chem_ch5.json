@@ -1,0 +1,69 @@
+{
+  "chapter": 5,
+  "name": "Coordination Compounds",
+  "subject": "Chemistry",
+  "_source": "NCERT Class 12 Chem Ch 5",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "Werner's Theory and Basic Definitions",
+      "body": "<p>A <b>coordination compound</b> contains a central metal atom or ion bonded to ligands by coordinate (dative) bonds, retaining its identity in solution. Examples: [Cu(NH<sub>3</sub>)<sub>4</sub>]SO<sub>4</sub>, K<sub>4</sub>[Fe(CN)<sub>6</sub>], [Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>3</sub>.</p><p><b>Werner's postulates</b> (1893):</p><ol><li>Metals have two kinds of valencies: <b>primary (ionisable)</b> = oxidation state, and <b>secondary (non-ionisable)</b> = coordination number.</li><li>Primary valencies are satisfied by negative ions; secondary valencies are satisfied by ligands (neutral or charged).</li><li>Secondary valencies are directional — they give the complex a definite geometry.</li></ol><p>Key terms:</p><ul><li><b>Coordination sphere</b>: metal + ligands inside [...]; behaves as a single unit.</li><li><b>Counter ion</b>: outside the brackets; ionises in solution.</li><li><b>Coordination number (CN)</b>: number of ligand atoms directly bonded to the metal.</li><li><b>Donor atom</b>: the atom of the ligand that donates the electron pair (e.g. N in NH<sub>3</sub>).</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Ligands — Types",
+      "body": "<p>A <b>ligand</b> is a Lewis base donating an electron pair. By denticity:</p><ul><li><b>Monodentate</b>: 1 donor (Cl⁻, H<sub>2</sub>O, NH<sub>3</sub>, CN⁻, CO).</li><li><b>Bidentate</b>: 2 donors (ethylenediamine \"en\" H<sub>2</sub>N–CH<sub>2</sub>–CH<sub>2</sub>–NH<sub>2</sub>; oxalate C<sub>2</sub>O<sub>4</sub>²⁻).</li><li><b>Polydentate</b>: more than 2 (EDTA⁴⁻ is hexadentate).</li><li><b>Chelating ligand</b>: bidentate or polydentate that grips the metal in a ring — produces extra stability (chelate effect).</li><li><b>Ambidentate</b>: ligand with two different donor atoms but only one binds at a time (NO<sub>2</sub>⁻ vs ONO⁻; SCN⁻ vs NCS⁻).</li></ul><p><b>Strong-field ligands</b> (CN⁻, CO, NO<sub>2</sub>⁻, en) cause large d-orbital splitting and electron pairing → low spin. <b>Weak-field ligands</b> (I⁻, Br⁻, F⁻, H<sub>2</sub>O) cause small splitting → high spin. Spectrochemical series: I⁻ < Br⁻ < S²⁻ < SCN⁻ < Cl⁻ < F⁻ < OH⁻ < H<sub>2</sub>O < NH<sub>3</sub> < en < NO<sub>2</sub>⁻ < CN⁻ < CO.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "IUPAC Nomenclature",
+      "body": "<p>Rules:</p><ol><li>Cation is named first, then anion (whether the complex is cation or anion).</li><li>Ligands are named alphabetically (ignoring numerical prefixes), then the metal.</li><li>Anionic ligands end in -o (chloro, hydroxo, cyano, sulfato, oxalato).</li><li>Neutral ligands keep their names except H<sub>2</sub>O = aqua, NH<sub>3</sub> = ammine, CO = carbonyl, NO = nitrosyl.</li><li>Use di-, tri-, tetra- for simple ligands; bis-, tris-, tetrakis- if the ligand name itself contains a numerical prefix (e.g. bis(ethylenediamine)).</li><li>Oxidation state of the metal is given in Roman numerals in parentheses immediately after the metal name.</li><li>If complex is an anion, metal name ends in -ate (often using Latin: ferrate for Fe, cuprate for Cu, plumbate for Pb, argentate for Ag, aurate for Au).</li></ol><p>Examples:</p><ul><li>[Cu(NH<sub>3</sub>)<sub>4</sub>]SO<sub>4</sub> = tetraamminecopper(II) sulfate.</li><li>K<sub>4</sub>[Fe(CN)<sub>6</sub>] = potassium hexacyanidoferrate(II).</li><li>[Co(NH<sub>3</sub>)<sub>4</sub>Cl<sub>2</sub>]Cl = tetraamminedichloridocobalt(III) chloride.</li><li>[Pt(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>] = diamminedichloridoplatinum(II).</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Isomerism in Coordination Compounds",
+      "body": "<p><b>Structural isomerism</b>:</p><ul><li><b>Linkage</b>: ambidentate ligand binds via different atoms — [Co(NH<sub>3</sub>)<sub>5</sub>(NO<sub>2</sub>)]²⁺ vs [Co(NH<sub>3</sub>)<sub>5</sub>(ONO)]²⁺.</li><li><b>Coordination</b>: ligands swap between cation and anion in [Co(NH<sub>3</sub>)<sub>6</sub>][Cr(CN)<sub>6</sub>] vs [Cr(NH<sub>3</sub>)<sub>6</sub>][Co(CN)<sub>6</sub>].</li><li><b>Ionisation</b>: counter ion swaps with a ligand — [Co(NH<sub>3</sub>)<sub>5</sub>SO<sub>4</sub>]Br vs [Co(NH<sub>3</sub>)<sub>5</sub>Br]SO<sub>4</sub>.</li><li><b>Solvate (hydrate)</b>: water inside vs outside coordination sphere — [Cr(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>3</sub> (violet), [Cr(H<sub>2</sub>O)<sub>5</sub>Cl]Cl<sub>2</sub>·H<sub>2</sub>O (blue-green), [Cr(H<sub>2</sub>O)<sub>4</sub>Cl<sub>2</sub>]Cl·2H<sub>2</sub>O (dark green).</li></ul><p><b>Stereoisomerism</b>:</p><ul><li><b>Geometrical (cis–trans)</b>: in square planar [MA<sub>2</sub>B<sub>2</sub>] (e.g. cisplatin = cis-[Pt(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>], an anti-cancer drug; trans is inactive). Octahedral [MA<sub>4</sub>B<sub>2</sub>] and [M(AA)<sub>2</sub>B<sub>2</sub>] also show cis–trans.</li><li><b>Optical (d–l)</b>: octahedral [M(AA)<sub>3</sub>] (e.g. [Co(en)<sub>3</sub>]³⁺) and cis-[M(AA)<sub>2</sub>X<sub>2</sub>] are chiral. Tetrahedral with four different ligands also shows enantiomers.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Valence Bond Theory (VBT)",
+      "body": "<p>VBT explains shape and magnetism in terms of <b>hybridisation</b> of the metal orbitals that accept electron pairs from ligands.</p><table><tr><th>CN</th><th>Hybridisation</th><th>Geometry</th></tr><tr><td>2</td><td>sp</td><td>Linear</td></tr><tr><td>4</td><td>sp³</td><td>Tetrahedral</td></tr><tr><td>4</td><td>dsp²</td><td>Square planar</td></tr><tr><td>5</td><td>sp³d / dsp³</td><td>Trigonal bipyramidal</td></tr><tr><td>6</td><td>d²sp³ (inner orbital, low spin)</td><td>Octahedral</td></tr><tr><td>6</td><td>sp³d² (outer orbital, high spin)</td><td>Octahedral</td></tr></table><p>Examples: [Ni(CN)<sub>4</sub>]²⁻ — dsp², diamagnetic; [NiCl<sub>4</sub>]²⁻ — sp³, paramagnetic; [Fe(CN)<sub>6</sub>]³⁻ — d²sp³, low spin (1 unpaired e⁻); [FeF<sub>6</sub>]³⁻ — sp³d², high spin (5 unpaired e⁻).</p><p><b>Limitations of VBT</b>: doesn't quantitatively explain colour, magnetism near borderline cases, or thermodynamic stability; doesn't predict relative stabilities of geometries.</p>",
+      "keyFormulae": [
+        "\\text{Tetrahedral: } sp^3",
+        "\\text{Square planar: } dsp^2",
+        "\\text{Octahedral inner: } d^2sp^3"
+      ]
+    },
+    {
+      "heading": "Crystal Field Theory (CFT)",
+      "body": "<p>CFT treats the metal–ligand bond as electrostatic. In an isolated atom the five d orbitals are degenerate. Approach of ligands lifts the degeneracy.</p><p><b>Octahedral field</b>: d orbitals split into <b>t<sub>2g</sub></b> (d<sub>xy</sub>, d<sub>yz</sub>, d<sub>xz</sub>; lower) and <b>e<sub>g</sub></b> (d<sub>z²</sub>, d<sub>x²−y²</sub>; higher). Splitting Δ<sub>o</sub> (or 10Dq).</p><p><b>Tetrahedral field</b>: opposite splitting — e (lower) below t<sub>2</sub> (higher). Δ<sub>t</sub> ≈ (4/9) Δ<sub>o</sub>; small splitting means tetrahedral complexes are almost always high-spin.</p><p><b>Crystal Field Stabilization Energy (CFSE)</b>: net energy stabilization when d electrons fill the split levels. For octahedral, CFSE = (−0.4·n<sub>t2g</sub> + 0.6·n<sub>eg</sub>) Δ<sub>o</sub>.</p><p><b>High vs Low Spin (octahedral, d⁴–d⁷)</b>: if Δ<sub>o</sub> > pairing energy P, electrons pair up in t<sub>2g</sub> → low spin (strong-field ligands like CN⁻, CO). If Δ<sub>o</sub> < P → high spin (weak-field ligands like H<sub>2</sub>O, F⁻).</p><p><b>Colour explanation</b>: visible light promotes a d electron from t<sub>2g</sub> to e<sub>g</sub> (Δ<sub>o</sub> falls in visible range). The complementary colour is observed. d⁰ and d¹⁰ ions are colourless.</p>",
+      "keyFormulae": [
+        "\\Delta_t \\approx (4/9)\\Delta_o",
+        "\\text{CFSE} = (-0.4 n_{t_{2g}} + 0.6 n_{e_g})\\Delta_o",
+        "\\text{Low spin if }\\Delta_o > P"
+      ]
+    },
+    {
+      "heading": "Metal Carbonyls and Bonding",
+      "body": "<p><b>Metal carbonyls</b>: complexes of metals with CO, all electrically neutral with metal in zero oxidation state. Examples: Ni(CO)<sub>4</sub> (tetrahedral), Fe(CO)<sub>5</sub> (trigonal bipyramidal), Cr(CO)<sub>6</sub> (octahedral), Mn<sub>2</sub>(CO)<sub>10</sub>, Co<sub>2</sub>(CO)<sub>8</sub>.</p><p>The M–CO bond has dual character: (i) <b>σ donation</b> from filled C lone pair into empty metal d orbital; (ii) <b>π back-donation</b> from filled metal d orbital into empty antibonding π* of CO. This synergic bonding strengthens the M–C bond and weakens the C≡O bond (lower IR stretching frequency than free CO).</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Stability of Complexes and Applications",
+      "body": "<p><b>Stability constant (formation constant) K</b>: M + nL ⇌ ML<sub>n</sub>; K = [ML<sub>n</sub>]/([M][L]<sup>n</sup>). Larger K means a more stable complex. Stability is favoured by:</p><ul><li>High charge on metal ion;</li><li>Small size of metal ion;</li><li>Greater basicity of ligand;</li><li>Chelating effect (chelates much more stable than monodentate analogues).</li></ul><p><b>Importance of coordination compounds</b>:</p><ul><li><b>Biological</b>: chlorophyll (Mg²⁺ porphyrin), haemoglobin (Fe²⁺ porphyrin), vitamin B<sub>12</sub> (Co³⁺ corrin).</li><li><b>Medicine</b>: cisplatin (anticancer); EDTA in lead/heavy metal poisoning chelation therapy.</li><li><b>Analytical chemistry</b>: EDTA titration for water hardness; Tollen's, Fehling's reagents.</li><li><b>Metallurgy</b>: extraction of Ag and Au by cyanide leaching ([Ag(CN)<sub>2</sub>]⁻); purification of Ni by Mond's process via Ni(CO)<sub>4</sub>.</li><li><b>Catalysis</b>: Wilkinson's catalyst RhCl(PPh<sub>3</sub>)<sub>3</sub> for hydrogenation.</li></ul>",
+      "keyFormulae": [
+        "K_f = [ML_n]/([M][L]^n)"
+      ]
+    }
+  ],
+  "summary": "Coordination compounds contain a central metal bonded to ligands through coordinate bonds. Werner's primary (ionisable) and secondary (non-ionisable, directional) valencies became today's oxidation state and coordination number. Ligands are classified by denticity and as strong/weak field per the spectrochemical series (CN⁻ > CO > en > ... > F⁻ > Cl⁻ > Br⁻ > I⁻). IUPAC names are built systematically (cation first, ligands alphabetical, oxidation state in Roman numerals, anionic complexes get -ate). Isomerism includes structural (linkage, ionisation, coordination, hydrate) and stereoisomerism (cis–trans and optical). VBT explains shape via hybridisation; CFT explains colour, magnetism, and high/low spin via d-orbital splitting (Δ_o, Δ_t = 4/9 Δ_o). Coordination compounds are central in biology (chlorophyll, haemoglobin), medicine (cisplatin, EDTA chelation), metallurgy (Au/Ag extraction, Mond), and catalysis.",
+  "pitfalls": [
+    "Naming ligands non-alphabetically — alphabetise by ligand name, ignoring numerical prefixes.",
+    "Forgetting Latin -ate names for anionic complexes: ferrate (Fe), cuprate (Cu), argentate (Ag).",
+    "Confusing primary and secondary valency — primary = oxidation state, secondary = coordination number.",
+    "Saying [Ni(CN)_4]^{2−} is tetrahedral — it is square planar (dsp², low spin, diamagnetic).",
+    "Predicting tetrahedral complexes as low-spin — they are almost always high-spin (Δ_t too small).",
+    "Forgetting that CFSE doesn't include pairing energy term explicitly — add it back when comparing low-spin states.",
+    "Treating π back-donation as ionic — it is covalent and synergic with σ donation."
+  ]
+}

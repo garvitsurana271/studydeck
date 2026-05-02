@@ -1,0 +1,48 @@
+{
+  "chapter": 10,
+  "name": "Wave Optics",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 10",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. Wavefronts and Huygens' Principle",
+      "body": "<p>A <b>wavefront</b> is a surface of constant phase. Types: spherical (point source), cylindrical (line source), planar (very distant source). Energy travels perpendicular to the wavefront — i.e. along rays.</p><p><b>Huygens' principle</b>: every point on a primary wavefront acts as a source of secondary wavelets, propagating in all forward directions at the wave speed. The new wavefront at a later time is the envelope of these secondary wavelets.</p><p>This principle explains rectilinear propagation, reflection, and refraction. Snell's law follows from applying Huygens' principle to a plane wave hitting a boundary, giving $\\sin\\theta_1/\\sin\\theta_2 = v_1/v_2 = n_2/n_1$.</p>",
+      "keyFormulae": ["\\dfrac{\\sin\\theta_1}{\\sin\\theta_2} = \\dfrac{v_1}{v_2}"]
+    },
+    {
+      "heading": "2. Coherent Sources and Superposition",
+      "body": "<p>Two sources are <b>coherent</b> if they have a constant phase difference (and same frequency) over time. Two independent light sources are never coherent — atoms emit randomly, so phase relation changes within ~$10^{-9}$ s. To get coherence, one source is split into two (Young's double slit, Fresnel biprism, Lloyd's mirror).</p><p>When two coherent waves $y_1 = a\\sin\\omega t$ and $y_2 = a\\sin(\\omega t + \\phi)$ superpose, the resultant is $y = 2a\\cos(\\phi/2)\\sin(\\omega t + \\phi/2)$, with intensity: $$I = I_1 + I_2 + 2\\sqrt{I_1 I_2}\\cos\\phi$$ For equal amplitudes: $I = 4I_0\\cos^2(\\phi/2)$.</p><p>Maxima ($I = 4I_0$): $\\phi = 2n\\pi$ (path diff $= n\\lambda$). Minima ($I = 0$): $\\phi = (2n+1)\\pi$ (path diff $= (n + 1/2)\\lambda$).</p>",
+      "keyFormulae": ["I = I_1 + I_2 + 2\\sqrt{I_1 I_2}\\cos\\phi", "\\Delta x_{\\text{max}} = n\\lambda", "\\Delta x_{\\text{min}} = (n + 1/2)\\lambda"]
+    },
+    {
+      "heading": "3. Young's Double Slit Experiment",
+      "body": "<p>Two narrow slits $S_1$, $S_2$ separated by $d$, illuminated by monochromatic light, produce alternating bright and dark fringes on a screen at distance $D \\gg d$.</p><p>Path difference at point $y$ on screen: $\\Delta x \\approx yd/D$.</p><p><b>Bright fringes</b>: $y_n = n\\lambda D/d$, $n = 0, \\pm 1, \\pm 2, \\ldots$</p><p><b>Dark fringes</b>: $y_n = (n + 1/2)\\lambda D/d$.</p><p><b>Fringe width</b> (spacing between consecutive bright or dark fringes): $$\\beta = \\dfrac{\\lambda D}{d}$$</p><p>Fringe width is independent of $n$ — fringes are equally spaced. Doubling $d$ halves $\\beta$; doubling $D$ doubles $\\beta$. With white light: central fringe is white; on either side, spectra appear (violet nearer, red farther).</p>",
+      "keyFormulae": ["\\beta = \\dfrac{\\lambda D}{d}", "y_n^{\\text{bright}} = \\dfrac{n\\lambda D}{d}", "y_n^{\\text{dark}} = \\dfrac{(2n+1)\\lambda D}{2d}"]
+    },
+    {
+      "heading": "4. Diffraction at a Single Slit",
+      "body": "<p>Light passing through a single slit of width $a$ spreads out and forms a diffraction pattern: a wide central maximum flanked by dimmer secondary maxima.</p><p>Condition for <b>minima</b>: $a\\sin\\theta = n\\lambda$, $n = \\pm 1, \\pm 2, \\ldots$</p><p>Condition for <b>secondary maxima</b>: $a\\sin\\theta \\approx (n + 1/2)\\lambda$, $n = 1, 2, \\ldots$</p><p>Width of central maximum (between first minima on either side): $$\\Delta y = \\dfrac{2\\lambda D}{a}$$</p><p>Central max is twice as wide as side maxima, and much brighter ($\\sim 22\\times$ the first secondary). Diffraction is significant only when slit width $a$ is comparable to $\\lambda$.</p>",
+      "keyFormulae": ["a\\sin\\theta = n\\lambda \\text{ (minima)}", "\\Delta y_{\\text{central}} = \\dfrac{2\\lambda D}{a}"]
+    },
+    {
+      "heading": "5. Resolution and Limit of Resolution",
+      "body": "<p>Diffraction sets a fundamental limit to resolving power of optical instruments. <b>Rayleigh criterion</b>: two point objects are just resolved if the principal maximum of one falls on the first minimum of the other.</p><p>For a circular aperture of diameter $D$: minimum angular separation $$\\theta_{\\min} = 1.22\\,\\dfrac{\\lambda}{D}$$ (the 1.22 comes from the first zero of the Airy pattern).</p><p>For a microscope, <b>limit of resolution</b>: $d_{\\min} = 1.22\\lambda/(2 n\\sin\\beta)$, where $n\\sin\\beta$ is the numerical aperture. Smaller $\\lambda$ (UV/electron microscopy) and larger NA give finer detail.</p><p>For a telescope, larger $D$ (objective diameter) gives better resolution — also collects more light.</p>",
+      "keyFormulae": ["\\theta_{\\min} = 1.22\\dfrac{\\lambda}{D}"]
+    },
+    {
+      "heading": "6. Polarisation",
+      "body": "<p>Light is a transverse EM wave: $\\vec{E}$ oscillates perpendicular to propagation direction. <b>Unpolarised</b> light has $\\vec{E}$ vibrating in all directions in the perpendicular plane (random). <b>Linearly polarised</b> light has $\\vec{E}$ confined to a single direction.</p><p>A <b>polariser</b> (e.g. Polaroid) transmits only the component of $\\vec{E}$ along its transmission axis. Unpolarised light through a polariser: intensity halves ($I_0/2$), output linearly polarised.</p><p><b>Malus' law</b>: when polarised light of intensity $I_0$ passes through an analyser whose axis makes angle $\\theta$ with its polarisation: $$I = I_0 \\cos^2\\theta$$ Maximum at $\\theta = 0$, zero at $\\theta = 90°$ (crossed polarisers).</p><p><b>Brewster's law</b>: at a particular angle of incidence — Brewster's angle $\\theta_B$ — reflected light is completely polarised perpendicular to the plane of incidence: $\\tan\\theta_B = n_2/n_1$ (or $n$ for air-to-medium). At this angle, reflected and refracted rays are perpendicular.</p><p>Polarisation confirms transverse nature of light (longitudinal waves like sound cannot be polarised).</p>",
+      "keyFormulae": ["I = I_0\\cos^2\\theta", "\\tan\\theta_B = n"]
+    }
+  ],
+  "summary": "Huygens' principle constructs wavefronts from secondary wavelets. Coherent sources produce interference: $I = I_1 + I_2 + 2\\sqrt{I_1 I_2}\\cos\\phi$. Young's experiment: fringe width $\\beta = \\lambda D/d$. Single-slit diffraction: minima at $a\\sin\\theta = n\\lambda$, central max width $2\\lambda D/a$. Rayleigh limit $\\theta = 1.22\\lambda/D$. Polarisation confirms transverse nature; Malus' law $I = I_0\\cos^2\\theta$, Brewster's $\\tan\\theta_B = n$.",
+  "pitfalls": [
+    "Coherent sources must come from a SINGLE original source (split somehow); two independent lamps never interfere.",
+    "Fringe width β = λD/d for INTERFERENCE; central maximum width 2λD/a for DIFFRACTION — different formulas.",
+    "Single-slit minima at a sin θ = nλ (looks like double-slit MAX condition — easy to confuse).",
+    "Rayleigh's 1.22 factor is for circular aperture; rectangular slit gives just 1.",
+    "Unpolarised light through one polariser: I = I_0/2; through second polariser: I_0/2 × cos²θ.",
+    "Sound waves CANNOT be polarised (longitudinal); polarisation is the cleanest proof that light is transverse."
+  ]
+}

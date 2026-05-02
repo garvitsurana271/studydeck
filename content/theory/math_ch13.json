@@ -1,0 +1,48 @@
+{
+  "chapter": 13,
+  "name": "Probability",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 13",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "13.1 Conditional Probability",
+      "body": "<p>For events $E,F$ in a sample space with $P(F)\\neq 0$, the <b>conditional probability</b> of $E$ given $F$ is</p><p>$P(E\\mid F)=\\dfrac{P(E\\cap F)}{P(F)}.$</p><p>Properties:</p><ul><li>$0\\leq P(E\\mid F)\\leq 1$.</li><li>$P(S\\mid F)=P(F\\mid F)=1$.</li><li>$P((E\\cup G)\\mid F)=P(E\\mid F)+P(G\\mid F)-P(E\\cap G\\mid F)$.</li><li>$P(E'\\mid F)=1-P(E\\mid F)$.</li></ul>",
+      "keyFormulae": ["$P(E\\mid F)=\\dfrac{P(E\\cap F)}{P(F)}$"]
+    },
+    {
+      "heading": "13.2 Multiplication Theorem on Probability",
+      "body": "<p>From the definition of conditional probability:</p><p>$P(E\\cap F)=P(F)\\,P(E\\mid F)=P(E)\\,P(F\\mid E).$</p><p><b>Multiplication theorem (chain rule).</b> $P(E\\cap F\\cap G)=P(E)\\,P(F\\mid E)\\,P(G\\mid E\\cap F).$</p><p>Generalises to any finite number of events.</p>",
+      "keyFormulae": ["$P(E\\cap F)=P(E)P(F\\mid E)$", "$P(\\bigcap E_i)=P(E_1)P(E_2|E_1)\\cdots$"]
+    },
+    {
+      "heading": "13.3 Independent Events",
+      "body": "<p>$E$ and $F$ are <b>independent</b> if the occurrence of one does not affect the probability of the other:</p><p>$P(E\\cap F)=P(E)\\,P(F).$</p><p>Equivalently, $P(E\\mid F)=P(E)$ (when $P(F)>0$) and $P(F\\mid E)=P(F)$ (when $P(E)>0$).</p><p>Three events $E,F,G$ are <b>mutually independent</b> if all pairwise products and the triple product factor: $P(E\\cap F)=P(E)P(F)$, $P(F\\cap G)=P(F)P(G)$, $P(E\\cap G)=P(E)P(G)$, AND $P(E\\cap F\\cap G)=P(E)P(F)P(G).$</p><p><b>Independent</b> $\\neq$ <b>mutually exclusive</b>: mutually exclusive events with positive probability are NEVER independent (their intersection is empty).</p>",
+      "keyFormulae": ["Independent: $P(E\\cap F)=P(E)P(F)$"]
+    },
+    {
+      "heading": "13.4 Total Probability & Bayes' Theorem",
+      "body": "<p>Let $E_1,E_2,\\dots,E_n$ be a <b>partition</b> of the sample space (mutually exclusive, exhaustive, each $P(E_i)>0$). For any event $A$:</p><p><b>Total Probability:</b> $P(A)=\\sum_{i=1}^{n} P(E_i)\\,P(A\\mid E_i).$</p><p><b>Bayes' Theorem.</b> If $P(A)>0$:</p><p>$P(E_i\\mid A)=\\dfrac{P(E_i)\\,P(A\\mid E_i)}{\\sum_{j=1}^{n} P(E_j)\\,P(A\\mid E_j)}.$</p><p>The $P(E_i)$ are <b>prior</b> probabilities; $P(E_i\\mid A)$ are <b>posterior</b> probabilities (updated by observing $A$). $P(A\\mid E_i)$ are the <b>likelihoods</b>.</p>",
+      "keyFormulae": ["$P(A)=\\sum P(E_i)P(A|E_i)$", "$P(E_i|A)=\\dfrac{P(E_i)P(A|E_i)}{\\sum P(E_j)P(A|E_j)}$"]
+    },
+    {
+      "heading": "13.5 Random Variables & Probability Distributions",
+      "body": "<p>A <b>random variable (r.v.)</b> $X$ is a real-valued function on the sample space.</p><p>The <b>probability distribution</b> of a discrete r.v. lists each value $x_i$ with its probability $p_i=P(X=x_i)$, where $0\\leq p_i\\leq 1$ and $\\sum p_i=1$.</p><p><b>Mean (expectation).</b> $\\mu=E(X)=\\sum_{i} x_i\\,p_i.$</p><p><b>Variance.</b> $\\sigma^{2}=\\operatorname{Var}(X)=\\sum_{i}(x_i-\\mu)^{2}p_i=E(X^{2})-[E(X)]^{2},$ where $E(X^{2})=\\sum x_i^{2}p_i.$</p><p><b>Standard deviation.</b> $\\sigma=\\sqrt{\\operatorname{Var}(X)}.$</p>",
+      "keyFormulae": ["$E(X)=\\sum x_i p_i$", "$\\text{Var}(X)=E(X^{2})-[E(X)]^{2}$"]
+    },
+    {
+      "heading": "13.6 Bernoulli Trials & Binomial Distribution",
+      "body": "<p>A <b>Bernoulli trial</b> is an experiment with exactly two outcomes, success ($S$) and failure ($F$), with $P(S)=p$ constant from trial to trial. <b>Bernoulli trials</b> are independent.</p><p>If $X$ is the number of successes in $n$ independent Bernoulli trials each with success probability $p$ (and failure $q=1-p$), then $X$ follows a <b>binomial distribution</b> $B(n,p)$:</p><p>$P(X=r)=\\binom{n}{r} p^{r}\\,q^{n-r},\\quad r=0,1,2,\\dots,n.$</p><p>Properties:</p><ul><li><b>Mean:</b> $E(X)=np.$</li><li><b>Variance:</b> $\\operatorname{Var}(X)=npq.$</li><li><b>Standard deviation:</b> $\\sigma=\\sqrt{npq}.$</li><li>The probabilities $\\binom{n}{0}q^{n},\\binom{n}{1}pq^{n-1},\\dots,\\binom{n}{n}p^{n}$ are the successive terms of the expansion $(q+p)^{n}$.</li></ul>",
+      "keyFormulae": ["$P(X=r)=\\binom{n}{r}p^{r}q^{n-r}$", "$E(X)=np,\\;\\text{Var}(X)=npq$"]
+    }
+  ],
+  "summary": "Conditional probability $P(E\\mid F)=P(E\\cap F)/P(F)$ leads to the multiplication rule $P(E\\cap F)=P(E)P(F\\mid E)$ and the definition of independence $P(E\\cap F)=P(E)P(F)$. The Total Probability Law sums likelihoods over a partition; Bayes' Theorem reverses conditioning to update priors into posteriors. Random variables have probability distributions with $\\sum p_i=1$, mean $E(X)=\\sum x_i p_i$, and variance $E(X^{2})-[E(X)]^{2}$. Binomial distribution $B(n,p)$ models successes in $n$ Bernoulli trials with $P(X=r)=\\binom{n}{r}p^{r}q^{n-r}$, mean $np$, variance $npq$.",
+  "pitfalls": [
+    "Confusing $P(E\\mid F)$ with $P(F\\mid E)$ — they are generally different.",
+    "Treating mutually exclusive events as independent — opposite is true (mutually exclusive with positive probabilities are dependent).",
+    "Using Bayes' Theorem without verifying $E_1,\\dots,E_n$ form a partition.",
+    "Forgetting $\\sum p_i=1$ when computing a missing probability in a distribution.",
+    "Using $\\text{Var}(X)=E(X)^{2}-E(X^{2})$ — sign reversed; correct is $E(X^{2})-[E(X)]^{2}$.",
+    "Applying the binomial formula when trials are not independent or $p$ varies."
+  ]
+}

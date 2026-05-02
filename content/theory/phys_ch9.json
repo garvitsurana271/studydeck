@@ -1,0 +1,63 @@
+{
+  "chapter": 9,
+  "name": "Ray Optics and Optical Instruments",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 9",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. Reflection at Spherical Mirrors",
+      "body": "<p>Two laws of reflection: angle of incidence equals angle of reflection ($i = r$); incident ray, reflected ray, and normal are coplanar.</p><p>For spherical mirrors with small aperture, the focal length $f = R/2$, where $R$ is the radius of curvature.</p><p><b>Mirror formula</b> (with sign convention: distances measured from pole, against incident light direction are negative): $$\\dfrac{1}{v} + \\dfrac{1}{u} = \\dfrac{1}{f}$$</p><p><b>Magnification</b>: $m = -v/u = h_i/h_o$. Concave mirror: $f$ negative. Convex mirror: $f$ positive. Real image: $m$ negative; virtual image: $m$ positive.</p>",
+      "keyFormulae": ["\\dfrac{1}{v} + \\dfrac{1}{u} = \\dfrac{1}{f}", "f = \\dfrac{R}{2}", "m = -\\dfrac{v}{u}"]
+    },
+    {
+      "heading": "2. Refraction and Snell's Law",
+      "body": "<p>When light passes from one medium to another, it bends. <b>Snell's law</b>: $$n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2$$ Equivalently $\\sin\\theta_1/\\sin\\theta_2 = n_2/n_1 = n_{21}$ (refractive index of 2 wrt 1).</p><p>Refractive index $n = c/v$, ratio of light speed in vacuum to that in the medium. Always $n \\ge 1$. Frequency does not change on refraction; wavelength does ($\\lambda = \\lambda_0/n$).</p><p>Real depth vs apparent depth: object viewed through medium of index $n$ from above appears at depth $d_{\\text{app}} = d_{\\text{real}}/n$. Lateral shift through a glass slab: $d = t\\sin(i-r)/\\cos r$.</p>",
+      "keyFormulae": ["n_1\\sin\\theta_1 = n_2\\sin\\theta_2", "n = \\dfrac{c}{v}", "d_{\\text{app}} = \\dfrac{d_{\\text{real}}}{n}"]
+    },
+    {
+      "heading": "3. Total Internal Reflection",
+      "body": "<p>When light goes from denser ($n_1$) to rarer ($n_2$) medium, the refracted ray bends away from normal. At a particular incidence angle — the <b>critical angle</b> $\\theta_c$ — the refracted ray grazes the surface ($\\theta_2 = 90°$): $$\\sin\\theta_c = \\dfrac{n_2}{n_1}$$ For glass-air, $n_1 = 1.5$, gives $\\theta_c \\approx 42°$.</p><p>For $\\theta_1 > \\theta_c$, no refraction — all light reflects back into denser medium. This is <b>total internal reflection (TIR)</b>.</p><p>Applications: optical fibres (signals confined by repeated TIR; core has slightly higher $n$ than cladding), prisms in periscopes/binoculars, sparkle of diamond ($\\theta_c \\approx 24°$), mirage formation.</p>",
+      "keyFormulae": ["\\sin\\theta_c = \\dfrac{n_2}{n_1}", "\\sin\\theta_c = \\dfrac{1}{n} \\text{ (denser to air)}"]
+    },
+    {
+      "heading": "4. Refraction at a Spherical Surface and Lensmaker's Equation",
+      "body": "<p>For a single spherical refracting surface separating media $n_1$ and $n_2$, with radius of curvature $R$: $$\\dfrac{n_2}{v} - \\dfrac{n_1}{u} = \\dfrac{n_2 - n_1}{R}$$ This is the basis for thin-lens formula.</p><p>Applying refraction at both surfaces of a thin lens (radii $R_1$, $R_2$, lens material index $n_l$, in medium $n_m$): <b>Lensmaker's equation</b>: $$\\dfrac{1}{f} = (n_{lm} - 1)\\!\\left(\\dfrac{1}{R_1} - \\dfrac{1}{R_2}\\right)$$ where $n_{lm} = n_l/n_m$.</p><p><b>Thin lens formula</b>: $$\\dfrac{1}{v} - \\dfrac{1}{u} = \\dfrac{1}{f}$$ Magnification: $m = v/u$. Sign: $f > 0$ for convex/converging, $f < 0$ for concave/diverging.</p><p><b>Power</b> of a lens: $P = 1/f$ (in metres), unit <b>dioptre (D)</b>.</p>",
+      "keyFormulae": ["\\dfrac{n_2}{v} - \\dfrac{n_1}{u} = \\dfrac{n_2 - n_1}{R}", "\\dfrac{1}{f} = (n - 1)\\!\\left(\\dfrac{1}{R_1} - \\dfrac{1}{R_2}\\right)", "\\dfrac{1}{v} - \\dfrac{1}{u} = \\dfrac{1}{f}", "P = \\dfrac{1}{f}"]
+    },
+    {
+      "heading": "5. Combination of Thin Lenses",
+      "body": "<p>For two thin lenses in contact, focal lengths $f_1$, $f_2$: $$\\dfrac{1}{f} = \\dfrac{1}{f_1} + \\dfrac{1}{f_2}, \\quad P = P_1 + P_2$$ Magnification: $m = m_1\\,m_2$.</p><p>Useful for designing composite optical systems: e.g. an achromatic doublet combines a converging crown-glass lens with a diverging flint lens to cancel chromatic aberration.</p>",
+      "keyFormulae": ["\\dfrac{1}{f} = \\dfrac{1}{f_1} + \\dfrac{1}{f_2}", "P = P_1 + P_2"]
+    },
+    {
+      "heading": "6. Refraction Through a Prism",
+      "body": "<p>For a prism with refracting angle $A$, light is deviated by $\\delta = (i_1 + i_2) - A$, where $i_1, i_2$ are angles of incidence and emergence. Also $r_1 + r_2 = A$.</p><p>At <b>minimum deviation</b> $\\delta_m$, the ray passes symmetrically: $i_1 = i_2$, $r_1 = r_2 = A/2$. Refractive index: $$n = \\dfrac{\\sin\\!\\left(\\dfrac{A + \\delta_m}{2}\\right)}{\\sin\\!\\left(\\dfrac{A}{2}\\right)}$$</p><p><b>Dispersion</b>: different colours have slightly different $n$ in glass; violet bends more than red. Spectrum spreads on emergence. Angular dispersion: $\\delta_v - \\delta_r$. <b>Dispersive power</b>: $\\omega = (\\delta_v - \\delta_r)/\\delta_y$.</p>",
+      "keyFormulae": ["\\delta = i_1 + i_2 - A", "n = \\dfrac{\\sin[(A + \\delta_m)/2]}{\\sin[A/2]}"]
+    },
+    {
+      "heading": "7. Scattering and Some Natural Phenomena",
+      "body": "<p><b>Rayleigh scattering</b>: intensity scattered by particles much smaller than $\\lambda$ varies as $1/\\lambda^4$. Shorter wavelengths (blue/violet) scatter much more than red.</p><p>Consequences:</p><ul><li><b>Blue sky</b>: blue light from sun is scattered in all directions by air molecules.</li><li><b>Reddish sun at sunrise/sunset</b>: when sun is near horizon, sunlight passes through more atmosphere; blue scattered out, only red transmitted directly.</li><li><b>White clouds</b>: water droplets are large compared to $\\lambda$, scattering all wavelengths equally.</li></ul><p><b>Rainbow</b>: formation involves refraction, total internal reflection, and dispersion in spherical water droplets. Primary rainbow: one TIR, red on outside (~42°). Secondary: two TIRs, colours reversed (~50°), fainter.</p>",
+      "keyFormulae": ["I_{\\text{scattered}} \\propto \\dfrac{1}{\\lambda^4}"]
+    },
+    {
+      "heading": "8. The Human Eye and Defects",
+      "body": "<p>Eye: cornea + crystalline lens form a real, inverted image on retina. Ciliary muscles change lens shape (<b>accommodation</b>), so image always falls on retina. Normal range: 25 cm (near point) to infinity (far point).</p><p>Defects:</p><ul><li><b>Myopia</b> (short-sight): far point < ∞; image of distant object forms in front of retina. Corrected with concave (diverging) lens of power $P = -1/d_f$.</li><li><b>Hypermetropia</b> (long-sight): near point > 25 cm. Corrected with convex (converging) lens.</li><li><b>Presbyopia</b>: loss of accommodation due to age; bifocals.</li><li><b>Astigmatism</b>: cornea has different curvature in different planes; corrected with cylindrical lens.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "9. Optical Instruments — Microscope and Telescope",
+      "body": "<p><b>Simple microscope</b> (magnifier): a single convex lens, image at near point gives magnification $m = 1 + D/f$, image at infinity gives $m = D/f$, where $D = 25$ cm.</p><p><b>Compound microscope</b>: two lenses (objective + eyepiece), short focal lengths. Magnification (final image at near point): $$M = -\\dfrac{L}{f_o}\\!\\left(1 + \\dfrac{D}{f_e}\\right)$$ where $L$ is tube length. Used for tiny nearby objects.</p><p><b>Astronomical telescope</b> (refracting): long-focal-length objective, short-focal-length eyepiece. Magnification (normal adjustment, image at infinity): $$M = -\\dfrac{f_o}{f_e}, \\quad L = f_o + f_e$$ Higher $f_o$ and lower $f_e$ → higher magnification. Used for distant objects.</p><p><b>Reflecting (Cassegrain) telescope</b>: uses concave mirror as objective. Advantages: no chromatic aberration, easier to make large, mechanically stable, cheaper.</p>",
+      "keyFormulae": ["m_{\\text{simple}} = 1 + \\dfrac{D}{f}", "M_{\\text{compound}} = -\\dfrac{L}{f_o}\\!\\left(1 + \\dfrac{D}{f_e}\\right)", "M_{\\text{telescope}} = -\\dfrac{f_o}{f_e}"]
+    }
+  ],
+  "summary": "Mirror $1/v + 1/u = 1/f$, lens $1/v - 1/u = 1/f$, with sign conventions. Snell's law $n_1\\sin\\theta_1 = n_2\\sin\\theta_2$; TIR for $\\theta > \\theta_c = \\sin^{-1}(n_2/n_1)$. Lensmaker's equation gives $f$ from radii. Prism: $n = \\sin[(A+\\delta_m)/2]/\\sin[A/2]$; dispersion creates spectra. Rayleigh scattering $\\propto 1/\\lambda^4$ explains blue sky and red sunsets. Telescopes: $M = f_o/f_e$.",
+  "pitfalls": [
+    "Sign conventions: distances measured from pole/optical centre, against incident light = negative. Mess this up and signs of f, v, u will all be wrong.",
+    "Mirror formula has 1/v + 1/u; lens formula has 1/v - 1/u (different signs!). Easy to confuse.",
+    "Critical angle exists only for denser-to-rarer; never the other way.",
+    "In dispersion, violet bends MORE than red (smaller wavelength → larger n).",
+    "For telescope, you want LONG f_o (objective) and SHORT f_e (eyepiece) — opposite for microscope objective is short.",
+    "Power P = 1/f only when f is in METRES; in cm gives dioptres × 100, wrong."
+  ]
+}

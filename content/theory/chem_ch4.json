@@ -1,0 +1,70 @@
+{
+  "chapter": 4,
+  "name": "The d- and f-Block Elements",
+  "subject": "Chemistry",
+  "_source": "NCERT Class 12 Chem Ch 4",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "Position in Periodic Table",
+      "body": "<p>The <b>d-block elements</b> (transition metals) lie between s- and p-blocks, in groups 3–12. Their last electron enters a (n−1)d orbital, with general configuration <b>(n−1)d<sup>1−10</sup>·ns<sup>1−2</sup></b>. There are four series:</p><ul><li><b>3d (1st series)</b>: Sc → Zn (Z = 21–30)</li><li><b>4d (2nd series)</b>: Y → Cd</li><li><b>5d (3rd series)</b>: La, Hf → Hg</li><li><b>6d (4th series)</b>: Ac, Rf → Cn (incomplete)</li></ul><p>A <b>transition element</b> is defined as one whose atom (or its common ion) has a partially filled d-subshell. By this definition Zn, Cd, Hg are not strictly transition metals (d¹⁰ in M and M²⁺), though included in the d-block for convenience.</p><p><b>f-block</b> (inner transition): lanthanoids (4f, Ce → Lu) and actinoids (5f, Th → Lr).</p>",
+      "keyFormulae": [
+        "(n-1)d^{1-10}\\,ns^{1-2}"
+      ]
+    },
+    {
+      "heading": "Electronic Configurations and Anomalies",
+      "body": "<p>Two well-known irregularities in the 3d series due to extra stability of half-filled and fully-filled d subshells:</p><ul><li><b>Cr</b>: [Ar] 3d⁵ 4s¹ (not 3d⁴ 4s²) — half-filled d⁵ stable.</li><li><b>Cu</b>: [Ar] 3d¹⁰ 4s¹ (not 3d⁹ 4s²) — fully-filled d¹⁰ stable.</li></ul><p>For the cations of transition metals, electrons are removed from <b>4s before 3d</b>. So Fe = [Ar] 3d⁶ 4s², but Fe²⁺ = [Ar] 3d⁶ and Fe³⁺ = [Ar] 3d⁵.</p>",
+      "keyFormulae": [
+        "\\text{Cr: } [Ar]3d^5 4s^1",
+        "\\text{Cu: } [Ar]3d^{10} 4s^1"
+      ]
+    },
+    {
+      "heading": "General Properties of Transition Metals",
+      "body": "<p><b>Atomic and ionic radii</b>: decrease across a series due to increasing nuclear charge, but only slowly because added d-electrons screen poorly. From 4d to 5d series, radii hardly increase due to <b>lanthanoid contraction</b> (filling of 4f in lanthanoids before 5d series). Hence Zr ≈ Hf, Nb ≈ Ta in size and chemistry.</p><p><b>Density and m.p./b.p.</b>: high (strong metallic bonding from d-electrons participating). Maxima around the middle of each series (Cr, Mo, W).</p><p><b>Ionisation enthalpy</b>: gradually increases across a series; broadly higher than s-block. Irregularities at d⁵ and d¹⁰ configurations.</p><p><b>Metallic character</b>: all are metals, hard, ductile, good conductors of heat and electricity.</p><p><b>Standard electrode potentials</b>: E°(M²⁺/M) becomes less negative across the series; Cu has positive E° (+0.34 V), explaining why it does not displace H<sub>2</sub> from acids.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Variable Oxidation States",
+      "body": "<p>Transition metals show multiple oxidation states because (n−1)d and ns electrons are close in energy. The most common oxidation states in the 3d series are:</p><ul><li>Sc: +3 only</li><li>Ti: +2, +3, +4</li><li>V: +2 to +5</li><li>Cr: +2 to +6 (most stable +3)</li><li>Mn: +2 to +7 (most stable +2)</li><li>Fe: +2, +3 (stable +3 = d⁵)</li><li>Co, Ni: +2, +3</li><li>Cu: +1, +2</li><li>Zn: +2 only</li></ul><p>Highest oxidation states (Mn(VII), Cr(VI)) appear with O²⁻ or F⁻ as ligands. Sc (no d electrons in +3) and Zn (full d¹⁰ in +2) show only one oxidation state.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Coloured Ions, Magnetic Properties, Catalytic Activity",
+      "body": "<p><b>Colour</b>: most transition-metal ions are coloured because partially-filled d orbitals allow <b>d–d transitions</b> by absorbing visible light; the complementary colour is transmitted. Sc³⁺ (d⁰), Ti⁴⁺ (d⁰), Cu⁺ (d¹⁰), Zn²⁺ (d¹⁰) are colourless.</p><p><b>Magnetic moment</b>: from spin-only formula μ = √(n(n+2)) BM, where n is the number of unpaired electrons. (Bohr magneton, BM = 9.27 × 10⁻²⁴ J T⁻¹.) Ions with unpaired electrons are <b>paramagnetic</b>; with all paired, <b>diamagnetic</b>.</p><p><b>Catalytic activity</b>: due to (i) variable oxidation states and (ii) ability to form intermediate complexes with reactants. Examples: V<sub>2</sub>O<sub>5</sub> (contact process), Fe (Haber), Ni (catalytic hydrogenation), Pd/Pt (many).</p><p><b>Interstitial compounds</b>: small atoms (H, C, N, B) occupy interstitial sites in metal lattices, giving very hard, high-melting, chemically inert solids (e.g. steel, TiC, Mn<sub>4</sub>N).</p><p><b>Alloys</b>: form readily because of similar atomic radii (e.g. brass = Cu + Zn, bronze = Cu + Sn, steel = Fe + C + others).</p>",
+      "keyFormulae": [
+        "\\mu_{spin} = \\sqrt{n(n+2)}\\ \\text{BM}"
+      ]
+    },
+    {
+      "heading": "Important Compounds — KMnO₄ and K₂Cr₂O₇",
+      "body": "<p><b>Potassium permanganate KMnO₄</b>: prepared by fusion of MnO<sub>2</sub> with KOH and an oxidising agent (KNO<sub>3</sub>) to give K<sub>2</sub>MnO<sub>4</sub> (green), then electrolytic or chemical oxidation in alkaline solution. It is a powerful oxidising agent in acidic, neutral, and alkaline media:</p><ul><li>Acidic: MnO<sub>4</sub>⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H<sub>2</sub>O (E° = +1.51 V).</li><li>Neutral/Slightly alkaline: MnO<sub>4</sub>⁻ + 2H<sub>2</sub>O + 3e⁻ → MnO<sub>2</sub> + 4OH⁻.</li><li>Strongly alkaline: MnO<sub>4</sub>⁻ + e⁻ → MnO<sub>4</sub>²⁻.</li></ul><p>Used in titrations (oxalate, Fe²⁺), bleaching, water treatment, and as a disinfectant.</p><p><b>Potassium dichromate K₂Cr₂O₇</b>: from chromite ore FeCr<sub>2</sub>O<sub>4</sub>: fused with Na<sub>2</sub>CO<sub>3</sub> and air → Na<sub>2</sub>CrO<sub>4</sub>, acidified to Na<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>, treated with KCl. Orange-red crystals.</p><p>Equilibrium: 2 CrO<sub>4</sub>²⁻ (yellow) + 2H⁺ ⇌ Cr<sub>2</sub>O<sub>7</sub>²⁻ (orange) + H<sub>2</sub>O. Strong oxidiser only in acidic medium: Cr<sub>2</sub>O<sub>7</sub>²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H<sub>2</sub>O (E° = +1.33 V). Used in volumetric analysis and leather tanning.</p>",
+      "keyFormulae": [
+        "MnO_4^- + 8H^+ + 5e^- \\to Mn^{2+} + 4H_2O",
+        "Cr_2O_7^{2-} + 14H^+ + 6e^- \\to 2Cr^{3+} + 7H_2O"
+      ]
+    },
+    {
+      "heading": "Lanthanoids — General Trends",
+      "body": "<p>Lanthanoids: 14 elements Ce (Z=58) to Lu (Z=71); general configuration [Xe] 4f<sup>1−14</sup> 5d<sup>0−1</sup> 6s². Common oxidation state <b>+3</b>; +2 (Eu, Yb) and +4 (Ce, Tb) occasionally seen.</p><p><b>Lanthanoid contraction</b>: steady decrease in atomic and ionic radii (Ln³⁺) across the series due to poor shielding by 4f electrons. Consequences:</p><ul><li>Similar size of 4d and 5d series (Zr ≈ Hf, Nb ≈ Ta).</li><li>Similar chemistry of all lanthanoids → difficult separation.</li><li>Slight increase in basicity from Ce(OH)<sub>3</sub> to Lu(OH)<sub>3</sub>... actually basicity decreases from La(OH)<sub>3</sub> to Lu(OH)<sub>3</sub> as size decreases.</li></ul><p>All lanthanoids are silvery-white, highly reactive metals (less than alkaline earths). Used in misch metal (Ce + La + others) for lighter flints, and in alloys.</p>",
+      "keyFormulae": [
+        "\\text{Common ox. state: }+3"
+      ]
+    },
+    {
+      "heading": "Actinoids — General Features",
+      "body": "<p>Actinoids: 14 elements Th (Z=90) to Lr (Z=103); general configuration [Rn] 5f<sup>1−14</sup> 6d<sup>0−1</sup> 7s². All are radioactive; only Th and U are found in significant amounts in nature.</p><p>Show variable oxidation states (+3 to +7) because 5f, 6d, 7s have similar energies. Most common is +3.</p><p><b>Actinoid contraction</b>: similar to lanthanoid contraction but more pronounced because 5f electrons screen even more poorly than 4f.</p><p>Comparison with lanthanoids: actinoids show greater range of oxidation states; their compounds are more easily hydrolysed; they are more reactive; coloured ions are due to f–f transitions.</p>",
+      "keyFormulae": []
+    }
+  ],
+  "summary": "The d-block (transition metals) and f-block (inner-transition: lanthanoids and actinoids) are characterised by partially-filled (n−1)d and (n−2)f orbitals respectively. Distinctive features include variable oxidation states, coloured ions from d–d transitions, paramagnetism (μ = √(n(n+2)) BM), catalytic activity, complex formation, and alloy/interstitial-compound formation. Anomalous configurations of Cr (3d⁵4s¹) and Cu (3d¹⁰4s¹) reflect half/full d-shell stability. Lanthanoid contraction makes 4d ≈ 5d radii. KMnO₄ and K₂Cr₂O₇ are key oxidising agents (E° = +1.51 V and +1.33 V in acid). Actinoids resemble lanthanoids but are radioactive with a wider range of oxidation states.",
+  "pitfalls": [
+    "Calling Zn, Cd, Hg \"transition metals\" — strictly they are not (d¹⁰ in common ion).",
+    "Removing 3d electrons before 4s when forming cations — wrong; 4s leaves first.",
+    "Using μ = √(n(n+2)) for orbital + spin contribution — formula is spin-only.",
+    "Forgetting that K₂Cr₂O₇ is a strong oxidiser only in acidic medium; KMnO₄ works in all.",
+    "Confusing the lanthanoid contraction (4f) with actinoid contraction (5f).",
+    "Ignoring the fact that Mn shows +7 (highest in 3d series) due to 3d⁵ 4s² electrons available."
+  ]
+}

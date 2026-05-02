@@ -1,0 +1,68 @@
+{
+  "chapter": 2,
+  "name": "Electrostatic Potential and Capacitance",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 2",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. Electrostatic Potential",
+      "body": "<p>The electrostatic potential at a point is the work done by an external agent in bringing a unit positive test charge from infinity to that point against the electric field, without acceleration. $$V = \\dfrac{W_{\\infty \\to P}}{q_0}$$ Unit: <b>volt (V) = J/C</b>. Potential is a scalar, simplifying calculations vs. fields.</p><p>For a point charge $q$ at distance $r$: $$V = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q}{r}$$ Potential is positive for positive source charge and negative for negative source charge. By superposition, $V_{\\text{total}} = \\sum V_i$ at the same point.</p>",
+      "keyFormulae": ["V = \\dfrac{W}{q_0}", "V = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q}{r}"]
+    },
+    {
+      "heading": "2. Potential Difference and Field-Potential Relation",
+      "body": "<p>The potential difference between two points A and B is $V_A - V_B = -\\int_B^A \\vec{E}\\cdot d\\vec{l}$, the negative of the line integral of the field. It depends only on the endpoints (electrostatic field is conservative).</p><p>The electric field is the negative gradient of potential: $$\\vec{E} = -\\nabla V = -\\dfrac{dV}{dr}\\hat{r}$$ Field points from high to low potential. SI unit V/m equals N/C.</p><p>Useful corollary: in a region of constant potential, $\\vec{E} = 0$.</p>",
+      "keyFormulae": ["V_A - V_B = -\\int_B^A \\vec{E}\\cdot d\\vec{l}", "E = -\\dfrac{dV}{dr}"]
+    },
+    {
+      "heading": "3. Potential due to a Dipole and a System of Charges",
+      "body": "<p>For an electric dipole of moment $p$, at point distance $r$ from centre at angle $\\theta$ to dipole axis ($r \\gg a$): $$V = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{p\\cos\\theta}{r^2}$$ Special cases: axial point ($\\theta = 0$): $V = kp/r^2$; equatorial ($\\theta = 90°$): $V = 0$.</p><p>For a system of $n$ point charges, $V = \\dfrac{1}{4\\pi\\varepsilon_0}\\sum_{i=1}^{n}\\dfrac{q_i}{r_i}$ where $r_i$ is the distance from $q_i$ to the field point.</p>",
+      "keyFormulae": ["V_{\\text{dipole}} = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{p\\cos\\theta}{r^2}", "V = \\dfrac{1}{4\\pi\\varepsilon_0}\\sum_i \\dfrac{q_i}{r_i}"]
+    },
+    {
+      "heading": "4. Equipotential Surfaces",
+      "body": "<p>An equipotential surface has the same potential at every point. Properties:</p><ul><li>Work done in moving a charge along an equipotential is zero.</li><li>Electric field is always <b>perpendicular</b> to an equipotential surface.</li><li>Surfaces never intersect (potential is single-valued).</li><li>For a point charge, equipotentials are concentric spheres.</li><li>For a uniform field, equipotentials are parallel planes perpendicular to the field.</li><li>For a dipole, equipotentials are complicated; the equatorial plane is at $V = 0$.</li></ul><p>Closer equipotentials indicate a stronger field.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "5. Potential Energy of a System of Charges and a Dipole",
+      "body": "<p>Potential energy of two point charges: $U = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q_1 q_2}{r_{12}}$. For three charges, sum over all pairs: $U = k\\left(\\dfrac{q_1 q_2}{r_{12}} + \\dfrac{q_1 q_3}{r_{13}} + \\dfrac{q_2 q_3}{r_{23}}\\right)$.</p><p>For a dipole in external field $\\vec{E}$: $U = -\\vec{p}\\cdot\\vec{E} = -pE\\cos\\theta$. Stable equilibrium at $\\theta = 0$ (energy $-pE$), unstable at $\\theta = \\pi$ (energy $+pE$).</p><p>For a single charge $q$ in external potential $V$: $U = qV$.</p>",
+      "keyFormulae": ["U = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q_1 q_2}{r_{12}}", "U_{\\text{dipole}} = -\\vec{p}\\cdot\\vec{E}"]
+    },
+    {
+      "heading": "6. Conductors in Electrostatic Equilibrium",
+      "body": "<p>Inside a conductor in electrostatic equilibrium:</p><ul><li>$\\vec{E} = 0$ everywhere inside (otherwise free electrons would accelerate).</li><li>Net charge resides only on the outer surface.</li><li>Just outside the surface, $\\vec{E}$ is normal to the surface, magnitude $E = \\sigma/\\varepsilon_0$.</li><li>Entire conductor is an equipotential.</li><li>Charge density is higher at sharp points (basis of lightning rods).</li></ul><p><b>Electrostatic shielding</b>: a hollow conductor (Faraday cage) shields its interior from external fields, since field inside the cavity is zero regardless of external charges.</p>",
+      "keyFormulae": ["E_{\\text{inside}} = 0", "E_{\\text{just outside}} = \\dfrac{\\sigma}{\\varepsilon_0}"]
+    },
+    {
+      "heading": "7. Dielectrics and Polarisation",
+      "body": "<p>Dielectrics are insulators with no free charges. In an external field, molecules polarise — either aligning permanent dipoles (polar) or developing induced dipoles (non-polar). The <b>polarisation</b> $\\vec{P}$ is the dipole moment per unit volume.</p><p>For a linear isotropic dielectric, $\\vec{P} = \\chi_e \\varepsilon_0 \\vec{E}$, where $\\chi_e$ is the electric susceptibility. The dielectric constant $K = 1 + \\chi_e$ (also called relative permittivity $\\varepsilon_r$). Inside the dielectric, $E$ is reduced by factor $K$: $E = E_0/K$.</p>",
+      "keyFormulae": ["\\vec{P} = \\chi_e \\varepsilon_0 \\vec{E}", "K = 1 + \\chi_e", "E = E_0 / K"]
+    },
+    {
+      "heading": "8. Capacitors and Capacitance",
+      "body": "<p>A <b>capacitor</b> stores charge on two conductors separated by an insulator. <b>Capacitance</b> is $$C = \\dfrac{Q}{V}$$ where $Q$ is the charge on one plate and $V$ the potential difference. Unit: <b>farad (F) = C/V</b>. Practical units μF, nF, pF.</p><p>For a <b>parallel-plate capacitor</b> (plate area $A$, separation $d$, vacuum between): $$C_0 = \\dfrac{\\varepsilon_0 A}{d}$$ With a dielectric of constant $K$ filling the gap: $C = K C_0 = K\\varepsilon_0 A/d$.</p><p>Capacitance depends only on geometry and the dielectric — not on $Q$ or $V$.</p>",
+      "keyFormulae": ["C = \\dfrac{Q}{V}", "C_0 = \\dfrac{\\varepsilon_0 A}{d}", "C = \\dfrac{K\\varepsilon_0 A}{d}"]
+    },
+    {
+      "heading": "9. Combinations of Capacitors",
+      "body": "<p><b>Series</b> combination: same charge $Q$ on each, voltages add. $$\\dfrac{1}{C_s} = \\dfrac{1}{C_1} + \\dfrac{1}{C_2} + \\cdots$$ Equivalent capacitance is less than the smallest.</p><p><b>Parallel</b> combination: same voltage $V$, charges add. $$C_p = C_1 + C_2 + \\cdots$$ Equivalent capacitance equals the sum.</p><p>Mnemonic: capacitors combine opposite to resistors.</p>",
+      "keyFormulae": ["\\dfrac{1}{C_s} = \\sum \\dfrac{1}{C_i}", "C_p = \\sum C_i"]
+    },
+    {
+      "heading": "10. Energy Stored in a Capacitor",
+      "body": "<p>Work done in charging a capacitor is stored as electrostatic potential energy: $$U = \\dfrac{1}{2}CV^2 = \\dfrac{1}{2}QV = \\dfrac{Q^2}{2C}$$</p><p>The <b>energy density</b> in the electric field is $u = \\dfrac{1}{2}\\varepsilon_0 E^2$ (J/m³), valid in vacuum. With a dielectric: $u = \\dfrac{1}{2}\\varepsilon_0 K E^2$. The energy is stored in the field itself, distributed throughout the volume between the plates.</p><p>Inserting a dielectric at constant $V$ <i>increases</i> stored energy (battery does extra work); at constant $Q$ (battery disconnected), energy <i>decreases</i> by factor $K$.</p>",
+      "keyFormulae": ["U = \\dfrac{1}{2}CV^2 = \\dfrac{Q^2}{2C}", "u = \\dfrac{1}{2}\\varepsilon_0 E^2"]
+    }
+  ],
+  "summary": "Potential is work per unit positive charge; $\\vec{E} = -\\nabla V$. Equipotentials are perpendicular to field lines. Conductors are equipotentials with $E = 0$ inside. Capacitance $C = Q/V$ depends only on geometry; for parallel plates $C = K\\varepsilon_0 A/d$. Series and parallel combine like reciprocals/sums respectively. Energy stored is $\\tfrac{1}{2}CV^2$, with energy density $\\tfrac{1}{2}\\varepsilon_0 E^2$.",
+  "pitfalls": [
+    "Potential and potential energy differ by a factor of charge: U = qV.",
+    "Potential is a scalar — add algebraically, not as vectors.",
+    "Inside a charged spherical shell, E = 0 but V is constant and equal to surface value (NOT zero).",
+    "Capacitors combine opposite to resistors (series in caps = parallel in resistors formula-wise).",
+    "When inserting a dielectric, energy change depends on whether battery is connected or disconnected.",
+    "Equipotential surfaces never intersect, and field lines are always perpendicular to them."
+  ]
+}

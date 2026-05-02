@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<svg width="618" height="839" viewBox="70 115 618 839" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <linearGradient id="a" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#fff" offset="0"/>
+  <stop stop-color="#f0f0ff" offset=".26777"/>
+  <stop stop-color="#7594ff" offset=".81559"/>
+  <stop stop-color="#00f" offset="1"/>
+ </linearGradient>
+ <radialGradient id="b" cx="90.421" cy="909.92" r="19.066" gradientTransform="matrix(1.2663 -.0389 .03942 1.2832 -59.945 -254.17)" xlink:href="#a"/>
+ <radialGradient id="c" cx="98.169" cy="891.17" r="14.65" gradientTransform="matrix(1.3655 -.03876 .061 2.1489 -90.252 -1022.4)" xlink:href="#a"/>
+ <radialGradient id="d" cx="76.738" cy="897.89" r="20.31" gradientTransform="matrix(1.4536 .20523 -.15434 .93818 103.72 40.063)" xlink:href="#a"/>
+ <linearGradient id="e" xlink:href="#a"/>
+ <radialGradient id="f" cx="81.179" cy="919.77" r="9.9" gradientTransform="matrix(1.2759 -.00524 .00637 2.8782 -28.012 -1728.5)" xlink:href="#a"/>
+ <radialGradient id="g" cx="107.82" cy="885.38" r="27.5" gradientTransform="matrix(-1.163 .0528 -.03812 -.83964 275.15 1634.1)" xlink:href="#a"/>
+ <radialGradient id="h" cx="94.974" cy="915.76" r="21.502" gradientTransform="matrix(1.111 .0359 -.0186 .57565 6.4902 386.39)" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#1b00e4" offset="0"/>
+  <stop stop-color="#0061bc" offset=".26777"/>
+  <stop stop-color="#fff" offset=".7229"/>
+  <stop stop-color="#13d7ff" offset="1"/>
+  <stop stop-color="#00f" offset="1"/>
+ </radialGradient>
+ <radialGradient id="i" cx="113.39" cy="883.77" r="21.1" gradientTransform="matrix(1.6717 .37376 -.27087 1.2625 163.21 -270.61)" xlink:href="#a"/>
+ <radialGradient id="j" cx="68.546" cy="884.43" r="22.7" gradientTransform="matrix(1.6176 .15718 -.13253 .97972 74.875 12.702)" xlink:href="#e"/>
+ <radialGradient id="k" cx="48.722" cy="920.11" r="25.1" gradientTransform="matrix(1.3508 -.10234 .07213 .95214 -82.186 50.47)" xlink:href="#e"/>
+ <radialGradient id="l" cx="102.25" cy="915.09" r="19.7" gradientTransform="matrix(1.2175 1.0855 -1.073 1.2035 960.21 -295.16)" xlink:href="#e"/>
+ <radialGradient id="m" cx="116.61" cy="881.39" r="19.371" gradientTransform="matrix(-.96867 1.4679 -.87918 -.58017 956.62 1282.3)" xlink:href="#a"/>
+ <radialGradient id="n" cx="115.56" cy="888.28" r="19.371" gradientTransform="matrix(-1.0418 1.6188 -.87298 -.56182 1001.9 1196.4)" xlink:href="#a"/>
+ <radialGradient id="o" cx="116.61" cy="881.39" r="19.371" gradientTransform="matrix(.96867 1.4679 .87918 -.58017 -776.93 1282.3)" xlink:href="#a"/>
+ <radialGradient id="p" cx="115.56" cy="888.28" r="19.371" gradientTransform="matrix(1.0418 1.6188 .87298 -.56182 -822.17 1196.4)" xlink:href="#a"/>
+ <radialGradient id="q" cx="116.61" cy="881.39" r="19.371" gradientTransform="matrix(.0287 -1.6092 .96381 .01718 -280.36 564.7)" xlink:href="#a"/>
+ <radialGradient id="r" cx="115.56" cy="888.28" r="19.371" gradientTransform="matrix(.01121 -1.7616 .95002 .00605 -273.18 653.29)" xlink:href="#a"/>
+ <radialGradient id="s" cx="116.61" cy="881.39" r="19.371" gradientTransform="matrix(-1.6092 -.0287 .01718 -.96381 507.52 1271.4)" xlink:href="#a"/>
+ <radialGradient id="t" cx="115.56" cy="888.28" r="19.371" gradientTransform="matrix(-1.7616 -.01121 .00605 -.95002 596.1 1264.2)" xlink:href="#a"/>
+ <radialGradient id="u" cx="116.61" cy="881.39" r="19.371" gradientTransform="matrix(-1.1582 1.1176 -.66937 -.69367 870.47 922.83)" xlink:href="#a"/>
+ <radialGradient id="v" cx="115.56" cy="888.28" r="19.371" gradientTransform="matrix(-1.2536 1.2377 -.66749 -.67604 928.03 855.11)" xlink:href="#a"/>
+ <radialGradient id="w" cx="86.079" cy="888.78" r="11.766" gradientTransform="matrix(-1.1718 -.01876 .04578 -2.86 431.12 3134.2)" xlink:href="#e"/>
+ <radialGradient id="x" cx="115.56" cy="888.28" r="19.371" gradientTransform="matrix(.01121 -1.7616 .95002 .00605 -470.32 856.86)" xlink:href="#e"/>
+ <g fill="none" stroke="#000">
+  <path d="m10015 784.92v248.54" stroke-width=".45601"/>
+  <g stroke-linecap="round">
+   <path d="m295.13 223.21h150.14"/>
+   <path d="m370.2 298.29v-150.14"/>
+   <path d="m317.12 276.3 106.17-106.17"/>
+  </g>
+ </g>
+ <path transform="translate(278 -689.98)" d="m111.12 912.95a19.066 19.066 0 1 1-38.131 0 19.066 19.066 0 1 1 38.131 0z" fill="url(#b)" stroke="#0096fe" stroke-width=".7"/>
+ <path d="m94.318 422.65h150.14" fill="none" stroke="#000" stroke-linecap="round"/>
+ <path d="m169.39 497.72v-150.14" fill="none" stroke="#000" stroke-linecap="round"/>
+ <path d="m204.7 386.8c15.9 22.1-34.6 35.2-34.649 35.187s13.6-47.8 34.649-35.187z" fill="url(#v)" stroke="#0096ff"/>
+ <path d="m134.25 458.54c-15.9-22.1 34.6-35.2 34.649-35.187s-13.6 47.8-34.649 35.187z" fill="url(#u)" stroke="#0096ff"/>
+ <g fill="none" stroke="#000" stroke-linecap="round">
+  <path d="m206.44 385.6 16.449-16.449"/>
+  <path d="m115.86 476.18 19.483-19.483" stroke-linejoin="round"/>
+  <path d="m312.34 475.12 106.17-106.17"/>
+  <path d="m365.43 497.11v-150.14"/>
+ </g>
+ <path d="m415.78 421.57c-4.36 26.8-49.4.38-49.381.3801s43.4-24.2 49.381-.3801z" fill="url(#t)" stroke="#0096ff"/>
+ <path d="m315.23 422.48c4.36-26.8 49.4-.38 49.381-.3801s-43.4 24.2-49.381.3801z" fill="url(#s)" stroke="#0096ff"/>
+ <g fill="none" stroke="#000" stroke-linecap="round">
+  <path d="m417.86 421.95h23.263"/>
+  <path d="m289.75 421.95h23.518l4.0351 1e-5" stroke-linejoin="round"/>
+  <path d="m515.94 475.73 106.17-106.17"/>
+  <path d="m644.09 422.65h-150.14"/>
+ </g>
+ <path d="m569.43 472.96c-26.8-4.36-.38-49.4-.38011-49.381s24.2 43.4.38011 49.381z" fill="url(#r)" stroke="#0096ff"/>
+ <path d="m568.52 372.41c26.8 4.36.38 49.4.38011 49.381s-24.2-43.4-.38011-49.381z" fill="url(#q)" stroke="#0096ff"/>
+ <g stroke-linecap="round">
+  <path d="m569.05 475.05 1e-5 4.1575-1e-5 15.699v3.4068" fill="none" stroke="#000"/>
+  <path d="m569.05 346.93v23.518l-1e-5 4.0351" fill="none" stroke="#000" stroke-linejoin="round"/>
+  <g stroke="#0096ff" stroke-linejoin="round">
+   <path transform="matrix(1 0 0 -1 74.98 1540.6)" d="m112.9 894.48a14.15 19.959 0 1 1-28.3 0 14.15 19.959 0 1 1 28.3 0z" fill="url(#c)"/>
+   <path transform="translate(72.98 -288.51)" d="m112.9 894.48a14.15 19.959 0 1 1-28.3 0 14.15 19.959 0 1 1 28.3 0z" fill="url(#c)"/>
+   <path transform="matrix(.80252 -.51048 -.33374 -1.2275 397.95 1794.4)" d="m100.39 901.18a19.81 15.64 0 1 1-39.621 0 19.81 15.64 0 1 1 39.621 0z" fill="url(#d)"/>
+  </g>
+  <g fill="none" stroke="#000">
+   <path d="m115.56 679.09 106.17-106.17"/>
+   <path d="m243.72 626.01h-150.14"/>
+  </g>
+ </g>
+ <g stroke-linecap="round">
+  <path d="m168.68 666.01v6.0992l1e-5 23.031-1e-5 4.998" fill="none" stroke="#000" stroke-linejoin="round"/>
+  <path transform="matrix(.88422 .45606 -.36771 1.0967 418.23 -417.69)" d="m100.39 901.18a19.81 15.64 0 1 1-39.621 0 19.81 15.64 0 1 1 39.621 0z" fill="url(#d)" stroke="#0096ff" stroke-linejoin="round"/>
+  <g fill="none" stroke="#000">
+   <path d="m168.68 550.29v7.1803l1e-5 27.113-1e-5 5.8838" stroke-linejoin="round"/>
+   <path d="m319.26 678.79 106.17-106.17"/>
+   <path d="m447.41 625.71h-150.14"/>
+   <g stroke-linejoin="round">
+    <path d="m372.37 665.71v6.0993l1e-5 23.031-1e-5 4.998"/>
+    <path d="m372.37 549.99v7.1803l1e-5 27.113-1e-5 5.8838"/>
+   </g>
+  </g>
+ </g>
+ <g stroke="#0096ff">
+  <path d="m372.29 676.54c-26.8-4.36-.38-49.4-.38011-49.381s24.2 43.4.38011 49.381z" fill="url(#x)"/>
+  <path transform="translate(275.82 -292.51)" d="m116.78 918.16a21.002 10.278 0 1 1-42.004 0 21.002 10.278 0 1 1 42.004 0z" fill="url(#h)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path transform="matrix(.45562 0 0 .45562 327.96 207.31)" d="m116.78 918.16a21.002 10.278 0 1 1-42.004 0 21.002 10.278 0 1 1 42.004 0z" fill="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.1948"/>
+  <path d="m371.38 575.98c26.8 4.36.38 49.4.3801 49.381s-24.2-43.4-.3801-49.381z" fill="url(#w)"/>
+ </g>
+ <g transform="translate(405.07 -72.757)">
+  <path d="m60.828 962.7c-22.2-19.7 28.6-45.8 28.562-45.783s-3.07 54.3-28.562 45.783z" fill="url(#m)" stroke="#0096ff" stroke-width="1.0927"/>
+  <path d="m164.74 916.52h-150.14" fill="none" stroke="#000" stroke-linecap="round"/>
+  <path d="m118.86 962.7c22.2-19.7-28.6-45.8-28.562-45.783s3.07 54.3 28.562 45.783z" fill="url(#o)" stroke="#0096ff" stroke-width="1.0927"/>
+  <path d="m89.698 840.8v26.467l7e-6 99.943-1.4e-5 21.689" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m60.828 869.4c-22.2 19.7 28.6 45.8 28.562 45.783s-3.07-54.3-28.562-45.783z" fill="url(#p)" stroke="#0096ff" stroke-width="1.0927"/>
+  <path d="m37.935 968.25 104.26-104.26" fill="none" stroke="#000" stroke-linecap="round"/>
+  <path d="m118.86 869.4c22.2 19.7-28.6 45.8-28.562 45.783s3.07-54.3 28.562-45.783z" fill="url(#n)" stroke="#0096ff" stroke-width="1.0927"/>
+ </g>
+ <g stroke-linecap="round">
+  <path transform="matrix(1.3621 0 0 1 136.7 -78.357)" d="m92 921.16a9.4 20.4 0 1 1-18.8 0 9.4 20.4 0 1 1 18.8 0z" fill="url(#f)" stroke="#0096ff" stroke-linejoin="round"/>
+  <path transform="translate(226.12 -.31656)" d="m92.628 844.08h-150.14" fill="none" stroke="#000"/>
+  <g stroke-linejoin="round">
+   <path transform="translate(226.12 -.31656)" d="m17.587 867.98v8.9765l7e-6 33.896-1.4e-5 7.3558" fill="none" stroke="#000"/>
+   <path transform="translate(226.12 -.31656)" d="m17.587 768.36v10.701l7e-6 40.407-1.4e-5 8.7688" fill="none" stroke="#000"/>
+   <g stroke="#0096ff">
+    <path transform="translate(154.81 -56.757)" d="m143.6 900.36a27 15.6 0 1 1-54 0 27 15.6 0 1 1 54 0z" fill="url(#g)"/>
+    <path transform="matrix(-1 0 0 1 333.01 -57.557)" d="m143.6 900.36a27 15.6 0 1 1-54 0 27 15.6 0 1 1 54 0z" fill="url(#g)"/>
+    <path transform="matrix(1.3621 0 0 1 127.5 -72.757)" d="m92 921.16a9.4 20.4 0 1 1-18.8 0 9.4 20.4 0 1 1 18.8 0z" fill="url(#f)"/>
+   </g>
+  </g>
+  <g fill="none" stroke="#000">
+   <path transform="translate(226.12 -.31656)" d="m32.953 828.68 38.008-38.008"/>
+   <path transform="translate(226.12 -.31656)" d="m-35.781 897.42 45.877-45.877" stroke-width="1.0931"/>
+   <g transform="translate(392.6 -397.99)">
+    <path d="m252.23 1022.9h-150.14"/>
+    <path d="m177.19 1034.1v11.246l1e-5 42.466-1e-5 9.2157" stroke-linejoin="round"/>
+    <path d="m177.19 947.16v11.648l1e-5 43.984-1e-5 9.545" stroke-linejoin="round" stroke-width="1.043"/>
+    <path d="m192.55 1007.5 38.008-38.008"/>
+   </g>
+  </g>
+  <g stroke="#0096ff" stroke-linejoin="round">
+   <path transform="matrix(1.1565 -.20819 .21033 1.0986 274.59 -345.08)" d="m132.4 900.16a20.6 15.8 0 1 1-41.2 0 20.6 15.8 0 1 1 41.2 0z" fill="url(#i)"/>
+   <path transform="matrix(.84753 0 0 1 493.19 -282.83)" d="m91.2 900.96a22.2 14.6 0 1 1-44.4 0 22.2 14.6 0 1 1 44.4 0z" fill="url(#j)"/>
+   <path transform="translate(493.69 -298.03)" d="m77.6 925.36a24.6 17.4 0 1 1-49.2 0 24.6 17.4 0 1 1 49.2 0z" fill="url(#k)"/>
+  </g>
+  <path transform="translate(392.6 -397.99)" d="m123.89 1076.1 51.738-51.738" fill="none" stroke="#000"/>
+  <path transform="translate(485.29 -298.83)" d="m120.8 923.96a19.2 19.2 0 1 1-38.4 0 19.2 19.2 0 1 1 38.4 0z" fill="url(#l)" stroke="#0096ff" stroke-linejoin="round"/>
+ </g>
+ <g font-family="Liberation Sans">
+  <g font-size="8">
+   <text x="445.53079" y="225.00217">y</text>
+   <text x="368.17517" y="145.29141">z</text>
+   <text transform="matrix(.70711 -.70711 .70711 .70711 0 0)" x="24.15156" y="421.79095">x</text>
+  </g>
+  <text x="344.54822" y="310.95108" font-size="13.985">orbital s</text>
+  <g font-family="Liberation Sans" font-size="8">
+   <text x="244.71472" y="424.43924">y</text>
+   <text x="167.3591" y="344.72849">z</text>
+   <text transform="matrix(.70711 -.70711 .70711 .70711 0 0)" x="-258.87018" y="420.81583">x</text>
+  </g>
+  <text x="143.78227" y="509.75156" font-size="12.475">orbital p<tspan baseline-shift="sub" font-size="8.1091">x</tspan></text>
+  <g font-family="Liberation Sans" font-size="8">
+   <text x="442.75351" y="423.82364">y</text>
+   <text x="363.39789" y="344.11288">z</text>
+   <text transform="matrix(.70711 -.70711 .70711 .70711 0 0)" x="-119.81456" y="559.00092">x</text>
+  </g>
+  <text x="341.82095" y="508.65958" font-size="12.478">orbital p<tspan baseline-shift="sub" font-size="8.1111">y</tspan></text>
+  <g font-family="Liberation Sans" font-size="8">
+   <text x="646.34686" y="424.43924">y</text>
+   <text x="566.99127" y="344.72849">z</text>
+   <text transform="matrix(.70711 -.70711 .70711 .70711 0 0)" x="23.71243" y="703.3985">x</text>
+  </g>
+  <text x="543.41345" y="509.74557" font-size="12.505">orbital p<tspan baseline-shift="sub" font-size="8.1285">z</tspan></text>
+  <g font-family="Liberation Sans" font-size="8">
+   <text x="245.97375" y="627.79541">y</text>
+   <text x="166.61813" y="548.08466">z</text>
+   <text transform="matrix(.70711 -.70711 .70711 .70711 0 0)" x="-403.18863" y="564.08643">x</text>
+  </g>
+  <text x="145.07274" y="713.297" font-size="11.529">orbital d<tspan baseline-shift="sub" font-size="7.494">xz</tspan></text>
+  <g font-size="8">
+   <text x="449.66519" y="627.49542">y</text>
+   <text x="370.30957" y="547.78467">z</text>
+   <text transform="matrix(.70711 -.70711 .70711 .70711 0 0)" x="-258.94492" y="707.90594">x</text>
+  </g>
+ </g>
+ <text x="350.84814" y="711.50275">orbital d<tspan baseline-shift="sub" font-size="8">z<tspan baseline-shift="super" font-size="8">2</tspan></tspan></text>
+ <g font-family="Liberation Sans" font-size="8">
+  <text transform="translate(405.07 -72.757)" x="166.99382" y="918.3078">y</text>
+  <text transform="translate(405.07 -72.757)" x="87.6382" y="838.59705">z</text>
+  <text transform="matrix(.70711 -.70711 .70711 .70711 405.07 -72.756)" x="-664.45917" y="713.66248">x</text>
+ </g>
+ <text transform="translate(405.07 -72.757)" x="68.17677" y="1002.3152">orbital d<tspan baseline-shift="sub" font-size="8">yz</tspan></text>
+ <g font-family="Liberation Sans" font-size="8">
+  <text transform="translate(226.12 -.31656)" x="94.88353" y="845.86731">y</text>
+  <text transform="translate(226.12 -.31656)" x="15.52791" y="766.15656">z</text>
+  <text transform="matrix(.70711 -.70711 .70711 .70711 226.12 -.31528)" x="-664.22571" y="611.44965">x</text>
+ </g>
+ <text transform="translate(226.12 -.31656)" x="-3.93352" y="929.87469">orbital d<tspan baseline-shift="sub">x<tspan baseline-shift="super" font-size="8">2</tspan>-y<tspan baseline-shift="super" font-size="8">2</tspan></tspan></text>
+ <g font-family="Liberation Sans" font-size="8">
+  <text transform="translate(392.6 -397.99)" x="254.48352" y="1024.6674">y</text>
+  <text transform="translate(392.6 -397.99)" x="175.12791" y="944.95654">z</text>
+  <text transform="matrix(.70711 -.70711 .70711 .70711 392.6 -397.99)" x="-677.80212" y="850.73456">x</text>
+ </g>
+ <text transform="translate(392.6 -397.99)" x="155.66647" y="1108.6747">orbital d<tspan baseline-shift="sub" font-size="8">xy</tspan></text>
+</svg>

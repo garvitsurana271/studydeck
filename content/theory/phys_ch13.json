@@ -1,0 +1,58 @@
+{
+  "chapter": 13,
+  "name": "Nuclei",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 13",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. Composition and Size of the Nucleus",
+      "body": "<p>The nucleus contains <b>protons</b> (charge +$e$, mass $m_p \\approx 1.673 \\times 10^{-27}$ kg) and <b>neutrons</b> (neutral, $m_n \\approx 1.675 \\times 10^{-27}$ kg). Collectively called <b>nucleons</b>.</p><p>Notation: $^A_Z X$, where $Z$ = atomic number (protons), $A$ = mass number (nucleons), $N = A - Z$ = neutrons. Examples: $^1_1\\text{H}$, $^4_2\\text{He}$, $^{235}_{92}\\text{U}$.</p><p>Classifications:</p><ul><li><b>Isotopes</b>: same $Z$, different $A$ (e.g. $^1$H, $^2$D, $^3$T).</li><li><b>Isobars</b>: same $A$, different $Z$ (e.g. $^3_1$H, $^3_2$He).</li><li><b>Isotones</b>: same $N$, different $Z$ (e.g. $^3_1$H, $^4_2$He).</li></ul><p>Nuclear radius: $$R = R_0 A^{1/3}$$ with $R_0 \\approx 1.2$ fm. Nuclear density is constant ($\\rho \\approx 2.3 \\times 10^{17}$ kg/m³) — independent of $A$ — implying nucleons are tightly packed and short-range nuclear force saturates.</p>",
+      "keyFormulae": ["R = R_0 A^{1/3}", "R_0 \\approx 1.2\\,\\text{fm}"]
+    },
+    {
+      "heading": "2. Atomic Mass Unit and Mass-Energy Equivalence",
+      "body": "<p><b>Atomic mass unit</b>: $1\\,\\text{u} = (1/12)$ × mass of $^{12}$C atom $= 1.6605 \\times 10^{-27}$ kg.</p><p>Einstein's mass-energy relation: $$E = mc^2$$ Mass-energy equivalent of 1 u: $E = 1\\text{u}\\cdot c^2 = 931.5$ MeV.</p><p>So small mass changes ($\\Delta m \\sim$ u) correspond to large energies ($\\Delta E \\sim$ MeV) — characteristic of nuclear processes, vs. eV in chemistry.</p>",
+      "keyFormulae": ["E = mc^2", "1\\,\\text{u} \\equiv 931.5\\,\\text{MeV}/c^2"]
+    },
+    {
+      "heading": "3. Mass Defect and Binding Energy",
+      "body": "<p>The mass of any nucleus is <b>less</b> than the sum of free nucleon masses. <b>Mass defect</b>: $$\\Delta m = [Z m_p + (A-Z) m_n] - M_{\\text{nucleus}}$$</p><p><b>Binding energy</b>: energy needed to separate nucleus into free nucleons (or equivalently, energy released when free nucleons assemble): $$E_b = \\Delta m \\cdot c^2$$</p><p><b>Binding energy per nucleon</b> $E_b/A$: a measure of stability. Plot vs. $A$:</p><ul><li>Rises rapidly for light nuclei.</li><li>Peaks around $A \\approx 56$ (Fe) at ~8.8 MeV/nucleon — most stable.</li><li>Falls slowly for heavier nuclei.</li><li>Average for medium/heavy nuclei: ~8 MeV/nucleon.</li></ul><p>This shape implies energy is released either by <b>fusion</b> of light nuclei (climbing toward Fe) or by <b>fission</b> of heavy nuclei (also climbing toward Fe).</p>",
+      "keyFormulae": ["\\Delta m = Z m_p + (A-Z)m_n - M", "E_b = \\Delta m \\cdot c^2"]
+    },
+    {
+      "heading": "4. Nuclear Force",
+      "body": "<p>The strong nuclear force binds nucleons together against electrostatic repulsion among protons. Properties:</p><ul><li><b>Short-range</b>: significant only within ~3 fm; negligible beyond.</li><li>Much <b>stronger</b> than electromagnetic at short range (~100×).</li><li>Charge-independent: same between p-p, n-n, p-n.</li><li>Attractive at typical separations (~1 fm), strongly repulsive at very short distances (<0.5 fm) — preventing nuclear collapse.</li><li>Saturates: each nucleon interacts only with its nearest neighbours, hence constant binding energy per nucleon.</li><li>Spin-dependent.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "5. Radioactivity",
+      "body": "<p>Spontaneous emission of radiation from unstable nuclei. Discovered by Becquerel (1896). Three natural types:</p><ul><li><b>Alpha (α)</b>: $^4_2$He nucleus. Heavy, low penetration (paper stops); ionises strongly. $^A_Z X \\to ^{A-4}_{Z-2} Y + ^4_2\\text{He}$.</li><li><b>Beta (β⁻)</b>: high-energy electron from neutron decay $n \\to p + e^- + \\bar{\\nu}_e$ in nucleus. Continuous energy spectrum (due to neutrino sharing energy). $^A_Z X \\to ^A_{Z+1} Y + e^- + \\bar{\\nu}_e$. β⁺ (positron) also exists.</li><li><b>Gamma (γ)</b>: high-energy photon from de-excitation of nucleus. $A$, $Z$ unchanged; very penetrating (lead needed).</li></ul><p>Soddy-Fajans displacement laws state how $A$, $Z$ change for each decay type.</p>",
+      "keyFormulae": ["{}^A_Z X \\xrightarrow{\\alpha} {}^{A-4}_{Z-2} Y", "{}^A_Z X \\xrightarrow{\\beta^-} {}^A_{Z+1} Y"]
+    },
+    {
+      "heading": "6. Law of Radioactive Decay",
+      "body": "<p>The number of decays per unit time is proportional to the number of unstable nuclei present: $$\\dfrac{dN}{dt} = -\\lambda N$$ Solution: $N(t) = N_0 e^{-\\lambda t}$, where $\\lambda$ is the <b>decay constant</b>.</p><p><b>Half-life</b>: time for half the nuclei to decay: $$T_{1/2} = \\dfrac{\\ln 2}{\\lambda} = \\dfrac{0.693}{\\lambda}$$</p><p><b>Mean (average) life</b>: $\\tau = 1/\\lambda = T_{1/2}/\\ln 2 = 1.44\\,T_{1/2}$.</p><p><b>Activity</b>: $A = -dN/dt = \\lambda N$. Unit: <b>becquerel (Bq) = 1 disintegration/s</b>. Older unit: <b>curie (Ci) = $3.7\\times 10^{10}$ Bq</b>.</p><p>After $n$ half-lives, $N = N_0/2^n$.</p>",
+      "keyFormulae": ["N = N_0 e^{-\\lambda t}", "T_{1/2} = \\dfrac{0.693}{\\lambda}", "\\tau = \\dfrac{1}{\\lambda}", "A = \\lambda N"]
+    },
+    {
+      "heading": "7. Nuclear Fission",
+      "body": "<p>A heavy nucleus (typically $^{235}$U) absorbs a slow neutron and splits into two roughly equal lighter nuclei plus 2-3 neutrons, releasing ~200 MeV per fission: $$^{235}_{92}\\text{U} + n \\to ^{141}_{56}\\text{Ba} + ^{92}_{36}\\text{Kr} + 3n + \\sim 200\\,\\text{MeV}$$</p><p>Energy comes from increase in $E_b/A$ from $^{235}$U (~7.6 MeV) to fragments (~8.5 MeV) → ~0.9 MeV/nucleon × 235 ≈ 200 MeV per fission.</p><p>The released neutrons can trigger further fissions — a <b>chain reaction</b>. Controlled chain (k = 1) in <b>nuclear reactors</b>; uncontrolled (k > 1) in atom bombs. Reactors use control rods (cadmium/boron, absorbing neutrons) and moderators (heavy water, graphite, slowing neutrons to thermal energies).</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "8. Nuclear Fusion",
+      "body": "<p>Two light nuclei combine to form a heavier nucleus, releasing energy. Example (proton-proton chain in stars): $$4\\,^1_1\\text{H} \\to ^4_2\\text{He} + 2e^+ + 2\\nu_e + 26.7\\,\\text{MeV}$$</p><p>Requires extreme temperature ($\\sim 10^7$ K) for nuclei to overcome Coulomb repulsion — hence <b>thermonuclear</b> reactions. Source of energy in the Sun and stars; also in hydrogen bombs.</p><p>Per nucleon, fusion releases more energy than fission. Achieving controlled fusion on Earth (tokamaks, ICF) is an ongoing engineering challenge — confining plasma at million-degree temperatures.</p>",
+      "keyFormulae": ["4\\,{}^1\\text{H} \\to {}^4\\text{He} + 26.7\\,\\text{MeV}"]
+    }
+  ],
+  "summary": "Nucleus has $A$ nucleons in radius $R = R_0 A^{1/3}$. Mass defect $\\Delta m$ gives binding energy $E_b = \\Delta m c^2$, peaking at $\\sim 8.8$ MeV/nucleon for Fe. Strong, short-range nuclear force binds nucleons. Decay law $N = N_0 e^{-\\lambda t}$, half-life $T_{1/2} = 0.693/\\lambda$. Three decay modes: α, β, γ. Both fission of heavy nuclei and fusion of light nuclei release energy by climbing the $E_b/A$ curve.",
+  "pitfalls": [
+    "Mass defect is a TINY mass difference (≈ MeV / 931 u), but yields HUGE energies because of c².",
+    "Binding energy means how much energy is REQUIRED to break apart, not what's stored in the nucleus.",
+    "β⁻ comes with antineutrino, β⁺ with neutrino — needed for energy and lepton-number conservation.",
+    "Half-life is INDEPENDENT of initial amount, temperature, pressure, chemical state.",
+    "Fusion releases more energy per nucleon than fission, but requires extreme temperatures.",
+    "Activity = λN — depends on amount left, NOT just on time."
+  ]
+}

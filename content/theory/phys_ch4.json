@@ -1,0 +1,63 @@
+{
+  "chapter": 4,
+  "name": "Moving Charges and Magnetism",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 4",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. Magnetic Force on a Moving Charge",
+      "body": "<p>A charge $q$ moving with velocity $\\vec{v}$ in a magnetic field $\\vec{B}$ experiences the <b>Lorentz force</b>: $$\\vec{F} = q\\vec{v}\\times\\vec{B}, \\quad |F| = qvB\\sin\\theta$$ where $\\theta$ is the angle between $\\vec{v}$ and $\\vec{B}$.</p><p>Key features:</p><ul><li>Force is perpendicular to both $\\vec{v}$ and $\\vec{B}$.</li><li>Zero when $\\vec{v}\\parallel\\vec{B}$ or $v = 0$.</li><li>Magnetic force does no work ($\\vec{F}\\perp\\vec{v}$) — speed unchanged, only direction changes.</li></ul><p>Combined electric and magnetic force: $\\vec{F} = q(\\vec{E} + \\vec{v}\\times\\vec{B})$. Unit of $B$: <b>tesla (T) = N/(A·m)</b>; 1 T = 10⁴ gauss.</p>",
+      "keyFormulae": ["\\vec{F} = q\\vec{v}\\times\\vec{B}", "\\vec{F} = q(\\vec{E} + \\vec{v}\\times\\vec{B})"]
+    },
+    {
+      "heading": "2. Motion in a Magnetic Field",
+      "body": "<p>If $\\vec{v}\\perp\\vec{B}$, the magnetic force provides centripetal acceleration; the charge moves in a <b>circle</b> of radius $$r = \\dfrac{mv}{qB}$$ Period: $T = 2\\pi m/(qB)$, frequency $f = qB/(2\\pi m)$ — both independent of $v$ (cyclotron frequency).</p><p>If $\\vec{v}$ has components both parallel and perpendicular to $\\vec{B}$, the perpendicular part causes circular motion while the parallel part moves uniformly — combined motion is a <b>helix</b> with pitch $p = v_\\parallel T = 2\\pi m v_\\parallel/(qB)$.</p>",
+      "keyFormulae": ["r = \\dfrac{mv}{qB}", "T = \\dfrac{2\\pi m}{qB}", "p = \\dfrac{2\\pi m v_\\parallel}{qB}"]
+    },
+    {
+      "heading": "3. Cyclotron",
+      "body": "<p>The cyclotron accelerates positive ions to high energies using a perpendicular magnetic field and an alternating electric field across two D-shaped electrodes (dees). The ion crosses the gap each half-cycle, gaining energy; meanwhile the field bends it into a semicircle inside each dee.</p><p>The applied AC frequency must equal the <b>cyclotron frequency</b>: $$f_c = \\dfrac{qB}{2\\pi m}$$ This <b>resonance condition</b> is independent of speed (as long as $m$ is constant).</p><p>Maximum energy: $K_{\\max} = q^2 B^2 R^2/(2m)$, where $R$ is the dee radius.</p><p>Limitations: relativistic mass increase at high speed breaks resonance; not used for electrons (too light, become relativistic quickly).</p>",
+      "keyFormulae": ["f_c = \\dfrac{qB}{2\\pi m}", "K_{\\max} = \\dfrac{q^2 B^2 R^2}{2m}"]
+    },
+    {
+      "heading": "4. Biot-Savart Law",
+      "body": "<p>The magnetic field $d\\vec{B}$ at point $P$ due to a small current element $I\\,d\\vec{l}$ at distance $r$: $$d\\vec{B} = \\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,d\\vec{l}\\times\\hat{r}}{r^2}$$ where $\\mu_0 = 4\\pi\\times 10^{-7}\\,\\text{T m/A}$ is the permeability of free space.</p><p>Magnitude: $dB = (\\mu_0/4\\pi)(I\\,dl\\sin\\theta)/r^2$, where $\\theta$ is between $d\\vec{l}$ and $\\vec{r}$.</p><p>Direction: by right-hand rule (thumb along $I$, fingers curl in $\\vec{B}$ direction).</p><p>Field of a finite straight wire at perpendicular distance $a$, subtending angles $\\phi_1, \\phi_2$ at the foot: $B = (\\mu_0 I)/(4\\pi a)(\\sin\\phi_1 + \\sin\\phi_2)$. For an infinite wire: $B = \\mu_0 I/(2\\pi a)$.</p>",
+      "keyFormulae": ["d\\vec{B} = \\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,d\\vec{l}\\times\\hat{r}}{r^2}", "B_{\\text{wire,}\\infty} = \\dfrac{\\mu_0 I}{2\\pi a}"]
+    },
+    {
+      "heading": "5. Field of a Circular Loop and Solenoid",
+      "body": "<p><b>Centre of a circular loop</b> of $N$ turns, radius $R$, current $I$: $$B = \\dfrac{\\mu_0 N I}{2R}$$ along the axis.</p><p><b>On axis</b> at distance $x$ from centre: $B = \\dfrac{\\mu_0 N I R^2}{2(R^2 + x^2)^{3/2}}$. For $x \\gg R$: $B \\approx \\mu_0 N I R^2/(2x^3)$, like a magnetic dipole.</p><p><b>Solenoid</b> (long, with $n$ turns/unit length): inside, the field is nearly uniform along the axis: $$B = \\mu_0 n I$$ At the ends, $B = \\mu_0 n I/2$. Outside an ideal long solenoid, $B \\approx 0$.</p><p><b>Toroid</b> (closed solenoid): inside the toroid, $B = \\mu_0 N I/(2\\pi r)$, where $N$ is total turns and $r$ the mean radius.</p>",
+      "keyFormulae": ["B_{\\text{loop centre}} = \\dfrac{\\mu_0 N I}{2R}", "B_{\\text{solenoid}} = \\mu_0 n I"]
+    },
+    {
+      "heading": "6. Ampere's Circuital Law",
+      "body": "<p>Line integral of $\\vec{B}$ around any closed loop equals $\\mu_0$ times the net current enclosed: $$\\oint \\vec{B}\\cdot d\\vec{l} = \\mu_0 I_{\\text{enc}}$$ Analogous to Gauss's law in electrostatics; useful when symmetry makes $B$ constant along the chosen <b>Amperian loop</b>.</p><p>Applications:</p><ul><li>Long straight wire: cylindrical Amperian loop gives $B = \\mu_0 I/(2\\pi r)$ outside.</li><li>Solenoid: rectangular loop gives $B_{\\text{inside}} = \\mu_0 n I$.</li><li>Toroid: circular loop inside gives $B = \\mu_0 N I/(2\\pi r)$.</li></ul>",
+      "keyFormulae": ["\\oint \\vec{B}\\cdot d\\vec{l} = \\mu_0 I_{\\text{enc}}"]
+    },
+    {
+      "heading": "7. Force on a Current-Carrying Conductor",
+      "body": "<p>A conductor of length $\\vec{l}$ carrying current $I$ in field $\\vec{B}$ experiences force: $$\\vec{F} = I\\vec{l}\\times\\vec{B}, \\quad F = BIl\\sin\\theta$$ Direction by right-hand rule (or Fleming's left-hand rule for force on positive current).</p><p>Force per unit length between two parallel wires at distance $d$, carrying $I_1, I_2$: $$\\dfrac{F}{l} = \\dfrac{\\mu_0 I_1 I_2}{2\\pi d}$$ Same direction → attract; opposite → repel. This defines the ampere: 1 A is the current that produces $2\\times 10^{-7}$ N/m between two infinite parallel wires 1 m apart.</p>",
+      "keyFormulae": ["\\vec{F} = I\\vec{l}\\times\\vec{B}", "\\dfrac{F}{l} = \\dfrac{\\mu_0 I_1 I_2}{2\\pi d}"]
+    },
+    {
+      "heading": "8. Torque on a Current Loop and Magnetic Dipole Moment",
+      "body": "<p>A planar current loop of area $\\vec{A}$ carrying current $I$ in field $\\vec{B}$ has <b>magnetic dipole moment</b> $\\vec{m} = NI\\vec{A}$ (direction by right-hand thumb rule). Unit: A·m².</p><p>Torque: $$\\vec{\\tau} = \\vec{m}\\times\\vec{B}, \\quad |\\tau| = mB\\sin\\theta = NIAB\\sin\\theta$$ Force is zero in a uniform field, but torque tends to align $\\vec{m}$ with $\\vec{B}$.</p><p>Potential energy: $U = -\\vec{m}\\cdot\\vec{B}$.</p><p>This is the principle of the moving-coil galvanometer.</p>",
+      "keyFormulae": ["\\vec{m} = NI\\vec{A}", "\\vec{\\tau} = \\vec{m}\\times\\vec{B}", "U = -\\vec{m}\\cdot\\vec{B}"]
+    },
+    {
+      "heading": "9. Moving Coil Galvanometer",
+      "body": "<p>A rectangular coil of $N$ turns, area $A$, suspended in a radial magnetic field $B$ (provided by curved pole pieces and a soft-iron core, so torque is always $NIAB$ regardless of orientation). A spring provides restoring torque proportional to angular deflection $\\phi$: $\\tau_{\\text{restore}} = k\\phi$.</p><p>At equilibrium: $NIAB = k\\phi$, so $$I = \\dfrac{k}{NAB}\\phi$$ — deflection is proportional to current.</p><p><b>Current sensitivity</b>: $\\phi/I = NAB/k$. <b>Voltage sensitivity</b>: $\\phi/V = NAB/(kR_g)$.</p><p>To convert to <b>ammeter</b>: connect a low-resistance <b>shunt</b> $S$ in parallel: $S = (I_g R_g)/(I - I_g)$. To convert to <b>voltmeter</b>: connect a high resistance $R$ in series: $R = V/I_g - R_g$.</p>",
+      "keyFormulae": ["I = \\dfrac{k\\phi}{NAB}", "S = \\dfrac{I_g R_g}{I - I_g}", "R = \\dfrac{V}{I_g} - R_g"]
+    }
+  ],
+  "summary": "Moving charges feel $\\vec{F} = q\\vec{v}\\times\\vec{B}$, executing circular or helical paths. Cyclotron exploits $f_c = qB/(2\\pi m)$. Biot-Savart gives field of current elements; Ampere's law $\\oint\\vec{B}\\cdot d\\vec{l} = \\mu_0 I_{\\text{enc}}$ exploits symmetry. A solenoid produces $\\mu_0 nI$. Parallel currents attract; current loops have moment $\\vec{m} = NI\\vec{A}$ and feel torque $\\vec{m}\\times\\vec{B}$ — the basis of the galvanometer.",
+  "pitfalls": [
+    "Magnetic force does NO work — speed of charged particle never changes, only direction.",
+    "Cyclotron cannot accelerate electrons (relativistic effects break resonance) or neutrons (no charge).",
+    "In Biot-Savart, the cross product means dB = 0 along the wire's own line.",
+    "Solenoid has B = μ₀nI inside but B = μ₀nI/2 at the ends; outside an ideal long solenoid, B ≈ 0.",
+    "Galvanometer current sensitivity vs voltage sensitivity — increasing N increases both proportionally.",
+    "Shunt for ammeter is LOW resistance in PARALLEL; multiplier for voltmeter is HIGH resistance in SERIES."
+  ]
+}

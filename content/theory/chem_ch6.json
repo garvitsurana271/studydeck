@@ -1,0 +1,62 @@
+{
+  "chapter": 6,
+  "name": "Haloalkanes and Haloarenes",
+  "subject": "Chemistry",
+  "_source": "NCERT Class 12 Chem Ch 6 (Vol 2 Ch 1)",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "Classification and Nomenclature",
+      "body": "<p>Compounds containing C–X (X = F, Cl, Br, I) are called <b>haloalkanes (alkyl halides)</b> when X is on a sp³ carbon, and <b>haloarenes (aryl halides)</b> when X is on an sp² carbon of an aromatic ring.</p><p>By the nature of the carbon bearing X:</p><ul><li><b>Primary (1°)</b>: X on a carbon attached to one other C — CH<sub>3</sub>CH<sub>2</sub>Cl.</li><li><b>Secondary (2°)</b>: X on a carbon attached to two other Cs — (CH<sub>3</sub>)<sub>2</sub>CHCl.</li><li><b>Tertiary (3°)</b>: X on a carbon attached to three other Cs — (CH<sub>3</sub>)<sub>3</sub>CCl.</li></ul><p>By the type of hybridisation of C bearing X:</p><ul><li><b>Allylic</b>: X on sp³ C adjacent to C=C (CH<sub>2</sub>=CH–CH<sub>2</sub>X).</li><li><b>Benzylic</b>: X on sp³ C adjacent to aromatic ring (C<sub>6</sub>H<sub>5</sub>–CH<sub>2</sub>X).</li><li><b>Vinylic</b>: X on sp² C of C=C (CH<sub>2</sub>=CHX).</li><li><b>Aryl</b>: X on sp² C of arene (C<sub>6</sub>H<sub>5</sub>X).</li></ul><p>IUPAC: longest chain containing the C–X is parent; X is named as a halo substituent and gets the lowest locant. Example: (CH<sub>3</sub>)<sub>2</sub>CHCH(Br)CH<sub>3</sub> = 2-bromo-3-methylbutane.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Methods of Preparation",
+      "body": "<p><b>From alcohols</b>:</p><ul><li>R–OH + HX → R–X + H<sub>2</sub>O. Reactivity: HI > HBr > HCl. Tertiary alcohols react with HCl alone; primary need ZnCl<sub>2</sub> + HCl (Lucas test).</li><li>With PCl<sub>5</sub>: R–OH + PCl<sub>5</sub> → R–Cl + POCl<sub>3</sub> + HCl.</li><li>With PCl<sub>3</sub>: 3 R–OH + PCl<sub>3</sub> → 3 R–Cl + H<sub>3</sub>PO<sub>3</sub>.</li><li>With SOCl<sub>2</sub> (Darzens method): R–OH + SOCl<sub>2</sub> → R–Cl + SO<sub>2</sub>↑ + HCl↑. Best because byproducts are gases — pure halide.</li></ul><p><b>From hydrocarbons</b>: free-radical halogenation of alkanes (poor selectivity, mixtures).</p><p><b>From alkenes</b>: addition of HX (Markovnikov) or X<sub>2</sub>; in presence of peroxides, HBr addition is anti-Markovnikov (Kharasch effect).</p><p><b>Halide exchange (Finkelstein reaction)</b>: R–Cl/Br + NaI →<sub>acetone</sub> R–I + NaCl/NaBr↓ (NaCl/NaBr precipitate in acetone drives equilibrium).</p><p><b>Swarts reaction</b>: R–X + AgF (or Hg<sub>2</sub>F<sub>2</sub>, CoF<sub>2</sub>) → R–F + AgX.</p><p><b>Haloarenes</b>: from arenes by electrophilic substitution with X<sub>2</sub>/FeX<sub>3</sub>; from diazonium salts (Sandmeyer: ArN<sub>2</sub>⁺ + CuCl/CuBr → ArCl/ArBr; Gattermann uses Cu/HX; Hunsdiecker would be... not on syllabus here).</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Physical Properties",
+      "body": "<p><b>State</b>: Lower haloalkanes are gases or liquids (e.g. CH<sub>3</sub>Cl is gas), higher members are liquids or solids.</p><p><b>Boiling point</b>: increases with molecular size (more London forces). For same alkyl group, b.p. order: R–I > R–Br > R–Cl > R–F (more electrons, larger polarisability). For isomers, b.p. decreases with branching (less surface contact). Haloarenes are liquid/solid; their b.p. values are higher than corresponding haloalkanes.</p><p><b>Density</b>: increases C–F < C–Cl < C–Br < C–I. Bromides, iodides, polychlorides denser than water.</p><p><b>Solubility</b>: very slightly soluble in water (cannot form H-bonds with water) but soluble in organic solvents.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Nucleophilic Substitution Reactions — SN1 vs SN2",
+      "body": "<p>Haloalkanes undergo nucleophilic substitution: R–X + Nu⁻ → R–Nu + X⁻. Two mechanisms:</p><p><b>SN2 (bimolecular)</b>: rate = k[R–X][Nu]. Single-step, concerted; Nu attacks the carbon from the side opposite to X (back-side attack). Transition state has Nu and X partially bonded; results in <b>inversion of configuration</b> (Walden inversion).</p><p>Order of reactivity for SN2: <b>CH<sub>3</sub>X > 1° > 2° > 3°</b> (steric crowding hinders backside attack).</p><p><b>SN1 (unimolecular)</b>: rate = k[R–X]. Two-step: (i) slow ionisation R–X → R⁺ + X⁻ giving a carbocation; (ii) fast attack by Nu. Carbocation is planar (sp²), so Nu can attack from either face → <b>racemisation</b> (with some inversion preference).</p><p>Order of reactivity for SN1: <b>3° > 2° > 1° > CH<sub>3</sub>X</b> (more substituted carbocation is more stable; allyl/benzyl also fast).</p><p><b>Solvent effects</b>: polar protic solvents (water, alcohols) favour SN1 (stabilise cation and anion). Polar aprotic solvents (acetone, DMSO, DMF) favour SN2 (do not solvate Nu, leaving it more reactive).</p><p><b>Leaving group</b>: weaker bases are better leaving groups: I⁻ > Br⁻ > Cl⁻ > F⁻.</p><p><b>Allyl and benzyl halides</b>: undergo SN1 readily because the resulting carbocations are resonance-stabilised. They also undergo SN2 readily because the C–X carbon is sp³ but adjacent π system stabilises the transition state.</p>",
+      "keyFormulae": [
+        "\\text{SN2: rate} = k[RX][Nu]",
+        "\\text{SN1: rate} = k[RX]"
+      ]
+    },
+    {
+      "heading": "Elimination Reactions and Saytzeff Rule",
+      "body": "<p>With strong bases (e.g. KOH/alc.), haloalkanes undergo β-elimination (E2) to give alkenes:</p><p>CH<sub>3</sub>–CH<sub>2</sub>–CH(Br)–CH<sub>3</sub> + KOH (alc) → mostly 2-butene + minor 1-butene.</p><p><b>Saytzeff (Zaitsev) rule</b>: in dehydrohalogenation, the alkene with the <b>more substituted (more stable) double bond</b> is the major product.</p><p>Substitution vs elimination depends on:</p><ul><li>Substrate: 3° favours elimination; 1° favours substitution.</li><li>Base/Nu: bulky strong bases (e.g. tBuO⁻) favour E; small good Nu (CN⁻, I⁻) favour S.</li><li>Temperature: high T favours E (gain of entropy).</li><li>Solvent: alc. KOH → E; aq. KOH → S (gives alcohol).</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Reactions with Metals — Grignard and Wurtz",
+      "body": "<p><b>Grignard reagent</b>: R–X + Mg →<sub>dry ether</sub> R–Mg–X. Highly reactive; the C–Mg bond is strongly polar (C is δ−). Used to build C–C bonds with carbonyl, CO<sub>2</sub>, epoxides, etc. Must avoid water/H-source — even traces of moisture decompose Grignard to alkane.</p><p><b>Wurtz reaction</b>: 2 R–X + 2 Na →<sub>dry ether</sub> R–R + 2 NaX. Couples two alkyl halides to a symmetrical alkane (poor for unsymmetrical).</p><p><b>Wurtz–Fittig</b> (haloarene + haloalkane + Na): Ar–X + R–X + 2 Na → Ar–R + 2 NaX. <b>Fittig</b>: 2 Ar–X + 2 Na → Ar–Ar + 2 NaX (biaryl).</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Reactivity of Haloarenes (Aryl Halides)",
+      "body": "<p>Haloarenes are <b>much less reactive</b> than haloalkanes towards nucleophilic substitution because:</p><ol><li>The C–X bond has partial double-bond character due to resonance of lone pair on X with the ring (shorter, stronger).</li><li>The sp² carbon has higher electronegativity than sp³, holding electrons of C–X more tightly.</li><li>Approach of Nu is hindered by the π electron cloud of the ring.</li><li>The phenyl cation is unstable, so SN1 is unfavourable; aryl carbanion intermediate of SN2 is also unstable.</li></ol><p>Substitution becomes feasible if strong electron-withdrawing groups (–NO<sub>2</sub>, –CN) are at <b>ortho/para</b> positions (resonance stabilisation of intermediate). Example: 2,4,6-trinitrochlorobenzene reacts with NaOH at warm conditions.</p><p><b>Electrophilic substitution on haloarenes</b>: halogens are slightly deactivating but <b>ortho/para directing</b> (lone pair donates by resonance, sigma withdraws by induction; net effect is weakly deactivating but o/p directing).</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Polyhalogen Compounds and Environmental Effects",
+      "body": "<p>Important polyhalogen compounds:</p><ul><li><b>Dichloromethane (CH<sub>2</sub>Cl<sub>2</sub>)</b>: paint remover, propellant in aerosols. Harmful in high concentrations.</li><li><b>Chloroform (CHCl<sub>3</sub>)</b>: was used as anaesthetic; now a solvent. Slowly oxidised in air/light to phosgene COCl<sub>2</sub> (highly toxic) — stored in dark bottles with a little ethanol.</li><li><b>Iodoform (CHI<sub>3</sub>)</b>: yellow solid, antiseptic (action due to release of free I<sub>2</sub>).</li><li><b>Carbon tetrachloride (CCl<sub>4</sub>)</b>: was in fire extinguishers (Pyrene); causes liver cancer; depletes ozone.</li><li><b>Freons (CFCl<sub>3</sub>, CF<sub>2</sub>Cl<sub>2</sub> etc.)</b>: refrigerants, aerosol propellants. Major cause of ozone-layer depletion (release Cl radicals catalysing O<sub>3</sub> destruction).</li><li><b>DDT (p,p'-dichlorodiphenyltrichloroethane)</b>: first synthetic insecticide; non-biodegradable, accumulates in food chain — banned in many countries.</li></ul>",
+      "keyFormulae": []
+    }
+  ],
+  "summary": "Haloalkanes (R–X) and haloarenes (Ar–X) are alkyl/aryl derivatives in which a halogen replaces hydrogen. Their preparation routes include alcohol substitution (HX, PX_3, PCl_5, SOCl_2 — best because byproducts are gases), free-radical halogenation, addition to alkenes, Finkelstein, Swarts, and Sandmeyer for arenes. C–X is polar so nucleophilic substitution (SN1 vs SN2) and elimination (E1/E2) dominate. SN2 follows CH_3 > 1° > 2° > 3° with backside attack and Walden inversion; SN1 follows 3° > 2° > 1° via planar carbocation, giving racemisation. Polar protic solvents favour SN1; polar aprotic favour SN2. Saytzeff rule predicts the more-substituted alkene as the major elimination product. Aryl halides are inert to Nu substitution unless electron-withdrawing groups (especially −NO_2 at o/p) activate the ring. Polyhalogen compounds (CHCl_3, CCl_4, freons, DDT) raise serious environmental and health concerns.",
+  "pitfalls": [
+    "Forgetting Walden inversion in SN2 — stereochemistry matters in MCQs.",
+    "Predicting SN2 for tertiary substrates — they overwhelmingly go SN1 / E1.",
+    "Using aqueous KOH expecting alkene (it gives alcohol, SN); use alcoholic KOH for elimination.",
+    "Saying haloarenes undergo facile SN — they don't, except with strong activation by ortho/para −NO_2.",
+    "Forgetting Markovnikov vs anti-Markovnikov for HBr addition (peroxide effect only with HBr, not HCl/HI).",
+    "Mis-ordering SN2 reactivity — it's CH_3X > 1° > 2° > 3°, opposite of SN1.",
+    "Using halogen as activator in EAS — halogens are deactivators (but o/p directors)."
+  ]
+}

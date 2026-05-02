@@ -1,0 +1,47 @@
+{
+  "chapter": 1,
+  "name": "Relations and Functions",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 1",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1.1 Relations — Setup",
+      "body": "<p>A <b>relation</b> $R$ from set $A$ to set $B$ is any subset of the Cartesian product $A\\times B$. If $(a,b)\\in R$ we write $aRb$. A relation in $A$ means a subset of $A\\times A$. Two extremes: the <b>empty relation</b> $R=\\varnothing$ (no element related to any) and the <b>universal relation</b> $R=A\\times A$ (every element related to every).</p><p>Domain of $R$ = set of first coordinates appearing; range = set of second coordinates; codomain = $B$ (range $\\subseteq$ codomain).</p>",
+      "keyFormulae": ["$R\\subseteq A\\times B$", "$|A\\times B|=|A|\\cdot|B|$"]
+    },
+    {
+      "heading": "1.2 Types of Relations",
+      "body": "<p>A relation $R$ in $A$ is:</p><ul><li><b>Reflexive</b> if $(a,a)\\in R\\;\\forall a\\in A$.</li><li><b>Symmetric</b> if $(a_1,a_2)\\in R\\Rightarrow(a_2,a_1)\\in R$.</li><li><b>Transitive</b> if $(a_1,a_2),(a_2,a_3)\\in R\\Rightarrow(a_1,a_3)\\in R$.</li><li><b>Equivalence relation</b> if reflexive, symmetric AND transitive.</li></ul><p>An equivalence relation partitions $A$ into <b>equivalence classes</b> $[a]=\\{x\\in A:xRa\\}$. Distinct classes are disjoint and their union is $A$.</p><p><i>Example.</i> $R=\\{(a,b)\\in\\mathbb Z\\times\\mathbb Z:\\,a-b\\text{ is divisible by }n\\}$ is an equivalence relation; classes are residue classes mod $n$.</p>",
+      "keyFormulae": ["Equivalence $\\Leftrightarrow$ R, S, T", "$\\bigcup [a_i]=A$, $[a]\\cap[b]=\\varnothing$ if $a\\not R b$"]
+    },
+    {
+      "heading": "1.3 Functions — Types",
+      "body": "<p>A function $f:A\\to B$ is a relation in which every element of $A$ has exactly one image in $B$.</p><ul><li><b>One-one (injective)</b>: $f(x_1)=f(x_2)\\Rightarrow x_1=x_2$.</li><li><b>Onto (surjective)</b>: range $=$ codomain, i.e. $\\forall y\\in B\\;\\exists x\\in A$ with $f(x)=y$.</li><li><b>Bijective</b>: one-one AND onto.</li><li><b>Many-one</b>: not injective. <b>Into</b>: not surjective.</li></ul><p>Useful theorem: if $A$ and $B$ are finite with the same cardinality and $f:A\\to B$, then $f$ is one-one $\\Leftrightarrow$ $f$ is onto.</p>",
+      "keyFormulae": ["Injective: $f(x_1)=f(x_2)\\Rightarrow x_1=x_2$", "Surjective: $\\text{range}(f)=B$"]
+    },
+    {
+      "heading": "1.4 Composition of Functions",
+      "body": "<p>If $f:A\\to B$ and $g:B\\to C$, the <b>composition</b> $g\\circ f:A\\to C$ is defined by $(g\\circ f)(x)=g(f(x))$.</p><p>Properties:</p><ul><li>Composition is <b>associative</b>: $h\\circ(g\\circ f)=(h\\circ g)\\circ f$.</li><li>Composition is <b>not commutative</b> in general: $g\\circ f\\neq f\\circ g$.</li><li>If $f,g$ are one-one then $g\\circ f$ is one-one.</li><li>If $f,g$ are onto then $g\\circ f$ is onto.</li></ul>",
+      "keyFormulae": ["$(g\\circ f)(x)=g(f(x))$", "$g\\circ f$ defined only if range$(f)\\subseteq$ domain$(g)$"]
+    },
+    {
+      "heading": "1.5 Invertible Functions",
+      "body": "<p>$f:A\\to B$ is <b>invertible</b> if there exists $g:B\\to A$ such that $g\\circ f=I_A$ and $f\\circ g=I_B$. Then $g=f^{-1}$.</p><p><b>Theorem.</b> $f$ is invertible $\\Leftrightarrow$ $f$ is bijective. The inverse is unique.</p><p>If $f:A\\to B$ and $g:B\\to C$ are bijective then $(g\\circ f)^{-1}=f^{-1}\\circ g^{-1}$ (sock-shoe rule).</p>",
+      "keyFormulae": ["$f^{-1}\\circ f=I_A,\\;f\\circ f^{-1}=I_B$", "$(g\\circ f)^{-1}=f^{-1}\\circ g^{-1}$"]
+    },
+    {
+      "heading": "1.6 Binary Operations",
+      "body": "<p>A <b>binary operation</b> $*$ on a set $A$ is a function $*:A\\times A\\to A$. We write $a*b$ instead of $*(a,b)$.</p><ul><li><b>Commutative</b>: $a*b=b*a\\;\\forall a,b\\in A$.</li><li><b>Associative</b>: $(a*b)*c=a*(b*c)$.</li><li><b>Identity</b> $e\\in A$: $a*e=e*a=a\\;\\forall a$. (Unique if it exists.)</li><li><b>Inverse</b> of $a$: element $b$ such that $a*b=b*a=e$. (Unique if $*$ is associative.)</li></ul><p>Examples: $+,\\times$ on $\\mathbb R$ are commutative and associative; subtraction is neither commutative nor associative; matrix multiplication is associative but not commutative.</p>",
+      "keyFormulae": ["$*:A\\times A\\to A$", "Identity $e:\\;a*e=e*a=a$"]
+    }
+  ],
+  "summary": "Relations are subsets of $A\\times B$; classify by reflexive/symmetric/transitive; equivalence relations partition the set into classes. Functions are special relations; classify as one-one, onto, bijective. Composition is associative not commutative; a function is invertible iff bijective with $(g\\circ f)^{-1}=f^{-1}\\circ g^{-1}$. Binary operations may have identity and inverses.",
+  "pitfalls": [
+    "Confusing codomain with range — codomain is given, range is the actual image.",
+    "Assuming reflexive automatically holds — must verify $(a,a)\\in R$ for EVERY $a$.",
+    "Writing $(g\\circ f)(x)=f(g(x))$ — the rightmost function acts first.",
+    "Claiming $f$ is invertible without checking BOTH injectivity and surjectivity.",
+    "Forgetting that a binary operation must be closed — output must lie in $A$."
+  ]
+}

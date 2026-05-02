@@ -1,0 +1,86 @@
+{
+  "chapter": 1,
+  "name": "Solutions",
+  "subject": "Chemistry",
+  "_source": "NCERT Class 12 Chem Ch 1",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "Types of Solutions",
+      "body": "<p>A <b>solution</b> is a homogeneous mixture of two or more components whose composition and properties are uniform throughout. The component present in the largest amount is the <b>solvent</b>; the rest are <b>solutes</b>. Solutions are classified by the physical state of the solvent — gaseous, liquid, or solid — and each can dissolve gas, liquid, or solid solutes (nine combinations in total).</p><p>Examples: air (gas in gas), oxygen in water (gas in liquid), brass (solid in solid). NCERT focuses on <b>binary liquid solutions</b>.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Concentration Units",
+      "body": "<p>Concentration can be expressed qualitatively (dilute/concentrated) or quantitatively. The standard quantitative measures are:</p><ul><li><b>Mass % (w/w)</b> = (mass of component / total mass) × 100</li><li><b>Volume % (v/v)</b> = (volume of component / total volume) × 100</li><li><b>Mass by volume % (w/v)</b> — common in medicine.</li><li><b>Parts per million (ppm)</b> = (parts of component / total parts) × 10⁶ — used for very dilute solutions.</li><li><b>Mole fraction (x)</b> = moles of component / total moles. Sum of mole fractions of all components = 1.</li><li><b>Molarity (M)</b> = moles of solute / volume of solution in litres. <i>Temperature dependent</i> because volume changes with T.</li><li><b>Molality (m)</b> = moles of solute / mass of solvent in kg. <i>Temperature independent</i>, hence preferred for colligative properties.</li></ul>",
+      "keyFormulae": [
+        "x_A = n_A / (n_A + n_B)",
+        "M = n_{solute} / V_{solution(L)}",
+        "m = n_{solute} / w_{solvent(kg)}"
+      ]
+    },
+    {
+      "heading": "Solubility — Solid in Liquid and Gas in Liquid",
+      "body": "<p><b>Solubility</b> is the maximum amount of a solute that dissolves in a given amount of solvent at a specified temperature. <i>Like dissolves like</i>: polar solutes dissolve in polar solvents, non-polar in non-polar.</p><p><b>Effect of temperature</b> on solid solubility follows Le Chatelier's principle. If dissolution is endothermic (ΔH<sub>sol</sub> > 0), solubility increases with T; if exothermic, it decreases. <b>Pressure</b> has negligible effect on solid–liquid solubility.</p><p><b>Henry's Law</b> for gases: the partial pressure of a gas above a solution is proportional to its mole fraction in the solution: <b>p = K<sub>H</sub> · x</b>. Higher K<sub>H</sub> means lower solubility. K<sub>H</sub> increases with temperature, so gas solubility decreases on heating (why aquatic life suffers in warm water).</p><p>Applications: aerated drinks bottled at high pressure; deep-sea divers' tanks use He-diluted air to avoid <b>bends</b>; climbers at altitude suffer <b>anoxia</b> due to lower O<sub>2</sub> partial pressure.</p>",
+      "keyFormulae": [
+        "p = K_H · x",
+        "K_H \\uparrow \\Rightarrow \\text{solubility} \\downarrow"
+      ]
+    },
+    {
+      "heading": "Vapour Pressure of Liquid Solutions — Raoult's Law",
+      "body": "<p><b>Raoult's Law</b> for a solution of two volatile liquids: the partial vapour pressure of each component is proportional to its mole fraction in the liquid phase.</p><p>p<sub>1</sub> = p<sub>1</sub>° · x<sub>1</sub>; p<sub>2</sub> = p<sub>2</sub>° · x<sub>2</sub>. Total pressure: p<sub>total</sub> = p<sub>1</sub>° + (p<sub>2</sub>° − p<sub>1</sub>°)·x<sub>2</sub>, which is linear in x<sub>2</sub>.</p><p>For a solution containing a <b>non-volatile solute</b>, only the solvent contributes to vapour pressure: p<sub>solution</sub> = p<sub>1</sub>° · x<sub>1</sub>. Relative lowering: <b>(p<sub>1</sub>° − p<sub>solution</sub>) / p<sub>1</sub>° = x<sub>2</sub></b> (mole fraction of solute). This is a <b>colligative property</b>.</p><p>Raoult's law is a special case of Henry's law where K<sub>H</sub> = p°.</p>",
+      "keyFormulae": [
+        "p_1 = p_1^\\circ x_1",
+        "p_{total} = p_1^\\circ + (p_2^\\circ - p_1^\\circ)x_2",
+        "(p_1^\\circ - p_s)/p_1^\\circ = x_2"
+      ]
+    },
+    {
+      "heading": "Ideal and Non-Ideal Solutions",
+      "body": "<p><b>Ideal solutions</b> obey Raoult's law over the entire concentration range. They have ΔH<sub>mix</sub> = 0 and ΔV<sub>mix</sub> = 0 because solute–solvent interactions are identical to solute–solute and solvent–solvent. Examples: n-hexane + n-heptane, benzene + toluene, chlorobenzene + bromobenzene.</p><p><b>Non-ideal solutions</b> deviate from Raoult's law:</p><ul><li><b>Positive deviation</b>: A–B interactions weaker than A–A / B–B; vapour pressure higher than predicted; ΔH<sub>mix</sub> > 0; ΔV<sub>mix</sub> > 0. e.g. ethanol + acetone, CS<sub>2</sub> + acetone.</li><li><b>Negative deviation</b>: A–B interactions stronger (often H-bonding); vapour pressure lower than predicted; ΔH<sub>mix</sub> < 0; ΔV<sub>mix</sub> < 0. e.g. chloroform + acetone (forms H-bond), HNO<sub>3</sub> + H<sub>2</sub>O.</li></ul><p><b>Azeotropes</b>: binary mixtures with constant boiling point that distill without composition change. <b>Minimum boiling azeotrope</b> arises from large positive deviation (95% ethanol + 5% water). <b>Maximum boiling azeotrope</b> from large negative deviation (68% HNO<sub>3</sub> + 32% H<sub>2</sub>O).</p>",
+      "keyFormulae": [
+        "\\text{Ideal: } \\Delta H_{mix}=0,\\ \\Delta V_{mix}=0",
+        "\\text{+ve dev}: p > p_{Raoult}",
+        "\\text{-ve dev}: p < p_{Raoult}"
+      ]
+    },
+    {
+      "heading": "Colligative Properties — Relative Lowering, Boiling Point Elevation, Freezing Point Depression",
+      "body": "<p>Colligative properties depend on the <b>number</b> of solute particles, not their identity.</p><p><b>1. Relative lowering of vapour pressure</b>: ΔP/P° = x<sub>solute</sub>. Used to determine molar mass: M<sub>2</sub> = (w<sub>2</sub> · M<sub>1</sub> · p<sub>1</sub>°) / [(p<sub>1</sub>° − p<sub>s</sub>) · w<sub>1</sub>] (dilute approximation).</p><p><b>2. Elevation of boiling point</b>: ΔT<sub>b</sub> = K<sub>b</sub> · m, where K<sub>b</sub> is the <b>molal elevation constant (ebullioscopic constant)</b>. Solute makes boiling point higher because vapour pressure is lowered.</p><p><b>3. Depression of freezing point</b>: ΔT<sub>f</sub> = K<sub>f</sub> · m, where K<sub>f</sub> is the <b>molal depression constant (cryoscopic constant)</b>. Used in antifreeze (ethylene glycol in radiators), salt-on-roads.</p><p>K<sub>b</sub> and K<sub>f</sub> depend only on the solvent: K<sub>b</sub> = R·M<sub>1</sub>·T<sub>b</sub>² / (1000·ΔH<sub>vap</sub>) and similarly for K<sub>f</sub> with ΔH<sub>fus</sub>.</p>",
+      "keyFormulae": [
+        "\\Delta T_b = K_b \\cdot m",
+        "\\Delta T_f = K_f \\cdot m",
+        "M_2 = (1000\\cdot K_b \\cdot w_2)/(\\Delta T_b \\cdot w_1)"
+      ]
+    },
+    {
+      "heading": "Osmotic Pressure",
+      "body": "<p><b>Osmosis</b>: solvent flow through a semipermeable membrane from low to high solute concentration. <b>Osmotic pressure (π)</b> is the extra pressure that must be applied to the solution side to stop osmosis.</p><p>Van't Hoff equation: <b>π = C·R·T</b> = (n<sub>2</sub>/V)·R·T. Hence M<sub>2</sub> = w<sub>2</sub>·R·T / (π·V). This is the most accurate method for determining molar mass of polymers and proteins because π is measurable even at very dilute concentration and at room temperature.</p><p><b>Isotonic</b>: same osmotic pressure (e.g. 0.9% NaCl is isotonic with blood plasma). <b>Hypertonic</b>: higher π — water flows out of cells (plasmolysis). <b>Hypotonic</b>: lower π — water flows in (cells burst). <b>Reverse osmosis</b>: applying pressure greater than π pushes solvent out — used for desalination of sea water using cellulose acetate membranes.</p>",
+      "keyFormulae": [
+        "\\pi = CRT",
+        "\\pi V = n_2 R T",
+        "M_2 = w_2 R T / (\\pi V)"
+      ]
+    },
+    {
+      "heading": "Abnormal Molar Masses and Van't Hoff Factor",
+      "body": "<p>If the solute associates or dissociates in solution, the experimentally determined molar mass differs from the true value. Van't Hoff introduced the factor <b>i</b> to correct colligative properties:</p><p>i = (observed colligative property) / (calculated colligative property) = (normal molar mass) / (abnormal molar mass) = (number of particles after) / (number of particles before).</p><ul><li><b>Dissociation</b> (e.g. NaCl → Na⁺ + Cl⁻): i > 1. KCl, NaCl ideally i = 2; BaCl<sub>2</sub> ideally i = 3.</li><li><b>Association</b> (e.g. acetic acid dimer in benzene): i < 1.</li></ul><p>Modified equations: ΔT<sub>b</sub> = i·K<sub>b</sub>·m; ΔT<sub>f</sub> = i·K<sub>f</sub>·m; π = i·CRT; ΔP/P° = i·x<sub>2</sub>.</p><p><b>Degree of dissociation</b> α = (i − 1)/(n − 1). <b>Degree of association</b> α = (1 − i) · n/(n − 1).</p>",
+      "keyFormulae": [
+        "i = \\text{observed}/\\text{calculated}",
+        "\\Delta T_f = i K_f m",
+        "\\pi = i C R T",
+        "\\alpha_{diss} = (i-1)/(n-1)"
+      ]
+    }
+  ],
+  "summary": "Solutions are homogeneous mixtures characterised by composition (mole fraction, molarity, molality, ppm). Henry's law (p = K_H·x) governs gas solubility; Raoult's law (p_i = p_i°·x_i) governs vapour pressure of volatile components. Ideal solutions show ΔH_mix = ΔV_mix = 0; non-ideal solutions show positive (weaker A–B interaction) or negative (H-bonding A–B) deviations and may form azeotropes. The four colligative properties — relative lowering of vapour pressure, ΔT_b = K_b·m, ΔT_f = K_f·m, π = CRT — depend only on the number of solute particles and are used to determine molar masses. Dissociation/association introduce the van't Hoff factor i to correct results.",
+  "pitfalls": [
+    "Confusing molarity (per L of solution) with molality (per kg of solvent) — molality is T-independent.",
+    "Forgetting to include i for ionic/associated solutes in colligative formulae.",
+    "Mixing up positive vs negative deviation: positive deviation = higher vapour pressure = weaker A–B interactions.",
+    "Assuming K_b and K_f depend on solute — they depend only on solvent.",
+    "Treating azeotropes as separable by simple distillation — they are not.",
+    "Using mole fraction of solute when the formula calls for mole fraction of solvent (or vice versa) in vapour pressure calculations."
+  ]
+}

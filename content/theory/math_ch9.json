@@ -1,0 +1,48 @@
+{
+  "chapter": 9,
+  "name": "Differential Equations",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 9",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "9.1 Definitions: Order, Degree, Solutions",
+      "body": "<p>A <b>differential equation (DE)</b> is an equation involving an unknown function and its derivatives.</p><p><b>Order</b>: order of the highest derivative present.</p><p><b>Degree</b>: power of the highest-order derivative when the DE is polynomial in derivatives (after removing radicals/fractional powers). Degree may be undefined.</p><p>A <b>general solution</b> contains as many arbitrary constants as the order. A <b>particular solution</b> is obtained by giving these constants specific values.</p><p>Example: $\\dfrac{d^{2}y}{dx^{2}}+\\sin\\!\\left(\\dfrac{dy}{dx}\\right)=0$ has order $2$ but degree undefined (not polynomial in $y'$).</p>",
+      "keyFormulae": ["Order = highest derivative", "General soln has constants $=$ order"]
+    },
+    {
+      "heading": "9.2 Forming a Differential Equation",
+      "body": "<p>Start from a family of curves $f(x,y,c_1,c_2,\\dots,c_n)=0$ with $n$ arbitrary constants. Differentiate $n$ times w.r.t. $x$. Eliminate the $n$ constants among the $n+1$ relations. The result is a DE of order $n$.</p><p>Example: family $y=mx$ — one constant $m$. Differentiate: $y'=m$. Eliminate: $y=y'\\,x$, i.e. $x\\,\\dfrac{dy}{dx}=y$.</p>",
+      "keyFormulae": ["#constants = order of resulting DE"]
+    },
+    {
+      "heading": "9.3 Variables Separable Method",
+      "body": "<p>A first-order DE $\\dfrac{dy}{dx}=F(x,y)$ is <b>separable</b> if $F(x,y)=g(x)\\,h(y)$. Then</p><p>$\\dfrac{dy}{h(y)}=g(x)\\,dx\\;\\;\\Longrightarrow\\;\\;\\int\\dfrac{dy}{h(y)}=\\int g(x)\\,dx+C.$</p><p>Example: $\\dfrac{dy}{dx}=ky$ gives $\\ln|y|=kx+C$, i.e. $y=Ae^{kx}$.</p>",
+      "keyFormulae": ["$\\int\\dfrac{dy}{h(y)}=\\int g(x)\\,dx+C$"]
+    },
+    {
+      "heading": "9.4 Homogeneous DEs",
+      "body": "<p>A function $F(x,y)$ is <b>homogeneous of degree $n$</b> if $F(\\lambda x,\\lambda y)=\\lambda^{n}F(x,y)$. A first-order DE $\\dfrac{dy}{dx}=F(x,y)$ is <b>homogeneous</b> if the RHS is homogeneous of degree $0$, i.e. $\\dfrac{dy}{dx}=g\\!\\left(\\dfrac{y}{x}\\right).$</p><p><b>Substitution.</b> Put $y=vx$, $\\dfrac{dy}{dx}=v+x\\dfrac{dv}{dx}$. The DE becomes separable in $v,x$:</p><p>$v+x\\dfrac{dv}{dx}=g(v)\\;\\Longrightarrow\\;\\dfrac{dv}{g(v)-v}=\\dfrac{dx}{x}.$</p>",
+      "keyFormulae": ["Homogeneous of degree 0: substitute $y=vx$"]
+    },
+    {
+      "heading": "9.5 Linear First-Order DE",
+      "body": "<p>Standard form: $\\dfrac{dy}{dx}+P(x)\\,y=Q(x).$</p><p><b>Integrating factor</b> (IF): $\\mu(x)=e^{\\int P(x)\\,dx}.$ Multiplying both sides by $\\mu$ makes the LHS the derivative of $\\mu y$:</p><p>$\\dfrac{d}{dx}\\!\\left(\\mu(x)\\,y\\right)=\\mu(x)\\,Q(x).$</p><p>Solution: $y\\cdot\\mu(x)=\\int\\mu(x)\\,Q(x)\\,dx+C.$</p><p>For $\\dfrac{dx}{dy}+P(y)\\,x=Q(y)$, swap roles: IF $=e^{\\int P(y)\\,dy}$, solution $x\\cdot$IF$=\\int Q\\cdot$IF$\\,dy+C$.</p>",
+      "keyFormulae": ["IF $=e^{\\int P\\,dx}$", "$y\\cdot$IF$=\\int Q\\cdot$IF$\\,dx+C$"]
+    },
+    {
+      "heading": "9.6 Initial Value Problems & Applications",
+      "body": "<p>An <b>initial value problem</b> supplies a value $y(x_0)=y_0$ to determine the constant in the general solution.</p><p>Common applications:</p><ul><li><b>Population/decay</b>: $\\dfrac{dN}{dt}=kN\\Rightarrow N=N_0 e^{kt}$.</li><li><b>Newton's law of cooling</b>: $\\dfrac{dT}{dt}=-k(T-T_s)$.</li><li><b>Mixing tanks</b>: rate in $-$ rate out, gives a linear DE in concentration.</li></ul>",
+      "keyFormulae": ["$N=N_0 e^{kt}$", "$T(t)=T_s+(T_0-T_s)e^{-kt}$"]
+    }
+  ],
+  "summary": "A differential equation involves derivatives of an unknown function. Identify order (highest derivative) and degree. Forming a DE: differentiate the family enough times to eliminate constants. Solving methods on the syllabus: (1) separation of variables; (2) homogeneous DE via $y=vx$ substitution; (3) linear first-order via integrating factor $e^{\\int P\\,dx}$. Initial conditions pin down constants.",
+  "pitfalls": [
+    "Confusing order and degree.",
+    "Trying to separate a non-separable equation.",
+    "Substituting $y=vx$ when the DE is not homogeneous of degree 0.",
+    "Forgetting to multiply BOTH sides by the integrating factor.",
+    "Dropping the constant of integration before applying the initial condition.",
+    "Writing the IF as $e^{P}$ instead of $e^{\\int P\\,dx}$."
+  ]
+}

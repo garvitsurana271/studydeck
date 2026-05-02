@@ -1,0 +1,52 @@
+{
+  "chapter": 6,
+  "name": "Application of Derivatives",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 6",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "6.1 Rate of Change",
+      "body": "<p>If $y=f(x)$ then $\\dfrac{dy}{dx}$ measures the instantaneous rate of change of $y$ with respect to $x$. When two variables both depend on time $t$, related rates link their derivatives via the chain rule.</p><p><b>Strategy.</b> Identify the geometric/physical relationship; differentiate w.r.t. $t$ implicitly; substitute the given instantaneous values to find the unknown rate.</p><p>Examples: $V=\\tfrac{4}{3}\\pi r^{3}\\Rightarrow \\dfrac{dV}{dt}=4\\pi r^{2}\\dfrac{dr}{dt}$; for a square of side $x$, $\\dfrac{dA}{dt}=2x\\dfrac{dx}{dt}$.</p>",
+      "keyFormulae": ["$\\dfrac{dy}{dt}=\\dfrac{dy}{dx}\\cdot\\dfrac{dx}{dt}$"]
+    },
+    {
+      "heading": "6.2 Increasing & Decreasing Functions",
+      "body": "<p>$f$ is <b>increasing</b> on $I$ if $x_1<x_2\\Rightarrow f(x_1)\\leq f(x_2)$ (strictly increasing if $<$). Decreasing analogously.</p><p><b>First-derivative test.</b> Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$.</p><ul><li>$f'(x)>0\\;\\forall x\\in(a,b)\\Rightarrow f$ strictly increasing on $[a,b]$.</li><li>$f'(x)<0\\;\\forall x\\in(a,b)\\Rightarrow f$ strictly decreasing on $[a,b]$.</li><li>$f'(x)=0\\;\\forall x\\in(a,b)\\Rightarrow f$ constant on $[a,b]$.</li></ul>",
+      "keyFormulae": ["$f'>0\\Rightarrow$ strictly increasing", "$f'<0\\Rightarrow$ strictly decreasing"]
+    },
+    {
+      "heading": "6.3 Tangents and Normals",
+      "body": "<p>Slope of tangent to $y=f(x)$ at $(x_0,y_0)$: $m=f'(x_0)$.</p><p><b>Tangent line:</b> $y-y_0=f'(x_0)(x-x_0)$.</p><p><b>Normal line</b> (perpendicular to tangent): slope $=-1/f'(x_0)$, equation $y-y_0=-\\dfrac{1}{f'(x_0)}(x-x_0)$.</p><p>Special cases: vertical tangent if $f'(x_0)$ infinite; horizontal tangent if $f'(x_0)=0$.</p>",
+      "keyFormulae": ["Tangent slope $=f'(x_0)$", "Normal slope $=-1/f'(x_0)$"]
+    },
+    {
+      "heading": "6.4 Approximations & Differentials",
+      "body": "<p>For small $\\Delta x$, $f(x+\\Delta x)\\approx f(x)+f'(x)\\Delta x.$</p><p>Equivalently, $dy=f'(x)\\,dx$ where $dy$ is the differential of $y$ and $dx=\\Delta x$. The approximate change in $y$ is $\\Delta y\\approx dy$.</p><p>Used to estimate values like $\\sqrt{25.3}$ by linearising around $x=25$: $\\sqrt{25.3}\\approx 5+\\dfrac{0.3}{10}=5.03.$</p>",
+      "keyFormulae": ["$\\Delta y\\approx f'(x)\\Delta x$", "$dy=f'(x)\\,dx$"]
+    },
+    {
+      "heading": "6.5 Maxima and Minima",
+      "body": "<p>$c$ is a point of <b>local maximum</b> if $f(c)\\geq f(x)$ for $x$ in a neighbourhood; <b>local minimum</b> if $f(c)\\leq f(x)$ similarly.</p><p><b>Critical points</b>: where $f'(c)=0$ or $f'(c)$ does not exist.</p><p><b>First-derivative test.</b> Examine sign of $f'$ on either side of $c$:</p><ul><li>$+\\to-$: local max.</li><li>$-\\to+$: local min.</li><li>No sign change: neither (point of inflection candidate).</li></ul><p><b>Second-derivative test.</b> If $f'(c)=0$ then: $f''(c)<0\\Rightarrow$ local max; $f''(c)>0\\Rightarrow$ local min; $f''(c)=0\\Rightarrow$ test inconclusive (use first-derivative test).</p>",
+      "keyFormulae": ["$f'(c)=0,f''(c)<0$: local max", "$f'(c)=0,f''(c)>0$: local min"]
+    },
+    {
+      "heading": "6.6 Absolute Maximum/Minimum on $[a,b]$",
+      "body": "<p>A continuous function on a closed bounded interval $[a,b]$ attains both an absolute maximum and an absolute minimum (Extreme Value Theorem).</p><p><b>Procedure.</b></p><ol><li>Find all critical points of $f$ in $(a,b)$.</li><li>Compute $f$ at every critical point and at the endpoints $a$, $b$.</li><li>The greatest of these is the absolute maximum; the smallest is the absolute minimum.</li></ol>",
+      "keyFormulae": ["Compare $f$ at critical points + endpoints"]
+    },
+    {
+      "heading": "6.7 Optimisation Problems",
+      "body": "<p>Real-world maxima/minima reduce to:</p><ol><li>Translate the problem into a function $f$ of a single variable, with constraints.</li><li>Identify the feasible interval.</li><li>Find $f'$, set $=0$, solve.</li><li>Use first or second derivative test to confirm max/min.</li><li>Interpret in original units.</li></ol><p>Common archetypes: largest area for fixed perimeter, smallest surface area for fixed volume of a cylinder ($r=h/2$ for closed cylinder), shortest distance from a point to a curve, fence-along-a-river problems.</p>",
+      "keyFormulae": ["Reduce to one variable using constraint, then $f'=0$"]
+    }
+  ],
+  "summary": "Derivatives encode rates of change, slopes of tangents/normals, and behaviour of functions. Sign of $f'$ governs monotonicity; vanishing $f'$ flags critical points where local extrema may live, classified by the first or second derivative test. On a closed interval the absolute max/min are found among critical points and endpoints. Differentials give linear approximations $\\Delta y\\approx f'(x)\\Delta x$ used for fast estimates and error analysis.",
+  "pitfalls": [
+    "Confusing local extrema with absolute extrema.",
+    "Forgetting endpoints when computing absolute max/min on $[a,b]$.",
+    "Concluding nothing when $f''(c)=0$ — must fall back on first-derivative test.",
+    "Not checking whether the optimum from $f'=0$ lies in the feasible region.",
+    "Mixing up tangent and normal slopes — they are negative reciprocals."
+  ]
+}

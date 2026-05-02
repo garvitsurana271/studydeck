@@ -1,0 +1,52 @@
+{
+  "chapter": 11,
+  "name": "Three Dimensional Geometry",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 11",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "11.1 Direction Cosines & Direction Ratios of a Line",
+      "body": "<p>A line in space makes angles $\\alpha,\\beta,\\gamma$ with the positive $x,y,z$ axes. Its <b>direction cosines</b> are $l=\\cos\\alpha,\\,m=\\cos\\beta,\\,n=\\cos\\gamma$ with $l^{2}+m^{2}+n^{2}=1.$</p><p><b>Direction ratios</b> $a,b,c$: any triple proportional to $l,m,n$. Given d.r. $a,b,c$:</p><p>$l=\\dfrac{a}{\\sqrt{a^{2}+b^{2}+c^{2}}},\\;m=\\dfrac{b}{\\sqrt{a^{2}+b^{2}+c^{2}}},\\;n=\\dfrac{c}{\\sqrt{a^{2}+b^{2}+c^{2}}}.$</p><p>For the line through $A(x_1,y_1,z_1)$ and $B(x_2,y_2,z_2)$, d.r. are $x_2-x_1,\\,y_2-y_1,\\,z_2-z_1$.</p>",
+      "keyFormulae": ["$l^{2}+m^{2}+n^{2}=1$"]
+    },
+    {
+      "heading": "11.2 Equation of a Line",
+      "body": "<p><b>Vector form</b> through point $\\vec a$ with direction $\\vec b$: $\\vec r=\\vec a+\\lambda\\vec b,\\;\\lambda\\in\\mathbb R.$</p><p><b>Cartesian form</b> through $(x_1,y_1,z_1)$ with d.r. $a,b,c$:</p><p>$\\dfrac{x-x_1}{a}=\\dfrac{y-y_1}{b}=\\dfrac{z-z_1}{c}.$</p><p><b>Through two points</b> $(x_1,y_1,z_1)$ and $(x_2,y_2,z_2)$:</p><p>$\\dfrac{x-x_1}{x_2-x_1}=\\dfrac{y-y_1}{y_2-y_1}=\\dfrac{z-z_1}{z_2-z_1}.$</p><p>Vector form: $\\vec r=\\vec a+\\lambda(\\vec b-\\vec a)$.</p>",
+      "keyFormulae": ["$\\vec r=\\vec a+\\lambda\\vec b$", "$\\dfrac{x-x_1}{a}=\\dfrac{y-y_1}{b}=\\dfrac{z-z_1}{c}$"]
+    },
+    {
+      "heading": "11.3 Angle Between Two Lines",
+      "body": "<p>If lines have direction vectors $\\vec b_1$ and $\\vec b_2$ (or d.r. $(a_1,b_1,c_1)$ and $(a_2,b_2,c_2)$), the acute angle $\\theta$ between them satisfies</p><p>$\\cos\\theta=\\dfrac{|\\vec b_1\\cdot\\vec b_2|}{|\\vec b_1||\\vec b_2|}=\\dfrac{|a_1 a_2+b_1 b_2+c_1 c_2|}{\\sqrt{a_1^{2}+b_1^{2}+c_1^{2}}\\sqrt{a_2^{2}+b_2^{2}+c_2^{2}}}.$</p><p>Two lines are <b>perpendicular</b> iff $a_1 a_2+b_1 b_2+c_1 c_2=0$ and <b>parallel</b> iff $\\dfrac{a_1}{a_2}=\\dfrac{b_1}{b_2}=\\dfrac{c_1}{c_2}.$</p>",
+      "keyFormulae": ["$\\cos\\theta=\\dfrac{|\\vec b_1\\cdot\\vec b_2|}{|\\vec b_1||\\vec b_2|}$"]
+    },
+    {
+      "heading": "11.4 Shortest Distance Between Two Lines",
+      "body": "<p>Two lines that are not coplanar are <b>skew</b>; their shortest distance is the length of the common perpendicular.</p><p><b>Skew lines.</b> $\\vec r=\\vec a_1+\\lambda\\vec b_1$ and $\\vec r=\\vec a_2+\\mu\\vec b_2$:</p><p>$d=\\dfrac{\\big|\\,(\\vec a_2-\\vec a_1)\\cdot(\\vec b_1\\times\\vec b_2)\\,\\big|}{|\\vec b_1\\times\\vec b_2|}.$</p><p><b>Parallel lines.</b> If $\\vec b_1\\parallel\\vec b_2$: $d=\\dfrac{|(\\vec a_2-\\vec a_1)\\times\\vec b_1|}{|\\vec b_1|}.$</p><p>Two lines are coplanar iff the shortest distance is zero, i.e. $(\\vec a_2-\\vec a_1)\\cdot(\\vec b_1\\times\\vec b_2)=0$.</p>",
+      "keyFormulae": ["$d=\\dfrac{|(\\vec a_2-\\vec a_1)\\cdot(\\vec b_1\\times\\vec b_2)|}{|\\vec b_1\\times\\vec b_2|}$"]
+    },
+    {
+      "heading": "11.5 Equation of a Plane",
+      "body": "<p><b>Vector form (normal $\\hat n$, distance $d$ from origin):</b> $\\vec r\\cdot\\hat n=d$ (normal form, $d\\geq 0$).</p><p><b>Cartesian (normal form):</b> $lx+my+nz=d$ where $l,m,n$ are direction cosines of the unit normal.</p><p><b>Through a point with given normal $\\vec n$:</b> $(\\vec r-\\vec a)\\cdot\\vec n=0$, i.e. $a(x-x_1)+b(y-y_1)+c(z-z_1)=0.$</p><p><b>Through three points</b> $A,B,C$: $\\vec n=(\\vec{AB})\\times(\\vec{AC})$ then use $(\\vec r-\\vec a)\\cdot\\vec n=0$.</p><p><b>Intercept form:</b> $\\dfrac{x}{a}+\\dfrac{y}{b}+\\dfrac{z}{c}=1.$</p>",
+      "keyFormulae": ["$\\vec r\\cdot\\hat n=d$", "$\\dfrac{x}{a}+\\dfrac{y}{b}+\\dfrac{z}{c}=1$"]
+    },
+    {
+      "heading": "11.6 Plane Through Intersection of Two Planes",
+      "body": "<p>Given two planes $\\vec r\\cdot\\vec n_1=d_1$ and $\\vec r\\cdot\\vec n_2=d_2$, any plane through their intersection has the form</p><p>$\\vec r\\cdot(\\vec n_1+\\lambda\\vec n_2)=d_1+\\lambda d_2,\\quad \\lambda\\in\\mathbb R.$</p><p>Cartesian: $(a_1 x+b_1 y+c_1 z-d_1)+\\lambda(a_2 x+b_2 y+c_2 z-d_2)=0$.</p>",
+      "keyFormulae": ["$\\vec r\\cdot(\\vec n_1+\\lambda\\vec n_2)=d_1+\\lambda d_2$"]
+    },
+    {
+      "heading": "11.7 Angles & Distances Involving Planes",
+      "body": "<p><b>Angle between two planes</b> (acute): $\\cos\\theta=\\dfrac{|\\vec n_1\\cdot\\vec n_2|}{|\\vec n_1||\\vec n_2|}.$ Planes are perpendicular iff $\\vec n_1\\cdot\\vec n_2=0$, parallel iff $\\vec n_1\\parallel\\vec n_2$.</p><p><b>Angle between line and plane</b>: if $\\vec b$ is the line's direction and $\\vec n$ the plane's normal, then $\\sin\\phi=\\dfrac{|\\vec b\\cdot\\vec n|}{|\\vec b||\\vec n|}.$</p><p><b>Distance from point to plane.</b> For point $(x_1,y_1,z_1)$ and plane $ax+by+cz+d=0$: $D=\\dfrac{|ax_1+by_1+cz_1+d|}{\\sqrt{a^{2}+b^{2}+c^{2}}}.$</p>",
+      "keyFormulae": ["$\\sin\\phi=\\dfrac{|\\vec b\\cdot\\vec n|}{|\\vec b||\\vec n|}$ (line/plane)", "$D=\\dfrac{|ax_1+by_1+cz_1+d|}{\\sqrt{a^{2}+b^{2}+c^{2}}}$"]
+    }
+  ],
+  "summary": "Lines in 3D are described by a point and a direction (vector or Cartesian symmetric form). Angles between lines come from the dot product of direction vectors. Skew lines have shortest distance $\\dfrac{|(\\vec a_2-\\vec a_1)\\cdot(\\vec b_1\\times\\vec b_2)|}{|\\vec b_1\\times\\vec b_2|}$. Planes are described by a point and a normal $\\vec n$, giving $(\\vec r-\\vec a)\\cdot\\vec n=0$ or $ax+by+cz+d=0$. Intercept form makes $x,y,z$-axis crossings explicit. Angle between line and plane uses $\\sin$ of the angle between $\\vec b$ and $\\vec n$. Distance from point to plane is the standard normal-projection formula.",
+  "pitfalls": [
+    "Using $\\cos$ instead of $\\sin$ for the angle between a line and a plane.",
+    "Forgetting absolute value when computing acute angles.",
+    "Confusing direction ratios with direction cosines (the latter are normalized).",
+    "Treating skew lines as intersecting just because the shortest distance is small.",
+    "Wrong sign of $d$ in $\\vec r\\cdot\\hat n=d$ — keep $d\\geq 0$ in normal form."
+  ]
+}

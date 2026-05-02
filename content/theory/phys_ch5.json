@@ -1,0 +1,53 @@
+{
+  "chapter": 5,
+  "name": "Magnetism and Matter",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 5",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. The Bar Magnet and Magnetic Field Lines",
+      "body": "<p>A bar magnet behaves as a <b>magnetic dipole</b> with two poles (north and south). Properties:</p><ul><li>Like poles repel, unlike poles attract.</li><li>Magnetic poles always exist in pairs — <b>magnetic monopoles do not exist</b>.</li><li>A freely suspended magnet aligns roughly north-south (used in compass).</li></ul><p>Magnetic field lines:</p><ul><li>Form closed loops (unlike electric lines which terminate on charges).</li><li>Outside the magnet, run from N to S; inside, from S to N.</li><li>Tangent at any point gives field direction.</li><li>Density indicates field strength.</li><li>Never intersect.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "2. Bar Magnet as an Equivalent Solenoid",
+      "body": "<p>A bar magnet is equivalent to a current-carrying solenoid. Its <b>magnetic dipole moment</b> $\\vec{m}$ points from S to N inside the magnet.</p><p>For a solenoid of $N$ turns, current $I$, length $2l$, area $A$: $m = NI(2l)A$. Field at axial distance $r$ from centre ($r \\gg l$): $$B_{\\text{axial}} = \\dfrac{\\mu_0}{4\\pi}\\dfrac{2m}{r^3}$$</p><p>Field on the equatorial line: $$B_{\\text{eq}} = \\dfrac{\\mu_0}{4\\pi}\\dfrac{m}{r^3}$$ direction antiparallel to $\\vec{m}$.</p><p>This mirrors the electric dipole field exactly with $1/4\\pi\\varepsilon_0 \\to \\mu_0/4\\pi$ and $\\vec{p}\\to\\vec{m}$.</p>",
+      "keyFormulae": ["B_{\\text{axial}} = \\dfrac{\\mu_0}{4\\pi}\\dfrac{2m}{r^3}", "B_{\\text{eq}} = \\dfrac{\\mu_0}{4\\pi}\\dfrac{m}{r^3}"]
+    },
+    {
+      "heading": "3. Magnetic Dipole in a Uniform Field",
+      "body": "<p>A magnetic dipole of moment $\\vec{m}$ in a uniform field $\\vec{B}$ experiences:</p><ul><li><b>Net force</b> = 0 (forces on N and S cancel).</li><li><b>Torque</b>: $\\vec{\\tau} = \\vec{m}\\times\\vec{B}$, magnitude $mB\\sin\\theta$, tending to align $\\vec{m}$ with $\\vec{B}$.</li><li><b>Potential energy</b>: $U = -\\vec{m}\\cdot\\vec{B} = -mB\\cos\\theta$. Minimum at $\\theta = 0$ (stable), maximum at $\\theta = \\pi$ (unstable).</li></ul><p>Work done in rotating dipole from $\\theta_1$ to $\\theta_2$: $W = mB(\\cos\\theta_1 - \\cos\\theta_2)$.</p><p>For small oscillations of a dipole about equilibrium, period $T = 2\\pi\\sqrt{I/(mB)}$, where $I$ is moment of inertia.</p>",
+      "keyFormulae": ["\\vec{\\tau} = \\vec{m}\\times\\vec{B}", "U = -\\vec{m}\\cdot\\vec{B}", "T = 2\\pi\\sqrt{\\dfrac{I}{mB}}"]
+    },
+    {
+      "heading": "4. Earth's Magnetism",
+      "body": "<p>Earth behaves as a giant magnetic dipole tilted ~11.3° to its rotational axis, with the magnetic south pole near geographic north. The field at the surface is ~$3$–$6\\times 10^{-5}$ T.</p><p>Three <b>elements of Earth's magnetic field</b> at any location:</p><ul><li><b>Declination</b> ($D$): angle between geographic and magnetic meridians.</li><li><b>Dip / inclination</b> ($I$): angle between Earth's field and the horizontal.</li><li><b>Horizontal component</b> ($B_H = B\\cos I$). The vertical component is $B_V = B\\sin I$. Total field: $B = \\sqrt{B_H^2 + B_V^2}$, and $\\tan I = B_V/B_H$.</li></ul><p>At magnetic equator $I = 0$ ($B_V = 0$, $B = B_H$); at magnetic poles $I = 90°$ ($B_H = 0$).</p>",
+      "keyFormulae": ["B_H = B\\cos I", "B_V = B\\sin I", "\\tan I = \\dfrac{B_V}{B_H}"]
+    },
+    {
+      "heading": "5. Magnetisation and Magnetic Intensity",
+      "body": "<p><b>Magnetisation</b> $\\vec{M}$: net magnetic moment per unit volume of a material. Unit: A/m.</p><p><b>Magnetic intensity</b> $\\vec{H}$: defined so that $\\vec{B} = \\mu_0(\\vec{H} + \\vec{M})$. In a linear material, $\\vec{M} = \\chi_m \\vec{H}$, where $\\chi_m$ is the <b>magnetic susceptibility</b> (dimensionless).</p><p><b>Permeability</b>: $\\mu = \\mu_0(1 + \\chi_m) = \\mu_0\\mu_r$, where $\\mu_r = 1 + \\chi_m$ is the relative permeability.</p><p>Then $\\vec{B} = \\mu \\vec{H}$. For vacuum, $\\chi_m = 0$, $\\mu = \\mu_0$.</p>",
+      "keyFormulae": ["\\vec{B} = \\mu_0(\\vec{H} + \\vec{M})", "\\vec{M} = \\chi_m \\vec{H}", "\\mu_r = 1 + \\chi_m"]
+    },
+    {
+      "heading": "6. Diamagnetism, Paramagnetism, Ferromagnetism",
+      "body": "<p><b>Diamagnetic</b> ($\\chi_m$ small, negative; $\\mu_r < 1$): repelled weakly by magnets. Examples: bismuth, copper, water, gold. Origin: induced currents oppose external field (Lenz's law). Independent of temperature. Superconductors are perfect diamagnets ($\\chi_m = -1$).</p><p><b>Paramagnetic</b> ($\\chi_m$ small, positive; $\\mu_r > 1$): weakly attracted. Examples: aluminium, sodium, oxygen. Atoms have permanent magnetic moments that partially align with field. <b>Curie's law</b>: $\\chi_m = C/T$.</p><p><b>Ferromagnetic</b> ($\\chi_m$ large, positive; $\\mu_r \\gg 1$, up to $10^4$): strongly attracted, retain magnetisation. Examples: iron, cobalt, nickel, gadolinium. Atoms align in <b>domains</b>; domain walls move under external field. Above the <b>Curie temperature</b> $T_C$, ferromagnets become paramagnetic.</p>",
+      "keyFormulae": ["\\chi_m^{\\text{para}} = \\dfrac{C}{T}"]
+    },
+    {
+      "heading": "7. Hysteresis",
+      "body": "<p>When a ferromagnet is taken through a complete cycle of magnetisation, $B$ vs $H$ traces a closed loop — the <b>hysteresis loop</b> — not a single curve.</p><p>Key points on the loop:</p><ul><li><b>Retentivity</b> ($B_r$): residual magnetic field when $H = 0$ after saturation.</li><li><b>Coercivity</b> ($H_c$): reverse $H$ required to reduce $B$ to zero.</li></ul><p>Area of the loop = energy dissipated per unit volume per cycle.</p><p><b>Soft ferromagnets</b> (low retentivity, low coercivity, narrow loop): ideal for transformer cores, electromagnets — easy to magnetise/demagnetise. Example: soft iron, mu-metal.</p><p><b>Hard ferromagnets</b> (high retentivity and coercivity, fat loop): used for permanent magnets. Example: alnico, steel, neodymium alloys.</p>",
+      "keyFormulae": []
+    }
+  ],
+  "summary": "A bar magnet is equivalent to a solenoid with moment $m$. Magnetic field lines form closed loops; monopoles don't exist. A dipole feels torque $\\vec{m}\\times\\vec{B}$ and energy $-\\vec{m}\\cdot\\vec{B}$ in external field. Earth's magnetism is described by declination, dip, and horizontal component. Materials are classified diamagnetic ($\\chi_m < 0$), paramagnetic ($\\chi_m > 0$, small), or ferromagnetic ($\\chi_m \\gg 0$). Ferromagnets show hysteresis with retentivity, coercivity.",
+  "pitfalls": [
+    "Magnetic monopoles do not exist; field lines always form closed loops.",
+    "Earth's magnetic SOUTH pole is near geographic NORTH (that's why N pole of compass points north).",
+    "Diamagnetism is universal but masked by stronger para/ferromagnetism in those materials.",
+    "Curie's law applies to paramagnets; above Curie temperature, ferromagnets become paramagnetic.",
+    "Soft ferromagnets (narrow loop, low coercivity) for cores; hard (wide loop, high coercivity) for permanent magnets.",
+    "Magnetic flux is always ZERO through a closed surface (Gauss's law for magnetism)."
+  ]
+}

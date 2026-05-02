@@ -1,0 +1,58 @@
+{
+  "chapter": 7,
+  "name": "Integrals",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 7",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "7.1 Integration as Anti-Differentiation",
+      "body": "<p>An <b>antiderivative</b> (or primitive) of $f$ is a function $F$ with $F'(x)=f(x)$. The collection of all antiderivatives is the <b>indefinite integral</b>:</p><p>$\\int f(x)\\,dx=F(x)+C,$ where $C$ is the constant of integration.</p><p>Linearity: $\\int[af(x)+bg(x)]dx=a\\!\\int f(x)dx+b\\!\\int g(x)dx.$</p>",
+      "keyFormulae": ["$\\int f\\,dx=F+C$ where $F'=f$"]
+    },
+    {
+      "heading": "7.2 Standard Integrals",
+      "body": "<ul><li>$\\int x^{n}dx=\\dfrac{x^{n+1}}{n+1}+C,\\;n\\neq-1$.</li><li>$\\int\\dfrac{dx}{x}=\\ln|x|+C$.</li><li>$\\int e^{x}dx=e^{x}+C$, $\\int a^{x}dx=\\dfrac{a^{x}}{\\ln a}+C$.</li><li>$\\int\\sin x\\,dx=-\\cos x+C$, $\\int\\cos x\\,dx=\\sin x+C$.</li><li>$\\int\\sec^{2}x\\,dx=\\tan x+C$, $\\int\\csc^{2}x\\,dx=-\\cot x+C$.</li><li>$\\int\\sec x\\tan x\\,dx=\\sec x+C$, $\\int\\csc x\\cot x\\,dx=-\\csc x+C$.</li><li>$\\int\\dfrac{dx}{\\sqrt{1-x^{2}}}=\\sin^{-1}x+C$, $\\int\\dfrac{dx}{1+x^{2}}=\\tan^{-1}x+C$, $\\int\\dfrac{dx}{x\\sqrt{x^{2}-1}}=\\sec^{-1}|x|+C$.</li></ul>",
+      "keyFormulae": ["$\\int x^{n}dx=\\dfrac{x^{n+1}}{n+1}+C$", "$\\int\\dfrac{dx}{1+x^{2}}=\\tan^{-1}x+C$"]
+    },
+    {
+      "heading": "7.3 Integration by Substitution",
+      "body": "<p>If $u=g(x)$, $du=g'(x)dx$, then $\\int f(g(x))\\,g'(x)\\,dx=\\int f(u)\\,du.$</p><p>Useful patterns:</p><ul><li>$\\int\\tan x\\,dx=\\ln|\\sec x|+C$ (substitute $u=\\cos x$).</li><li>$\\int\\sec x\\,dx=\\ln|\\sec x+\\tan x|+C$.</li><li>$\\int\\csc x\\,dx=\\ln|\\csc x-\\cot x|+C$.</li><li>$\\int\\dfrac{f'(x)}{f(x)}dx=\\ln|f(x)|+C$.</li></ul>",
+      "keyFormulae": ["$\\int f(g(x))g'(x)dx=\\int f(u)du$ with $u=g(x)$", "$\\int\\sec x\\,dx=\\ln|\\sec x+\\tan x|+C$"]
+    },
+    {
+      "heading": "7.4 Integration by Partial Fractions",
+      "body": "<p>For a proper rational function $\\dfrac{P(x)}{Q(x)}$ with $\\deg P<\\deg Q$, decompose $\\dfrac{P}{Q}$ into a sum of simpler fractions corresponding to the linear and irreducible quadratic factors of $Q$.</p><p>Standard forms:</p><ul><li>Each linear factor $(ax+b)\\to\\dfrac{A}{ax+b}$.</li><li>Repeated linear $(ax+b)^{k}\\to\\dfrac{A_1}{ax+b}+\\dfrac{A_2}{(ax+b)^{2}}+\\dots+\\dfrac{A_k}{(ax+b)^{k}}$.</li><li>Quadratic $(ax^{2}+bx+c)$ irreducible$\\to\\dfrac{Ax+B}{ax^{2}+bx+c}$.</li></ul><p>If improper, perform polynomial division first.</p>",
+      "keyFormulae": ["$\\dfrac{1}{(x-a)(x-b)}=\\dfrac{1}{a-b}\\!\\left(\\dfrac{1}{x-a}-\\dfrac{1}{x-b}\\right)$"]
+    },
+    {
+      "heading": "7.5 Integration by Parts",
+      "body": "<p>$\\int u\\,dv=uv-\\int v\\,du.$ Equivalently, $\\int u(x)\\,v'(x)\\,dx=u(x)v(x)-\\int v(x)\\,u'(x)\\,dx.$</p><p><b>ILATE/LIATE</b> rule for choosing $u$: Inverse trig, Logarithmic, Algebraic, Trigonometric, Exponential — pick $u$ as the one earlier in the list.</p><p><b>Useful identity.</b> $\\int e^{x}[f(x)+f'(x)]\\,dx=e^{x}f(x)+C.$</p>",
+      "keyFormulae": ["$\\int u\\,dv=uv-\\int v\\,du$", "$\\int e^{x}[f+f']dx=e^{x}f+C$"]
+    },
+    {
+      "heading": "7.6 Special Integrals",
+      "body": "<ul><li>$\\int\\dfrac{dx}{x^{2}-a^{2}}=\\dfrac{1}{2a}\\ln\\!\\left|\\dfrac{x-a}{x+a}\\right|+C$.</li><li>$\\int\\dfrac{dx}{a^{2}-x^{2}}=\\dfrac{1}{2a}\\ln\\!\\left|\\dfrac{a+x}{a-x}\\right|+C$.</li><li>$\\int\\dfrac{dx}{x^{2}+a^{2}}=\\dfrac{1}{a}\\tan^{-1}\\!\\dfrac{x}{a}+C$.</li><li>$\\int\\dfrac{dx}{\\sqrt{a^{2}-x^{2}}}=\\sin^{-1}\\!\\dfrac{x}{a}+C$.</li><li>$\\int\\dfrac{dx}{\\sqrt{x^{2}\\pm a^{2}}}=\\ln\\!\\left|x+\\sqrt{x^{2}\\pm a^{2}}\\right|+C$.</li><li>$\\int\\sqrt{a^{2}-x^{2}}\\,dx=\\dfrac{x}{2}\\sqrt{a^{2}-x^{2}}+\\dfrac{a^{2}}{2}\\sin^{-1}\\!\\dfrac{x}{a}+C$.</li><li>$\\int\\sqrt{x^{2}\\pm a^{2}}\\,dx=\\dfrac{x}{2}\\sqrt{x^{2}\\pm a^{2}}\\pm\\dfrac{a^{2}}{2}\\ln\\!\\left|x+\\sqrt{x^{2}\\pm a^{2}}\\right|+C$.</li></ul>",
+      "keyFormulae": ["$\\int\\dfrac{dx}{x^{2}+a^{2}}=\\dfrac{1}{a}\\tan^{-1}\\!\\dfrac{x}{a}+C$"]
+    },
+    {
+      "heading": "7.7 Definite Integral & Fundamental Theorem of Calculus",
+      "body": "<p>The <b>definite integral</b> $\\int_{a}^{b} f(x)\\,dx$ represents the signed area under $y=f(x)$ between $x=a$ and $x=b$. Defined as a limit of Riemann sums.</p><p><b>FTC Part 1.</b> If $A(x)=\\int_{a}^{x}f(t)\\,dt$ then $A'(x)=f(x)$.</p><p><b>FTC Part 2.</b> If $F$ is any antiderivative of $f$ then $\\int_{a}^{b}f(x)\\,dx=F(b)-F(a).$</p>",
+      "keyFormulae": ["$\\int_a^b f\\,dx=F(b)-F(a)$"]
+    },
+    {
+      "heading": "7.8 Properties of Definite Integrals",
+      "body": "<ol><li>$\\int_a^b f(x)\\,dx=\\int_a^b f(t)\\,dt$ (rename dummy variable).</li><li>$\\int_a^b f\\,dx=-\\int_b^a f\\,dx$.</li><li>$\\int_a^b f\\,dx=\\int_a^c f\\,dx+\\int_c^b f\\,dx$.</li><li>$\\int_a^b f(x)\\,dx=\\int_a^b f(a+b-x)\\,dx$.</li><li>$\\int_0^a f(x)\\,dx=\\int_0^a f(a-x)\\,dx$.</li><li>$\\int_0^{2a}f(x)\\,dx=\\int_0^a [f(x)+f(2a-x)]\\,dx$; equals $2\\int_0^a f$ if $f(2a-x)=f(x)$, equals $0$ if $f(2a-x)=-f(x)$.</li><li>$\\int_{-a}^{a}f(x)\\,dx=2\\int_0^{a}f(x)\\,dx$ if $f$ even; $=0$ if $f$ odd.</li></ol>",
+      "keyFormulae": ["$\\int_0^a f(x)dx=\\int_0^a f(a-x)dx$", "$\\int_{-a}^{a}f=0$ for $f$ odd"]
+    }
+  ],
+  "summary": "Indefinite integration inverts differentiation up to the constant $C$. The standard table covers powers, exponentials, trig, and inverse-trig forms. Substitution converts $\\int f(g(x))g'(x)dx$ to $\\int f(u)du$; partial fractions splits rational integrands; integration by parts uses $\\int u\\,dv=uv-\\int v\\,du$ with ILATE choice. Special-form integrals handle $1/(x^{2}\\pm a^{2})$, $1/\\sqrt{a^{2}-x^{2}}$, $\\sqrt{x^{2}\\pm a^{2}}$. Definite integrals compute net signed areas via FTC: $\\int_a^b f=F(b)-F(a)$, with symmetry properties simplifying many evaluations.",
+  "pitfalls": [
+    "Forgetting the $+C$ in indefinite integrals.",
+    "Wrong sign on $\\int\\sin x\\,dx$ — it is $-\\cos x+C$.",
+    "Doing partial fractions on an improper rational without dividing first.",
+    "Choosing $u$ wrong in integration by parts — apply ILATE.",
+    "Substituting in a definite integral but forgetting to change the limits.",
+    "Treating $\\int_a^b f\\,dx$ as positive area even when $f<0$ on part of $[a,b]$."
+  ]
+}

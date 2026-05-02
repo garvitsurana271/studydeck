@@ -1,0 +1,47 @@
+{
+  "chapter": 4,
+  "name": "Determinants",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 4",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "4.1 Determinant — Definition",
+      "body": "<p>To every square matrix $A=[a_{ij}]_{n\\times n}$ we associate a number $\\det A$ (or $|A|$).</p><p>For $n=1$: $|a_{11}|=a_{11}$.</p><p>For $n=2$: $\\det\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}=ad-bc.$</p><p>For $n=3$, expansion along row 1: $\\det A=a_{11}\\!\\begin{vmatrix}a_{22}&a_{23}\\\\a_{32}&a_{33}\\end{vmatrix}-a_{12}\\!\\begin{vmatrix}a_{21}&a_{23}\\\\a_{31}&a_{33}\\end{vmatrix}+a_{13}\\!\\begin{vmatrix}a_{21}&a_{22}\\\\a_{31}&a_{32}\\end{vmatrix}.$</p><p>General Laplace expansion along row $i$: $\\det A=\\sum_{j=1}^{n}(-1)^{i+j}a_{ij}M_{ij}$, where $M_{ij}$ is the $(i,j)$-minor.</p>",
+      "keyFormulae": ["$\\det A=\\sum_j (-1)^{i+j}a_{ij}M_{ij}$", "$\\begin{vmatrix}a&b\\\\c&d\\end{vmatrix}=ad-bc$"]
+    },
+    {
+      "heading": "4.2 Properties of Determinants",
+      "body": "<ol><li>$\\det A^{T}=\\det A$.</li><li>Interchange of two rows (or columns) changes the sign.</li><li>If two rows (cols) are identical, $\\det A=0$.</li><li>Multiplying any one row by $k$ multiplies $\\det A$ by $k$. So $\\det(kA)=k^{n}\\det A$ for $n\\times n$.</li><li>If a row is the sum of two row-vectors, the determinant splits as a sum of two determinants.</li><li>$R_i\\to R_i+kR_j$ ($i\\neq j$) leaves $\\det A$ unchanged.</li><li>$\\det(AB)=\\det A\\cdot\\det B$.</li></ol>",
+      "keyFormulae": ["$\\det(AB)=\\det A\\,\\det B$", "$\\det(kA)=k^{n}\\det A$"]
+    },
+    {
+      "heading": "4.3 Area of a Triangle",
+      "body": "<p>If a triangle has vertices $(x_1,y_1)$, $(x_2,y_2)$, $(x_3,y_3)$, its area is</p><p>$\\Delta=\\dfrac{1}{2}\\,\\Bigg|\\;\\begin{vmatrix}x_1&y_1&1\\\\x_2&y_2&1\\\\x_3&y_3&1\\end{vmatrix}\\;\\Bigg|.$</p><p>Three points are <b>collinear</b> iff the determinant is $0$. Without absolute value, the determinant gives a signed area (used to determine orientation).</p>",
+      "keyFormulae": ["$\\Delta=\\tfrac{1}{2}|\\,\\det(\\text{vertex matrix})|$", "Collinear $\\Leftrightarrow \\det=0$"]
+    },
+    {
+      "heading": "4.4 Minors, Cofactors and Adjoint",
+      "body": "<p><b>Minor</b> $M_{ij}$ = determinant of the $(n-1)\\times(n-1)$ matrix left after deleting row $i$ and column $j$.</p><p><b>Cofactor</b> $A_{ij}=(-1)^{i+j}M_{ij}$.</p><p><b>Adjoint</b> of $A$: $\\operatorname{adj}A=[A_{ij}]^{T}$ — the transpose of the cofactor matrix.</p><p>Key identity: $A\\,(\\operatorname{adj}A)=(\\operatorname{adj}A)\\,A=(\\det A)\\,I.$</p>",
+      "keyFormulae": ["$A_{ij}=(-1)^{i+j}M_{ij}$", "$A\\cdot\\text{adj}A=(\\det A)I$"]
+    },
+    {
+      "heading": "4.5 Inverse of a Matrix",
+      "body": "<p>$A$ is <b>singular</b> if $\\det A=0$, else <b>non-singular</b>. A square matrix is invertible iff it is non-singular.</p><p>Formula: $A^{-1}=\\dfrac{1}{\\det A}\\operatorname{adj}A,\\qquad\\det A\\neq 0.$</p><p>Useful: $|\\operatorname{adj}A|=|A|^{n-1}$ and $\\operatorname{adj}(AB)=\\operatorname{adj}B\\,\\operatorname{adj}A$, $(A^{-1})^{-1}=A$, $(A^{-1})^{T}=(A^{T})^{-1}$.</p>",
+      "keyFormulae": ["$A^{-1}=\\dfrac{1}{|A|}\\,\\text{adj}A$", "$|\\text{adj}A|=|A|^{n-1}$"]
+    },
+    {
+      "heading": "4.6 Linear Equations — Matrix Method",
+      "body": "<p>System $AX=B$ with $A$ square. Three cases:</p><ul><li><b>$\\det A\\neq 0$</b>: unique solution $X=A^{-1}B$. (Consistent.)</li><li><b>$\\det A=0$ and $(\\operatorname{adj}A)B=O$</b>: infinitely many solutions OR none — examine further. (System is consistent if a solution exists; otherwise inconsistent.)</li><li><b>$\\det A=0$ and $(\\operatorname{adj}A)B\\neq O$</b>: <b>no solution</b> (inconsistent).</li></ul><p>For homogeneous $AX=O$: trivial solution $X=O$ always. Non-trivial solutions exist iff $\\det A=0$.</p>",
+      "keyFormulae": ["$X=A^{-1}B$ when $|A|\\neq 0$", "Homogeneous: non-trivial iff $|A|=0$"]
+    }
+  ],
+  "summary": "Determinant is a scalar attached to a square matrix; computed by Laplace expansion. Properties (sign-flip on row swap, zero for repeated rows, multilinearity, invariance under $R_i\\to R_i+kR_j$, $\\det(AB)=\\det A\\det B$) make calculations tractable. Adjoint satisfies $A\\,\\text{adj}A=|A|I$, giving the inverse $A^{-1}=\\tfrac{1}{|A|}\\text{adj}A$ when $|A|\\neq 0$. Linear systems $AX=B$ are solved by $X=A^{-1}B$ if non-singular; otherwise compare $(\\text{adj}A)B$ to $O$ for consistency.",
+  "pitfalls": [
+    "Forgetting the cofactor sign $(-1)^{i+j}$.",
+    "Writing $\\det(kA)=k\\det A$ — it is $k^{n}\\det A$ for an $n\\times n$ matrix.",
+    "Computing $\\text{adj}A$ without taking the transpose of the cofactor matrix.",
+    "Trying $A^{-1}$ when $\\det A=0$ — does not exist.",
+    "For area of a triangle, dropping the $\\tfrac12$ or the absolute value."
+  ]
+}

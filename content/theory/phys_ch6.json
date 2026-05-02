@@ -1,0 +1,58 @@
+{
+  "chapter": 6,
+  "name": "Electromagnetic Induction",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 6",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. Magnetic Flux",
+      "body": "<p><b>Magnetic flux</b> through a surface is the surface integral of $\\vec{B}$: $$\\Phi_B = \\int \\vec{B}\\cdot d\\vec{A}$$ For a uniform field through a flat area: $\\Phi_B = BA\\cos\\theta$, where $\\theta$ is the angle between $\\vec{B}$ and the normal $\\hat{n}$. Unit: <b>weber (Wb) = T·m²</b>.</p><p>Flux is a scalar (with sign depending on orientation). Maximum when $\\vec{B}\\parallel\\hat{n}$, zero when $\\vec{B}\\perp\\hat{n}$.</p>",
+      "keyFormulae": ["\\Phi_B = \\int \\vec{B}\\cdot d\\vec{A}", "\\Phi_B = BA\\cos\\theta"]
+    },
+    {
+      "heading": "2. Faraday's Laws",
+      "body": "<p>Faraday's experiments showed that a changing magnetic flux through a circuit induces an EMF:</p><ul><li><b>First law</b>: an EMF is induced whenever the flux through a circuit changes.</li><li><b>Second law</b>: the magnitude of induced EMF is proportional to the rate of change of flux: $$\\varepsilon = -\\dfrac{d\\Phi_B}{dt}$$</li></ul><p>For a coil of $N$ turns: $\\varepsilon = -N\\,d\\Phi_B/dt$. The induced current $I = \\varepsilon/R$. Charge that flows in time $\\Delta t$: $q = \\Delta\\Phi_B/R$ — independent of how fast the change happens.</p>",
+      "keyFormulae": ["\\varepsilon = -\\dfrac{d\\Phi_B}{dt}", "\\varepsilon = -N\\dfrac{d\\Phi_B}{dt}"]
+    },
+    {
+      "heading": "3. Lenz's Law and Conservation of Energy",
+      "body": "<p><b>Lenz's law</b>: the direction of induced current is such that it opposes the change in flux that produced it.</p><p>This is a consequence of energy conservation. If the induced current aided the change, flux would grow without bound, providing free energy. Instead, the induced current creates a magnetic field opposing the original flux change, and external work must be done to maintain the change — that work appears as electrical (and thermal) energy in the circuit.</p><p>Examples:</p><ul><li>Pushing N pole toward a coil → induced current makes the near face act like N (repels the magnet).</li><li>Pulling magnet away → induced current reverses, attracting magnet.</li></ul><p>The negative sign in Faraday's law $\\varepsilon = -d\\Phi/dt$ encodes Lenz's law.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "4. Motional EMF",
+      "body": "<p>A conducting rod of length $l$ moving with velocity $v$ perpendicular to a uniform field $\\vec{B}$ has free electrons pushed by the Lorentz force, accumulating charge until the resulting electric field balances the magnetic force. The induced (motional) EMF is $$\\varepsilon = Bvl$$ Polarity: positive end is where positive charges accumulate (use $\\vec{F} = q\\vec{v}\\times\\vec{B}$).</p><p>If the rod is part of a closed circuit of resistance $R$, induced current $I = Bvl/R$, and force needed to keep moving: $F_{\\text{ext}} = BIl = B^2 l^2 v/R$. Power delivered: $P = F_{\\text{ext}} v = B^2 l^2 v^2/R$, which equals power dissipated $I^2 R$.</p>",
+      "keyFormulae": ["\\varepsilon = Bvl", "I = \\dfrac{Bvl}{R}", "F = \\dfrac{B^2 l^2 v}{R}"]
+    },
+    {
+      "heading": "5. Eddy Currents",
+      "body": "<p>When a bulk conductor experiences a changing magnetic flux, induced currents flow in closed loops within it — <b>eddy currents</b>. They oppose the change (Lenz) and dissipate energy as heat.</p><p>Applications: induction heating (e.g. cooktops, heat treatment of metals), electromagnetic braking (in trains and electric vehicles), speedometers, dead-beat galvanometers (rapid damping).</p><p>Drawbacks: cause power loss in transformer and motor cores. Mitigated by <b>laminating</b> the core (thin sheets separated by insulation) to break up the loops.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "6. Self-Inductance",
+      "body": "<p>A current $I$ in a coil produces flux through the coil itself, proportional to $I$: $\\Phi = LI$. The proportionality constant $L$ is the <b>self-inductance</b>. Unit: <b>henry (H) = V·s/A = Wb/A</b>.</p><p>Changing current induces a back-EMF: $$\\varepsilon = -L\\dfrac{dI}{dt}$$</p><p>For a long solenoid (length $l$, area $A$, $n$ turns/length, total $N = nl$): $$L = \\mu_0 n^2 A l = \\dfrac{\\mu_0 N^2 A}{l}$$</p><p>Energy stored in inductor: $U = \\dfrac{1}{2}LI^2$. Energy density in field: $u = B^2/(2\\mu_0)$.</p>",
+      "keyFormulae": ["\\varepsilon = -L\\dfrac{dI}{dt}", "L_{\\text{solenoid}} = \\mu_0 n^2 A l", "U = \\dfrac{1}{2}LI^2", "u = \\dfrac{B^2}{2\\mu_0}"]
+    },
+    {
+      "heading": "7. Mutual Inductance",
+      "body": "<p>Two coupled coils: changing current $I_1$ in coil 1 produces flux $\\Phi_2$ in coil 2 proportional to $I_1$: $\\Phi_2 = M I_1$, where $M$ is the <b>mutual inductance</b>. Induced EMF in coil 2: $\\varepsilon_2 = -M\\,dI_1/dt$. By symmetry $M_{12} = M_{21}$.</p><p>For two coaxial solenoids (inner $n_1$ turns/length, outer $n_2$, common area $A$, length $l$): $$M = \\mu_0 n_1 n_2 A l$$</p><p>Coupling coefficient: $k = M/\\sqrt{L_1 L_2}$, with $0 \\le k \\le 1$. $k = 1$ for ideal coupling (used in transformers).</p>",
+      "keyFormulae": ["\\varepsilon_2 = -M\\dfrac{dI_1}{dt}", "M = \\mu_0 n_1 n_2 A l", "k = \\dfrac{M}{\\sqrt{L_1 L_2}}"]
+    },
+    {
+      "heading": "8. AC Generator",
+      "body": "<p>Mechanical energy is converted to electrical energy by rotating a coil in a magnetic field. A coil of $N$ turns, area $A$, rotating at angular frequency $\\omega$ in field $\\vec{B}$ generates flux $\\Phi = NBA\\cos(\\omega t)$.</p><p>Induced EMF: $$\\varepsilon = -\\dfrac{d\\Phi}{dt} = NBA\\omega\\sin(\\omega t) = \\varepsilon_0\\sin(\\omega t)$$ where peak EMF $\\varepsilon_0 = NBA\\omega$. Output is sinusoidal AC.</p><p>Components: armature (rotating coil), field magnet, slip rings (for AC) or commutator (for DC), brushes. Frequency in India: 50 Hz.</p>",
+      "keyFormulae": ["\\varepsilon = NBA\\omega\\sin(\\omega t)", "\\varepsilon_0 = NBA\\omega"]
+    }
+  ],
+  "summary": "Faraday: $\\varepsilon = -d\\Phi_B/dt$. Lenz: induced current opposes the flux change (energy conservation). Motional EMF $\\varepsilon = Bvl$. Eddy currents heat conductors and damp motion. Self-inductance $\\varepsilon = -L\\,dI/dt$, energy $\\tfrac{1}{2}LI^2$, density $B^2/(2\\mu_0)$. Mutual inductance couples two coils, basis of transformer. AC generator gives $\\varepsilon = NBA\\omega\\sin\\omega t$.",
+  "pitfalls": [
+    "Faraday's law gives EMF, not current — current depends on resistance too.",
+    "Lenz's law gives DIRECTION; sign is automatic via the minus sign in dΦ/dt.",
+    "Charge induced (q = ΔΦ/R) depends only on net flux change, NOT on rate.",
+    "An inductor opposes change in current, not current itself — at steady DC it acts as a wire.",
+    "Energy in inductor lives in the magnetic field (u = B²/2μ₀), analogous to capacitor's E²/2 ε₀.",
+    "Eddy currents are mitigated by lamination — break up the conducting paths."
+  ]
+}

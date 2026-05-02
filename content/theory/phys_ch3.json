@@ -1,0 +1,68 @@
+{
+  "chapter": 3,
+  "name": "Current Electricity",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 3",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. Electric Current and Current Density",
+      "body": "<p>Electric current is the rate of flow of charge through a cross-section: $$I = \\dfrac{dq}{dt}$$ SI unit: <b>ampere (A) = C/s</b>. Conventional current is in the direction of positive-charge flow (opposite to electron flow in a metal).</p><p>For uniform current through area $A$, the <b>current density</b> $\\vec{j}$ has magnitude $j = I/A$ and points along $\\vec{v}_d$ for positive carriers. In general $I = \\int \\vec{j}\\cdot d\\vec{A}$. Unit: A/m².</p><p>Current is a scalar (does not obey vector addition at junctions — Kirchhoff's current law applies), but current density is a vector.</p>",
+      "keyFormulae": ["I = \\dfrac{dq}{dt}", "I = \\int \\vec{j}\\cdot d\\vec{A}"]
+    },
+    {
+      "heading": "2. Drift Velocity and Mobility",
+      "body": "<p>In a conductor, free electrons collide randomly with ions; an applied field $\\vec{E}$ superimposes a small <b>drift velocity</b> $\\vec{v}_d$ opposite to $\\vec{E}$: $$\\vec{v}_d = -\\dfrac{e\\vec{E}}{m}\\tau$$ where $\\tau$ is the average time between collisions and $m$ the electron mass. Typical $v_d \\sim$ mm/s.</p><p>Current in terms of drift: $I = neAv_d$, where $n$ is number density of free electrons. Hence $j = nev_d$.</p><p><b>Mobility</b> is drift velocity per unit field: $\\mu = v_d/E = e\\tau/m$. Unit: m²/(V·s). Conductivity $\\sigma = ne\\mu$.</p>",
+      "keyFormulae": ["v_d = \\dfrac{eE\\tau}{m}", "I = neAv_d", "\\mu = \\dfrac{v_d}{E}"]
+    },
+    {
+      "heading": "3. Ohm's Law and Resistance",
+      "body": "<p><b>Ohm's law</b>: at constant temperature, $V = IR$, where $R$ is the resistance of the conductor. Unit: <b>ohm (Ω) = V/A</b>.</p><p>In microscopic form: $\\vec{j} = \\sigma \\vec{E}$, equivalently $\\vec{E} = \\rho\\vec{j}$, where $\\rho$ is resistivity and $\\sigma = 1/\\rho$ is conductivity.</p><p>For a uniform conductor of length $l$ and area $A$: $$R = \\rho\\dfrac{l}{A}$$ Resistivity $\\rho$ is a material property, independent of dimensions. Substances obeying Ohm's law (linear $V$-$I$) are <b>ohmic</b>; semiconductors, vacuum tubes, etc., are <b>non-ohmic</b>.</p>",
+      "keyFormulae": ["V = IR", "R = \\rho\\dfrac{l}{A}", "\\vec{j} = \\sigma \\vec{E}"]
+    },
+    {
+      "heading": "4. Temperature Dependence of Resistivity",
+      "body": "<p>For metals, resistivity increases with temperature (more frequent collisions): $$\\rho_T = \\rho_0[1 + \\alpha(T - T_0)]$$ where $\\alpha$ is the temperature coefficient of resistivity. For typical metals $\\alpha \\approx 4 \\times 10^{-3}\\,\\text{K}^{-1}$ (positive).</p><p>For semiconductors and insulators, $\\rho$ decreases with $T$ (more carriers thermally excited) — $\\alpha$ is negative.</p><p>Some alloys (Manganin, Constantan) have very small $\\alpha$ — used for standard resistors. <b>Superconductors</b> show $\\rho = 0$ below a critical temperature.</p>",
+      "keyFormulae": ["\\rho_T = \\rho_0[1 + \\alpha(T - T_0)]"]
+    },
+    {
+      "heading": "5. Combination of Resistors",
+      "body": "<p><b>Series</b>: same current, voltages add. $$R_s = R_1 + R_2 + \\cdots$$ Equivalent resistance is greater than the largest individual.</p><p><b>Parallel</b>: same voltage, currents add. $$\\dfrac{1}{R_p} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2} + \\cdots$$ Equivalent is less than the smallest individual.</p><p>For two resistors in parallel: $R_p = R_1 R_2/(R_1 + R_2)$.</p>",
+      "keyFormulae": ["R_s = \\sum R_i", "\\dfrac{1}{R_p} = \\sum \\dfrac{1}{R_i}"]
+    },
+    {
+      "heading": "6. EMF, Internal Resistance, Terminal Voltage",
+      "body": "<p><b>EMF</b> ($\\varepsilon$) of a cell is the work done by its non-electrostatic source per unit positive charge in carrying it from negative to positive terminal inside the cell (open circuit).</p><p>A real cell has <b>internal resistance</b> $r$. When current $I$ flows: $$V = \\varepsilon - Ir$$ where $V$ is the terminal voltage. On discharging, $V < \\varepsilon$; on charging, $V = \\varepsilon + Ir$.</p><p>Maximum (short-circuit) current: $I_{sc} = \\varepsilon/r$.</p><p>For cells in series: $\\varepsilon_{eq} = \\sum \\varepsilon_i$, $r_{eq} = \\sum r_i$. For parallel cells of identical $\\varepsilon$, $r$: $\\varepsilon_{eq} = \\varepsilon$, $r_{eq} = r/n$.</p>",
+      "keyFormulae": ["V = \\varepsilon - Ir", "I = \\dfrac{\\varepsilon}{R + r}"]
+    },
+    {
+      "heading": "7. Kirchhoff's Laws",
+      "body": "<p><b>Junction (KCL) rule</b>: at any junction, $\\sum I_{\\text{in}} = \\sum I_{\\text{out}}$, i.e. $\\sum I = 0$. Conservation of charge.</p><p><b>Loop (KVL) rule</b>: around any closed loop, $\\sum \\Delta V = 0$. Conservation of energy. Sign convention: traversing a resistor in current direction gives $-IR$; traversing a cell from $-$ to $+$ gives $+\\varepsilon$.</p><p>These rules let you solve any DC network with multiple sources and loops by setting up simultaneous equations.</p>",
+      "keyFormulae": ["\\sum_{\\text{junction}} I = 0", "\\sum_{\\text{loop}} \\Delta V = 0"]
+    },
+    {
+      "heading": "8. Wheatstone Bridge",
+      "body": "<p>Four resistors $P, Q, R, S$ form a quadrilateral with a galvanometer between two opposite junctions and a battery between the other two. The bridge is <b>balanced</b> (zero galvanometer current) when $$\\dfrac{P}{Q} = \\dfrac{R}{S}$$ At balance, the galvanometer arm carries no current, so its exact resistance doesn't matter. Used in the <b>metre bridge</b> to measure unknown resistances precisely.</p><p>The metre bridge applies the principle with $P, Q$ as resistance per unit length on a uniform wire: $R/S = l/(100-l)$ where $l$ cm is the balance length.</p>",
+      "keyFormulae": ["\\dfrac{P}{Q} = \\dfrac{R}{S}"]
+    },
+    {
+      "heading": "9. Potentiometer",
+      "body": "<p>A long uniform wire of resistance per unit length $\\sigma_R$ carries a constant current; potential drop is uniform along its length. The <b>potential gradient</b> $k = $ V per unit length.</p><p>Used to measure EMF (no current drawn at balance, so no $Ir$ drop). If unknown EMF $\\varepsilon$ balances at length $l$: $\\varepsilon = kl$.</p><p>To compare two EMFs: $\\dfrac{\\varepsilon_1}{\\varepsilon_2} = \\dfrac{l_1}{l_2}$. To find internal resistance $r$ of a cell: balance EMF $\\varepsilon$ at $l_1$ open-circuit, then with shunt $R$ across cell at $l_2$: $r = R(l_1 - l_2)/l_2$.</p><p>Potentiometer is preferred over voltmeter because it draws no current at balance — measures true EMF.</p>",
+      "keyFormulae": ["\\varepsilon = kl", "\\dfrac{\\varepsilon_1}{\\varepsilon_2} = \\dfrac{l_1}{l_2}", "r = R\\dfrac{l_1 - l_2}{l_2}"]
+    },
+    {
+      "heading": "10. Power and Heating Effect",
+      "body": "<p>Power dissipated in a resistor: $$P = VI = I^2 R = \\dfrac{V^2}{R}$$ Unit: <b>watt (W)</b>. Energy dissipated as heat in time $t$: $W = Pt$.</p><p><b>Joule's law of heating</b>: $H = I^2 R t$ joules. This is the basis of fuses, heaters, bulbs.</p><p>For a battery delivering current $I$: total power $P_{\\text{total}} = \\varepsilon I$, power delivered to external circuit $P_{\\text{ext}} = VI = \\varepsilon I - I^2 r$.</p><p>Maximum power transfer occurs when external resistance equals internal resistance ($R = r$).</p>",
+      "keyFormulae": ["P = VI = I^2 R = \\dfrac{V^2}{R}", "H = I^2 R t"]
+    }
+  ],
+  "summary": "Current $I = nev_d A$ from drift velocity. Ohm's law $V = IR$, with $R = \\rho l/A$. Resistivity rises with $T$ in metals, falls in semiconductors. Real cells: $V = \\varepsilon - Ir$. Kirchhoff's junction and loop rules solve networks. Wheatstone $P/Q = R/S$ enables precise resistance measurement. Potentiometer compares EMFs without drawing current. Power dissipated = $I^2 R$.",
+  "pitfalls": [
+    "Drift velocity is tiny (mm/s); current signal travels at near-light speed because the field is set up nearly instantly throughout the wire.",
+    "EMF and terminal voltage differ by Ir; only equal when no current flows.",
+    "In a balanced Wheatstone bridge, galvanometer reading is zero — its exact resistance does NOT affect balance condition.",
+    "Resistors in parallel: 1/R_p formula, NOT R_1 R_2/(R_1+R_2) for more than two — many students misapply.",
+    "Internal resistance r is in series with the EMF inside the cell; on discharging V < ε, on charging V > ε.",
+    "Conventional current opposite to electron flow — confused frequently."
+  ]
+}

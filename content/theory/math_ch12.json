@@ -1,0 +1,42 @@
+{
+  "chapter": 12,
+  "name": "Linear Programming",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 12",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "12.1 LPP — Setup & Terminology",
+      "body": "<p>A <b>linear programming problem (LPP)</b> seeks to optimise (maximise or minimise) a linear <b>objective function</b> $Z=ax+by$ subject to <b>linear constraints</b> in the variables $x,y\\geq 0$.</p><p><b>Standard form.</b></p><p>Maximise (or Minimise) $Z=ax+by$, subject to $a_i x+b_i y\\leq(\\geq)c_i,\\;i=1,\\dots,m$ and $x,y\\geq 0$ (non-negativity).</p><p>Key terms: <b>decision variables</b> ($x,y$), <b>constraints</b> (linear inequalities), <b>non-negativity restrictions</b>, <b>feasible region</b> (set of all $(x,y)$ satisfying all constraints), <b>feasible solution</b>, <b>optimal solution</b> (maximises or minimises $Z$).</p>",
+      "keyFormulae": ["$Z=ax+by$", "Constraints linear, $x,y\\geq 0$"]
+    },
+    {
+      "heading": "12.2 Graphical Method",
+      "body": "<p>For two-variable LPPs we use the <b>corner-point method</b>:</p><ol><li>Write all constraints. Treat each $\\leq$ or $\\geq$ as an equation, plot the line, and shade the half-plane that satisfies the inequality.</li><li>The intersection of all shaded regions is the <b>feasible region</b>.</li><li>Identify the <b>corner points (vertices)</b> of this region.</li><li>Compute $Z=ax+by$ at every corner point.</li><li>The maximum (or minimum) of these values is the optimal value, and the corresponding vertex is the optimal solution.</li></ol>",
+      "keyFormulae": ["Optimum at vertex of feasible region"]
+    },
+    {
+      "heading": "12.3 Bounded vs Unbounded Feasible Regions",
+      "body": "<p>If the feasible region is <b>bounded</b>, the objective function attains BOTH a maximum and a minimum at corner points.</p><p>If the feasible region is <b>unbounded</b>, $Z$ may not attain a max/min. <b>Test:</b> after finding the candidate optimum $M$ at a corner point, check whether the open half-plane $ax+by>M$ (for max) or $ax+by<M$ (for min) has any common point with the feasible region.</p><ul><li>If yes — there is no maximum (or minimum).</li><li>If no — $M$ is the maximum (or minimum).</li></ul>",
+      "keyFormulae": ["Bounded $\\Rightarrow$ extrema exist at vertices", "Unbounded $\\Rightarrow$ test half-plane $ax+by\\gtrless M$"]
+    },
+    {
+      "heading": "12.4 Special Cases & Multiple Solutions",
+      "body": "<p><b>Multiple optimal solutions.</b> If the line $ax+by=Z_{\\max}$ is parallel to a boundary edge of the feasible region, then every point on that edge gives the same optimal $Z$. Solutions are then infinitely many along the edge.</p><p><b>Infeasibility.</b> If constraints contradict each other, the feasible region is empty and the LPP has no solution.</p><p><b>Redundant constraint.</b> A constraint that does not change the feasible region.</p>",
+      "keyFormulae": ["Edge parallel to $Z=k$: infinitely many optima"]
+    },
+    {
+      "heading": "12.5 Common Application Types",
+      "body": "<p>Standard problem types:</p><ul><li><b>Manufacturing / production</b>: limited resources (labour, machine time, raw material) split between two products to maximise profit.</li><li><b>Diet problem</b>: choose quantities of foods to meet nutritional minimums at minimum cost.</li><li><b>Transportation</b>: ship goods from sources to destinations at minimum cost respecting supply and demand.</li><li><b>Allocation / blending</b>: mix products to meet specs at minimum cost.</li></ul><p><b>Modelling steps.</b></p><ol><li>Identify decision variables.</li><li>Write the objective function.</li><li>Express each restriction as a linear inequality.</li><li>Add non-negativity $x,y\\geq 0$.</li><li>Solve graphically.</li></ol>",
+      "keyFormulae": ["Objective + constraints + $x,y\\geq 0$"]
+    }
+  ],
+  "summary": "An LPP optimises a linear objective $Z=ax+by$ over a region defined by linear inequalities and $x,y\\geq 0$. Solve graphically: plot constraints, identify the feasible region, evaluate $Z$ at each corner point, pick the optimal value. Bounded feasible regions guarantee optima at vertices; unbounded regions need an extra check via the open half-plane test. Multiple optima occur when the objective line is parallel to a boundary edge.",
+  "pitfalls": [
+    "Forgetting non-negativity constraints $x\\geq 0$, $y\\geq 0$.",
+    "Shading the wrong side of an inequality — substitute a test point like $(0,0)$ to verify.",
+    "Skipping the unbounded-region check and reporting a false maximum.",
+    "Computing $Z$ only at one or two vertices rather than ALL corner points.",
+    "Forgetting that integer constraints (when applicable) may rule out fractional vertex solutions."
+  ]
+}

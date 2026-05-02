@@ -1,0 +1,58 @@
+{
+  "chapter": 7,
+  "name": "Alternating Current",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 7",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. AC Source and RMS Values",
+      "body": "<p>An alternating EMF varies sinusoidally with time: $\\varepsilon = \\varepsilon_0 \\sin(\\omega t)$, where $\\omega = 2\\pi f$ is the angular frequency, $\\varepsilon_0$ the peak EMF. In India $f = 50$ Hz.</p><p>Average over a full cycle: $\\langle I\\rangle = 0$. Useful average is the <b>root-mean-square</b> value: $$I_{\\text{rms}} = \\dfrac{I_0}{\\sqrt{2}} \\approx 0.707\\,I_0$$ Same: $V_{\\text{rms}} = V_0/\\sqrt{2}$.</p><p>RMS values are what AC voltmeters and ammeters read; AC power formulae use RMS. India's 220 V supply means $V_{\\text{rms}} = 220$ V, peak $V_0 = 311$ V.</p>",
+      "keyFormulae": ["I_{\\text{rms}} = \\dfrac{I_0}{\\sqrt{2}}", "V_{\\text{rms}} = \\dfrac{V_0}{\\sqrt{2}}"]
+    },
+    {
+      "heading": "2. AC Through Pure Resistor",
+      "body": "<p>Source $V = V_0\\sin\\omega t$ across resistor $R$: by Ohm's law $I = V_0/R \\sin\\omega t = I_0\\sin\\omega t$. Current and voltage are <b>in phase</b>.</p><p>Average power: $P = V_{\\text{rms}} I_{\\text{rms}} = I_{\\text{rms}}^2 R = V_{\\text{rms}}^2/R$. Resistor dissipates power exactly as in DC, with RMS values.</p>",
+      "keyFormulae": ["I = \\dfrac{V_0}{R}\\sin\\omega t", "P = V_{\\text{rms}} I_{\\text{rms}}"]
+    },
+    {
+      "heading": "3. AC Through Pure Inductor",
+      "body": "<p>For source $V = V_0\\sin\\omega t$ across inductor $L$: $V = L\\,dI/dt$, so $$I = \\dfrac{V_0}{\\omega L}\\sin\\!\\left(\\omega t - \\dfrac{\\pi}{2}\\right)$$ Current <b>lags</b> voltage by $\\pi/2$. Peak current $I_0 = V_0/(\\omega L)$.</p><p>The quantity $X_L = \\omega L = 2\\pi f L$ is the <b>inductive reactance</b> (unit Ω). It increases with frequency. At DC ($f = 0$), $X_L = 0$ — pure inductor is a short.</p><p>Average power: $\\langle P\\rangle = 0$ — a pure inductor consumes no real power, only stores and returns energy.</p>",
+      "keyFormulae": ["X_L = \\omega L = 2\\pi f L", "I_0 = \\dfrac{V_0}{X_L}", "\\phi = -\\dfrac{\\pi}{2}"]
+    },
+    {
+      "heading": "4. AC Through Pure Capacitor",
+      "body": "<p>For source $V = V_0\\sin\\omega t$ across capacitor $C$: $q = CV$, $I = dq/dt = CV_0\\omega\\cos\\omega t$, so $$I = \\dfrac{V_0}{1/(\\omega C)}\\sin\\!\\left(\\omega t + \\dfrac{\\pi}{2}\\right)$$ Current <b>leads</b> voltage by $\\pi/2$.</p><p><b>Capacitive reactance</b>: $X_C = 1/(\\omega C) = 1/(2\\pi f C)$. Decreases with frequency. At DC, $X_C \\to \\infty$ — capacitor blocks DC.</p><p>Average power: zero. Capacitor only stores and returns energy.</p>",
+      "keyFormulae": ["X_C = \\dfrac{1}{\\omega C}", "I_0 = \\dfrac{V_0}{X_C}", "\\phi = +\\dfrac{\\pi}{2}"]
+    },
+    {
+      "heading": "5. Series LCR Circuit and Impedance",
+      "body": "<p>For $R$, $L$, $C$ in series with source $V = V_0\\sin\\omega t$: voltages across each element are out of phase. Use phasor diagram: $V_R$ in phase with $I$, $V_L$ leads by 90°, $V_C$ lags by 90°.</p><p>Net voltage: $V_0 = \\sqrt{V_R^2 + (V_L - V_C)^2}$. <b>Impedance</b>: $$Z = \\sqrt{R^2 + (X_L - X_C)^2}$$ Peak current: $I_0 = V_0/Z$. Phase angle (current relative to voltage): $$\\tan\\phi = \\dfrac{X_L - X_C}{R}$$ If $X_L > X_C$: circuit inductive, current lags. If $X_C > X_L$: capacitive, current leads.</p>",
+      "keyFormulae": ["Z = \\sqrt{R^2 + (X_L - X_C)^2}", "\\tan\\phi = \\dfrac{X_L - X_C}{R}", "I_0 = \\dfrac{V_0}{Z}"]
+    },
+    {
+      "heading": "6. Resonance in Series LCR",
+      "body": "<p>At <b>resonance</b>, $X_L = X_C$, i.e. $\\omega L = 1/(\\omega C)$, giving the <b>resonant angular frequency</b> $$\\omega_0 = \\dfrac{1}{\\sqrt{LC}}, \\quad f_0 = \\dfrac{1}{2\\pi\\sqrt{LC}}$$</p><p>At resonance: $Z = R$ (minimum), $I_0 = V_0/R$ (maximum), phase $\\phi = 0$ (in phase). Sharp peak in current vs frequency.</p><p><b>Quality factor</b> $Q = \\omega_0 L/R = 1/(\\omega_0 RC)$. High $Q$ → sharper resonance, narrower bandwidth $\\Delta\\omega = R/L$. Used in tuning radios.</p><p>Note: at resonance, $V_L$ and $V_C$ can each be much larger than the source voltage — they cancel.</p>",
+      "keyFormulae": ["\\omega_0 = \\dfrac{1}{\\sqrt{LC}}", "Q = \\dfrac{\\omega_0 L}{R} = \\dfrac{1}{R}\\sqrt{\\dfrac{L}{C}}"]
+    },
+    {
+      "heading": "7. Power in AC Circuits — Power Factor",
+      "body": "<p>Average power in an AC circuit: $$P = V_{\\text{rms}} I_{\\text{rms}} \\cos\\phi$$ where $\\cos\\phi$ is the <b>power factor</b>, with $\\cos\\phi = R/Z$ for series LCR.</p><p>Cases:</p><ul><li>Pure resistor: $\\phi = 0$, $\\cos\\phi = 1$, $P = V_{\\text{rms}}I_{\\text{rms}}$ (full power).</li><li>Pure $L$ or $C$: $\\phi = \\pm\\pi/2$, $\\cos\\phi = 0$, $P = 0$ (wattless current).</li><li>Series LCR at resonance: $\\phi = 0$, full power.</li></ul><p>Low power factor wastes capacity; industries use power-factor correction (typically banks of capacitors) to bring $\\cos\\phi$ near 1.</p>",
+      "keyFormulae": ["P = V_{\\text{rms}} I_{\\text{rms}} \\cos\\phi", "\\cos\\phi = \\dfrac{R}{Z}"]
+    },
+    {
+      "heading": "8. Transformer",
+      "body": "<p>A device based on mutual induction that changes AC voltage. Primary coil ($N_p$ turns) and secondary coil ($N_s$ turns) are wound on a common laminated soft-iron core.</p><p>For an ideal transformer (no losses): $$\\dfrac{V_s}{V_p} = \\dfrac{N_s}{N_p}, \\quad \\dfrac{I_s}{I_p} = \\dfrac{N_p}{N_s}$$ so $V_p I_p = V_s I_s$ — power is conserved.</p><p><b>Step-up</b>: $N_s > N_p$ → $V_s > V_p$, $I_s < I_p$. <b>Step-down</b>: opposite.</p><p>Energy losses (real transformers, ~99% efficient): copper loss ($I^2 R$ in windings), iron loss (hysteresis and eddy currents in core), flux leakage. Mitigated by thick low-resistance windings, laminated soft-iron core (low coercivity, low resistivity).</p><p>Used in long-distance transmission: step up at generator (low current → low $I^2 R$ loss in transmission lines), step down for distribution.</p>",
+      "keyFormulae": ["\\dfrac{V_s}{V_p} = \\dfrac{N_s}{N_p}", "V_p I_p = V_s I_s"]
+    }
+  ],
+  "summary": "AC quantities described by RMS: $V_{\\text{rms}} = V_0/\\sqrt{2}$. Resistor: in phase. Inductor: $X_L = \\omega L$, current lags by 90°. Capacitor: $X_C = 1/\\omega C$, current leads by 90°. Series LCR: $Z = \\sqrt{R^2 + (X_L-X_C)^2}$, resonance at $\\omega_0 = 1/\\sqrt{LC}$. Power $P = V_{\\text{rms}} I_{\\text{rms}}\\cos\\phi$. Transformer: $V_s/V_p = N_s/N_p$.",
+  "pitfalls": [
+    "Average current over a full cycle is ZERO; use RMS for power.",
+    "Inductor: current LAGS voltage by π/2; capacitor: current LEADS by π/2 (mnemonic: ICE for capacitor, ELI for inductor — E before I in inductor).",
+    "Pure L or C consumes ZERO real power, but carries 'wattless' current.",
+    "At resonance, V_L and V_C individually can exceed source voltage but cancel each other.",
+    "Transformer works only on AC — DC produces no flux change, no induced EMF.",
+    "Step-up transformer increases voltage but DECREASES current proportionally; power is conserved (in ideal case)."
+  ]
+}

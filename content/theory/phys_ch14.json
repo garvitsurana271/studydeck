@@ -1,0 +1,54 @@
+{
+  "chapter": 14,
+  "name": "Semiconductor Electronics: Materials, Devices and Simple Circuits",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 14",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. Classification of Solids by Conductivity and Bands",
+      "body": "<p>By <b>resistivity</b>:</p><ul><li><b>Metals</b>: $\\rho \\sim 10^{-8}$ – $10^{-6}$ Ω·m.</li><li><b>Semiconductors</b>: $\\rho \\sim 10^{-5}$ – $10^{6}$ Ω·m.</li><li><b>Insulators</b>: $\\rho \\sim 10^{11}$ – $10^{19}$ Ω·m.</li></ul><p><b>Band theory</b>: in solids, atomic energy levels broaden into <b>bands</b>. The two highest occupied bands matter most — <b>valence band</b> (mostly filled) and <b>conduction band</b> (mostly empty). The <b>energy gap</b> $E_g$ separates them.</p><ul><li><b>Metal</b>: bands overlap or conduction band is partly filled — abundant free carriers; conductive at all temperatures.</li><li><b>Insulator</b>: $E_g \\gtrsim 3$ eV — too large for thermal excitation; almost no carriers.</li><li><b>Semiconductor</b>: $E_g \\sim 1$ eV (Si: 1.1 eV, Ge: 0.7 eV) — small enough that thermal excitation creates some electron-hole pairs at room temperature.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "2. Intrinsic Semiconductors",
+      "body": "<p>Pure (intrinsic) Si or Ge: each atom has 4 valence electrons forming covalent bonds. At $T = 0$ K, no free carriers. At room temperature, thermal energy breaks some bonds, creating <b>electron-hole pairs</b>: a free electron in the conduction band and a <b>hole</b> (vacancy) in the valence band.</p><p>Both carriers contribute to conduction:</p><ul><li>Electrons drift opposite to $\\vec{E}$ (negative charge).</li><li>Holes drift along $\\vec{E}$ (effectively positive charge — neighbouring electron 'hops' into vacancy, hole moves opposite).</li></ul><p>For intrinsic semiconductor: $n_e = n_h = n_i$. Concentration $n_i$ rises rapidly with temperature, so resistivity falls (negative temperature coefficient).</p>",
+      "keyFormulae": ["n_e = n_h = n_i"]
+    },
+    {
+      "heading": "3. Extrinsic Semiconductors — Doping",
+      "body": "<p><b>Doping</b>: adding small amounts (1 in $10^6$ to $10^9$) of pentavalent or trivalent impurity to drastically increase conductivity.</p><p><b>n-type</b>: doped with pentavalent atoms (P, As, Sb). Four electrons form covalent bonds; the fifth is loosely bound, easily becomes free electron. <b>Donor</b> level lies just below conduction band.</p><ul><li>Majority carriers: electrons. Minority: holes.</li><li>$n_e \\gg n_h$, but $n_e n_h = n_i^2$ (mass-action law).</li></ul><p><b>p-type</b>: doped with trivalent (B, Al, In, Ga). Three electrons form bonds; one bond has a hole. <b>Acceptor</b> level lies just above valence band.</p><ul><li>Majority: holes. Minority: electrons.</li><li>$n_h \\gg n_e$.</li></ul><p>The crystal as a whole remains electrically neutral.</p>",
+      "keyFormulae": ["n_e n_h = n_i^2"]
+    },
+    {
+      "heading": "4. p-n Junction",
+      "body": "<p>Formed by joining a p-type and n-type semiconductor in a single crystal. Two phenomena occur:</p><ul><li><b>Diffusion</b>: electrons diffuse n→p, holes diffuse p→n (concentration gradients). Leaves immobile positive donor ions on n-side and negative acceptor ions on p-side near the junction → <b>depletion region</b>.</li><li>The exposed ion charges create an internal electric field (n→p), which drives a <b>drift current</b> opposite to diffusion.</li></ul><p>At equilibrium, drift balances diffusion. The depletion region (~$10^{-6}$ m wide) has no mobile carriers and a built-in <b>potential barrier</b> $V_0$ (~0.7 V for Si, 0.3 V for Ge).</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "5. p-n Junction Diode under Forward and Reverse Bias",
+      "body": "<p><b>Forward bias</b>: p-side connected to + terminal, n-side to − terminal of battery. External field opposes built-in field, reducing barrier and depletion width. Once external $V > V_0$, large current flows (mostly diffusion of majority carriers across junction). Small forward voltage produces large current — exponential I-V relation.</p><p><b>Reverse bias</b>: p-side to −, n-side to +. External field aids built-in field, widens depletion region and increases barrier. Only a tiny reverse saturation current flows (due to thermally generated minority carriers crossing the junction). Independent of voltage (saturation) until <b>breakdown voltage</b>, where current abruptly rises (Zener / avalanche).</p><p>Diode is essentially a one-way valve. I-V curve highly non-linear.</p>",
+      "keyFormulae": ["I \\approx I_0\\!\\left(e^{eV/kT} - 1\\right)"]
+    },
+    {
+      "heading": "6. Diode as Rectifier",
+      "body": "<p>A diode converts AC to DC: passes current in one direction only.</p><p><b>Half-wave rectifier</b>: single diode in series with load. Conducts only during one half of AC cycle; output is pulsating DC, frequency = input frequency. Low efficiency; large ripple.</p><p><b>Full-wave rectifier</b>: two diodes with a centre-tapped transformer (or four diodes in a bridge). Both halves of AC are utilised; output frequency = 2× input. Higher efficiency, smaller ripple. With a smoothing capacitor (filter) across the load, output approaches steady DC.</p><p>Used in every battery charger, AC adapter, and DC power supply.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "7. Special-Purpose Diodes",
+      "body": "<p><b>Zener diode</b>: heavily doped p-n junction designed to operate in reverse breakdown without damage. Beyond Zener voltage $V_Z$, voltage stays constant despite changing current — used as <b>voltage regulator</b>.</p><p><b>Photodiode</b>: reverse-biased p-n junction in transparent package; incident photons (with $h\\nu > E_g$) generate electron-hole pairs, increasing reverse current proportional to light intensity. Used in light sensors, optical communication.</p><p><b>Light-Emitting Diode (LED)</b>: forward-biased junction where electron-hole recombination across the gap releases photons of energy $h\\nu \\approx E_g$. Choice of semiconductor (GaAs IR, GaP green/red, GaN blue) sets colour. Highly efficient, long life.</p><p><b>Solar cell</b>: large-area p-n junction with no external bias; sunlight creates electron-hole pairs, the built-in field drives them to opposite electrodes — generating EMF (~0.5 V per cell). Used in calculators, satellites, power generation.</p>",
+      "keyFormulae": ["E_g \\ge h\\nu \\text{ (photodiode)}", "h\\nu = E_g \\text{ (LED)}"]
+    }
+  ],
+  "summary": "Solids classified by band structure: metals (overlapping bands), semiconductors ($E_g \\sim 1$ eV), insulators ($E_g > 3$ eV). Intrinsic semiconductors have $n_e = n_h$; doping creates n-type (donor, electrons majority) or p-type (acceptor, holes majority), with $n_e n_h = n_i^2$. p-n junction has depletion region and barrier $V_0$. Diodes conduct under forward bias, block under reverse — basis of rectifiers. Special diodes: Zener (regulator), photodiode (sensor), LED (emitter), solar cell (generator).",
+  "pitfalls": [
+    "Holes are NOT real particles — they're vacancies, but behave as positive charges in an electric field.",
+    "n-type has electron majority but is electrically NEUTRAL (donor ions provide compensating + charge).",
+    "Mass-action law n_e × n_h = n_i² holds in BOTH n-type and p-type at equilibrium.",
+    "Depletion region has NO mobile carriers and a high resistance.",
+    "Forward-bias barrier ≈ 0.7 V for Si, 0.3 V for Ge (cut-in voltage).",
+    "Zener diode operates in REVERSE bias (in breakdown), not forward — it's a regulator there.",
+    "Half-wave rectifier output frequency = input frequency; full-wave = 2× input frequency."
+  ]
+}

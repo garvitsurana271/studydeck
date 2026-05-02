@@ -1,0 +1,54 @@
+{
+  "chapter": 8,
+  "name": "Aldehydes, Ketones and Carboxylic Acids",
+  "subject": "Chemistry",
+  "_source": "NCERT Class 12 Chem Ch 8 (Vol 2 Ch 3)",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "Carbonyl Group — Structure and Nomenclature",
+      "body": "<p><b>Aldehydes (R–CHO)</b> and <b>ketones (R–CO–R')</b> share the carbonyl group <b>>C=O</b>. The C is sp² hybridised; one σ and one π bond between C and O. Polar bond (δ+ on C, δ− on O) → reactive towards nucleophiles.</p><p><b>Carboxylic acid (R–COOH)</b>: contains –C(=O)–OH; the OH is much more acidic than alcohol due to resonance stabilisation of carboxylate.</p><p>IUPAC names:</p><ul><li>Aldehydes: replace -e of alkane with -al (no locant: CHO is always C1). Example: CH<sub>3</sub>CHO = ethanal; C<sub>6</sub>H<sub>5</sub>CHO = benzaldehyde (retained).</li><li>Ketones: -one suffix, with locant for C=O. CH<sub>3</sub>COCH<sub>3</sub> = propan-2-one (acetone). Aryl: 1-phenylethan-1-one (acetophenone).</li><li>Carboxylic acids: -oic acid suffix (–COOH always C1). HCOOH = methanoic, CH<sub>3</sub>COOH = ethanoic, C<sub>6</sub>H<sub>5</sub>COOH = benzoic.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Preparation of Aldehydes and Ketones",
+      "body": "<p><b>Common methods</b>:</p><ul><li>Oxidation of <b>1° alcohol → aldehyde</b> (PCC, or controlled K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>); <b>2° alcohol → ketone</b>.</li><li><b>Dehydrogenation</b> of alcohols over Cu/573 K.</li><li>Hydration of <b>alkynes</b> (HgSO<sub>4</sub>, dil. H<sub>2</sub>SO<sub>4</sub>): ethyne → acetaldehyde; higher alkyne → ketone (Markovnikov).</li><li>Ozonolysis of alkenes: reductive workup (Zn/H<sub>2</sub>O) gives aldehydes/ketones.</li></ul><p><b>Aldehydes from acyl chlorides — Rosenmund reduction</b>: RCOCl + H<sub>2</sub>/Pd-BaSO<sub>4</sub> (poisoned with S/quinoline) → RCHO. Catalyst poison stops over-reduction to alcohol.</p><p><b>Stephen reaction</b>: RCN + SnCl<sub>2</sub>/HCl → RCH=NH·HCl → RCHO + NH<sub>3</sub> (on hydrolysis).</p><p><b>Aldehydes/ketones from nitriles via Grignard</b>: R'MgX + R–CN → R–C(=N–MgX)–R' → ketone (after H<sub>3</sub>O⁺).</p><p><b>Aromatic aldehydes</b>:</p><ul><li><b>Etard reaction</b>: toluene + CrO<sub>2</sub>Cl<sub>2</sub> in CS<sub>2</sub> → benzaldehyde (after hydrolysis). Mild, no over-oxidation.</li><li><b>Gattermann–Koch</b>: benzene + CO + HCl in presence of AlCl<sub>3</sub>/CuCl → benzaldehyde.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Physical Properties and Reactivity",
+      "body": "<p>Aldehydes/ketones are polar (μ ≈ 2.7 D) but cannot H-bond among themselves — boiling points lie between alkanes and alcohols of similar size. Lower members are water-soluble (H-bond acceptors). Carboxylic acids form <b>cyclic dimers</b> via two H-bonds in vapour phase, giving abnormally high b.p. Lower acids (HCOOH, CH<sub>3</sub>COOH) miscible with water.</p><p>The carbonyl carbon is electrophilic; nucleophiles attack at C, while H<sup>+</sup> (or other electrophiles) bind O. Aldehydes are <b>more reactive</b> than ketones towards nucleophilic addition because: (i) alkyl groups in ketones donate electrons into C, lowering δ+; (ii) two alkyl groups cause more steric hindrance.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Nucleophilic Addition Reactions",
+      "body": "<p>General: Nu⁻ + >C=O → Nu–C–O⁻ → (after H⁺) Nu–C–OH.</p><ul><li><b>HCN</b> → cyanohydrin (NaCN/H<sup>+</sup>; useful synthon → α-hydroxy acids).</li><li><b>NaHSO<sub>3</sub></b> → bisulphite addition product (white crystalline; used for purification of aldehydes and methyl ketones).</li><li><b>Alcohols (acid catalysis)</b>: RCHO + R'OH → hemiacetal → acetal RCH(OR')<sub>2</sub>. Ketones similarly give ketals.</li><li><b>Grignard reagents</b>: → 1°/2°/3° alcohols (already discussed in Ch 7).</li><li><b>Reduction</b>: H<sub>2</sub>/Ni, NaBH<sub>4</sub>, LiAlH<sub>4</sub> reduce >C=O to >CH–OH. <b>Clemmensen</b> (Zn-Hg/HCl) and <b>Wolff–Kishner</b> (NH<sub>2</sub>NH<sub>2</sub>/KOH-glycol) reduce >C=O directly to >CH<sub>2</sub>.</li></ul><p><b>Reactions with NH<sub>3</sub> derivatives</b>: H<sub>2</sub>N–Z + >C=O → >C=N–Z + H<sub>2</sub>O. With NH<sub>2</sub>OH → oxime; NH<sub>2</sub>NH<sub>2</sub> → hydrazone; 2,4-DNP → 2,4-dinitrophenylhydrazone (yellow/orange — test for >C=O); semicarbazide → semicarbazone.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Reactions Due to α-Hydrogen and Other Important Reactions",
+      "body": "<p>The α-H of an aldehyde/ketone is acidic (carbonyl stabilises the resulting enolate by resonance).</p><p><b>Aldol condensation</b>: aldehydes/ketones with at least one α-H, in presence of dilute base (NaOH), give β-hydroxy carbonyl (aldol). On heating, water is eliminated to give an α,β-unsaturated carbonyl. Example: 2 CH<sub>3</sub>CHO → CH<sub>3</sub>CH(OH)CH<sub>2</sub>CHO → CH<sub>3</sub>CH=CHCHO (crotonaldehyde).</p><p><b>Cross aldol</b>: between two different carbonyls; gives mixture unless one of them has no α-H (e.g. PhCHO + acetaldehyde → cinnamaldehyde mainly).</p><p><b>Cannizzaro reaction</b>: aldehydes <b>without α-H</b> (HCHO, PhCHO) undergo disproportionation in concentrated NaOH: 2 PhCHO + NaOH → PhCH<sub>2</sub>OH + PhCOONa.</p><p><b>Oxidation</b>:</p><ul><li>Aldehydes are easily oxidised to acids by mild oxidants. <b>Tollen's test</b>: aldehyde + [Ag(NH<sub>3</sub>)<sub>2</sub>]⁺ → silver mirror + RCOO⁻. <b>Fehling's test</b>: aldehyde + Cu²⁺ tartrate complex → Cu<sub>2</sub>O brick-red ppt + RCOO⁻ (works for aliphatic aldehydes; aromatic give negative).</li><li>Ketones resist mild oxidation; strong oxidants cleave C–C bonds.</li><li><b>Iodoform test</b>: methyl ketones (CH<sub>3</sub>CO–R) and ethanol/CH<sub>3</sub>CHOH–R give yellow CHI<sub>3</sub> on warming with I<sub>2</sub>/NaOH. Useful diagnostic for –COCH<sub>3</sub> or –CH(OH)CH<sub>3</sub>.</li></ul><p><b>Electrophilic substitution on benzaldehyde</b>: –CHO is deactivating and meta directing.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Carboxylic Acids — Preparation",
+      "body": "<ul><li>Oxidation of 1° alcohols and aldehydes (KMnO<sub>4</sub>, K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>).</li><li>Oxidation of alkylbenzenes (KMnO<sub>4</sub>) → benzoic acid (regardless of side-chain length, provided benzylic H present).</li><li>Hydrolysis of <b>nitriles</b>: R–CN + H<sub>2</sub>O/H<sup>+</sup> or OH⁻ → R–COOH.</li><li>Hydrolysis of <b>esters, amides, acid chlorides, anhydrides</b>.</li><li><b>Carboxylation of Grignard</b>: R–MgX + CO<sub>2</sub> → RCOO⁻MgX⁺ →<sub>H<sup>+</sup></sub> RCOOH.</li></ul>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "Acidity and Reactions of Carboxylic Acids",
+      "body": "<p>Carboxylic acids are <b>weak acids</b> (pK<sub>a</sub> 4–5) but stronger than phenols and alcohols because the carboxylate ion is stabilised by <b>equivalent resonance structures</b> (negative charge spread over two equivalent oxygens).</p><p><b>Substituent effects</b>: electron-withdrawing groups (–Cl, –NO<sub>2</sub>, –CN) increase acidity; electron-donating groups (–CH<sub>3</sub>, –OCH<sub>3</sub>) decrease it. Examples: CH<sub>3</sub>COOH (4.76) > HCOOH (3.75)? — actually HCOOH is stronger (no +I from R). Cl<sub>3</sub>CCOOH (0.66) ≫ CH<sub>3</sub>COOH. For substituted benzoic acids, –NO<sub>2</sub> at o/p increases acidity strongly; –OCH<sub>3</sub> at p decreases it.</p><p><b>Reactions</b>:</p><ul><li>With NaHCO<sub>3</sub> → CO<sub>2</sub> effervescence (distinguishes from phenols, which need NaOH).</li><li><b>Esterification</b> (Fischer): RCOOH + R'OH ⇌ RCOOR' + H<sub>2</sub>O (conc. H<sub>2</sub>SO<sub>4</sub>).</li><li><b>Conversion to acid chloride</b>: RCOOH + SOCl<sub>2</sub> → RCOCl. Also PCl<sub>5</sub>, PCl<sub>3</sub>.</li><li><b>Conversion to anhydride</b>: 2 RCOOH →<sub>P<sub>2</sub>O<sub>5</sub></sub> (RCO)<sub>2</sub>O.</li><li><b>Conversion to amide</b>: via NH<sub>4</sub>⁺ salt → RCONH<sub>2</sub> (heat).</li><li><b>Reduction</b> with LiAlH<sub>4</sub> (or B<sub>2</sub>H<sub>6</sub>) → 1° alcohol; with HI/red P → alkane (via CH<sub>3</sub>).</li><li><b>Decarboxylation</b>: RCOO⁻Na⁺ + soda lime (NaOH/CaO) → RH + Na<sub>2</sub>CO<sub>3</sub>.</li><li><b>Hell–Volhard–Zelinsky reaction</b>: RCH<sub>2</sub>COOH + Cl<sub>2</sub>/red P → RCHCl–COOH (α-halogenation).</li><li><b>Ring substitution on benzoic acid</b>: –COOH is deactivating and meta-directing.</li></ul>",
+      "keyFormulae": []
+    }
+  ],
+  "summary": "Aldehydes (R–CHO) and ketones (R–CO–R') share the polar carbonyl group; carboxylic acids (R–COOH) extend this with an –OH that is acidic. Aldehydes are made by controlled oxidation (PCC), Rosenmund (RCOCl + H_2/Pd-BaSO_4), Stephen (RCN + SnCl_2/HCl), Etard, and Gattermann–Koch. Ketones from 2° alcohol oxidation, alkyne hydration, Grignard with nitriles. The carbonyl C is electrophilic — nucleophilic addition with HCN, NaHSO_3, alcohols (acetal), Grignard, hydride reductants, ammonia derivatives (oxime, hydrazone, 2,4-DNP, semicarbazone). α-H acidity drives aldol condensation; aldehydes lacking α-H undergo Cannizzaro disproportionation. Tollen's, Fehling's, and iodoform tests are diagnostic. Carboxylic acids are stronger acids than alcohols/phenols because of resonance-stabilised carboxylate; HVZ α-halogenation, esterification, conversion to RCOCl/RCONH_2, LiAlH_4 reduction, decarboxylation are key reactions.",
+  "pitfalls": [
+    "Forgetting that ketones don't give Tollen's, Fehling's, or Schiff's tests — these are aldehyde-specific.",
+    "Iodoform test: works only for CH_3CO–R or CH_3CH(OH)–R (and ethanol/acetaldehyde) — not for all carbonyls.",
+    "Naming aldehyde with a locant — CHO is always C1.",
+    "Predicting that LiAlH_4 reduces –COOH to –CHO — it goes all the way to –CH_2OH; use DIBAL-H to stop at aldehyde.",
+    "Using NaOH on phenol vs NaHCO_3 on carboxylic acid — only acid liberates CO_2 from bicarbonate.",
+    "Getting Cannizzaro mixed up: needs concentrated NaOH and an aldehyde without α-H (HCHO, PhCHO).",
+    "Forgetting Saytzeff/Markovnikov when generating aldehyde vs ketone via alkyne hydration."
+  ]
+}

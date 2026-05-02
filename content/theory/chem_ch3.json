@@ -1,0 +1,69 @@
+{
+  "chapter": 3,
+  "name": "Chemical Kinetics",
+  "subject": "Chemistry",
+  "_source": "NCERT Class 12 Chem Ch 3",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "Rate of a Reaction",
+      "body": "<p><b>Rate of reaction</b> is the change in concentration of reactant or product per unit time. For aA + bB → cC + dD:</p><p>Rate = −(1/a) d[A]/dt = −(1/b) d[B]/dt = (1/c) d[C]/dt = (1/d) d[D]/dt.</p><p><b>Average rate</b> is over a finite interval; <b>instantaneous rate</b> is the limit as Δt → 0 (slope of concentration–time curve).</p><p>Units: mol L⁻¹ s⁻¹ (concentration/time). For gases, sometimes atm s⁻¹.</p><p><b>Factors affecting rate</b>: nature of reactants, concentration, temperature, catalyst, surface area, light/radiation.</p>",
+      "keyFormulae": [
+        "r = -\\frac{1}{a}\\frac{d[A]}{dt}",
+        "\\text{Units: mol L}^{-1}\\text{s}^{-1}"
+      ]
+    },
+    {
+      "heading": "Rate Law and Order of Reaction",
+      "body": "<p>The <b>rate law</b> (or rate equation) is an experimentally determined relation: rate = k·[A]<sup>x</sup>·[B]<sup>y</sup>, where k is the <b>rate constant</b> and x, y are <b>orders</b> with respect to A and B (need not equal stoichiometric coefficients).</p><p><b>Overall order</b> = x + y. Can be 0, 1, 2, 3, or fractional.</p><p><b>Molecularity</b>: the number of molecules taking part in an elementary step. Always a positive integer (1, 2, rarely 3). Order = molecularity only for elementary reactions; for multi-step reactions, order is determined by the rate-determining (slowest) step.</p><p>Units of k depend on overall order n: k has units mol<sup>1−n</sup> L<sup>n−1</sup> s⁻¹.</p><ul><li>Zero order: mol L⁻¹ s⁻¹</li><li>First order: s⁻¹</li><li>Second order: L mol⁻¹ s⁻¹</li></ul>",
+      "keyFormulae": [
+        "\\text{rate} = k[A]^x[B]^y",
+        "\\text{order} = x+y",
+        "\\text{units of }k = (\\text{mol/L})^{1-n}\\text{s}^{-1}"
+      ]
+    },
+    {
+      "heading": "Integrated Rate Equations",
+      "body": "<p><b>Zero-order reaction</b> (rate = k): [R] = [R]<sub>0</sub> − kt. Plot of [R] vs t is linear with slope −k. Half-life t<sub>1/2</sub> = [R]<sub>0</sub> / 2k (depends on initial conc). Examples: photochemical decomposition of HI on Au surface; decomposition of N<sub>2</sub>O on Pt.</p><p><b>First-order reaction</b> (rate = k[R]): ln([R]<sub>0</sub>/[R]) = kt; equivalently k = (2.303/t) log([R]<sub>0</sub>/[R]). Plot of ln[R] vs t (or log[R] vs t) is linear with slope −k (or −k/2.303). <b>Half-life</b> t<sub>1/2</sub> = 0.693/k (independent of initial concentration). Examples: radioactive decay, decomposition of N<sub>2</sub>O<sub>5</sub>, hydrolysis of ester in dilute acid (pseudo-first-order).</p><p><b>Pseudo-first-order</b>: a true higher-order reaction that becomes first-order because one reactant (often solvent) is in large excess and its concentration is effectively constant. Example: hydrolysis of ester: CH<sub>3</sub>COOC<sub>2</sub>H<sub>5</sub> + H<sub>2</sub>O → CH<sub>3</sub>COOH + C<sub>2</sub>H<sub>5</sub>OH; with H<sub>2</sub>O in excess, rate = k'·[ester].</p>",
+      "keyFormulae": [
+        "\\text{Zero: } [R] = [R]_0 - kt;\\ t_{1/2} = [R]_0/2k",
+        "\\text{First: } k = (2.303/t)\\log([R]_0/[R])",
+        "t_{1/2} = 0.693/k\\ \\text{(first order)}"
+      ]
+    },
+    {
+      "heading": "Temperature Dependence — Arrhenius Equation",
+      "body": "<p>Rate constant rises sharply with temperature: roughly, k doubles for every 10 K rise. Quantitatively, the <b>Arrhenius equation</b>:</p><p><b>k = A · e<sup>−E<sub>a</sub>/RT</sup></b>, where A is the pre-exponential / frequency factor, E<sub>a</sub> the <b>activation energy</b>, R = 8.314 J K⁻¹ mol⁻¹.</p><p>Taking log: ln k = ln A − E<sub>a</sub>/RT or log k = log A − E<sub>a</sub>/(2.303·RT). Plot of log k vs 1/T is a straight line with slope −E<sub>a</sub>/(2.303·R), useful for finding E<sub>a</sub> graphically.</p><p>Two-temperature form: log(k<sub>2</sub>/k<sub>1</sub>) = (E<sub>a</sub>/2.303·R) · (T<sub>2</sub> − T<sub>1</sub>)/(T<sub>1</sub>·T<sub>2</sub>).</p><p><b>Activation energy</b> is the minimum energy that colliding molecules must possess. <b>Threshold energy</b> = average energy + E<sub>a</sub>.</p>",
+      "keyFormulae": [
+        "k = A e^{-E_a/RT}",
+        "\\ln k = \\ln A - E_a/RT",
+        "\\log(k_2/k_1) = \\frac{E_a}{2.303R}\\cdot\\frac{T_2-T_1}{T_1 T_2}"
+      ]
+    },
+    {
+      "heading": "Collision Theory",
+      "body": "<p>According to <b>collision theory</b> (for bimolecular gas reactions):</p><p>Rate = Z<sub>AB</sub> · e<sup>−E<sub>a</sub>/RT</sup>, where Z<sub>AB</sub> is the collision frequency.</p><p>Not every collision leads to reaction. Two requirements:</p><ol><li><b>Energy barrier</b>: collisions must have energy ≥ E<sub>a</sub> (fraction = e<sup>−E<sub>a</sub>/RT</sup>).</li><li><b>Orientation</b>: molecules must collide in the right geometry. Captured by the <b>steric factor (P)</b> in the modified equation: Rate = P·Z<sub>AB</sub>·e<sup>−E<sub>a</sub>/RT</sup>.</li></ol><p>Hence Arrhenius's pre-exponential factor A = P·Z<sub>AB</sub>.</p><p>Effective collision = collision with sufficient energy AND proper orientation.</p>",
+      "keyFormulae": [
+        "\\text{Rate} = PZ_{AB} e^{-E_a/RT}",
+        "A = P \\cdot Z_{AB}"
+      ]
+    },
+    {
+      "heading": "Effect of a Catalyst",
+      "body": "<p>A <b>catalyst</b> alters the rate of a reaction without being consumed. It provides an <b>alternative pathway with lower activation energy</b>, so a larger fraction of molecules now have energy ≥ E<sub>a</sub>'.</p><p>A catalyst:</p><ul><li>Lowers E<sub>a</sub> for both forward and reverse reactions equally;</li><li>Does not change ΔG, ΔH, ΔU, or K of the reaction;</li><li>Does not change the equilibrium composition, only how fast equilibrium is reached;</li><li>Catalyses both forward and reverse reactions to the same extent.</li></ul><p>Examples: Pt for catalytic hydrogenation; V<sub>2</sub>O<sub>5</sub> in contact process (SO<sub>2</sub> → SO<sub>3</sub>); Fe in Haber process (N<sub>2</sub> + H<sub>2</sub> → NH<sub>3</sub>).</p>",
+      "keyFormulae": [
+        "E_a' < E_a \\Rightarrow k' > k",
+        "K_{eq} \\text{ unchanged}"
+      ]
+    }
+  ],
+  "summary": "Chemical kinetics studies how fast reactions proceed and the factors controlling rate. Rate law (rate = k[A]^x[B]^y) is empirical; order can differ from stoichiometry, while molecularity must equal an integer for an elementary step. Integrated forms give zero-order linear decays ([R] = [R]_0 − kt) and first-order exponential decays (k = (2.303/t) log [R]_0/[R], t_1/2 = 0.693/k). The Arrhenius equation k = A·e^(−Ea/RT) captures temperature dependence; plotting log k vs 1/T extracts E_a. Collision theory adds a steric factor P. A catalyst speeds both forward and reverse reactions equally by lowering E_a and never shifts equilibrium.",
+  "pitfalls": [
+    "Confusing order (experimental, can be fractional/zero) with molecularity (count of molecules in elementary step, integer).",
+    "Quoting wrong units of k for the order — practice deriving them from rate = (M/s) = k·M^n.",
+    "Forgetting the 2.303 conversion when switching between ln and log forms.",
+    "Assuming half-life is constant for all orders — only first-order has t_{1/2} independent of [R]_0.",
+    "Treating a catalyst as shifting equilibrium — it does not.",
+    "Ignoring the orientation factor; a high-collision system may still react slowly if P is small."
+  ]
+}

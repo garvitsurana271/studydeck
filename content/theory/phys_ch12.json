@@ -1,0 +1,53 @@
+{
+  "chapter": 12,
+  "name": "Atoms",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 12",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. Thomson's Plum Pudding Model",
+      "body": "<p>J.J. Thomson (1898) proposed that an atom is a sphere of positive charge in which electrons are embedded like plums in a pudding. The atom is electrically neutral — total positive charge equals total negative.</p><p>The model could explain neutrality and approximate size but failed to account for line spectra, stability of atoms, or — fatally — the results of Rutherford's scattering experiment.</p>",
+      "keyFormulae": []
+    },
+    {
+      "heading": "2. Rutherford's Alpha-Scattering Experiment and Nuclear Model",
+      "body": "<p>Geiger and Marsden (under Rutherford, 1911) bombarded a thin gold foil with $\\alpha$-particles. Most $\\alpha$s passed through with little or no deflection, but a small fraction (~1 in 8000) was scattered by more than 90° — some bouncing nearly straight back.</p><p>Conclusions:</p><ul><li>Most of the atom is empty space.</li><li>Almost all the mass and the entire positive charge is concentrated in a tiny central <b>nucleus</b> ($r \\sim 10^{-15}$ m vs atom $\\sim 10^{-10}$ m).</li><li>Electrons orbit the nucleus at distance.</li></ul><p><b>Distance of closest approach</b> for head-on collision: $\\alpha$-particle KE converts entirely to potential energy: $$r_0 = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{2Ze \\cdot e}{K}$$</p><p>Drawback: classical electrodynamics predicts orbiting electrons should radiate continuously and spiral into nucleus in $\\sim 10^{-8}$ s — atoms would be unstable.</p>",
+      "keyFormulae": ["r_0 = \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{2Ze^2}{K}"]
+    },
+    {
+      "heading": "3. Atomic Spectra",
+      "body": "<p>Excited atoms emit light only at certain discrete wavelengths — a <b>line spectrum</b>, characteristic of the element. Each atom has its 'fingerprint'.</p><p>For hydrogen, wavelengths are given by the <b>Rydberg formula</b>: $$\\dfrac{1}{\\lambda} = R\\!\\left(\\dfrac{1}{n_1^2} - \\dfrac{1}{n_2^2}\\right)$$ where $n_2 > n_1$, $R = 1.097 \\times 10^7$ m⁻¹ is the Rydberg constant.</p><p>Series:</p><ul><li><b>Lyman</b> ($n_1 = 1$): UV.</li><li><b>Balmer</b> ($n_1 = 2$): visible (Hα 656 nm, Hβ 486 nm, etc.).</li><li><b>Paschen</b> ($n_1 = 3$): IR.</li><li><b>Brackett</b> ($n_1 = 4$), <b>Pfund</b> ($n_1 = 5$): far IR.</li></ul>",
+      "keyFormulae": ["\\dfrac{1}{\\lambda} = R\\!\\left(\\dfrac{1}{n_1^2} - \\dfrac{1}{n_2^2}\\right)"]
+    },
+    {
+      "heading": "4. Bohr's Postulates",
+      "body": "<p>Bohr (1913) modified Rutherford's model with quantum postulates:</p><ol><li><b>Stationary orbits</b>: Electrons revolve only in certain allowed orbits without radiating energy.</li><li><b>Quantisation of angular momentum</b>: $$L = mvr = \\dfrac{nh}{2\\pi}, \\quad n = 1, 2, 3, \\ldots$$ where $n$ is the principal quantum number.</li><li><b>Frequency condition</b>: When an electron jumps from a higher orbit ($n_2$) to a lower one ($n_1$), it emits a photon: $$h\\nu = E_{n_2} - E_{n_1}$$ Conversely, absorption causes upward jump.</li></ol>",
+      "keyFormulae": ["mvr = \\dfrac{nh}{2\\pi}", "h\\nu = E_{n_2} - E_{n_1}"]
+    },
+    {
+      "heading": "5. Bohr Model of Hydrogen — Radii and Energies",
+      "body": "<p>Setting Coulomb force = centripetal force, plus Bohr's quantisation, for hydrogen-like ($Z$ = atomic number, single electron) atom:</p><p><b>Radius of $n$-th orbit</b>: $$r_n = \\dfrac{n^2 h^2 \\varepsilon_0}{\\pi m e^2 Z} = \\dfrac{n^2}{Z}\\,a_0$$ where $a_0 = 0.529$ Å is the Bohr radius (for H with $n = 1$).</p><p><b>Speed</b>: $v_n = Ze^2/(2\\varepsilon_0 nh)$, decreases as $1/n$.</p><p><b>Energy</b>: $$E_n = -\\dfrac{m e^4 Z^2}{8\\varepsilon_0^2 n^2 h^2} = -\\dfrac{13.6\\,Z^2}{n^2}\\,\\text{eV}$$ Negative because electron is bound. Lowest level (ground state, $n=1$): $E_1 = -13.6$ eV for H.</p><p>Energy difference between levels: $\\Delta E = E_{n_2} - E_{n_1} = 13.6\\,Z^2(1/n_1^2 - 1/n_2^2)$ eV. This produces the Rydberg formula upon dividing by $hc$.</p>",
+      "keyFormulae": ["r_n = \\dfrac{n^2}{Z}\\,a_0", "E_n = -\\dfrac{13.6\\,Z^2}{n^2}\\,\\text{eV}", "a_0 = 0.529\\,\\mathring{\\text{A}}"]
+    },
+    {
+      "heading": "6. Energy Level Diagram and Excitation",
+      "body": "<p>For hydrogen, ground state $E_1 = -13.6$ eV, $E_2 = -3.4$ eV, $E_3 = -1.51$ eV, $E_\\infty = 0$.</p><p><b>Ionisation energy</b>: minimum energy to free the electron from ground state: $E_{\\text{ion}} = 13.6$ eV.</p><p><b>Excitation energy</b>: $E_n - E_1$. First excitation energy (1 → 2): 10.2 eV. Excitation potential: 10.2 V (V such that $eV$ = excitation energy).</p><p>de Broglie's interpretation: $2\\pi r_n = n\\lambda$ — i.e., orbit circumference must contain integer number of de Broglie wavelengths. This naturally gives $mvr = nh/(2\\pi)$, providing physical meaning to Bohr's quantisation.</p>",
+      "keyFormulae": ["E_{\\text{ion, H}} = 13.6\\,\\text{eV}", "2\\pi r_n = n\\lambda"]
+    },
+    {
+      "heading": "7. Limitations of Bohr's Model",
+      "body": "<p>Successes:</p><ul><li>Explained hydrogen spectrum (Rydberg formula derived).</li><li>Predicted ionisation energy of H accurately.</li><li>Worked for hydrogen-like ions (He⁺, Li²⁺).</li></ul><p>Failures:</p><ul><li>Cannot explain spectra of multi-electron atoms.</li><li>Cannot explain fine structure (close splitting of lines).</li><li>Cannot explain relative intensities of spectral lines.</li><li>Cannot explain Zeeman effect (splitting in magnetic field) or Stark effect (in electric field).</li><li>Mixes classical and quantum ideas inconsistently — patched together.</li></ul><p>Resolved later by full quantum mechanics (Schrödinger 1926 et al.).</p>",
+      "keyFormulae": []
+    }
+  ],
+  "summary": "Rutherford established the nuclear atom but predicted instability. Bohr's three postulates — stationary orbits, $L = nh/2\\pi$, and $h\\nu = \\Delta E$ — explain hydrogen's discrete spectrum. Allowed radii $r_n = n^2 a_0/Z$, energies $E_n = -13.6 Z^2/n^2$ eV. Rydberg formula $1/\\lambda = R(1/n_1^2 - 1/n_2^2)$ generates Lyman, Balmer, Paschen series. de Broglie justifies quantisation by demanding $2\\pi r = n\\lambda$.",
+  "pitfalls": [
+    "Energy levels are NEGATIVE (bound states); ionisation gives E = 0.",
+    "Bohr's model works only for HYDROGEN-LIKE atoms (one electron). Fails for He, Li, etc.",
+    "n_1 < n_2 in Rydberg formula (lower level always n_1).",
+    "Radius scales as n², energy as -Z²/n²; speed as Z/n.",
+    "Distance of closest approach uses Coulomb PE = initial KE — only valid for head-on collision.",
+    "Bohr's postulates are AD HOC; only later quantum mechanics gives them deep justification."
+  ]
+}

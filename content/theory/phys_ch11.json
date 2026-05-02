@@ -1,0 +1,48 @@
+{
+  "chapter": 11,
+  "name": "Dual Nature of Radiation and Matter",
+  "subject": "Physics",
+  "_source": "NCERT Class 12 Phys Ch 11",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "1. Electron Emission",
+      "body": "<p>Free electrons in a metal cannot escape at room temperature because of the attractive force of positive ions. The minimum energy required for an electron to just escape from a metal surface is the <b>work function</b> $\\phi_0$ (or $W$), measured in eV. Typical values: 2–5 eV.</p><p>Methods to supply this energy:</p><ul><li><b>Thermionic emission</b>: heating (used in CRT cathodes).</li><li><b>Field emission</b>: applying very strong electric field.</li><li><b>Photoelectric emission</b>: light of suitable frequency.</li><li><b>Secondary emission</b>: bombardment by other particles.</li></ul><p>1 eV $= 1.602 \\times 10^{-19}$ J.</p>",
+      "keyFormulae": ["1\\,\\text{eV} = 1.602 \\times 10^{-19}\\,\\text{J}"]
+    },
+    {
+      "heading": "2. Photoelectric Effect — Hertz and Hallwachs Observations",
+      "body": "<p>Hertz (1887) discovered that UV light incident on a negatively charged metal causes loss of charge — emission of electrons. Hallwachs and Lenard refined experiments using a vacuum tube with cathode and anode, observing photocurrent.</p><p>Key experimental facts:</p><ul><li>Below a certain <b>threshold frequency</b> $\\nu_0$ (specific to the metal), no electrons are emitted, no matter how intense the light.</li><li>Above $\\nu_0$, photoelectrons are emitted instantaneously (within $\\sim 10^{-9}$ s).</li><li>Photocurrent (number of electrons per second) is proportional to light <b>intensity</b>.</li><li>Maximum kinetic energy of photoelectrons depends only on light <b>frequency</b>, not intensity.</li><li>Stopping potential $V_0$ (reverse voltage to halt fastest photoelectrons) gives $K_{\\max} = eV_0$. Stopping potential is independent of intensity.</li></ul><p>Classical wave theory cannot explain frequency threshold or instantaneous emission — failure motivated quantum theory.</p>",
+      "keyFormulae": ["K_{\\max} = eV_0"]
+    },
+    {
+      "heading": "3. Einstein's Photoelectric Equation",
+      "body": "<p>Einstein (1905, Nobel 1921) explained photoelectric effect by proposing that light consists of discrete packets of energy — <b>photons</b> — each carrying energy $E = h\\nu$, where $h = 6.626 \\times 10^{-34}$ J·s is Planck's constant.</p><p>One photon is absorbed by one electron. The electron uses energy $\\phi_0$ to escape; the rest becomes kinetic energy: $$h\\nu = \\phi_0 + K_{\\max}$$ Equivalently: $$K_{\\max} = h\\nu - \\phi_0 = h(\\nu - \\nu_0)$$ where $\\nu_0 = \\phi_0/h$ is the threshold frequency.</p><p>This explains all observations:</p><ul><li>Threshold: if $\\nu < \\nu_0$, $h\\nu < \\phi_0$, electron can't escape regardless of intensity.</li><li>Instantaneous emission: one photon absorbed in one event.</li><li>Intensity affects number of photons (hence current), not photon energy.</li><li>$K_{\\max}$ depends linearly on $\\nu$ (Millikan's experiments confirmed slope $h/e$).</li></ul>",
+      "keyFormulae": ["E_{\\text{photon}} = h\\nu", "K_{\\max} = h\\nu - \\phi_0", "\\nu_0 = \\dfrac{\\phi_0}{h}"]
+    },
+    {
+      "heading": "4. Particle Nature of Light — Photons",
+      "body": "<p>The photon picture:</p><ul><li>Energy: $E = h\\nu = hc/\\lambda$.</li><li>Momentum: $p = h\\nu/c = h/\\lambda$ (rest mass zero, but momentum from relativistic $E = pc$).</li><li>Travels at $c$ in vacuum; not deflected by electric/magnetic fields.</li><li>In photon-particle collisions, both energy and momentum conserved.</li></ul><p>Light shows wave-like behaviour (interference, diffraction) and particle-like behaviour (photoelectric effect, Compton scattering): <b>wave-particle duality</b>.</p>",
+      "keyFormulae": ["E = h\\nu = \\dfrac{hc}{\\lambda}", "p = \\dfrac{h}{\\lambda}"]
+    },
+    {
+      "heading": "5. de Broglie Hypothesis — Wave Nature of Matter",
+      "body": "<p>de Broglie (1924) proposed that matter, like light, has dual nature: a particle of momentum $p$ has an associated wavelength $$\\lambda = \\dfrac{h}{p} = \\dfrac{h}{mv}$$ Wave-like properties are negligible for macroscopic objects (e.g. cricket ball at 50 m/s has $\\lambda \\sim 10^{-34}$ m) but significant for electrons.</p><p>For an electron accelerated through potential $V$: $K = eV = p^2/(2m)$, so $p = \\sqrt{2mEV}$, giving $$\\lambda = \\dfrac{h}{\\sqrt{2meV}} = \\dfrac{12.27}{\\sqrt{V}}\\,\\mathring{\\text{A}}$$ where $V$ is in volts. For a 100 V electron: $\\lambda \\approx 1.23$ Å — comparable to atomic spacings.</p>",
+      "keyFormulae": ["\\lambda = \\dfrac{h}{p} = \\dfrac{h}{mv}", "\\lambda_e = \\dfrac{12.27}{\\sqrt{V}}\\,\\mathring{\\text{A}}"]
+    },
+    {
+      "heading": "6. Davisson-Germer Experiment",
+      "body": "<p>Davisson and Germer (1927) confirmed the wave nature of electrons: a beam of low-energy electrons scattered off a single nickel crystal showed a sharp peak at scattering angle 50° for 54 V acceleration — interpretable as Bragg diffraction.</p><p>Wavelength calculated from de Broglie's formula: $\\lambda = 12.27/\\sqrt{54}$ Å $\\approx 1.67$ Å.</p><p>Wavelength calculated from Bragg's law (assuming nickel lattice spacing): $\\lambda \\approx 1.65$ Å.</p><p>Excellent agreement validated de Broglie's hypothesis. This led to <b>electron microscopy</b> (much higher resolution than light microscopes due to shorter $\\lambda$).</p>",
+      "keyFormulae": []
+    }
+  ],
+  "summary": "Photoelectric effect: light above threshold frequency ejects electrons instantly with $K_{\\max} = h\\nu - \\phi_0$. Einstein: light is photons with $E = h\\nu$, $p = h/\\lambda$. de Broglie: matter has wavelength $\\lambda = h/p$; for electrons accelerated by $V$: $\\lambda = 12.27/\\sqrt{V}$ Å. Davisson-Germer's diffraction of electrons confirmed matter waves. Light and matter both exhibit wave-particle duality.",
+  "pitfalls": [
+    "Stopping potential and K_max relate by K_max = eV_0; do NOT confuse V_0 with photon energy.",
+    "Photoelectric effect is INSTANTANEOUS — wave theory predicted a delay (one of its failures).",
+    "Threshold frequency is metal-specific; intensity affects current (number of electrons), not max KE.",
+    "Photon has zero rest mass but nonzero momentum p = h/λ.",
+    "de Broglie wavelength is significant only for very small particles — irrelevant for cricket balls.",
+    "λ = 12.27/√V Å only valid for non-relativistic electrons; works fine for ≤ ~10 kV."
+  ]
+}

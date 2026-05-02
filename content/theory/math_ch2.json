@@ -1,0 +1,52 @@
+{
+  "chapter": 2,
+  "name": "Inverse Trigonometric Functions",
+  "subject": "Maths",
+  "_source": "NCERT Class 12 Maths Ch 2",
+  "_verified": true,
+  "sections": [
+    {
+      "heading": "2.1 Need for Inverses & Principal Branches",
+      "body": "<p>The trig functions $\\sin,\\cos,\\tan,\\cot,\\sec,\\csc$ are not one-one on their natural domains, so inverses are defined by restricting the domain to a <b>principal branch</b> on which the function becomes bijective.</p><p>Standard principal-value branches (the range of the inverse function):</p><ul><li>$\\sin^{-1}x:[-1,1]\\to\\left[-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right]$</li><li>$\\cos^{-1}x:[-1,1]\\to[0,\\pi]$</li><li>$\\tan^{-1}x:\\mathbb R\\to\\left(-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right)$</li><li>$\\cot^{-1}x:\\mathbb R\\to(0,\\pi)$</li><li>$\\sec^{-1}x:(-\\infty,-1]\\cup[1,\\infty)\\to[0,\\pi]\\setminus\\{\\pi/2\\}$</li><li>$\\csc^{-1}x:(-\\infty,-1]\\cup[1,\\infty)\\to\\left[-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right]\\setminus\\{0\\}$</li></ul>",
+      "keyFormulae": ["$\\sin^{-1}x\\in[-\\pi/2,\\pi/2]$", "$\\cos^{-1}x\\in[0,\\pi]$", "$\\tan^{-1}x\\in(-\\pi/2,\\pi/2)$"]
+    },
+    {
+      "heading": "2.2 Self-Inverse Identities",
+      "body": "<p>For $x$ in the appropriate domain:</p><ul><li>$\\sin(\\sin^{-1}x)=x,\\;x\\in[-1,1]$ and $\\sin^{-1}(\\sin x)=x,\\;x\\in[-\\pi/2,\\pi/2]$.</li><li>$\\cos(\\cos^{-1}x)=x,\\;x\\in[-1,1]$ and $\\cos^{-1}(\\cos x)=x,\\;x\\in[0,\\pi]$.</li><li>$\\tan(\\tan^{-1}x)=x,\\;x\\in\\mathbb R$ and $\\tan^{-1}(\\tan x)=x,\\;x\\in(-\\pi/2,\\pi/2)$.</li></ul><p>Outside the principal branch, $\\sin^{-1}(\\sin x)$ may differ from $x$ by reflection / shift.</p>",
+      "keyFormulae": ["$\\sin^{-1}(\\sin x)=x$ only on $[-\\pi/2,\\pi/2]$"]
+    },
+    {
+      "heading": "2.3 Negative-Argument & Complementary Identities",
+      "body": "<p>Sign rules:</p><ul><li>$\\sin^{-1}(-x)=-\\sin^{-1}x$, $\\tan^{-1}(-x)=-\\tan^{-1}x$, $\\csc^{-1}(-x)=-\\csc^{-1}x$.</li><li>$\\cos^{-1}(-x)=\\pi-\\cos^{-1}x$, $\\sec^{-1}(-x)=\\pi-\\sec^{-1}x$, $\\cot^{-1}(-x)=\\pi-\\cot^{-1}x$.</li></ul><p>Complementary pairs:</p><ul><li>$\\sin^{-1}x+\\cos^{-1}x=\\dfrac{\\pi}{2}$, $x\\in[-1,1]$.</li><li>$\\tan^{-1}x+\\cot^{-1}x=\\dfrac{\\pi}{2}$, $x\\in\\mathbb R$.</li><li>$\\sec^{-1}x+\\csc^{-1}x=\\dfrac{\\pi}{2}$, $|x|\\geq 1$.</li></ul>",
+      "keyFormulae": ["$\\sin^{-1}x+\\cos^{-1}x=\\pi/2$", "$\\tan^{-1}x+\\cot^{-1}x=\\pi/2$"]
+    },
+    {
+      "heading": "2.4 Reciprocal Identities",
+      "body": "<p>For appropriate $x$:</p><ul><li>$\\sin^{-1}\\dfrac{1}{x}=\\csc^{-1}x$, $|x|\\geq 1$.</li><li>$\\cos^{-1}\\dfrac{1}{x}=\\sec^{-1}x$, $|x|\\geq 1$.</li><li>$\\tan^{-1}\\dfrac{1}{x}=\\cot^{-1}x$ if $x>0$; equals $-\\pi+\\cot^{-1}x$ if $x<0$.</li></ul>",
+      "keyFormulae": ["$\\tan^{-1}\\tfrac{1}{x}=\\cot^{-1}x$ for $x>0$"]
+    },
+    {
+      "heading": "2.5 Sum & Difference Formulae",
+      "body": "<p>For $\\tan^{-1}$:</p><p>$\\tan^{-1}x+\\tan^{-1}y=\\tan^{-1}\\dfrac{x+y}{1-xy}$ when $xy<1$. If $xy>1$ and $x,y>0$, add $\\pi$; if $xy>1$ and $x,y<0$, subtract $\\pi$.</p><p>$\\tan^{-1}x-\\tan^{-1}y=\\tan^{-1}\\dfrac{x-y}{1+xy}$, $xy>-1$.</p><p>For $\\sin^{-1}$ and $\\cos^{-1}$:</p><p>$\\sin^{-1}x+\\sin^{-1}y=\\sin^{-1}\\!\\left(x\\sqrt{1-y^{2}}+y\\sqrt{1-x^{2}}\\right)$, valid when $x^{2}+y^{2}\\leq1$ or $xy<0$.</p><p>$\\cos^{-1}x+\\cos^{-1}y=\\cos^{-1}\\!\\left(xy-\\sqrt{1-x^{2}}\\sqrt{1-y^{2}}\\right)$, valid when $x+y\\geq 0$.</p>",
+      "keyFormulae": ["$\\tan^{-1}x+\\tan^{-1}y=\\tan^{-1}\\dfrac{x+y}{1-xy}$ (if $xy<1$)", "$2\\tan^{-1}x=\\tan^{-1}\\dfrac{2x}{1-x^{2}}$"]
+    },
+    {
+      "heading": "2.6 Double-Angle Style Identities",
+      "body": "<p>For $\\tan^{-1}$: $2\\tan^{-1}x=\\sin^{-1}\\dfrac{2x}{1+x^{2}}=\\cos^{-1}\\dfrac{1-x^{2}}{1+x^{2}}=\\tan^{-1}\\dfrac{2x}{1-x^{2}}$ (each with its own domain restriction).</p><p>Useful conversions: $\\sin^{-1}x=\\cos^{-1}\\sqrt{1-x^{2}}=\\tan^{-1}\\dfrac{x}{\\sqrt{1-x^{2}}}$ for $x\\in[0,1]$.</p>",
+      "keyFormulae": ["$2\\tan^{-1}x=\\sin^{-1}\\dfrac{2x}{1+x^{2}}$ (for $|x|\\leq 1$)"]
+    },
+    {
+      "heading": "2.7 Graphs (Qualitative)",
+      "body": "<p>Each inverse trig graph is the reflection of the corresponding restricted trig graph in the line $y=x$.</p><ul><li>$y=\\sin^{-1}x$: increasing on $[-1,1]$, runs from $-\\pi/2$ to $\\pi/2$.</li><li>$y=\\cos^{-1}x$: decreasing on $[-1,1]$, runs from $\\pi$ to $0$.</li><li>$y=\\tan^{-1}x$: increasing on $\\mathbb R$ with horizontal asymptotes $y=\\pm\\pi/2$.</li></ul>",
+      "keyFormulae": ["Asymptotes of $\\tan^{-1}x$: $y=\\pm\\pi/2$"]
+    }
+  ],
+  "summary": "Inverse trig functions are defined on principal branches that make trig functions bijective. Master the standard ranges, the self-inverse identity rule (only inside the principal range), the complementary pair $\\sin^{-1}+\\cos^{-1}=\\pi/2$, sign/reflection rules, and the sum-of-arctangents formula $\\tan^{-1}x+\\tan^{-1}y=\\tan^{-1}\\tfrac{x+y}{1-xy}$ along with its $\\pm\\pi$ correction when $xy>1$.",
+  "pitfalls": [
+    "Forgetting principal-value range — $\\sin^{-1}(\\sin 5\\pi/4)\\neq 5\\pi/4$.",
+    "Applying $\\tan^{-1}x+\\tan^{-1}y=\\tan^{-1}\\tfrac{x+y}{1-xy}$ blindly when $xy>1$ — must add or subtract $\\pi$.",
+    "Mixing up $\\cos^{-1}(-x)=\\pi-\\cos^{-1}x$ with $\\sin^{-1}(-x)=-\\sin^{-1}x$.",
+    "Writing $\\sec^{-1}x$ over the whole real line — domain is $|x|\\geq 1$.",
+    "Treating $\\sin^{-1}x$ as $1/\\sin x$ — that's $\\csc x$, not the inverse."
+  ]
+}
