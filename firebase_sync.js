@@ -69,16 +69,17 @@
     function setIcon(status) {
       var btn = document.getElementById('v70-sync-btn');
       if (!btn) return;
-      var colors = { idle:'var(--ink-muted)', pending:'#f59e0b', synced:'#16a34a', error:'#ef4444' };
+      var colors = { idle:'var(--ink-muted)', pending:'#f59e0b', synced:'#16a34a', error:'#ef4444', local:'var(--ink-muted)' };
       var titles = {
         idle:    'Sync — click to sign in with Google',
         pending: 'Syncing to cloud…',
         synced:  'Synced ✓ — all devices up to date',
-        error:   'Sync failed — will retry'
+        error:   'Sync failed — will retry',
+        local:   'Saved locally — will sync when connection is stable'
       };
       btn.innerHTML        = cloudSVG(colors[status] || 'var(--ink-muted)');
       btn.title            = titles[status]  || 'Sync';
-      btn.style.animation  = status === 'pending' ? 'v70pulse 1.2s ease-in-out infinite' : '';
+      btn.style.animation  = (status === 'pending') ? 'v70pulse 1.2s ease-in-out infinite' : '';
     }
 
     // ── Sign-in / sign-out menu ──────────────────────────────────────────────
@@ -172,13 +173,29 @@
       if (!uid || !window.state) return;
       window.state._ts = Date.now();
       var payload = { json: JSON.stringify(window.state), _ts: window.state._ts };
+
+      var settled = false;
+      // If Firestore is offline the promise hangs indefinitely — bail after 10s
+      var timeoutId = setTimeout(function () {
+        if (settled) return;
+        settled = true;
+        console.warn('[Sync] Write timed out — saved locally, will retry when online');
+        setIcon('local');
+        setTimeout(writeToCloud, 30000);
+      }, 10000);
+
       db.doc('users/' + uid + '/data/state').set(payload).then(function () {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timeoutId);
         setIcon('synced');
         console.log('[Sync] Saved to cloud at', new Date(window.state._ts).toISOString());
       }).catch(function (e) {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timeoutId);
         console.warn('[Sync] Save failed:', e.code, e.message);
         setIcon('error');
-        // Retry in 20s
         setTimeout(writeToCloud, 20000);
       });
     }
