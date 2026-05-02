@@ -24,8 +24,8 @@
 
 <div class="th-concept">
   <span class="th-label">Definition</span>
-  A <strong>relation R</strong> from set A to set B is any subset of $A \times B$.<br>
-  <small style="color:var(--ink-soft)">Write $(a, b) \in R$ or $a\,R\,b$ meaning "a is related to b"</small>
+  A <strong>relation R</strong> from set A to set B is any subset of $A \\times B$.<br>
+  <small style="color:var(--ink-soft)">Write $(a, b) \\in R$ or $a\\,R\\,b$ meaning "a is related to b"</small>
 </div>
 
 <div class="th-h3">Types of Relations</div>
@@ -34,17 +34,17 @@
   <tbody>
     <tr>
       <td><strong>Reflexive</strong></td>
-      <td>$(a,a) \in R$ for <em>every</em> $a \in A$</td>
+      <td>$(a,a) \\in R$ for <em>every</em> $a \\in A$</td>
       <td>Like a mirror — each element reflects itself</td>
     </tr>
     <tr>
       <td><strong>Symmetric</strong></td>
-      <td>$(a,b) \in R \Rightarrow (b,a) \in R$</td>
+      <td>$(a,b) \\in R \\Rightarrow (b,a) \\in R$</td>
       <td>Two-way road: if A→B then B→A</td>
     </tr>
     <tr>
       <td><strong>Transitive</strong></td>
-      <td>$(a,b) \in R$ and $(b,c) \in R \Rightarrow (a,c) \in R$</td>
+      <td>$(a,b) \\in R$ and $(b,c) \\in R \\Rightarrow (a,c) \\in R$</td>
       <td>Chain: A→B and B→C means A→C</td>
     </tr>
     <tr>
@@ -62,23 +62,23 @@
 <div class="th-example">
   <span class="th-label">ISC 2024 MCQ — "Perpendicular to" on set of lines L</span>
   Reflexive? A line ⊥ to itself? <strong>NO</strong> ✗<br>
-  Symmetric? $\ell_1 \perp \ell_2 \Rightarrow \ell_2 \perp \ell_1$? <strong>YES</strong> ✓<br>
-  Transitive? $\ell_1 \perp \ell_2$ and $\ell_2 \perp \ell_3 \Rightarrow \ell_1 \perp \ell_3$? <strong>NO</strong> (they'd be parallel) ✗<br>
+  Symmetric? $\\ell_1 \\perp \\ell_2 \\Rightarrow \\ell_2 \\perp \\ell_1$? <strong>YES</strong> ✓<br>
+  Transitive? $\\ell_1 \\perp \\ell_2$ and $\\ell_2 \\perp \\ell_3 \\Rightarrow \\ell_1 \\perp \\ell_3$? <strong>NO</strong> (they'd be parallel) ✗<br>
   <strong>Answer: Only Symmetric</strong>
 </div>
 
 <div class="th-example">
   <span class="th-label">ISC 2025 MCQ — Smallest equivalence relation on A = {1,2,3}</span>
   Reflexive requires $(1,1),(2,2),(3,3)$. These three pairs alone form an equivalence relation.<br>
-  <strong>Answer: $\{(1,1),(2,2),(3,3)\}$</strong> — the identity relation
+  <strong>Answer: $\\{(1,1),(2,2),(3,3)\\}$</strong> — the identity relation
 </div>
 
 <div class="th-h2">Functions &amp; Their Types</div>
 
 <div class="th-concept">
   <span class="th-label">Definition</span>
-  A <strong>function</strong> $f: A \to B$ maps each element of $A$ to exactly <em>one</em> element of $B$.<br>
-  <small style="color:var(--ink-soft)">Domain = $A$,&nbsp; Codomain = $B$,&nbsp; Range = $\{f(a): a \in A\} \subseteq B$</small>
+  A <strong>function</strong> $f: A \\to B$ maps each element of $A$ to exactly <em>one</em> element of $B$.<br>
+  <small style="color:var(--ink-soft)">Domain = $A$,&nbsp; Codomain = $B$,&nbsp; Range = $\\{f(a): a \\in A\\} \\subseteq B$</small>
 </div>
 
 <table class="th-table">
@@ -86,13 +86,13 @@
   <tbody>
     <tr>
       <td><strong>One-One</strong><br><small style="color:var(--ink-muted)">Injective</small></td>
-      <td>$x_1 \ne x_2 \Rightarrow f(x_1) \ne f(x_2)$<br><small>No two inputs share an output</small></td>
+      <td>$x_1 \\ne x_2 \\Rightarrow f(x_1) \\ne f(x_2)$<br><small>No two inputs share an output</small></td>
       <td>Assume $f(x_1) = f(x_2)$, prove $x_1 = x_2$</td>
     </tr>
     <tr>
       <td><strong>Onto</strong><br><small style="color:var(--ink-muted)">Surjective</small></td>
-      <td>Range = Codomain<br><small>Every $y \in B$ has a pre-image in $A$</small></td>
-      <td>For any $y \in B$, find $x \in A$ with $f(x) = y$</td>
+      <td>Range = Codomain<br><small>Every $y \\in B$ has a pre-image in $A$</small></td>
+      <td>For any $y \\in B$, find $x \\in A$ with $f(x) = y$</td>
     </tr>
     <tr>
       <td><strong>Bijective</strong></td>
@@ -115,29 +115,29 @@
   <li>Write: "Let $y$ be any element in codomain $B$"</li>
   <li>Set $f(x) = y$ and solve for $x$ in terms of $y$</li>
   <li>Verify this $x$ lies in domain $A$</li>
-  <li>Conclude: "For every $y \in B$, $\exists\ x \in A$ with $f(x)=y$. Hence onto ✓"</li>
+  <li>Conclude: "For every $y \\in B$, $\\exists\\ x \\in A$ with $f(x)=y$. Hence onto ✓"</li>
 </ol>
 
 <div class="th-example">
   <span class="th-label">ISC 2019 — Show f(x) = (8x+3)/(5x−8) is bijective, find inverse</span>
   <strong>One-one:</strong> Let $f(x_1) = f(x_2)$<br>
-  $\dfrac{8x_1+3}{5x_1-8} = \dfrac{8x_2+3}{5x_2-8}$<br>
-  Cross-multiply &amp; simplify: $-40x_1+40x_2 = 0 \Rightarrow x_1 = x_2$ ✓<br><br>
-  <strong>Onto &amp; Inverse:</strong> Set $y = \dfrac{8x+3}{5x-8}$ → solve: $x = \dfrac{8y+3}{5y-8}$<br>
-  For every $y \ne \frac{8}{5}$, valid $x$ exists → onto ✓<br>
-  Therefore $f^{-1}(x) = \dfrac{8x+3}{5x-8}$ — <em>f is its own inverse!</em>
+  $\\dfrac{8x_1+3}{5x_1-8} = \\dfrac{8x_2+3}{5x_2-8}$<br>
+  Cross-multiply &amp; simplify: $-40x_1+40x_2 = 0 \\Rightarrow x_1 = x_2$ ✓<br><br>
+  <strong>Onto &amp; Inverse:</strong> Set $y = \\dfrac{8x+3}{5x-8}$ → solve: $x = \\dfrac{8y+3}{5y-8}$<br>
+  For every $y \\ne \\frac{8}{5}$, valid $x$ exists → onto ✓<br>
+  Therefore $f^{-1}(x) = \\dfrac{8x+3}{5x-8}$ — <em>f is its own inverse!</em>
 </div>
 
 <div class="th-h2">Composition of Functions</div>
 
 <div class="th-formula">
   <span class="th-label">Formula</span>
-  $$(f \circ g)(x) = f\!\left(g(x)\right)$$
-  <small style="color:var(--ink-soft);display:block;margin-top:6px">Apply $g$ first, then $f$. Note: $f \circ g \ne g \circ f$ in general.</small>
+  $$(f \\circ g)(x) = f\\!\\left(g(x)\\right)$$
+  <small style="color:var(--ink-soft);display:block;margin-top:6px">Apply $g$ first, then $f$. Note: $f \\circ g \\ne g \\circ f$ in general.</small>
 </div>
 
 <div class="th-pyq">
-  <strong>ISC 2020 (4 marks):</strong> $f(x) = \dfrac{4x+3}{6x-4}$, $g(x) = \dfrac{2x+3}{3x-2}$ — Show $(f\circ g)(x) = x$ and $(g\circ f)(x) = x$.<br>
+  <strong>ISC 2020 (4 marks):</strong> $f(x) = \\dfrac{4x+3}{6x-4}$, $g(x) = \\dfrac{2x+3}{3x-2}$ — Show $(f\\circ g)(x) = x$ and $(g\\circ f)(x) = x$.<br>
   This proves $f$ and $g$ are <strong>inverses of each other</strong>.
 </div>
 
@@ -145,46 +145,46 @@
 
 <div class="th-concept">
   <span class="th-label">Key Theorem</span>
-  $f: A \to B$ is invertible <strong>if and only if</strong> $f$ is <strong>bijective</strong>.<br>
-  The inverse $f^{-1}: B \to A$ satisfies $f(f^{-1}(y)) = y$ and $f^{-1}(f(x)) = x$.
+  $f: A \\to B$ is invertible <strong>if and only if</strong> $f$ is <strong>bijective</strong>.<br>
+  The inverse $f^{-1}: B \\to A$ satisfies $f(f^{-1}(y)) = y$ and $f^{-1}(f(x)) = x$.
 </div>
 
 <div class="th-warn">
-  ⚠ <strong>Critical distinction:</strong> $f^{-1}(x)$ is the <em>inverse function</em>, NOT $\dfrac{1}{f(x)}$.
+  ⚠ <strong>Critical distinction:</strong> $f^{-1}(x)$ is the <em>inverse function</em>, NOT $\\dfrac{1}{f(x)}$.
 </div>
 
 <div class="th-h3">⭐ Universal Recipe for f⁻¹(x) — Works Every Time</div>
 <ol class="th-steps">
   <li>Write $y = f(x)$</li>
   <li>Solve for $x$ in terms of $y$</li>
-  <li>Replace $y \to x$ — this is $f^{-1}(x)$</li>
-  <li><strong>Verify:</strong> compute $(f \circ f^{-1})(x)$ and confirm it equals $x$</li>
+  <li>Replace $y \\to x$ — this is $f^{-1}(x)$</li>
+  <li><strong>Verify:</strong> compute $(f \\circ f^{-1})(x)$ and confirm it equals $x$</li>
 </ol>
 
 <div class="th-example">
   <span class="th-label">ISC 2018 — f(x) = √(2x−3), find f⁻¹(x) and prove (f∘f⁻¹)(x) = x</span>
-  $y = \sqrt{2x-3} \Rightarrow y^2 = 2x-3 \Rightarrow x = \dfrac{y^2+3}{2}$<br>
-  $\therefore\ f^{-1}(x) = \dfrac{x^2+3}{2}$<br>
-  <strong>Verify:</strong> $f(f^{-1}(x)) = \sqrt{2 \cdot \dfrac{x^2+3}{2} - 3} = \sqrt{x^2} = x$ ✓
+  $y = \\sqrt{2x-3} \\Rightarrow y^2 = 2x-3 \\Rightarrow x = \\dfrac{y^2+3}{2}$<br>
+  $\\therefore\\ f^{-1}(x) = \\dfrac{x^2+3}{2}$<br>
+  <strong>Verify:</strong> $f(f^{-1}(x)) = \\sqrt{2 \\cdot \\dfrac{x^2+3}{2} - 3} = \\sqrt{x^2} = x$ ✓
 </div>
 
 <div class="th-example">
   <span class="th-label">ISC 2023 — f(x) = [4−(x−7)³]^(1/5), find f⁻¹(x)</span>
   $y = [4-(x-7)^3]^{1/5}$<br>
-  $y^5 = 4-(x-7)^3 \Rightarrow (x-7)^3 = 4-y^5 \Rightarrow x = 7+(4-y^5)^{1/3}$<br>
-  $\boldsymbol{f^{-1}(x) = 7+(4-x^5)^{1/3}}$
+  $y^5 = 4-(x-7)^3 \\Rightarrow (x-7)^3 = 4-y^5 \\Rightarrow x = 7+(4-y^5)^{1/3}$<br>
+  $\\boldsymbol{f^{-1}(x) = 7+(4-x^5)^{1/3}}$
 </div>
 
 <div class="th-example">
   <span class="th-label">ISC 2024 — f(x) = 1/(log x−1), find f⁻¹(x)</span>
-  $y = \dfrac{1}{\log x - 1} \Rightarrow \log x = 1 + \dfrac{1}{y} \Rightarrow \boldsymbol{f^{-1}(x) = e^{1+1/x}}$
+  $y = \\dfrac{1}{\\log x - 1} \\Rightarrow \\log x = 1 + \\dfrac{1}{y} \\Rightarrow \\boldsymbol{f^{-1}(x) = e^{1+1/x}}$
 </div>
 
 <div class="th-pyq">
   <strong>Full-Mark Board Strategy (4-mark questions):</strong><br>
   ① State "$f$ is bijective (one-one + onto), hence invertible"<br>
   ② Use the 4-step recipe to find $f^{-1}(x)$<br>
-  ③ Always write the verification step: $(f \circ f^{-1})(x) = x$ ✓<br>
+  ③ Always write the verification step: $(f \\circ f^{-1})(x) = x$ ✓<br>
   Missing step ③ typically costs 1 mark.
 </div>
 `;

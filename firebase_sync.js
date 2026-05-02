@@ -130,6 +130,18 @@
       }, 10);
     }
 
+    // ── Local state helpers (engine stores state as let, not window.state) ──
+    function getLocalState() {
+      try { return JSON.parse(localStorage.getItem('studydeck_state')); } catch(e) { return null; }
+    }
+    function setLocalState(s) {
+      try { localStorage.setItem('studydeck_state', JSON.stringify(s)); } catch(e) {}
+      // Also patch window.state if engine exposed it
+      if (window.state && typeof window.state === 'object') {
+        Object.keys(s).forEach(function(k) { window.state[k] = s[k]; });
+      }
+    }
+
     // ── REST helpers ─────────────────────────────────────────────────────────
     function fsGet() {
       return getToken().then(function (token) {
@@ -188,13 +200,13 @@
         var cloudState = fromFsDoc(doc);
         if (!cloudState) { writeToCloud(); return; }
 
-        var localTs = (window.state && window.state._ts) || 0;
+        var localState = getLocalState();
+        var localTs = (localState && localState._ts) || 0;
         var cloudTs = cloudState._ts || 0;
 
         if (cloudTs > localTs) {
           console.log('[Sync] Cloud newer — applying (cloud:', cloudTs, 'local:', localTs, ')');
-          Object.keys(cloudState).forEach(function (k) { window.state[k] = cloudState[k]; });
-          try { localStorage.setItem('studydeck_state', JSON.stringify(window.state)); } catch (e) {}
+          setLocalState(cloudState);
           try { if (typeof renderHeaderStats === 'function') renderHeaderStats(); } catch (e) {}
           try {
             var pv = document.getElementById('view-plan');
@@ -221,9 +233,12 @@
     }
 
     function writeToCloud() {
-      if (!uid || !window.state) return;
-      window.state._ts = Date.now();
-      fsPatch(toFsDoc(window.state)).then(function (r) {
+      if (!uid) return;
+      var st = getLocalState();
+      if (!st) return;
+      st._ts = Date.now();
+      setLocalState(st);
+      fsPatch(toFsDoc(st)).then(function (r) {
         if (!r.ok) { return r.json().then(function (e) { throw new Error((e.error && e.error.message) || r.status); }); }
         setIcon('synced');
         console.log('[Sync] Saved to cloud at', new Date(window.state._ts).toISOString());

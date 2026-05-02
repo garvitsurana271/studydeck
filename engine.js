@@ -1,7 +1,7 @@
 // ============= MULTI-CHAPTER ENGINE =============
-// Subjects → Chapters → Parts → Topics
+// Subjects \u2192 Chapters \u2192 Parts \u2192 Topics
 
-// KaTeX helper — renders any $…$, $$…$$, \(…\), \[…\] inside the given element.
+// KaTeX helper \u2014 renders any $\u2026$, $$\u2026$$, \(\u2026\), \[\u2026\] inside the given element.
 // Safe to call before KaTeX has loaded (no-op until window.renderMathInElement exists).
 function renderMathIn(el) {
   if (window.renderMathInElement && el) {
@@ -30,24 +30,24 @@ function getLevel(xp) {
 }
 
 const ACHIEVEMENTS = [
-  { id: 'first_spark',    icon: '⚡', name: 'First Spark',    desc: 'First correct answer' },
-  { id: 'untouchable',    icon: '✦', name: 'Untouchable',    desc: '10-streak chain' },
-  { id: 'perfectionist',  icon: '◆', name: 'Perfectionist',  desc: '100% on a topic' },
-  { id: 'speed_demon',    icon: '◐', name: 'Speed Demon',    desc: 'Answer in under 5 seconds' },
-  { id: 'night_owl',      icon: '☾', name: 'Night Owl',      desc: 'Study after 11 PM' },
-  { id: 'critical',       icon: '✶', name: 'Critical',       desc: 'First critical hit' },
-  { id: 'shielded',       icon: '🛡', name: 'Shielded',       desc: 'Save streak with shield' },
-  { id: 'discharge',      icon: '⚡', name: 'Discharge',      desc: 'Trigger a lightning strike' },
-  { id: 'marathon',       icon: '∞', name: 'Marathon',       desc: '50 problems in one day' },
-  { id: 'topic_master',   icon: '★', name: 'Topic Master',   desc: 'Complete first topic' },
-  { id: 'chapter_clear',  icon: '☆', name: 'Chapter Clear',  desc: 'Complete entire chapter' },
-  { id: 'level_5',        icon: '◈', name: 'Adept',          desc: 'Reach level 4 (Adept)' },
+  { id: 'first_spark',    icon: '\u26A1', name: 'First Spark',    desc: 'First correct answer' },
+  { id: 'untouchable',    icon: '\u2726', name: 'Untouchable',    desc: '10-streak chain' },
+  { id: 'perfectionist',  icon: '\u25C6', name: 'Perfectionist',  desc: '100% on a topic' },
+  { id: 'speed_demon',    icon: '\u25D0', name: 'Speed Demon',    desc: 'Answer in under 5 seconds' },
+  { id: 'night_owl',      icon: '\u263E', name: 'Night Owl',      desc: 'Study after 11 PM' },
+  { id: 'critical',       icon: '\u2736', name: 'Critical',       desc: 'First critical hit' },
+  { id: 'shielded',       icon: '\uD83D\uDEE1', name: 'Shielded',       desc: 'Save streak with shield' },
+  { id: 'discharge',      icon: '\u26A1', name: 'Discharge',      desc: 'Trigger a lightning strike' },
+  { id: 'marathon',       icon: '\u221E', name: 'Marathon',       desc: '50 problems in one day' },
+  { id: 'topic_master',   icon: '\u2605', name: 'Topic Master',   desc: 'Complete first topic' },
+  { id: 'chapter_clear',  icon: '\u2606', name: 'Chapter Clear',  desc: 'Complete entire chapter' },
+  { id: 'level_5',        icon: '\u25C8', name: 'Adept',          desc: 'Reach level 4 (Adept)' },
 ];
 
 const SUBJECT_THEMES = {
-  Physics:   { icon: '⚡', color: '#1E3AFF', soft: '#E5E9FF', name: 'Physics' },
-  Chemistry: { icon: '🧪', color: '#0FA968', soft: '#D7F4E5', name: 'Chemistry' },
-  Maths:     { icon: '∫',  color: '#7C3AED', soft: '#EDE4FF', name: 'Maths' },
+  Physics:   { icon: '\u26A1', color: '#1E3AFF', soft: '#E5E9FF', name: 'Physics' },
+  Chemistry: { icon: '\uD83E\uDDEA', color: '#0FA968', soft: '#D7F4E5', name: 'Chemistry' },
+  Maths:     { icon: '\u222B',  color: '#7C3AED', soft: '#EDE4FF', name: 'Maths' },
 };
 
 const DEFAULT_STATE = {
@@ -80,7 +80,7 @@ const DEFAULT_STATE = {
   chaptersExpanded: false,
   // ===== NEW: plan view =====
   stealth: false,
-  planChecks: {}, // { 'YYYY-MM-DD': { core: bool, bonus: bool, pomos: [bool×5] } }
+  planChecks: {}, // { 'YYYY-MM-DD': { core: bool, bonus: bool, pomos: [bool\u00D75] } }
 };
 let state = loadState();
 let session = { topicFullId: null, problems: [], idx: 0, correct: 0, xpEarned: 0, mixed: false };
@@ -261,12 +261,12 @@ function renderMission() {
     todayHTML = `
       <section class="today fade-in delay-1">
         <div class="today-meta">Today's mission</div>
-        <h1 class="today-title">${theme.icon} ${cont.chapter.subject} <em>→</em><br/>${cont.chapter.name}</h1>
+        <h1 class="today-title">${theme.icon} ${cont.chapter.subject} <em>\u2192</em><br/>${cont.chapter.name}</h1>
         <p class="today-sub">Next up: <strong>${cont.topic.name}</strong></p>
         <div class="today-row">
           <button class="today-cta" onclick="continueStudying()">Continue<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-          <button class="today-cta secondary" onclick="randomTopic()">⚡ Random</button>
-          <button class="today-cta secondary" onclick="openMockConfig()">🎯 Mock test</button>
+          <button class="today-cta secondary" onclick="randomTopic()">\u26A1 Random</button>
+          <button class="today-cta secondary" onclick="openMockConfig()">\uD83C\uDFAF Mock test</button>
           <button class="today-cta secondary" onclick="openChapter('${cont.chapter.id}')">Open chapter</button>
         </div>
         <div class="progress-row">
@@ -314,12 +314,12 @@ function renderSubject() {
   const stats = subjectStats(sub);
   const theme = SUBJECT_THEMES[sub];
   const html = [
-    `<button class="back-btn" onclick="setView('mission')">← Back</button>`,
+    `<button class="back-btn" onclick="setView('mission')">\u2190 Back</button>`,
     `<div class="subject-hero" style="--theme:${theme.color}; --soft:${theme.soft};">
       <div class="subject-hero-icon">${theme.icon}</div>
       <div class="subject-hero-text">
         <h1 class="subject-hero-title">${sub}</h1>
-        <p class="subject-hero-sub">${stats.doneChapters} of ${stats.totalChapters} chapters · ${stats.doneTopics} of ${stats.totalTopics} topics mastered</p>
+        <p class="subject-hero-sub">${stats.doneChapters} of ${stats.totalChapters} chapters \u00B7 ${stats.doneTopics} of ${stats.totalTopics} topics mastered</p>
       </div>
     </div>`,
     `<div class="chapter-list">`,
@@ -328,16 +328,16 @@ function renderSubject() {
     const cs = chapterStats(ch);
     const pct = cs.total > 0 ? (cs.done / cs.total) * 100 : 0;
     const status = cs.done === cs.total && cs.total > 0 ? 'done' : (cs.inProgress > 0 || state.currentChapterId === ch.id ? 'active' : 'idle');
-    const statusIcon = status === 'done' ? '✓' : (status === 'active' ? '►' : ch.number);
+    const statusIcon = status === 'done' ? '\u2713' : (status === 'active' ? '\u25BA' : ch.number);
     html.push(`
       <div class="chapter-row fade-in delay-${Math.min(i+1, 6)} ${status}" onclick="openChapter('${ch.id}')" style="--theme:${theme.color}; --soft:${theme.soft};">
         <div class="chapter-num">${statusIcon}</div>
         <div class="chapter-info">
           <div class="chapter-name">Ch ${ch.number}: ${ch.name}</div>
-          <div class="chapter-meta">${cs.done} / ${cs.total} topics${cs.inProgress > 0 ? ` · ${cs.inProgress} in progress` : ''}</div>
+          <div class="chapter-meta">${cs.done} / ${cs.total} topics${cs.inProgress > 0 ? ` \u00B7 ${cs.inProgress} in progress` : ''}</div>
           <div class="chapter-progress"><div class="chapter-progress-fill" style="width:${pct}%; background:${theme.color};"></div></div>
         </div>
-        <div class="chapter-arrow">→</div>
+        <div class="chapter-arrow">\u2192</div>
       </div>
     `);
   });
@@ -363,16 +363,16 @@ function renderChapter() {
   const pct = stats.total > 0 ? (stats.done / stats.total) * 100 : 0;
   const theme = SUBJECT_THEMES[ch.subject];
   const html = [
-    `<button class="back-btn" onclick="setView('subject')">← ${ch.subject}</button>`,
+    `<button class="back-btn" onclick="setView('subject')">\u2190 ${ch.subject}</button>`,
     `<section class="chapter-hero" style="--theme:${theme.color}; --soft:${theme.soft};">
-      <div class="chapter-hero-meta">${theme.icon} ${ch.subject} · Ch ${ch.number}</div>
+      <div class="chapter-hero-meta">${theme.icon} ${ch.subject} \u00B7 Ch ${ch.number}</div>
       <h1 class="chapter-hero-title">${ch.name}</h1>
       <div class="progress-row">
         <div class="progress-bar"><div class="progress-fill" style="width:${pct}%; background:${theme.color};"></div></div>
         <span class="progress-label">${stats.done} / ${stats.total}</span>
       </div>
       <div class="charge-meter" style="margin-top:24px;padding-top:24px;">
-        <div class="charge-meter-head"><span class="charge-meter-label">⚡ Charge meter</span><span class="charge-meter-val">${Math.min(state.charge, 10)} / 10</span></div>
+        <div class="charge-meter-head"><span class="charge-meter-label">\u26A1 Charge meter</span><span class="charge-meter-val">${Math.min(state.charge, 10)} / 10</span></div>
         <div class="charge-meter-bar"><div class="charge-meter-fill ${state.charge >= 10 ? 'full' : ''}" style="width:${Math.min(100, (state.charge/10)*100)}%;"></div></div>
       </div>
     </section>`,
@@ -408,11 +408,11 @@ function renderChapter() {
       if (isDone) cls.push('done');
       else if (isActive) cls.push('active');
       else if (!hasContent) cls.push('locked');
-      const status = isDone ? '✓' : (isActive ? '►' : (hasContent ? `${letter}${tIdx+1}` : '⏳'));
+      const status = isDone ? '\u2713' : (isActive ? '\u25BA' : (hasContent ? `${letter}${tIdx+1}` : '\u23F3'));
       const qCount = topic.questions?.length || 0;
       const hasTheory = (topic.theory && topic.theory.length > 100) || (ch.theory && ch.theory.length > 100);
       const meta = isDone
-        ? `mastered · ${ts.attempts || 0} attempts`
+        ? `mastered \u00B7 ${ts.attempts || 0} attempts`
         : (hasContent
             ? (hasTheory && qCount > 0 ? `theory + ${qCount} questions` : (hasTheory ? 'theory' : `${qCount} questions`))
             : 'coming soon');
@@ -427,25 +427,25 @@ function renderChapter() {
 
 // ============= PLAN VIEW =============
 const PLAN_PHASES = [
-  { num:0, name:'This Week',  desc:'App built · all 37 chapters live · EV1 push begins', start:'2026-04-27', end:'2026-04-30' },
-  { num:1, name:'First Pass', desc:'Cover EV1 chapters (Phys 1–5 · Chem 1–3 · Maths 1–6)', start:'2026-05-03', end:'2026-06-13' },
+  { num:0, name:'This Week',  desc:'App built \u00B7 all 37 chapters live \u00B7 EV1 push begins', start:'2026-04-27', end:'2026-04-30' },
+  { num:1, name:'First Pass', desc:'Cover EV1 chapters (Phys 1\u20135 \u00B7 Chem 1\u20133 \u00B7 Maths 1\u20136)', start:'2026-05-03', end:'2026-06-13' },
   { num:2, name:'EV1 Revision', desc:'Written mode PYQs + derivation drills all EV1 chapters', start:'2026-06-14', end:'2026-06-27' },
-  { num:3, name:'EV1 Mocks',   desc:'V69 full mocks · final weak-spot push · EV1 4 Jul', start:'2026-06-28', end:'2026-07-03' },
-  { num:4, name:'Deep Dive',  desc:'ISC derivations · PYQ grind', start:'2026-07-08', end:'2026-10-31' },
-  { num:5, name:'PB1 Prep',   desc:'Mock papers · weak-spot patching', start:'2026-11-01', end:'2026-12-05' },
-  { num:6, name:'PB2 Prep',   desc:'Full mocks · handwritten papers begin', start:'2026-12-06', end:'2027-01-10' },
-  { num:7, name:'Final Blitz',desc:'PYQs daily · formula sheets · BOARDS', start:'2027-01-11', end:'2027-02-28' },
+  { num:3, name:'EV1 Mocks',   desc:'V69 full mocks \u00B7 final weak-spot push \u00B7 EV1 4 Jul', start:'2026-06-28', end:'2026-07-03' },
+  { num:4, name:'Deep Dive',  desc:'ISC derivations \u00B7 PYQ grind', start:'2026-07-08', end:'2026-10-31' },
+  { num:5, name:'PB1 Prep',   desc:'Mock papers \u00B7 weak-spot patching', start:'2026-11-01', end:'2026-12-05' },
+  { num:6, name:'PB2 Prep',   desc:'Full mocks \u00B7 handwritten papers begin', start:'2026-12-06', end:'2027-01-10' },
+  { num:7, name:'Final Blitz',desc:'PYQs daily \u00B7 formula sheets \u00B7 BOARDS', start:'2027-01-11', end:'2027-02-28' },
 ];
 const PLAN_BLOCKS = [
-  { time:'6:00 AM',  label:'Wake · school',     desc:'Bus, no negotiation', pill:'rest', range:[6,15] },
+  { time:'6:00 AM',  label:'Wake \u00B7 school',     desc:'Bus, no negotiation', pill:'rest', range:[6,15] },
   { time:'3:20 PM',  label:'Decompress zone',   desc:'Lunch + doomscroll. NOT study. No guilt.', pill:'sacred', range:[15,17], stealthDesc:'Break time' },
-  { time:'5:00 PM',  label:'Core block · 5×25 min', desc:'Non-negotiable. Even ONE block = not a zero day.', pill:'core', range:[17,19.5], stealthDesc:'Study session' },
+  { time:'5:00 PM',  label:'Core block \u00B7 5\u00D725 min', desc:'Non-negotiable. Even ONE block = not a zero day.', pill:'core', range:[17,19.5], stealthDesc:'Study session' },
   { time:'7:30 PM',  label:'Dinner + chill',    desc:'Eat, breathe.', pill:'rest', range:[19.5,20.5] },
   { time:'8:30 PM',  label:'Optional 1 hr',     desc:'Light review or HW. Never new theory.', pill:'bonus', range:[20.5,21.5], stealthDesc:'Optional review' },
   { time:'12:00 AM', label:'Sleep',             desc:'Lights out.', pill:'rest', range:[0,6] },
 ];
 const PLAN_RULES = [
-  { t:'3:20–5 PM is sacred',  d:'Doomscroll without guilt. It\'s planned for.' },
+  { t:'3:20\u20135 PM is sacred',  d:'Doomscroll without guilt. It\'s planned for.' },
   { t:'No zero days',         d:'5 PM block starts no matter what. One Pomodoro counts.' },
   { t:'One subject per block',d:'No mid-block switching. Ever.' },
   { t:'8:30 is bonus',        d:'Never a debt. Skip it freely.' },
@@ -453,31 +453,31 @@ const PLAN_RULES = [
   { t:'Sunday plans the week',d:'Even 30 min. Non-negotiable.' },
 ];
 const PLAN_POMOS = [
-  { n:'01', time:'5:00–5:25', subj:'Maths',     subjKey:'Maths',     cls:'maths' },
-  { n:'02', time:'5:30–5:55', subj:'Physics',   subjKey:'Physics',   cls:'physics' },
-  { n:'03', time:'6:00–6:25', subj:'Maths',     subjKey:'Maths',     cls:'maths' },
-  { n:'04', time:'6:35–7:00', subj:'Physics',   subjKey:'Physics',   cls:'physics' },
-  { n:'05', time:'7:05–7:30', subj:'Chemistry', subjKey:'Chemistry', cls:'chemistry' },
+  { n:'01', time:'5:00\u20135:25', subj:'Maths',     subjKey:'Maths',     cls:'maths' },
+  { n:'02', time:'5:30\u20135:55', subj:'Physics',   subjKey:'Physics',   cls:'physics' },
+  { n:'03', time:'6:00\u20136:25', subj:'Maths',     subjKey:'Maths',     cls:'maths' },
+  { n:'04', time:'6:35\u20137:00', subj:'Physics',   subjKey:'Physics',   cls:'physics' },
+  { n:'05', time:'7:05\u20137:30', subj:'Chemistry', subjKey:'Chemistry', cls:'chemistry' },
 ];
 const PLAN_EV1_WEEKS = [
-  { w:1, start:'2026-05-03', dates:'May 3–9',      phase:'cover', chapters:['phys_1','chem_1','math_1'], phys:'Ch 1 · Electric Charges & Fields',      chem:'Ch 1 · Solutions',              math:'Ch 1 · Relations & Functions' },
-  { w:2, start:'2026-05-10', dates:'May 10–16',    phase:'cover', chapters:['phys_2','chem_1','math_2'], phys:'Ch 2 · Electrostatic Potential',         chem:'Ch 1 · Solutions (finish)',      math:'Ch 2 · Inverse Trig' },
-  { w:3, start:'2026-05-17', dates:'May 17–23',    phase:'cover', chapters:['phys_3','chem_2','math_3'], phys:'Ch 3 · Current Electricity',             chem:'Ch 2 · Electrochemistry',        math:'Ch 3 · Matrices' },
-  { w:4, start:'2026-05-24', dates:'May 24–30',    phase:'cover', chapters:['phys_4','chem_2','math_4'], phys:'Ch 4 · Moving Charges & Magnetism',      chem:'Ch 2 · Electrochemistry (finish)',math:'Ch 4 · Determinants' },
-  { w:5, start:'2026-05-31', dates:'May 31–Jun 6', phase:'cover', chapters:['phys_4','phys_5','chem_3','math_5'], phys:'Ch 4 finish + Ch 5 start',      chem:'Ch 3 · Chemical Kinetics',       math:'Ch 5 · Continuity & Differentiability' },
-  { w:6, start:'2026-06-07', dates:'Jun 7–13',     phase:'cover', chapters:['phys_5','chem_3','math_6'], phys:'Ch 5 · Magnetism & Matter (finish)',     chem:'Ch 3 · Chemical Kinetics (finish)',math:'Ch 6 · Application of Derivatives' },
-  { w:7, start:'2026-06-14', dates:'Jun 14–20',    phase:'revise', chapters:['phys_1','phys_2','phys_3','phys_4','phys_5','chem_1','chem_2','chem_3','math_1','math_2','math_3','math_4','math_5','math_6'], label:'Revision — all EV1 chapters · written mode + derivation drills (V67/V68)' },
-  { w:8, start:'2026-06-21', dates:'Jun 21–27',    phase:'mock',   label:'Mocks — 2× full exam simulator (V69) + PYQ written drill every session' },
-  { w:9, start:'2026-06-28', dates:'Jun 28–Jul 3', phase:'final',  label:'Final push — weak spots only · sleep by 10 PM on Jul 3' },
+  { w:1, start:'2026-05-03', dates:'May 3\u20139',      phase:'cover', chapters:['phys_1','chem_1','math_1'], phys:'Ch 1 \u00B7 Electric Charges & Fields',      chem:'Ch 1 \u00B7 Solutions',              math:'Ch 1 \u00B7 Relations & Functions' },
+  { w:2, start:'2026-05-10', dates:'May 10\u201316',    phase:'cover', chapters:['phys_2','chem_1','math_2'], phys:'Ch 2 \u00B7 Electrostatic Potential',         chem:'Ch 1 \u00B7 Solutions (finish)',      math:'Ch 2 \u00B7 Inverse Trig' },
+  { w:3, start:'2026-05-17', dates:'May 17\u201323',    phase:'cover', chapters:['phys_3','chem_2','math_3'], phys:'Ch 3 \u00B7 Current Electricity',             chem:'Ch 2 \u00B7 Electrochemistry',        math:'Ch 3 \u00B7 Matrices' },
+  { w:4, start:'2026-05-24', dates:'May 24\u201330',    phase:'cover', chapters:['phys_4','chem_2','math_4'], phys:'Ch 4 \u00B7 Moving Charges & Magnetism',      chem:'Ch 2 \u00B7 Electrochemistry (finish)',math:'Ch 4 \u00B7 Determinants' },
+  { w:5, start:'2026-05-31', dates:'May 31\u2013Jun 6', phase:'cover', chapters:['phys_4','phys_5','chem_3','math_5'], phys:'Ch 4 finish + Ch 5 start',      chem:'Ch 3 \u00B7 Chemical Kinetics',       math:'Ch 5 \u00B7 Continuity & Differentiability' },
+  { w:6, start:'2026-06-07', dates:'Jun 7\u201313',     phase:'cover', chapters:['phys_5','chem_3','math_6'], phys:'Ch 5 \u00B7 Magnetism & Matter (finish)',     chem:'Ch 3 \u00B7 Chemical Kinetics (finish)',math:'Ch 6 \u00B7 Application of Derivatives' },
+  { w:7, start:'2026-06-14', dates:'Jun 14\u201320',    phase:'revise', chapters:['phys_1','phys_2','phys_3','phys_4','phys_5','chem_1','chem_2','chem_3','math_1','math_2','math_3','math_4','math_5','math_6'], label:'Revision \u2014 all EV1 chapters \u00B7 written mode + derivation drills (V67/V68)' },
+  { w:8, start:'2026-06-21', dates:'Jun 21\u201327',    phase:'mock',   label:'Mocks \u2014 2\u00D7 full exam simulator (V69) + PYQ written drill every session' },
+  { w:9, start:'2026-06-28', dates:'Jun 28\u2013Jul 3', phase:'final',  label:'Final push \u2014 weak spots only \u00B7 sleep by 10 PM on Jul 3' },
 ];
 const PLAN_THIS_WEEK = [
-  { date:'2026-05-03', name:'Sun', task:'Day 1 · explore the app · sign in with Google · plan W1',     stealthTask:'Setup + plan' },
-  { date:'2026-05-04', name:'Mon', task:'EV1 W1 · Phys Ch 1 Electric Charges · Maths Ch 1 Relations', stealthTask:'Study session' },
-  { date:'2026-05-05', name:'Tue', task:'EV1 W1 · Phys Ch 1 finish · Maths Ch 1 finish',              stealthTask:'Study session' },
-  { date:'2026-05-06', name:'Wed', task:'EV1 W1 · Phys Ch 1 PYQ written mode · Maths Ch 1 practice',  stealthTask:'Study session' },
-  { date:'2026-05-07', name:'Thu', task:'3 Pomos · Chem Ch 1 Solutions start',                         stealthTask:'Light study' },
-  { date:'2026-05-08', name:'Fri', task:'EV1 W1 · Phys Ch 2 Capacitance · Maths Ch 2 Inv. Trig start', stealthTask:'Study session' },
-  { date:'2026-05-09', name:'Sat', task:'EV1 W1 · Phys Ch 2 + Chem Ch 1 finish · Maths Ch 2',         stealthTask:'Study session' },
+  { date:'2026-05-03', name:'Sun', task:'Day 1 \u00B7 explore the app \u00B7 sign in with Google \u00B7 plan W1',     stealthTask:'Setup + plan' },
+  { date:'2026-05-04', name:'Mon', task:'EV1 W1 \u00B7 Phys Ch 1 Electric Charges \u00B7 Maths Ch 1 Relations', stealthTask:'Study session' },
+  { date:'2026-05-05', name:'Tue', task:'EV1 W1 \u00B7 Phys Ch 1 finish \u00B7 Maths Ch 1 finish',              stealthTask:'Study session' },
+  { date:'2026-05-06', name:'Wed', task:'EV1 W1 \u00B7 Phys Ch 1 PYQ written mode \u00B7 Maths Ch 1 practice',  stealthTask:'Study session' },
+  { date:'2026-05-07', name:'Thu', task:'3 Pomos \u00B7 Chem Ch 1 Solutions start',                         stealthTask:'Light study' },
+  { date:'2026-05-08', name:'Fri', task:'EV1 W1 \u00B7 Phys Ch 2 Capacitance \u00B7 Maths Ch 2 Inv. Trig start', stealthTask:'Study session' },
+  { date:'2026-05-09', name:'Sat', task:'EV1 W1 \u00B7 Phys Ch 2 + Chem Ch 1 finish \u00B7 Maths Ch 2',         stealthTask:'Study session' },
 ];
 function todayISO() { const d = new Date(); return d.toISOString().slice(0,10); }
 function getPlanCheck(date) { return state.planChecks[date] || { core:false, bonus:false, pomos:[false,false,false,false,false] }; }
@@ -522,14 +522,14 @@ function renderPlan() {
     ? 'Study <em>plan</em>'
     : 'The road to <em>99%.</em>';
   const heroSub = stealth
-    ? 'ISC Class 12 · April 2026 → February 2027.'
-    : 'ISC Class 12 · April 2026 → February 2027 · ten months, one shot. Built for an ADHD brain: short blocks, sacred decompress, no zero days.';
+    ? 'ISC Class 12 \u00B7 April 2026 \u2192 February 2027.'
+    : 'ISC Class 12 \u00B7 April 2026 \u2192 February 2027 \u00B7 ten months, one shot. Built for an ADHD brain: short blocks, sacred decompress, no zero days.';
 
   const targetsHTML = `
     <div class="plan-targets stealth-hide">
       <div class="plan-target"><div class="l">Physics</div><div class="v" style="color:var(--accent);">99</div></div>
       <div class="plan-target"><div class="l">Maths</div><div class="v" style="color:#D9457E;">99</div></div>
-      <div class="plan-target"><div class="l">Chemistry</div><div class="v" style="color:var(--success);">85–88</div></div>
+      <div class="plan-target"><div class="l">Chemistry</div><div class="v" style="color:var(--success);">85\u201388</div></div>
       <div class="plan-target"><div class="l">Goal</div><div class="v" style="color:var(--gold);font-size:18px;">NUS / NTU</div></div>
     </div>`;
 
@@ -537,7 +537,7 @@ function renderPlan() {
     <section class="plan-hero fade-in delay-1">
       <div class="plan-hero-row">
         <div>
-          <div class="plan-hero-meta">${stealth ? 'Plan · stealth on' : 'Your study plan'}</div>
+          <div class="plan-hero-meta">${stealth ? 'Plan \u00B7 stealth on' : 'Your study plan'}</div>
           <h1 class="plan-hero-title">${heroTitle}</h1>
           <p class="plan-hero-sub">${heroSub}</p>
         </div>
@@ -559,7 +559,7 @@ function renderPlan() {
     if (d.urgent && !c.core) cls.push('urgent');
     const dayNum = d.date.slice(8);
     const taskText = stealth ? d.stealthTask : d.task;
-    weekHTML += `<div class="${cls.join(' ')}" onclick="toggleDayDone('${d.date}')" title="${isToday ? 'Today — click to mark done' : 'Click to toggle done'}">
+    weekHTML += `<div class="${cls.join(' ')}" onclick="toggleDayDone('${d.date}')" title="${isToday ? 'Today \u2014 click to mark done' : 'Click to toggle done'}">
       <div class="wd-name">${d.name}</div>
       <div class="wd-num">${dayNum}</div>
       <div class="wd-task">${taskText}</div>
@@ -584,7 +584,7 @@ function renderPlan() {
     const cls = ['phase-row'];
     if (i === phaseIdx) cls.push('active');
     else if (i < phaseIdx) cls.push('past');
-    const dateStr = `${p.start.slice(5)} → ${p.end.slice(5)}`;
+    const dateStr = `${p.start.slice(5)} \u2192 ${p.end.slice(5)}`;
     phasesHTML += `<div class="${cls.join(' ')}">
       <div class="phase-num">${p.num}</div>
       <div><div class="phase-name">${p.name}</div><div class="phase-desc">${p.desc}</div></div>
@@ -634,12 +634,12 @@ function renderPlan() {
           <div style="flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden;">
             <div style="height:100%;width:${pct}%;background:${pct===100?'#16a34a':color};border-radius:2px;transition:width 0.4s;"></div>
           </div>
-          <span style="font-size:10px;font-family:'Geist Mono',monospace;color:${pct===100?'#16a34a':pct>0?color:'var(--ink-muted)'};">${isDone?'✓ done':pct+'%'}</span>
+          <span style="font-size:10px;font-family:'Geist Mono',monospace;color:${pct===100?'#16a34a':pct>0?color:'var(--ink-muted)'};">${isDone?'\u2713 done':pct+'%'}</span>
         </div>`
       : '';
 
     const wLabel = `<div style="padding-top:2px;">
-      <span style="font-family:'Geist Mono',monospace;font-size:11px;font-weight:700;color:${isNow ? color : (isDone?'#16a34a':'var(--ink)')};text-transform:uppercase;letter-spacing:0.05em;">${isDone?'✓ ':''}W${w.w}</span>
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;font-weight:700;color:${isNow ? color : (isDone?'#16a34a':'var(--ink)')};text-transform:uppercase;letter-spacing:0.05em;">${isDone?'\u2713 ':''}W${w.w}</span>
       <div style="font-size:10px;color:var(--ink-muted);margin-top:2px;">${w.dates}</div>
       <span style="display:inline-block;margin-top:4px;font-size:9px;font-weight:700;color:${isDone?'#16a34a':color};background:${isDone?'#16a34a':color}18;padding:2px 7px;border-radius:100px;text-transform:uppercase;letter-spacing:0.06em;">${isDone?'done':w.phase}</span>
     </div>`;
@@ -653,8 +653,8 @@ function renderPlan() {
         ${progressHTML}
       </div>`;
     } else {
-      const icons = { revise:'📖', mock:'📋', final:'🎯' };
-      contentHTML = `<div style="font-size:13px;font-weight:600;color:${isDone?'#16a34a':color};padding-top:6px;">${isDone?'✓ ':(icons[w.phase]||'')+' '}${w.label}${progressHTML}</div>`;
+      const icons = { revise:'\uD83D\uDCD6', mock:'\uD83D\uDCCB', final:'\uD83C\uDFAF' };
+      contentHTML = `<div style="font-size:13px;font-weight:600;color:${isDone?'#16a34a':color};padding-top:6px;">${isDone?'\u2713 ':(icons[w.phase]||'')+' '}${w.label}${progressHTML}</div>`;
     }
     ev1HTML += `<div style="${rowStyle}">${wLabel}${contentHTML}</div>`;
   });
@@ -696,16 +696,16 @@ function renderPlan() {
       <div class="phases">${phasesHTML}</div>
     </section>
     <section class="plan-section fade-in delay-4">
-      <div class="plan-section-h">EV1 <em>chapter plan</em><span class="plan-section-meta">${daysToEV1} days · Jul 4 exam</span></div>
+      <div class="plan-section-h">EV1 <em>chapter plan</em><span class="plan-section-meta">${daysToEV1} days \u00B7 Jul 4 exam</span></div>
       <div style="padding:0 0 4px;">${ev1HTML}</div>
-      <div style="margin-top:10px;font-size:11px;color:var(--ink-muted);font-family:'Geist Mono',monospace;">* Confirm exact EV1 chapters with your teacher — plan assumes Phys Ch 1–5, Chem Ch 1–3, Maths Ch 1–6</div>
+      <div style="margin-top:10px;font-size:11px;color:var(--ink-muted);font-family:'Geist Mono',monospace;">* Confirm exact EV1 chapters with your teacher \u2014 plan assumes Phys Ch 1\u20135, Chem Ch 1\u20133, Maths Ch 1\u20136</div>
     </section>
     <section class="plan-section fade-in delay-5">
-      <div class="plan-section-h">Daily <em>template</em><span class="plan-section-meta">Mon–Sat</span></div>
+      <div class="plan-section-h">Daily <em>template</em><span class="plan-section-meta">Mon\u2013Sat</span></div>
       <div class="blocks">${blocksHTML}</div>
     </section>
     <section class="plan-section fade-in delay-6 stealth-hide">
-      <div class="plan-section-h">ADHD <em>rules</em> · locked</div>
+      <div class="plan-section-h">ADHD <em>rules</em> \u00B7 locked</div>
       <div class="rules-grid">${rulesHTML}</div>
     </section>
   `;
@@ -723,7 +723,7 @@ function renderHeaderStats() {
   const pct = Math.min(100, (inLvl / span) * 100);
   document.getElementById('levelBarFill').style.width = pct + '%';
   document.getElementById('levelBarName').textContent = lvl.name;
-  document.getElementById('levelBarDetail').textContent = `${inLvl} / ${span} xp · next: ${LEVELS[Math.min(lvl.idx + 1, LEVELS.length-1)].name}`;
+  document.getElementById('levelBarDetail').textContent = `${inLvl} / ${span} xp \u00B7 next: ${LEVELS[Math.min(lvl.idx + 1, LEVELS.length-1)].name}`;
   const shieldChip = document.getElementById('shieldChip');
   if (state.shields > 0) { shieldChip.style.display = 'flex'; document.getElementById('shieldVal').textContent = state.shields; }
   else { shieldChip.style.display = 'none'; }
@@ -736,7 +736,7 @@ function renderFooterStats() {
   if (!document.getElementById('solvedVal')) return;
   document.getElementById('solvedVal').textContent = state.solved.toLocaleString();
   const total = state.correct + state.wrong;
-  document.getElementById('accuracyVal').textContent = total ? Math.round(100 * state.correct / total) + '%' : '—';
+  document.getElementById('accuracyVal').textContent = total ? Math.round(100 * state.correct / total) + '%' : '\u2014';
   document.getElementById('accuracyDetail').textContent = total ? `${state.correct} / ${total} correct` : 'no attempts yet';
   document.getElementById('bestStreakVal').textContent = state.bestStreak.toLocaleString();
   // Total mastered across all subjects
@@ -855,7 +855,7 @@ function randomTopic() {
       });
     });
   }
-  if (pool.length === 0) { showToast('default', '✦', 'Everything mastered!'); return; }
+  if (pool.length === 0) { showToast('default', '\u2726', 'Everything mastered!'); return; }
   openTopic(pool[Math.floor(Math.random() * pool.length)]);
 }
 
@@ -863,7 +863,7 @@ function continueStudying() {
   sfx('click');
   const cont = smartContinue();
   if (cont) openTopic(fullTopicId(cont.chapter.id, cont.topic.id));
-  else showToast('default', '✦', 'All ready topics mastered!');
+  else showToast('default', '\u2726', 'All ready topics mastered!');
 }
 
 function switchTab(tab) {
@@ -929,7 +929,7 @@ function loadProblem() {
     });
     renderMathIn(optsEl);
   } else {
-    area.innerHTML = '<div class="modal-input-wrap"><input type="text" class="modal-input" id="modalInput" placeholder="Type your answer…" autocomplete="off" /></div>';
+    area.innerHTML = '<div class="modal-input-wrap"><input type="text" class="modal-input" id="modalInput" placeholder="Type your answer\u2026" autocomplete="off" /></div>';
     const inp = document.getElementById('modalInput');
     inp.focus();
     inp.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); document.getElementById('modalSubmit').click(); } });
@@ -946,7 +946,7 @@ function updateMultiplier() {
   const mult = state.streak >= 10 ? 2 : (state.streak >= 5 ? 1.5 : 1);
   state.comboMult = mult;
   const el = document.getElementById('modalMultiplier');
-  if (mult > 1) { el.textContent = '×' + mult; el.classList.add('show'); el.classList.toggle('hot', mult >= 2); }
+  if (mult > 1) { el.textContent = '\u00D7' + mult; el.classList.add('show'); el.classList.toggle('hot', mult >= 2); }
   else el.classList.remove('show');
 }
 
@@ -972,7 +972,7 @@ function toggleHint() {
 }
 
 function normalize(s) {
-  return String(s).trim().toLowerCase().replace(/\s+/g,'').replace(/[,]/g,'').replace(/×/g,'x').replace(/\*/g,'').replace(/\^/g,'').replace(/μ/g,'u').replace(/[''`]/g,"'");
+  return String(s).trim().toLowerCase().replace(/\s+/g,'').replace(/[,]/g,'').replace(/\u00D7/g,'x').replace(/\*/g,'').replace(/\^/g,'').replace(/\u03BC/g,'u').replace(/[''`]/g,"'");
 }
 
 function checkAnswer(p) {
@@ -1015,7 +1015,7 @@ function submitAnswer() {
     if (elapsed < SPEED_BONUS_MS) { xp += 5; ctx.fast = true; }
     if (crit) { xp *= 3; ctx.crit = true; }
     if (state.streak > 0 && state.streak % 10 === 0) {
-      state.shields += 1; showToast('shield', '🛡', '+1 streak shield'); sfx('shield');
+      state.shields += 1; showToast('shield', '\uD83D\uDEE1', '+1 streak shield'); sfx('shield');
     }
     session.xpEarned += xp;
     if (p.type === 'mcq') {
@@ -1025,10 +1025,10 @@ function submitAnswer() {
       input.classList.add(crit ? 'crit' : 'correct'); input.disabled = true;
     }
     const bonuses = [];
-    if (state.comboMult > 1) bonuses.push(`×${state.comboMult} combo`);
-    if (ctx.fast) bonuses.push('⚡ +5 speed');
-    if (crit) bonuses.push('✶ CRITICAL ×3');
-    showFeedback(crit ? 'crit' : 'correct', crit ? '✶ Critical hit.' : 'Correct.', p.explain || '', bonuses);
+    if (state.comboMult > 1) bonuses.push(`\u00D7${state.comboMult} combo`);
+    if (ctx.fast) bonuses.push('\u26A1 +5 speed');
+    if (crit) bonuses.push('\u2736 CRITICAL \u00D73');
+    showFeedback(crit ? 'crit' : 'correct', crit ? '\u2736 Critical hit.' : 'Correct.', p.explain || '', bonuses);
     awardXP(xp);
     sfx(crit ? 'crit' : 'correct');
     confettiBurst(crit ? 'big' : 'small');
@@ -1037,13 +1037,13 @@ function submitAnswer() {
   } else {
     if (state.shields > 0 && state.streak >= 3) {
       state.shields -= 1; ctx.shielded = true;
-      showToast('shield', '🛡', 'Shield used — streak saved!'); sfx('shield');
+      showToast('shield', '\uD83D\uDEE1', 'Shield used \u2014 streak saved!'); sfx('shield');
       if (p.type === 'mcq') {
         document.querySelectorAll('.mcq-option').forEach((o, i) => { o.classList.add('disabled'); if (i === p.correct) o.classList.add('correct'); else if (i === selectedMcqIdx) o.classList.add('wrong'); });
       } else {
         const input = document.getElementById('modalInput'); input.classList.add('correct'); input.disabled = true;
       }
-      showFeedback('correct', 'Saved by shield.', p.explain || '', ['🛡 streak preserved']);
+      showFeedback('correct', 'Saved by shield.', p.explain || '', ['\uD83D\uDEE1 streak preserved']);
     } else {
       state.wrong += 1; state.streak = 0; state.charge = Math.max(0, state.charge - 2);
       if (p.type === 'mcq') {
@@ -1070,7 +1070,7 @@ function submitAnswer() {
   midSessionNudge(result, ctx);
 
   const btn = document.getElementById('modalSubmit');
-  if (session.idx + 1 < session.problems.length) { btn.textContent = 'Next →'; btn.onclick = nextProblem; }
+  if (session.idx + 1 < session.problems.length) { btn.textContent = 'Next \u2192'; btn.onclick = nextProblem; }
   else { btn.textContent = 'Finish'; btn.onclick = finishTopic; }
 }
 
@@ -1119,7 +1119,7 @@ function finishTopic() {
   const nextTopic = findNextTopicInChapter();
   const btn = document.getElementById('modalSubmit');
   if (nextTopic) {
-    btn.textContent = 'Next topic →';
+    btn.textContent = 'Next topic \u2192';
     btn.onclick = () => {
       document.getElementById('completeView').classList.remove('show');
       document.getElementById('completeView').style.display = 'none';
@@ -1151,7 +1151,7 @@ function triggerChapterCelebration(chapter) {
   const flash = document.getElementById('lightning');
   flash.classList.add('show');
   awardXP(200);
-  showToast('lightning', '☆', `Chapter ${chapter.number} cleared! +200 xp`);
+  showToast('lightning', '\u2606', `Chapter ${chapter.number} cleared! +200 xp`);
   if (typeof confetti !== 'undefined') {
     confetti({ particleCount: 250, spread: 160, origin: { y: 0.5 }, colors: ['#FFD700','#FFFFFF','#1E3AFF','#FF8A3D','#16864B'] });
   }
@@ -1164,12 +1164,12 @@ function awardXP(amt, silent=false) {
   liveSession.xpEarned += amt;
   const before = getLevel(state.xp).idx;
   state.xp += amt; saveState(); renderHeaderStats();
-  if (!silent) showToast('default', '✦', `+${amt} xp`);
+  if (!silent) showToast('default', '\u2726', `+${amt} xp`);
   const after = getLevel(state.xp).idx;
   if (after > before) {
     setTimeout(() => {
       const lvl = getLevel(state.xp);
-      showToast('lightning', '◆', `LEVEL UP — ${lvl.name}!`);
+      showToast('lightning', '\u25C6', `LEVEL UP \u2014 ${lvl.name}!`);
       sfx('level_up'); confettiBurst('big');
     }, 500);
   }
@@ -1196,7 +1196,7 @@ function triggerDischarge(ctx) {
   const flash = document.getElementById('lightning');
   flash.classList.add('show'); sfx('lightning');
   state.charge = 0; awardXP(50);
-  showToast('lightning', '⚡', '⚡ DISCHARGE — +50 xp');
+  showToast('lightning', '\u26A1', '\u26A1 DISCHARGE \u2014 +50 xp');
   if (typeof confetti !== 'undefined') confetti({ particleCount: 150, spread: 120, origin: { y: 0.5 }, colors: ['#FFFFFF','#FFD700','#B8005C','#1E3AFF'] });
   setTimeout(() => flash.classList.remove('show'), 600);
   saveState(); renderHeaderStats();
@@ -1204,12 +1204,12 @@ function triggerDischarge(ctx) {
 }
 
 const MYSTERY_REWARDS = [
-  { emoji: '✦', text: '+50 bonus XP', apply: () => awardXP(50, true) },
-  { emoji: '⚡', text: '+25 bonus XP', apply: () => awardXP(25, true) },
-  { emoji: '🛡', text: '+1 streak shield', apply: () => { state.shields += 1; saveState(); renderHeaderStats(); } },
-  { emoji: '◆', text: '+100 bonus XP — JACKPOT', apply: () => awardXP(100, true) },
-  { emoji: '⚡', text: 'Charge meter +3', apply: () => { state.charge += 3; saveState(); renderHeaderStats(); } },
-  { emoji: '✶', text: '+30 bonus XP', apply: () => awardXP(30, true) },
+  { emoji: '\u2726', text: '+50 bonus XP', apply: () => awardXP(50, true) },
+  { emoji: '\u26A1', text: '+25 bonus XP', apply: () => awardXP(25, true) },
+  { emoji: '\uD83D\uDEE1', text: '+1 streak shield', apply: () => { state.shields += 1; saveState(); renderHeaderStats(); } },
+  { emoji: '\u25C6', text: '+100 bonus XP \u2014 JACKPOT', apply: () => awardXP(100, true) },
+  { emoji: '\u26A1', text: 'Charge meter +3', apply: () => { state.charge += 3; saveState(); renderHeaderStats(); } },
+  { emoji: '\u2736', text: '+30 bonus XP', apply: () => awardXP(30, true) },
 ];
 function openMystery() {
   liveSession.mysteries += 1;
@@ -1237,16 +1237,16 @@ function openExport() {
     getSubjectChapters(sub).forEach(ch => {
       const cs = chapterStats(ch);
       totalTopics += cs.total; doneTopics += cs.done;
-      if (cs.done > 0) sl.push(`  Ch ${ch.number}: ${ch.name} — ${cs.done}/${cs.total}${cs.done === cs.total && cs.total > 0 ? ' ★' : ''}`);
+      if (cs.done > 0) sl.push(`  Ch ${ch.number}: ${ch.name} \u2014 ${cs.done}/${cs.total}${cs.done === cs.total && cs.total > 0 ? ' \u2605' : ''}`);
     });
     if (sl.length) lines.push(`\n${sub.toUpperCase()}:\n${sl.join('\n')}`);
   });
   const total = state.correct + state.wrong;
   const accuracy = total ? Math.round(100 * state.correct / total) : 0;
   const lvl = getLevel(state.xp);
-  const summary = `STUDYDECK PROGRESS — ${new Date().toLocaleString()}
-Level: ${lvl.idx + 1} (${lvl.name})  ·  XP: ${state.xp}  ·  Day streak: ${state.dayStreak}
-Solved: ${state.solved}  ·  Accuracy: ${accuracy}% (${state.correct}/${total})  ·  Best streak: ${state.bestStreak}
+  const summary = `STUDYDECK PROGRESS \u2014 ${new Date().toLocaleString()}
+Level: ${lvl.idx + 1} (${lvl.name})  \u00B7  XP: ${state.xp}  \u00B7  Day streak: ${state.dayStreak}
+Solved: ${state.solved}  \u00B7  Accuracy: ${accuracy}% (${state.correct}/${total})  \u00B7  Best streak: ${state.bestStreak}
 Mastered: ${doneTopics}/${totalTopics} topics across all subjects
 Achievements: ${Object.keys(state.achievements).length}/${ACHIEVEMENTS.length}
 ${lines.join('')}`;
@@ -1256,7 +1256,7 @@ ${lines.join('')}`;
 function closeExport() { sfx('click'); document.getElementById('exportOverlay').classList.remove('show'); }
 function copyExport() {
   const ta = document.getElementById('exportText'); ta.select(); document.execCommand('copy');
-  showToast('default', '✓', 'Copied to clipboard'); sfx('correct');
+  showToast('default', '\u2713', 'Copied to clipboard'); sfx('correct');
 }
 function resetAll() {
   if (!confirm('Wipe all XP, streaks, mastery, achievements? This cannot be undone.')) return;
@@ -1264,7 +1264,7 @@ function resetAll() {
   state = Object.assign({}, DEFAULT_STATE);
   if (typeof window.v70ClearCloud === 'function') window.v70ClearCloud();
   saveState(); closeExport(); setView('mission');
-  showToast('default', '✓', 'Reset to blank slate'); sfx('correct');
+  showToast('default', '\u2713', 'Reset to blank slate'); sfx('correct');
 }
 
 document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target.id === 'modalOverlay') closeModal(); });
@@ -1297,11 +1297,11 @@ function classifyQuestion(q) {
   if (q.type === 'theory') return 'D';
   if (q.type === 'definition') return 'B';
   if (q.type === 'mcq') {
-    // Short MCQ → A, longer/conceptual → B
+    // Short MCQ \u2192 A, longer/conceptual \u2192 B
     return (q.q && q.q.length > 80) ? 'B' : 'A';
   }
   if (q.type === 'numerical') {
-    // Multi-step numericals → C, simple → B
+    // Multi-step numericals \u2192 C, simple \u2192 B
     return (q.q && (q.q.includes('multi-step') || q.q.length > 100)) ? 'C' : 'B';
   }
   return 'B';
@@ -1406,7 +1406,7 @@ function loadMockQuestion() {
   document.getElementById('mockSection').textContent = `Section ${sec}`;
   document.getElementById('mockMarks').textContent = `[${marks} mark${marks>1?'s':''}]`;
   document.getElementById('mockProgress').textContent = `Q ${mockSession.currentIdx + 1} of ${total}`;
-  document.getElementById('mockTopic').textContent = `Ch: ${(findChapter(q._chId)?.name) || ''} · ${q._topicName}`;
+  document.getElementById('mockTopic').textContent = `Ch: ${(findChapter(q._chId)?.name) || ''} \u00B7 ${q._topicName}`;
   const mockQEl = document.getElementById('mockQuestion');
   mockQEl.innerHTML = q.q;
   renderMathIn(mockQEl);
@@ -1431,7 +1431,7 @@ function loadMockQuestion() {
     });
     renderMathIn(opts);
   } else {
-    area.innerHTML = '<input type="text" class="modal-input" id="mockInput" placeholder="Type your answer…" autocomplete="off" />';
+    area.innerHTML = '<input type="text" class="modal-input" id="mockInput" placeholder="Type your answer\u2026" autocomplete="off" />';
     const inp = document.getElementById('mockInput');
     const prior = mockSession.answers[mockSession.currentIdx];
     if (prior) inp.value = prior.text || '';
@@ -1446,7 +1446,7 @@ function loadMockQuestion() {
 
   // Buttons
   document.getElementById('mockPrev').disabled = mockSession.currentIdx === 0;
-  document.getElementById('mockNext').textContent = mockSession.currentIdx === total - 1 ? 'Submit Mock' : 'Next →';
+  document.getElementById('mockNext').textContent = mockSession.currentIdx === total - 1 ? 'Submit Mock' : 'Next \u2192';
 }
 
 function renderMockPad() {
@@ -1596,7 +1596,7 @@ function unlockAccentsForLevel() {
     if (lvl >= ACCENT_THEMES[k].unlockLevel && !state.unlockedAccents.includes(k)) {
       state.unlockedAccents.push(k);
       changed = true;
-      showToast('lightning', '◆', `Theme unlocked: ${ACCENT_THEMES[k].name}`);
+      showToast('lightning', '\u25C6', `Theme unlocked: ${ACCENT_THEMES[k].name}`);
     }
   });
   if (changed) saveState();
@@ -1630,14 +1630,14 @@ function progressQuest(type, amount) {
   state.dailyQuests.quests.forEach(q => {
     if (q.type === type && !q.done) {
       q.progress = Math.min(q.target, q.progress + amount);
-      if (q.progress >= q.target) { q.done = true; any = true; showToast('lightning', '✓', `Quest complete: ${q.label}`); }
+      if (q.progress >= q.target) { q.done = true; any = true; showToast('lightning', '\u2713', `Quest complete: ${q.label}`); }
     }
   });
-  // Streak quest is special — check current streak
+  // Streak quest is special \u2014 check current streak
   state.dailyQuests.quests.forEach(q => {
     if (q.type === 'streak' && !q.done && state.streak >= q.target) {
       q.progress = q.target; q.done = true; any = true;
-      showToast('lightning', '✓', `Quest complete: ${q.label}`);
+      showToast('lightning', '\u2713', `Quest complete: ${q.label}`);
     }
   });
   saveState();
@@ -1660,7 +1660,7 @@ function renderDailyQuests() {
   el.innerHTML = `
     <div class="dq-head">
       <div>
-        <div class="dq-meta">${allDone ? '★ ALL CLEARED' : 'TODAY · daily quests'}</div>
+        <div class="dq-meta">${allDone ? '\u2605 ALL CLEARED' : 'TODAY \u00B7 daily quests'}</div>
         <div class="dq-title">Daily <em>quests</em></div>
       </div>
       <div class="dq-count">${state.dailyQuests.quests.filter(q => q.done).length} / ${state.dailyQuests.quests.length}</div>
@@ -1672,11 +1672,11 @@ function renderDailyQuests() {
           <div class="dq-item-info">
             <div class="dq-item-label">${q.label}</div>
             <div class="dq-item-bar"><div class="dq-item-bar-fill" style="width:${pct}%;"></div></div>
-            <div class="dq-item-meta">${q.progress} / ${q.target} · +${q.reward} xp</div>
+            <div class="dq-item-meta">${q.progress} / ${q.target} \u00B7 +${q.reward} xp</div>
           </div>
           ${q.done && !q.claimed
             ? `<button class="dq-claim" onclick="claimQuest(${i})">Claim</button>`
-            : q.claimed ? `<div class="dq-claimed">✓</div>` : `<div class="dq-pending">…</div>`}
+            : q.claimed ? `<div class="dq-claimed">\u2713</div>` : `<div class="dq-pending">\u2026</div>`}
         </div>`;
       }).join('')}
     </div>
@@ -1696,7 +1696,7 @@ function maybeOfferPowerHour() {
   state.powerHour = { startedAt: Date.now(), endsAt: Date.now() + 10 * 60 * 1000 };
   state.powerHourLastOffered = today;
   saveState();
-  showToast('lightning', '⚡', 'POWER HOUR — 2× XP for 10 minutes!');
+  showToast('lightning', '\u26A1', 'POWER HOUR \u2014 2\u00D7 XP for 10 minutes!');
   sfx('lightning');
   renderPowerHourBanner();
   setTimeout(renderPowerHourBanner, 10 * 60 * 1000 + 100);
@@ -1729,21 +1729,21 @@ function maybeShowComeback() {
   // Show welcome back
   state.comebackShown = today;
   saveState();
-  const msg = daysAway > 2 ? `Welcome back. ${Math.floor(daysAway)} days off — let's rebuild.` : `Welcome back. +30 XP gift to start.`;
+  const msg = daysAway > 2 ? `Welcome back. ${Math.floor(daysAway)} days off \u2014 let's rebuild.` : `Welcome back. +30 XP gift to start.`;
   awardXP(30, true);
-  setTimeout(() => showToast('lightning', '◆', msg), 800);
+  setTimeout(() => showToast('lightning', '\u25C6', msg), 800);
 }
 
 // ----- MID-SESSION NUDGES -----
 let _nudgeCooldown = 0;
 function midSessionNudge(wasCorrect, ctx) {
   if (Date.now() - _nudgeCooldown < 10000) return; // throttle
-  let msg = null, kind = 'default', icon = '✦';
+  let msg = null, kind = 'default', icon = '\u2726';
   if (wasCorrect) {
-    if (state.streak === 4) { msg = '1 more for ×1.5 combo bonus.'; icon = '✦'; }
-    else if (state.streak === 9) { msg = '1 more for ×2 combo and a streak shield.'; icon = '🛡'; kind = 'shield'; }
-    else if (state.charge === 9) { msg = '1 more correct → DISCHARGE.'; icon = '⚡'; kind = 'lightning'; }
-    else if (state.streak === 7 && Math.random() < 0.5) { msg = `On fire — ${state.streak} in a row!`; icon = '🔥'; }
+    if (state.streak === 4) { msg = '1 more for \u00D71.5 combo bonus.'; icon = '\u2726'; }
+    else if (state.streak === 9) { msg = '1 more for \u00D72 combo and a streak shield.'; icon = '\uD83D\uDEE1'; kind = 'shield'; }
+    else if (state.charge === 9) { msg = '1 more correct \u2192 DISCHARGE.'; icon = '\u26A1'; kind = 'lightning'; }
+    else if (state.streak === 7 && Math.random() < 0.5) { msg = `On fire \u2014 ${state.streak} in a row!`; icon = '\uD83D\uDD25'; }
   }
   if (msg) { showToast(kind, icon, msg); _nudgeCooldown = Date.now(); }
 }
@@ -1837,8 +1837,8 @@ function openSettings() {
     return `<button class="accent-swatch ${unlocked ? '' : 'locked'} ${active ? 'active' : ''}"
       onclick="${unlocked ? `pickAccent('${k}')` : ''}"
       style="background:${t.color};"
-      title="${t.name}${unlocked ? '' : ' — unlocks at level ' + t.unlockLevel}">
-      ${unlocked ? (active ? '✓' : '') : '🔒'}
+      title="${t.name}${unlocked ? '' : ' \u2014 unlocks at level ' + t.unlockLevel}">
+      ${unlocked ? (active ? '\u2713' : '') : '\uD83D\uDD12'}
     </button>`;
   }).join('');
   document.getElementById('settingsAccents').innerHTML = swatches;
@@ -1858,7 +1858,7 @@ function saveDisplayName() {
   state.displayName = v;
   saveState();
   closeSettings();
-  showToast('default', '✓', v ? `Hey ${v}.` : 'Name cleared');
+  showToast('default', '\u2713', v ? `Hey ${v}.` : 'Name cleared');
   setView(state.view);
 }
 
@@ -1884,14 +1884,14 @@ function injectNewUI() {
     headerStats.appendChild(settingsBtn);
   }
 
-  // 2. Power Hour banner + Daily Quests panel + Summary modal + Settings modal — append to .app once
+  // 2. Power Hour banner + Daily Quests panel + Summary modal + Settings modal \u2014 append to .app once
   if (!document.getElementById('powerHourBanner')) {
     const app = document.querySelector('.app');
     const banner = document.createElement('div');
     banner.id = 'powerHourBanner';
     banner.className = 'power-hour-banner';
     banner.style.display = 'none';
-    banner.innerHTML = `<span style="font-size:18px;">⚡</span><span><strong>POWER HOUR</strong> — every XP doubled</span><span class="ph-timer" id="powerHourTimer">10:00</span>`;
+    banner.innerHTML = `<span style="font-size:18px;">\u26A1</span><span><strong>POWER HOUR</strong> \u2014 every XP doubled</span><span class="ph-timer" id="powerHourTimer">10:00</span>`;
     // Insert after level-bar-wrap
     const lbw = document.querySelector('.level-bar-wrap');
     if (lbw) lbw.insertAdjacentElement('afterend', banner);
@@ -1939,7 +1939,7 @@ function injectModals() {
           <input type="text" id="settingsName" maxlength="20" placeholder="What should we call you?" class="modal-input" style="width:100%;" />
         </div>
         <div style="margin-bottom:20px;">
-          <div style="font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink-muted);margin-bottom:8px;">Accent color <span style="text-transform:none;letter-spacing:normal;color:var(--ink-muted);">· unlock more by leveling up</span></div>
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink-muted);margin-bottom:8px;">Accent color <span style="text-transform:none;letter-spacing:normal;color:var(--ink-muted);">\u00B7 unlock more by leveling up</span></div>
           <div id="settingsAccents" style="display:flex;gap:10px;flex-wrap:wrap;"></div>
         </div>
         <div class="export-buttons"><button class="btn btn-ghost" onclick="closeSettings()">Cancel</button><button class="btn btn-primary" onclick="saveDisplayName()">Save</button></div>
@@ -2058,7 +2058,7 @@ setView = function(view) {
   renderPowerHourBanner();
 };
 
-// ============= V2 EXTENSIONS: Mistake Bank · Inline Theory · Start Session · Pomodoro =============
+// ============= V2 EXTENSIONS: Mistake Bank \u00B7 Inline Theory \u00B7 Start Session \u00B7 Pomodoro =============
 (function v2Extensions() {
 
   // ---- State migration ----
@@ -2140,7 +2140,7 @@ setView = function(view) {
     if (!fb || fb.querySelector('.inline-theory-toggle')) return;
     const wrap = document.createElement('div');
     wrap.style.marginTop = '12px';
-    wrap.innerHTML = `<div class="inline-theory-toggle" style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent);cursor:pointer;user-select:none;">↓ Show theory for this concept</div><div class="inline-theory-body" style="display:none;margin-top:10px;padding:14px 18px;background:var(--bg);border-left:2px solid var(--accent);border-radius:8px;font-size:13.5px;line-height:1.55;">${found.topic.theory}</div>`;
+    wrap.innerHTML = `<div class="inline-theory-toggle" style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent);cursor:pointer;user-select:none;">\u2193 Show theory for this concept</div><div class="inline-theory-body" style="display:none;margin-top:10px;padding:14px 18px;background:var(--bg);border-left:2px solid var(--accent);border-radius:8px;font-size:13.5px;line-height:1.55;">${found.topic.theory}</div>`;
     fb.appendChild(wrap);
     const tog = wrap.querySelector('.inline-theory-toggle');
     const body = wrap.querySelector('.inline-theory-body');
@@ -2148,7 +2148,7 @@ setView = function(view) {
     tog.onclick = () => {
       const open = body.style.display === 'block';
       body.style.display = open ? 'none' : 'block';
-      tog.textContent = open ? '↓ Show theory for this concept' : '↑ Hide theory';
+      tog.textContent = open ? '\u2193 Show theory for this concept' : '\u2191 Hide theory';
       if (!open && !mathRendered) { renderMathIn(body); mathRendered = true; }
     };
   }
@@ -2174,7 +2174,7 @@ setView = function(view) {
     if (remaining <= 0) {
       stopPomodoro();
       try { sfx('lightning'); } catch(e){}
-      showToast('lightning', '🍅', 'Pomodoro complete · take 5');
+      showToast('lightning', '\uD83C\uDF45', 'Pomodoro complete \u00B7 take 5');
       return;
     }
     const mm = String(Math.floor(remaining / 60000)).padStart(2,'0');
@@ -2186,7 +2186,7 @@ setView = function(view) {
       chip.style.cursor = 'pointer';
       chip.title = 'Click to stop Pomodoro';
       chip.onclick = () => { if (confirm('Stop Pomodoro timer?')) stopPomodoro(); };
-      chip.innerHTML = `<span class="icon">🍅</span><span id="pomoTime">${mm}:${ss}</span>`;
+      chip.innerHTML = `<span class="icon">\uD83C\uDF45</span><span id="pomoTime">${mm}:${ss}</span>`;
       stats.insertBefore(chip, stats.firstChild);
     } else {
       const t = document.getElementById('pomoTime');
@@ -2199,13 +2199,13 @@ setView = function(view) {
   function startSession() {
     sfx('click');
     const cont = smartContinue();
-    if (!cont) { showToast('default', '✦', 'All ready topics mastered!'); return; }
+    if (!cont) { showToast('default', '\u2726', 'All ready topics mastered!'); return; }
     const fullId = fullTopicId(cont.chapter.id, cont.topic.id);
     const baseProblems = (cont.topic.questions || []).slice();
     const dueMistakes = getDueMistakes(3);
     const warmup = resolveMistakeProblems(dueMistakes);
     const merged = warmup.concat(baseProblems);
-    if (!merged.length) { showToast('default', '✦', 'Nothing to drill.'); return; }
+    if (!merged.length) { showToast('default', '\u2726', 'Nothing to drill.'); return; }
 
     session = { topicFullId: fullId, problems: merged, idx: 0, correct: 0, xpEarned: 0, mixed: warmup.length > 0 };
     state.currentTopicId = fullId;
@@ -2220,8 +2220,8 @@ setView = function(view) {
     document.getElementById('tabPractice').classList.add('active');
     document.getElementById('tabTheory').classList.remove('active');
     const found = findTopic(fullId);
-    { const _tc = document.getElementById('theoryContent'); _tc.innerHTML = found?.topic?.theory || '<p>—</p>'; renderMathIn(_tc); }
-    if (warmup.length) showToast('default', '🔁', `Warm-up: ${warmup.length} from mistake bank`);
+    { const _tc = document.getElementById('theoryContent'); _tc.innerHTML = found?.topic?.theory || '<p>\u2014</p>'; renderMathIn(_tc); }
+    if (warmup.length) showToast('default', '\uD83D\uDD01', `Warm-up: ${warmup.length} from mistake bank`);
     startPomodoro();
     loadProblem();
   }
@@ -2246,10 +2246,10 @@ setView = function(view) {
     hero.innerHTML = `
       <div>
         <div style="font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;opacity:0.85;">One-tap start</div>
-        <div style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;letter-spacing:-0.02em;margin-top:4px;">▶ Start Session</div>
-        <div style="font-size:13px;opacity:0.9;margin-top:6px;">${dueCount > 0 ? `${Math.min(dueCount,3)} warm-up from mistakes · then planned drill` : 'Planned drill · 25-min Pomodoro starts'}</div>
+        <div style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;letter-spacing:-0.02em;margin-top:4px;">\u25B6 Start Session</div>
+        <div style="font-size:13px;opacity:0.9;margin-top:6px;">${dueCount > 0 ? `${Math.min(dueCount,3)} warm-up from mistakes \u00B7 then planned drill` : 'Planned drill \u00B7 25-min Pomodoro starts'}</div>
       </div>
-      <div style="font-family:'Geist Mono',monospace;font-size:11px;background:rgba(255,255,255,0.15);padding:8px 14px;border-radius:100px;">🍅 25:00</div>
+      <div style="font-family:'Geist Mono',monospace;font-size:11px;background:rgba(255,255,255,0.15);padding:8px 14px;border-radius:100px;">\uD83C\uDF45 25:00</div>
     `;
     today.appendChild(hero);
   };
@@ -2261,8 +2261,8 @@ setView = function(view) {
     const problems = resolveMistakeProblems(due);
     if (!problems.length) {
       const total = state.mistakeBank.length;
-      if (total === 0) showToast('default', '✦', 'Mistake bank is empty');
-      else showToast('default', '🍅', `${total} in bank · all on cooldown`);
+      if (total === 0) showToast('default', '\u2726', 'Mistake bank is empty');
+      else showToast('default', '\uD83C\uDF45', `${total} in bank \u00B7 all on cooldown`);
       return;
     }
     // Use the first mistake's topic as the session "owner" so theory tab works
@@ -2279,8 +2279,8 @@ setView = function(view) {
     document.getElementById('theoryView').style.display = 'none';
     document.getElementById('tabPractice').classList.add('active');
     document.getElementById('tabTheory').classList.remove('active');
-    { const _tc = document.getElementById('theoryContent'); _tc.innerHTML = found?.topic?.theory || '<p>—</p>'; renderMathIn(_tc); }
-    showToast('default', '🔁', `Reviewing ${problems.length} mistake${problems.length>1?'s':''}`);
+    { const _tc = document.getElementById('theoryContent'); _tc.innerHTML = found?.topic?.theory || '<p>\u2014</p>'; renderMathIn(_tc); }
+    showToast('default', '\uD83D\uDD01', `Reviewing ${problems.length} mistake${problems.length>1?'s':''}`);
     loadProblem();
   }
   window.startMistakeReview = startMistakeReview;
@@ -2306,7 +2306,7 @@ setView = function(view) {
     const ch = findChapter(chapterId);
     if (!ch) return;
     const formulas = extractFormulas(ch);
-    if (!formulas.length) { showToast('default', '📋', 'No formulas in this chapter'); return; }
+    if (!formulas.length) { showToast('default', '\uD83D\uDCCB', 'No formulas in this chapter'); return; }
     // Build a lightweight overlay
     let overlay = document.getElementById('formulaOverlay');
     if (overlay) overlay.remove();
@@ -2320,13 +2320,13 @@ setView = function(view) {
       <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;">
         <div>
           <div style="font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink-muted);">Formula recall</div>
-          <h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;letter-spacing:-0.02em;margin-top:4px;">${ch.subject} · Ch ${ch.number}: ${ch.name}</h2>
+          <h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;letter-spacing:-0.02em;margin-top:4px;">${ch.subject} \u00B7 Ch ${ch.number}: ${ch.name}</h2>
           <div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--ink-soft);margin-top:4px;">${formulas.length} formulas</div>
         </div>
         <button class="btn btn-ghost" onclick="document.getElementById('formulaOverlay').remove()">Close</button>
       </div>
       <div style="display:flex;gap:8px;margin-bottom:16px;">
-        <button class="btn btn-ghost" id="formToggleHide" style="font-size:12px;">👁 Hide formulas (recall mode)</button>
+        <button class="btn btn-ghost" id="formToggleHide" style="font-size:12px;">\uD83D\uDC41 Hide formulas (recall mode)</button>
       </div>
     `;
     formulas.forEach((f, i) => {
@@ -2354,7 +2354,7 @@ setView = function(view) {
           el.onclick = null; el.style.cursor = '';
         }
       });
-      document.getElementById('formToggleHide').textContent = hidden ? '👁 Show all' : '👁 Hide formulas (recall mode)';
+      document.getElementById('formToggleHide').textContent = hidden ? '\uD83D\uDC41 Show all' : '\uD83D\uDC41 Hide formulas (recall mode)';
     };
   }
   window.openFormulaRecall = openFormulaRecall;
@@ -2373,7 +2373,7 @@ setView = function(view) {
     const btn = document.createElement('button');
     btn.className = 'formula-recall-btn btn btn-ghost';
     btn.style.cssText = 'margin-top:14px;border:0.5px solid var(--line);background:var(--bg);';
-    btn.innerHTML = `📋 Formulas (${formulas.length})`;
+    btn.innerHTML = `\uD83D\uDCCB Formulas (${formulas.length})`;
     btn.onclick = () => openFormulaRecall(ch.id);
     hero.appendChild(btn);
   };
@@ -2391,7 +2391,7 @@ setView = function(view) {
     const btn = document.createElement('button');
     btn.className = 'review-mistakes-btn today-cta secondary';
     btn.style.cssText = 'margin-top:12px;display:inline-flex;align-items:center;gap:8px;';
-    btn.innerHTML = `🔁 Review Mistakes <span style="font-family:'Geist Mono',monospace;font-size:11px;background:var(--accent-soft);color:var(--accent);padding:3px 8px;border-radius:100px;">${due} due / ${totalBank} total</span>`;
+    btn.innerHTML = `\uD83D\uDD01 Review Mistakes <span style="font-family:'Geist Mono',monospace;font-size:11px;background:var(--accent-soft);color:var(--accent);padding:3px 8px;border-radius:100px;">${due} due / ${totalBank} total</span>`;
     btn.onclick = () => startMistakeReview();
     const heroBtn = today.querySelector('.start-session-hero');
     if (heroBtn) heroBtn.insertAdjacentElement('afterend', btn);
@@ -2407,7 +2407,7 @@ setView = function(view) {
     if (_mistakesAddedThisSession > 0) {
       const n = _mistakesAddedThisSession;
       _mistakesAddedThisSession = 0;
-      setTimeout(() => showToast('default', '🔁', `${n} new mistake${n>1?'s':''} → review queue`), 200);
+      setTimeout(() => showToast('default', '\uD83D\uDD01', `${n} new mistake${n>1?'s':''} \u2192 review queue`), 200);
     }
     _origCloseModal();
   };
@@ -2426,8 +2426,8 @@ setView = function(view) {
   function toggleBookmark(t, q) {
     const k = bookmarkKey(t, q);
     const i = state.bookmarks.findIndex(b => b.k === k);
-    if (i >= 0) { state.bookmarks.splice(i,1); showToast('default','☆','Bookmark removed'); }
-    else { state.bookmarks.push({ k, topicFullId: t, qIdx: q, addedAt: Date.now() }); showToast('default','★','Bookmarked'); }
+    if (i >= 0) { state.bookmarks.splice(i,1); showToast('default','\u2606','Bookmark removed'); }
+    else { state.bookmarks.push({ k, topicFullId: t, qIdx: q, addedAt: Date.now() }); showToast('default','\u2605','Bookmarked'); }
     saveState();
     renderBookmarkBtn();
   }
@@ -2440,7 +2440,7 @@ setView = function(view) {
     const cur = session.problems[q];
     const realT = cur?._topicFullId || t;
     btn.style.display = '';
-    btn.textContent = isBookmarked(realT, q) ? '★' : '☆';
+    btn.textContent = isBookmarked(realT, q) ? '\u2605' : '\u2606';
     btn.style.color = isBookmarked(realT, q) ? 'var(--gold)' : 'var(--ink-muted)';
     btn.onclick = () => toggleBookmark(realT, q);
   }
@@ -2453,7 +2453,7 @@ setView = function(view) {
     const btn = document.createElement('button');
     btn.id = 'bookmarkBtn';
     btn.style.cssText = 'background:transparent;border:none;cursor:pointer;font-size:18px;margin-right:8px;padding:0 4px;';
-    btn.title = 'Bookmark this question (★)';
+    btn.title = 'Bookmark this question (\u2605)';
     head.querySelector('.modal-counter-wrap')?.appendChild(btn);
   }
   injectBookmarkBtn();
@@ -2466,14 +2466,14 @@ setView = function(view) {
 
   function startBookmarkReview() {
     sfx('click');
-    if (!state.bookmarks.length) { showToast('default','★','No bookmarks yet'); return; }
+    if (!state.bookmarks.length) { showToast('default','\u2605','No bookmarks yet'); return; }
     const problems = [];
     state.bookmarks.forEach(b => {
       const found = findTopic(b.topicFullId);
       const q = found?.topic?.questions?.[b.qIdx];
       if (q) problems.push({ ...q, _topicFullId: b.topicFullId });
     });
-    if (!problems.length) { showToast('default','★','Bookmarked questions not found'); return; }
+    if (!problems.length) { showToast('default','\u2605','Bookmarked questions not found'); return; }
     const firstTid = problems[0]._topicFullId;
     const found = findTopic(firstTid);
     session = { topicFullId: firstTid, problems, idx: 0, correct: 0, xpEarned: 0, mixed: true };
@@ -2487,8 +2487,8 @@ setView = function(view) {
     document.getElementById('theoryView').style.display = 'none';
     document.getElementById('tabPractice').classList.add('active');
     document.getElementById('tabTheory').classList.remove('active');
-    { const _tc = document.getElementById('theoryContent'); _tc.innerHTML = found?.topic?.theory || '<p>—</p>'; renderMathIn(_tc); }
-    showToast('default', '★', `Drilling ${problems.length} bookmark${problems.length>1?'s':''}`);
+    { const _tc = document.getElementById('theoryContent'); _tc.innerHTML = found?.topic?.theory || '<p>\u2014</p>'; renderMathIn(_tc); }
+    showToast('default', '\u2605', `Drilling ${problems.length} bookmark${problems.length>1?'s':''}`);
     loadProblem();
   }
   window.startBookmarkReview = startBookmarkReview;
@@ -2529,10 +2529,10 @@ setView = function(view) {
   function startWeakestDrill() {
     sfx('click');
     const w = getWeakestTopic(5);
-    if (!w) { showToast('default','📊','Need 5+ attempts on at least one topic first'); return; }
+    if (!w) { showToast('default','\uD83D\uDCCA','Need 5+ attempts on at least one topic first'); return; }
     if (typeof openTopic === 'function') {
       openTopic(w.tid);
-      showToast('default', '⚠', `Weakest topic · ${Math.round(w.acc*100)}% accuracy`);
+      showToast('default', '\u26A0', `Weakest topic \u00B7 ${Math.round(w.acc*100)}% accuracy`);
     }
   }
   window.startWeakestDrill = startWeakestDrill;
@@ -2541,7 +2541,7 @@ setView = function(view) {
   function startBreak() {
     state.pomodoro = { startedAt: Date.now(), durationMs: 5*60*1000, isBreak: true };
     saveState();
-    showToast('lightning', '☕', 'Break: 5 minutes. Walk, water.');
+    showToast('lightning', '\u2615', 'Break: 5 minutes. Walk, water.');
     renderPomoChip();
   }
   // Patch the existing renderPomoChip behavior to auto-trigger break instead of just stopping
@@ -2565,11 +2565,11 @@ setView = function(view) {
     if (!chip || !state.pomodoro) return;
     const icon = chip.querySelector('.icon');
     if (state.pomodoro.isBreak) {
-      if (icon) icon.textContent = '☕';
+      if (icon) icon.textContent = '\u2615';
       chip.style.background = 'linear-gradient(135deg, var(--success), #34D399)';
       chip.style.color = 'white';
     } else {
-      if (icon) icon.textContent = '🍅';
+      if (icon) icon.textContent = '\uD83C\uDF45';
       chip.style.background = '';
       chip.style.color = '';
     }
@@ -2581,7 +2581,7 @@ setView = function(view) {
     if (!root || root.querySelector('.notes-panel')) return;
     const ch = findChapter(state.currentChapterId);
     if (!ch) return;
-    // Add a single "📝 Notes" panel at end of chapter
+    // Add a single "\uD83D\uDCDD Notes" panel at end of chapter
     const panel = document.createElement('div');
     panel.className = 'notes-panel';
     panel.style.cssText = 'margin-top:32px;padding:20px 24px;background:var(--bg-elev);border-radius:var(--radius-lg);border:0.5px solid var(--line);';
@@ -2589,10 +2589,10 @@ setView = function(view) {
     const cur = state.topicNotes[noteKey] || '';
     panel.innerHTML = `
       <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
-        <div style="font-family:'Fraunces',serif;font-style:italic;font-size:18px;">📝 Your notes</div>
+        <div style="font-family:'Fraunces',serif;font-style:italic;font-size:18px;">\uD83D\uDCDD Your notes</div>
         <span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted);">auto-saves</span>
       </div>
-      <textarea class="notes-input" placeholder="Derivation tips, formula tricks, things you keep forgetting…" style="width:100%;min-height:90px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-md);font-family:'Geist Mono',monospace;font-size:13px;background:var(--bg);resize:vertical;outline:none;">${cur.replace(/</g,'&lt;')}</textarea>
+      <textarea class="notes-input" placeholder="Derivation tips, formula tricks, things you keep forgetting\u2026" style="width:100%;min-height:90px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-md);font-family:'Geist Mono',monospace;font-size:13px;background:var(--bg);resize:vertical;outline:none;">${cur.replace(/</g,'&lt;')}</textarea>
     `;
     root.appendChild(panel);
     const ta = panel.querySelector('.notes-input');
@@ -2618,11 +2618,11 @@ setView = function(view) {
       const w = getWeakestTopic(5);
       if (w) {
         const found = findTopic(w.tid);
-        const label = found ? `${found.chapter.subject} · ${found.topic.name}` : w.tid;
+        const label = found ? `${found.chapter.subject} \u00B7 ${found.topic.name}` : w.tid;
         const btn = document.createElement('button');
         btn.className = 'weakest-btn today-cta secondary';
         btn.style.cssText = 'margin-top:12px;display:inline-flex;align-items:center;gap:8px;';
-        btn.innerHTML = `⚠ Drill weakest <span style="font-family:'Geist Mono',monospace;font-size:11px;background:var(--danger-soft);color:var(--danger);padding:3px 8px;border-radius:100px;">${Math.round(w.acc*100)}% · ${label}</span>`;
+        btn.innerHTML = `\u26A0 Drill weakest <span style="font-family:'Geist Mono',monospace;font-size:11px;background:var(--danger-soft);color:var(--danger);padding:3px 8px;border-radius:100px;">${Math.round(w.acc*100)}% \u00B7 ${label}</span>`;
         btn.onclick = () => startWeakestDrill();
         today.appendChild(btn);
       }
@@ -2631,7 +2631,7 @@ setView = function(view) {
       const btn = document.createElement('button');
       btn.className = 'bookmark-btn today-cta secondary';
       btn.style.cssText = 'margin-top:12px;display:inline-flex;align-items:center;gap:8px;';
-      btn.innerHTML = `★ Bookmarks <span style="font-family:'Geist Mono',monospace;font-size:11px;background:var(--gold-soft);color:var(--gold);padding:3px 8px;border-radius:100px;">${state.bookmarks.length}</span>`;
+      btn.innerHTML = `\u2605 Bookmarks <span style="font-family:'Geist Mono',monospace;font-size:11px;background:var(--gold-soft);color:var(--gold);padding:3px 8px;border-radius:100px;">${state.bookmarks.length}</span>`;
       btn.onclick = () => startBookmarkReview();
       today.appendChild(btn);
     }
@@ -2652,13 +2652,13 @@ setView = function(view) {
     const isTyping = tag === 'TEXTAREA' || (tag === 'INPUT' && e.target.id !== 'modalInput' && e.target.id !== 'searchPaletteInput');
     if (isTyping && e.key !== 'Escape') return;
 
-    // Cmd+K / Ctrl+K — open search palette
+    // Cmd+K / Ctrl+K \u2014 open search palette
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
       openSearchPalette();
       return;
     }
-    // Escape — close any overlay
+    // Escape \u2014 close any overlay
     if (e.key === 'Escape') {
       if (isSearchOpen()) { closeSearchPalette(); e.preventDefault(); return; }
       if (isModalOpen()) { closeModal(); e.preventDefault(); return; }
@@ -2680,7 +2680,7 @@ setView = function(view) {
         }
         return;
       }
-      // Enter — submit / next
+      // Enter \u2014 submit / next
       if (e.key === 'Enter' && document.activeElement?.tagName !== 'TEXTAREA') {
         const btn = document.getElementById('modalSubmit');
         if (btn) { btn.click(); e.preventDefault(); }
@@ -2689,14 +2689,14 @@ setView = function(view) {
       // Letter shortcuts (T / B) ONLY work when NOT focused on the answer input
       const focusedOnInput = document.activeElement?.id === 'modalInput' || document.activeElement?.tagName === 'TEXTAREA';
       if (focusedOnInput) return;
-      // T — toggle theory tab
+      // T \u2014 toggle theory tab
       if (e.key.toLowerCase() === 't' && !e.metaKey && !e.ctrlKey && !e.altKey) {
         const theoryActive = document.getElementById('tabTheory')?.classList.contains('active');
         switchTab(theoryActive ? 'practice' : 'theory');
         e.preventDefault();
         return;
       }
-      // B — bookmark current question
+      // B \u2014 bookmark current question
       if (e.key.toLowerCase() === 'b' && !e.metaKey && !e.ctrlKey && !e.altKey) {
         const btn = document.getElementById('bookmarkBtn');
         if (btn && btn.style.display !== 'none') { btn.click(); e.preventDefault(); }
@@ -2710,11 +2710,11 @@ setView = function(view) {
     const idx = [];
     Object.keys(window.CONTENT || {}).forEach(sub => {
       (window.CONTENT[sub] || []).forEach(ch => {
-        idx.push({ kind: 'chapter', sub, label: `${sub} · Ch ${ch.number}: ${ch.name}`, action: () => openChapter(ch.id), keyword: `${sub} ${ch.name} chapter ${ch.number}`.toLowerCase() });
+        idx.push({ kind: 'chapter', sub, label: `${sub} \u00B7 Ch ${ch.number}: ${ch.name}`, action: () => openChapter(ch.id), keyword: `${sub} ${ch.name} chapter ${ch.number}`.toLowerCase() });
         ch.parts.forEach(p => p.topics.forEach(t => {
           if (!t.questions || !t.questions.length) return;
           const tid = fullTopicId(ch.id, t.id);
-          idx.push({ kind: 'topic', sub, label: `${sub} · ${ch.name} · ${t.name}`, action: () => openTopic(tid), keyword: `${sub} ${ch.name} ${t.name}`.toLowerCase() });
+          idx.push({ kind: 'topic', sub, label: `${sub} \u00B7 ${ch.name} \u00B7 ${t.name}`, action: () => openTopic(tid), keyword: `${sub} ${ch.name} ${t.name}`.toLowerCase() });
         }));
       });
     });
@@ -2730,10 +2730,10 @@ setView = function(view) {
     overlay.onclick = (e) => { if (e.target === overlay) closeSearchPalette(); };
     overlay.innerHTML = `
       <div style="background:var(--bg-elev);border-radius:var(--radius-xl);width:min(640px, 92vw);box-shadow:var(--shadow-lg);overflow:hidden;display:flex;flex-direction:column;max-height:70vh;">
-        <input id="searchPaletteInput" placeholder="Jump to chapter, topic… (try 'optics' or 'integ')" style="border:none;outline:none;padding:18px 22px;font-family:'Geist',sans-serif;font-size:16px;background:var(--bg-elev);border-bottom:0.5px solid var(--line);" autofocus />
+        <input id="searchPaletteInput" placeholder="Jump to chapter, topic\u2026 (try 'optics' or 'integ')" style="border:none;outline:none;padding:18px 22px;font-family:'Geist',sans-serif;font-size:16px;background:var(--bg-elev);border-bottom:0.5px solid var(--line);" autofocus />
         <div id="searchPaletteResults" style="overflow-y:auto;padding:6px;"></div>
         <div style="padding:10px 16px;border-top:0.5px solid var(--line);font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted);display:flex;gap:14px;">
-          <span>↑↓ navigate</span><span>↵ open</span><span>Esc close</span>
+          <span>\u2191\u2193 navigate</span><span>\u21B5 open</span><span>Esc close</span>
         </div>
       </div>
     `;
@@ -2783,9 +2783,9 @@ setView = function(view) {
     if (document.getElementById('searchHint')) return;
     const btn = document.createElement('button');
     btn.id = 'searchHint';
-    btn.title = 'Search (Ctrl+K) · Press B to bookmark, T to toggle theory, 1-4 for MCQ, Enter to submit';
+    btn.title = 'Search (Ctrl+K) \u00B7 Press B to bookmark, T to toggle theory, 1-4 for MCQ, Enter to submit';
     btn.style.cssText = 'position:fixed;bottom:24px;right:24px;background:var(--ink);color:white;border:none;border-radius:100px;padding:10px 16px;font-family:"Geist Mono",monospace;font-size:12px;cursor:pointer;box-shadow:0 8px 24px rgba(15,15,20,0.3);z-index:50;display:flex;align-items:center;gap:8px;';
-    btn.innerHTML = '⌘K <span style="opacity:0.6;">search</span>';
+    btn.innerHTML = '\u2318K <span style="opacity:0.6;">search</span>';
     btn.onclick = () => openSearchPalette();
     document.body.appendChild(btn);
   }
@@ -2835,14 +2835,14 @@ setView = function(view) {
   function startTopicReview() {
     sfx('click');
     const due = getDueTopics();
-    if (!due.length) { showToast('default','📅','No topics due for review'); return; }
+    if (!due.length) { showToast('default','\uD83D\uDCC5','No topics due for review'); return; }
     // Pick the most overdue one
     due.sort((a,b) => state.topicReview[a].nextReviewAt - state.topicReview[b].nextReviewAt);
     const tid = due[0];
     if (typeof openTopic === 'function') {
       openTopic(tid);
       const found = findTopic(tid);
-      showToast('default', '📅', `Refresher: ${found?.topic?.name || 'topic'}`);
+      showToast('default', '\uD83D\uDCC5', `Refresher: ${found?.topic?.name || 'topic'}`);
       // Schedule next refresher
       const cur = state.topicReview[tid];
       const stage = Math.min((cur.stage || 0) + 1, TOPIC_REVIEW_INTERVALS.length - 1);
@@ -2888,9 +2888,9 @@ setView = function(view) {
           const bg = d.solved === 0 ? 'var(--line-soft)' : `rgba(30,58,255,${intensity.toFixed(2)})`;
           const txtColor = intensity > 0.5 ? 'white' : 'var(--ink)';
           return `
-            <div title="${d.key} · ${d.solved} solved · ${d.solved>0?Math.round(d.acc*100)+'%':''} acc" style="background:${bg};border-radius:8px;padding:8px 4px;text-align:center;color:${txtColor};${d.isToday?'box-shadow:0 0 0 2px var(--accent);':''}">
+            <div title="${d.key} \u00B7 ${d.solved} solved \u00B7 ${d.solved>0?Math.round(d.acc*100)+'%':''} acc" style="background:${bg};border-radius:8px;padding:8px 4px;text-align:center;color:${txtColor};${d.isToday?'box-shadow:0 0 0 2px var(--accent);':''}">
               <div style="font-family:'Geist Mono',monospace;font-size:10px;opacity:0.8;">${d.label}</div>
-              <div style="font-family:'Fraunces',serif;font-weight:500;font-size:18px;line-height:1.1;margin-top:2px;">${d.solved || '·'}</div>
+              <div style="font-family:'Fraunces',serif;font-weight:500;font-size:18px;line-height:1.1;margin-top:2px;">${d.solved || '\u00B7'}</div>
             </div>
           `;
         }).join('')}
@@ -2911,7 +2911,7 @@ setView = function(view) {
     const btn = document.createElement('button');
     btn.className = 'topic-review-btn today-cta secondary';
     btn.style.cssText = 'margin-top:12px;display:inline-flex;align-items:center;gap:8px;';
-    btn.innerHTML = `📅 Topic refresher <span style="font-family:'Geist Mono',monospace;font-size:11px;background:var(--accent-soft);color:var(--accent);padding:3px 8px;border-radius:100px;">${due.length} due</span>`;
+    btn.innerHTML = `\uD83D\uDCC5 Topic refresher <span style="font-family:'Geist Mono',monospace;font-size:11px;background:var(--accent-soft);color:var(--accent);padding:3px 8px;border-radius:100px;">${due.length} due</span>`;
     btn.onclick = () => startTopicReview();
     today.appendChild(btn);
   };
@@ -2976,7 +2976,7 @@ setView = function(view) {
       const hint = document.createElement('div');
       hint.className = 'start-hotkey-hint';
       hint.style.cssText = 'font-family:"Geist Mono",monospace;font-size:10px;opacity:0.7;margin-top:8px;letter-spacing:0.05em;';
-      hint.textContent = 'Press S anywhere · Enter to start';
+      hint.textContent = 'Press S anywhere \u00B7 Enter to start';
       const inner = hero.querySelector('div');
       if (inner) inner.appendChild(hint);
     }
@@ -3005,7 +3005,7 @@ setView = function(view) {
     0: { sunday: true }, // Sun = mock day
   };
 
-  // No date overrides — standard rotation applies every day. English Lit project is handled outside the app.
+  // No date overrides \u2014 standard rotation applies every day. English Lit project is handled outside the app.
   const PHASE0_OVERRIDES = {};
 
   function blockSubject(blockIdx, dayOfWeek) {
@@ -3097,13 +3097,13 @@ setView = function(view) {
   function startSessionForSubject(subject) {
     sfx('click');
     const cont = smartContinueForSubject(subject) || smartContinue();
-    if (!cont) { showToast('default', '✦', 'All ready topics mastered!'); return; }
+    if (!cont) { showToast('default', '\u2726', 'All ready topics mastered!'); return; }
     const fullId = fullTopicId(cont.chapter.id, cont.topic.id);
     const baseProblems = (cont.topic.questions || []).slice();
     const dueMistakes = getDueMistakes(3);
     const warmup = resolveMistakeProblems(dueMistakes);
     const merged = warmup.concat(baseProblems);
-    if (!merged.length) { showToast('default', '✦', 'Nothing to drill.'); return; }
+    if (!merged.length) { showToast('default', '\u2726', 'Nothing to drill.'); return; }
     session = { topicFullId: fullId, problems: merged, idx: 0, correct: 0, xpEarned: 0, mixed: warmup.length > 0 };
     state.currentTopicId = fullId;
     state.currentChapterId = cont.chapter.id;
@@ -3117,8 +3117,8 @@ setView = function(view) {
     document.getElementById('tabPractice').classList.add('active');
     document.getElementById('tabTheory').classList.remove('active');
     const found = findTopic(fullId);
-    { const _tc = document.getElementById('theoryContent'); _tc.innerHTML = found?.topic?.theory || '<p>—</p>'; renderMathIn(_tc); }
-    if (warmup.length) showToast('default', '🔁', `Warm-up: ${warmup.length} from mistake bank`);
+    { const _tc = document.getElementById('theoryContent'); _tc.innerHTML = found?.topic?.theory || '<p>\u2014</p>'; renderMathIn(_tc); }
+    if (warmup.length) showToast('default', '\uD83D\uDD01', `Warm-up: ${warmup.length} from mistake bank`);
     if (typeof startPomodoro === 'function') startPomodoro();
     loadProblem();
   }
@@ -3127,7 +3127,7 @@ setView = function(view) {
   // Replace startSession to use planned subject by default
   startSession = function() {
     const planned = getPlannedSubject();
-    if (planned?.skip) { showToast('default', '📅', planned.note || 'Today is a non-study day'); return; }
+    if (planned?.skip) { showToast('default', '\uD83D\uDCC5', planned.note || 'Today is a non-study day'); return; }
     const subj = planned?.subject;
     startSessionForSubject(subj);
   };
@@ -3153,12 +3153,12 @@ setView = function(view) {
         const endMin = a ? a.endH * 60 + a.endM : 0;
         const nowMin = new Date().getHours()*60 + new Date().getMinutes();
         const left = endMin - nowMin;
-        sub.innerHTML = `<strong>Block ${planned.blockIdx}/5 · ${planned.subject}</strong> · ${left} min left in block`;
+        sub.innerHTML = `<strong>Block ${planned.blockIdx}/5 \u00B7 ${planned.subject}</strong> \u00B7 ${left} min left in block`;
       } else if (planned.source === 'phase0') {
-        sub.innerHTML = `<strong>${planned.subject}</strong> · ${planned.note}`;
+        sub.innerHTML = `<strong>${planned.subject}</strong> \u00B7 ${planned.note}`;
       } else if (planned.isNext) {
         const next = findNextBlock();
-        sub.innerHTML = `Next block ${next.idx}/5 at ${String(next.startH).padStart(2,'0')}:${String(next.startM).padStart(2,'0')} · <strong>${planned.subject}</strong>`;
+        sub.innerHTML = `Next block ${next.idx}/5 at ${String(next.startH).padStart(2,'0')}:${String(next.startM).padStart(2,'0')} \u00B7 <strong>${planned.subject}</strong>`;
       }
     }
 
@@ -3185,22 +3185,22 @@ setView = function(view) {
     { num: 0, name: 'This Week',  start: '2026-04-27', end: '2026-04-30', desc: 'Phase 0 kickoff' },
     { num: 1, name: 'First Pass', start: '2026-05-01', end: '2026-06-21', desc: 'Cover every PCM chapter once' },
     { num: 2, name: 'EV1 Prep',   start: '2026-06-22', end: '2026-07-03', desc: 'Tighten for EV1 (starts 4 Jul)' },
-    { num: 3, name: 'Deep Dive',  start: '2026-07-08', end: '2026-10-31', desc: 'ISC derivations · PYQ grind' },
-    { num: 4, name: 'PB1 Prep',   start: '2026-11-01', end: '2026-12-05', desc: 'Mock papers · weak-spot patching' },
-    { num: 5, name: 'PB2 Prep',   start: '2026-12-06', end: '2027-01-10', desc: 'Full mocks · handwritten papers' },
-    { num: 6, name: 'Final Blitz',start: '2027-01-11', end: '2027-02-28', desc: 'PYQs daily · BOARDS' },
+    { num: 3, name: 'Deep Dive',  start: '2026-07-08', end: '2026-10-31', desc: 'ISC derivations \u00B7 PYQ grind' },
+    { num: 4, name: 'PB1 Prep',   start: '2026-11-01', end: '2026-12-05', desc: 'Mock papers \u00B7 weak-spot patching' },
+    { num: 5, name: 'PB2 Prep',   start: '2026-12-06', end: '2027-01-10', desc: 'Full mocks \u00B7 handwritten papers' },
+    { num: 6, name: 'Final Blitz',start: '2027-01-11', end: '2027-02-28', desc: 'PYQs daily \u00B7 BOARDS' },
   ];
 
   // Phase 1 week-by-week chapter targets (per Timetable.md)
-  // Format: weekIdx (1-based from May 1) → { Physics, Maths, Chemistry } chapter numbers
+  // Format: weekIdx (1-based from May 1) \u2192 { Physics, Maths, Chemistry } chapter numbers
   const PHASE1_WEEKS = [
-    { range: '2026-05-01..2026-05-03', physics: 1,  maths: 2,  chemistry: 1, label: 'Week 1: Phys Ch 1 · Inverse Trig · Solutions' },
-    { range: '2026-05-04..2026-05-10', physics: 2,  maths: 3,  chemistry: 2, label: 'Week 2: Phys Ch 2 · Matrices · Electrochemistry' },
-    { range: '2026-05-11..2026-05-17', physics: 3,  maths: 4,  chemistry: 3, label: 'Week 3: Phys Ch 3 · Determinants · Kinetics' },
-    { range: '2026-05-18..2026-05-24', physics: 4,  maths: 5,  chemistry: 4, label: 'Week 4: Phys Ch 4 · Cont & Diff · d/f Block' },
-    { range: '2026-05-25..2026-05-31', physics: 5,  maths: 6,  chemistry: 5, label: 'Week 5: Phys Ch 5 · App Derivatives · Coordination' },
-    { range: '2026-06-01..2026-06-07', physics: 6,  maths: 7,  chemistry: 6, label: 'Week 6: Phys Ch 6 · Integration · Haloalkanes' },
-    { range: '2026-06-08..2026-06-14', physics: 7,  maths: 8,  chemistry: 7, label: 'Week 7: Phys Ch 7 · App Integrals · Alcohols/Phenols' },
+    { range: '2026-05-01..2026-05-03', physics: 1,  maths: 2,  chemistry: 1, label: 'Week 1: Phys Ch 1 \u00B7 Inverse Trig \u00B7 Solutions' },
+    { range: '2026-05-04..2026-05-10', physics: 2,  maths: 3,  chemistry: 2, label: 'Week 2: Phys Ch 2 \u00B7 Matrices \u00B7 Electrochemistry' },
+    { range: '2026-05-11..2026-05-17', physics: 3,  maths: 4,  chemistry: 3, label: 'Week 3: Phys Ch 3 \u00B7 Determinants \u00B7 Kinetics' },
+    { range: '2026-05-18..2026-05-24', physics: 4,  maths: 5,  chemistry: 4, label: 'Week 4: Phys Ch 4 \u00B7 Cont & Diff \u00B7 d/f Block' },
+    { range: '2026-05-25..2026-05-31', physics: 5,  maths: 6,  chemistry: 5, label: 'Week 5: Phys Ch 5 \u00B7 App Derivatives \u00B7 Coordination' },
+    { range: '2026-06-01..2026-06-07', physics: 6,  maths: 7,  chemistry: 6, label: 'Week 6: Phys Ch 6 \u00B7 Integration \u00B7 Haloalkanes' },
+    { range: '2026-06-08..2026-06-14', physics: 7,  maths: 8,  chemistry: 7, label: 'Week 7: Phys Ch 7 \u00B7 App Integrals \u00B7 Alcohols/Phenols' },
   ];
 
   function getCurrentPhase() {
@@ -3239,7 +3239,7 @@ setView = function(view) {
     const hero = root.querySelector('.start-session-hero');
     if (!hero) return;
 
-    // 1. Bonus mode: rewrite subtitle + add "🎁 Bonus" badge
+    // 1. Bonus mode: rewrite subtitle + add "\uD83C\uDF81 Bonus" badge
     const bonus = isBonusTime();
     if (bonus && !hero.querySelector('.bonus-badge')) {
       const sub = hero.querySelector('div > div:nth-child(3)');
@@ -3247,35 +3247,35 @@ setView = function(view) {
       const planned = getPlannedSubject();
       if (sub) {
         if (next && planned) {
-          sub.innerHTML = `<strong>🎁 Bonus session</strong> · pick a subject below or default to <strong>${planned.subject}</strong> (next block at ${String(next.startH).padStart(2,'0')}:${String(next.startM).padStart(2,'0')})`;
+          sub.innerHTML = `<strong>\uD83C\uDF81 Bonus session</strong> \u00B7 pick a subject below or default to <strong>${planned.subject}</strong> (next block at ${String(next.startH).padStart(2,'0')}:${String(next.startM).padStart(2,'0')})`;
         } else {
-          sub.innerHTML = `<strong>🎁 Bonus session</strong> · pick a subject`;
+          sub.innerHTML = `<strong>\uD83C\uDF81 Bonus session</strong> \u00B7 pick a subject`;
         }
       }
       const badge = document.createElement('div');
       badge.className = 'bonus-badge';
       badge.style.cssText = 'position:absolute;top:14px;right:14px;background:rgba(255,215,100,0.25);border:1px solid rgba(255,215,100,0.5);padding:4px 10px;border-radius:100px;font-family:"Geist Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;';
-      badge.textContent = '🎁 Bonus';
+      badge.textContent = '\uD83C\uDF81 Bonus';
       hero.style.position = 'relative';
       hero.appendChild(badge);
     }
 
-    // 2. Today counter — small chip below the hero
+    // 2. Today counter \u2014 small chip below the hero
     if (!root.querySelector('.today-count')) {
       const n = todayCount();
       const chip = document.createElement('div');
       chip.className = 'today-count';
       chip.style.cssText = 'margin:8px 0 16px;padding:10px 16px;background:var(--bg-elev);border:0.5px solid var(--line);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:space-between;font-family:"Geist Mono",monospace;font-size:12px;';
-      const target = 60; // ~5 blocks × 12 Qs/block
+      const target = 60; // ~5 blocks \u00D7 12 Qs/block
       const pct = Math.min(100, Math.round((n / target) * 100));
       chip.innerHTML = `
-        <span style="color:var(--ink-soft);">Today: <strong style="color:var(--ink);font-size:16px;">${n}</strong> questions · target ${target}</span>
+        <span style="color:var(--ink-soft);">Today: <strong style="color:var(--ink);font-size:16px;">${n}</strong> questions \u00B7 target ${target}</span>
         <span style="font-family:'Geist Mono',monospace;font-size:11px;color:${n >= target ? 'var(--success)' : (n >= target/2 ? 'var(--gold)' : 'var(--ink-muted)')};">${pct}%</span>
       `;
       hero.insertAdjacentElement('afterend', chip);
     }
 
-    // 3. Phase tracker — small panel under heatmap
+    // 3. Phase tracker \u2014 small panel under heatmap
     const heatmap = root.querySelector('.heatmap-strip');
     if (heatmap && !root.querySelector('.phase-tracker')) {
       const phase = getCurrentPhase();
@@ -3283,7 +3283,7 @@ setView = function(view) {
       const tracker = document.createElement('div');
       tracker.className = 'phase-tracker';
       tracker.style.cssText = 'margin-top:14px;padding:14px 18px;background:var(--bg-elev);border:0.5px solid var(--line);border-radius:var(--radius-md);';
-      let label = phase ? `Phase ${phase.num} · ${phase.name}` : 'Pre-Phase';
+      let label = phase ? `Phase ${phase.num} \u00B7 ${phase.name}` : 'Pre-Phase';
       let sub = phase ? phase.desc : '';
       if (week) sub = week.label;
       // Date range progress bar within phase
@@ -3327,7 +3327,7 @@ setView = function(view) {
       chip.id = 'powerHourChip';
       chip.className = 'stat-chip';
       chip.style.cssText = 'background:linear-gradient(135deg, #C8902B, #FF8A3D); color:white; border:none; box-shadow:0 4px 12px rgba(255,138,61,0.25);';
-      chip.innerHTML = `<span class="icon">⚡</span><span><strong>2×</strong></span><span id="phChipTime" style="font-family:\'Geist Mono\',monospace;">${txt}</span>`;
+      chip.innerHTML = `<span class="icon">\u26A1</span><span><strong>2\u00D7</strong></span><span id="phChipTime" style="font-family:\'Geist Mono\',monospace;">${txt}</span>`;
       stats.insertBefore(chip, stats.firstChild);
     } else {
       const t = document.getElementById('phChipTime');
@@ -3375,10 +3375,10 @@ setView = function(view) {
       banner.style.cssText = 'margin:0 0 18px;padding:14px 18px;background:linear-gradient(135deg, var(--accent-soft), #EEF1FF);border:1px solid rgba(30,58,255,0.3);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;';
       banner.innerHTML = `
         <div>
-          <div style="font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);">📖 New topic · 🍅 Pomodoro running</div>
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);">\uD83D\uDCD6 New topic \u00B7 \uD83C\uDF45 Pomodoro running</div>
           <div style="font-family:'Fraunces',serif;font-size:15px;margin-top:2px;color:var(--ink);">Read first, then drill.</div>
         </div>
-        <button class="btn btn-primary" id="newTopicStartBtn" style="white-space:nowrap;">▶ Start questions</button>
+        <button class="btn btn-primary" id="newTopicStartBtn" style="white-space:nowrap;">\u25B6 Start questions</button>
       `;
       theoryView.insertBefore(banner, theoryView.firstChild);
       document.getElementById('newTopicStartBtn').onclick = () => {
@@ -3392,7 +3392,7 @@ setView = function(view) {
   closeModal = function() { _v10b_handledTopicForSession = null; const b = document.getElementById('newTopicBanner'); if (b) b.remove(); _origCloseModalV10b(); };
 
   // V10 helpers removed (theory-flip de-scoped). T hotkey still flips tabs.
-  // Per-question timer pause/resume on tab switch — kept, simpler version:
+  // Per-question timer pause/resume on tab switch \u2014 kept, simpler version:
   const _origSwitchTab = (typeof switchTab === 'function') ? switchTab : null;
   if (_origSwitchTab) {
     switchTab = function(tab) {
@@ -3417,7 +3417,7 @@ setView = function(view) {
     const mm = String(Math.floor(remaining / 60000)).padStart(2,'0');
     const ss = String(Math.floor((remaining % 60000) / 1000)).padStart(2,'0');
     const isBreak = state.pomodoro.isBreak;
-    const txt = `${isBreak ? '☕' : '🍅'} ${mm}:${ss}`;
+    const txt = `${isBreak ? '\u2615' : '\uD83C\uDF45'} ${mm}:${ss}`;
     if (!ind) {
       const head = document.querySelector('#modalOverlay .modal-head');
       if (!head) return;
@@ -3461,7 +3461,7 @@ setView = function(view) {
     .lightning {
       z-index: 350 !important;
     }
-    /* Power Hour banner (legacy) — never let it render */
+    /* Power Hour banner (legacy) \u2014 never let it render */
     .power-hour-banner, #powerHourBanner { display: none !important; }
   `;
   document.head.appendChild(fixCSS);
@@ -3525,7 +3525,7 @@ setView(state.view || 'mission');
     chip.className = 'stat-chip';
     chip.id = 'markTrainerChip';
     chip.style.cursor = 'pointer';
-    chip.innerHTML = '<span class="icon">📋</span><span>Marks ' + (state.markTrainerOn?'ON':'OFF') + '</span>';
+    chip.innerHTML = '<span class="icon">\uD83D\uDCCB</span><span>Marks ' + (state.markTrainerOn?'ON':'OFF') + '</span>';
     chip.onclick = () => {
       state.markTrainerOn = !state.markTrainerOn;
       saveState();
@@ -3551,8 +3551,8 @@ setView(state.view || 'mission');
 
     const block = document.createElement('div');
     block.style.cssText = 'margin-top:12px;padding:10px 12px;background:var(--bg-elev);border:0.5px solid var(--line);border-radius:10px;font-size:13px;';
-    block.innerHTML = '<div style="font-weight:600;margin-bottom:6px;">📋 Mark Trainer (PYQ ' + cur._pyq.year + ' Q' + cur._pyq.qNum + ', ' + marks + ' marks)</div>'
-      + items.map(i => '<div style="margin:3px 0;color:var(--ink-soft);">☐ ' + i + '</div>').join('');
+    block.innerHTML = '<div style="font-weight:600;margin-bottom:6px;">\uD83D\uDCCB Mark Trainer (PYQ ' + cur._pyq.year + ' Q' + cur._pyq.qNum + ', ' + marks + ' marks)</div>'
+      + items.map(i => '<div style="margin:3px 0;color:var(--ink-soft);">\u2610 ' + i + '</div>').join('');
     fb.appendChild(block);
   };
 
@@ -3564,7 +3564,7 @@ setView(state.view || 'mission');
 
     if (marks >= 3) items.push('Did you state the formula/principle clearly?');
     if (marks >= 2) items.push('Did you substitute with units shown?');
-    if (marks >= 3) items.push('Did you show ≥1 intermediate working step?');
+    if (marks >= 3) items.push('Did you show \u22651 intermediate working step?');
     items.push('Did you box your final answer with units?');
     if (q.type === 'numerical' || marks >= 3) {
       if (isMath && (q.q||'').match(/\bint\b|integrat/i)) items.push('Did you write + C? (indefinite) or change limits? (definite)');
@@ -3788,7 +3788,7 @@ setView(state.view || 'mission');
         const ind = document.createElement('div');
         ind.id = 'ribbonPos';
         ind.style.cssText = 'font-family:Geist Mono,monospace;font-size:11px;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:100px;display:inline-block;margin:0 8px;';
-        ind.textContent = 'Ribbon ' + (cursor+1) + '/' + steps.length + ' · ' + step.kind;
+        ind.textContent = 'Ribbon ' + (cursor+1) + '/' + steps.length + ' \u00B7 ' + step.kind;
         modalHead.appendChild(ind);
       }
     }, 100);
@@ -3827,7 +3827,7 @@ setView(state.view || 'mission');
     const btn = document.createElement('button');
     btn.className = 'ribbon-cta';
     btn.style.cssText = 'margin-top:14px;margin-right:8px;padding:12px 22px;background:var(--ink);color:var(--bg);border:none;border-radius:100px;font-weight:500;cursor:pointer;font-size:14px;';
-    btn.textContent = cursor === 0 ? '▶ Study this chapter (' + steps.length + ' steps)' : '▶ Continue ribbon · step ' + (cursor+1) + '/' + steps.length;
+    btn.textContent = cursor === 0 ? '\u25B6 Study this chapter (' + steps.length + ' steps)' : '\u25B6 Continue ribbon \u00B7 step ' + (cursor+1) + '/' + steps.length;
     btn.onclick = function() { startRibbon(ch.id); };
     hero.appendChild(btn);
     if (cursor > 0) {
@@ -3982,7 +3982,7 @@ setView(state.view || 'mission');
       if (!ch) continue;
       const total = buildRibbon(chId).length;
       if (r.cursor > 0 && r.cursor < total) {
-        // active — pick the one with the highest cursor as "most recent"
+        // active \u2014 pick the one with the highest cursor as "most recent"
         if (r.cursor > bestStep) { bestStep = r.cursor; bestChId = chId; }
       }
     }
@@ -3995,7 +3995,7 @@ setView(state.view || 'mission');
     const btn = document.createElement('button');
     btn.className = 'ribbon-resume-cta';
     btn.style.cssText = 'margin:14px 0;padding:14px 22px;background:var(--accent);color:white;border:none;border-radius:14px;font-weight:500;cursor:pointer;font-size:15px;display:flex;align-items:center;gap:10px;width:100%;justify-content:space-between;';
-    btn.innerHTML = '<span>▶ Resume ' + ch.name + ' ribbon</span><span style="font-family:Geist Mono,monospace;font-size:12px;opacity:0.8;">step ' + (bestStep + 1) + ' / ' + steps.length + '</span>';
+    btn.innerHTML = '<span>\u25B6 Resume ' + ch.name + ' ribbon</span><span style="font-family:Geist Mono,monospace;font-size:12px;opacity:0.8;">step ' + (bestStep + 1) + ' / ' + steps.length + '</span>';
     btn.onclick = function() { state.currentChapterId = bestChId; state.currentSubject = ch.subject; saveState(); window.startRibbon ? startRibbon(bestChId) : null; };
     if (today && today.parentNode) today.parentNode.insertBefore(btn, today.nextSibling);
     else root.insertBefore(btn, root.firstChild);
@@ -4074,10 +4074,10 @@ setView(state.view || 'mission');
     // First button is the main start/continue
     const main = ribbonBtns[0];
     if (cursor === 0) {
-      main.textContent = '▶ Study this chapter (' + steps.length + ' steps)';
+      main.textContent = '\u25B6 Study this chapter (' + steps.length + ' steps)';
     } else {
       const cleanLabel = nextStep.label.replace(/^Practice:\s*/, '').replace(/^\d+\.\s*/, '');
-      main.textContent = '▶ Resume: ' + cleanLabel + ' (step ' + (cursor + 1) + ' / ' + steps.length + ')';
+      main.textContent = '\u25B6 Resume: ' + cleanLabel + ' (step ' + (cursor + 1) + ' / ' + steps.length + ')';
     }
   };
 
@@ -4218,7 +4218,7 @@ setView(state.view || 'mission');
         btn.className = 'pyq-handoff';
         btn.style.cssText = 'margin-top:14px;padding:12px 22px;background:var(--accent);color:white;border:none;border-radius:100px;font-weight:500;cursor:pointer;';
         btn.textContent = 'Try ' + pyqHits.length + ' ISC PYQ' + (pyqHits.length === 1 ? '' : 's') + ' on this concept &rarr;';
-        btn.innerHTML = btn.textContent.replace('&rarr;', '→');
+        btn.innerHTML = btn.textContent.replace('&rarr;', '\u2192');
         btn.onclick = function() {
           // Synthesize a session of the matched PYQs
           session = {
@@ -4270,7 +4270,7 @@ setView(state.view || 'mission');
       // Show feedback with model answer + mark scheme
       const modelAnswer = p.explain ? p.explain : 'Refer to mark scheme below for ideal structure.';
       const headerLine = '<div style="margin-bottom:6px;color:var(--ink-soft);font-size:12px;text-transform:uppercase;letter-spacing:0.5px;">Self-marked &middot; reveal model</div>';
-      showFeedback('correct', '✓ Self-marked: compare your answer below', headerLine + modelAnswer, []);
+      showFeedback('correct', '\u2713 Self-marked: compare your answer below', headerLine + modelAnswer, []);
       saveState();
       return;
     }
@@ -4308,13 +4308,13 @@ setView(state.view || 'mission');
   function renderWorkedExamplesBlock(topic) {
     if (!topic || !Array.isArray(topic.workedExamples) || !topic.workedExamples.length) return '';
     const html = ['<div class="we-block" style="margin:24px 0;padding-top:18px;border-top:0.5px solid var(--line);">'];
-    html.push('<h3 style="font-family:Fraunces,serif;font-weight:500;font-size:18px;margin-bottom:14px;color:var(--accent);">📘 Worked Examples (' + topic.workedExamples.length + ')</h3>');
+    html.push('<h3 style="font-family:Fraunces,serif;font-weight:500;font-size:18px;margin-bottom:14px;color:var(--accent);">\uD83D\uDCD8 Worked Examples (' + topic.workedExamples.length + ')</h3>');
     topic.workedExamples.forEach(function(we, i) {
       const id = 'we_' + i + '_' + Math.random().toString(36).slice(2,7);
       html.push('<div class="we-item" style="margin:14px 0;padding:14px 16px;background:var(--bg-elev);border:0.5px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;">');
-      html.push('<div style="font-family:Geist Mono,monospace;font-size:11px;color:var(--ink-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Example ' + (i + 1) + (we._source ? (' · ' + we._source) : '') + '</div>');
+      html.push('<div style="font-family:Geist Mono,monospace;font-size:11px;color:var(--ink-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Example ' + (i + 1) + (we._source ? (' \u00B7 ' + we._source) : '') + '</div>');
       html.push('<div style="font-weight:500;font-size:15px;margin-bottom:10px;">' + (we.prompt || '') + '</div>');
-      html.push('<button onclick="(function(b){var s=b.nextElementSibling;s.style.display=s.style.display===\'none\'?\'block\':\'none\';b.textContent=s.style.display===\'none\'?\'▶ Show solution\':\'▼ Hide solution\';if(window.renderMathInElement)window.renderMathInElement(s,{throwOnError:false});})(this)" style="padding:8px 14px;background:var(--bg);border:0.5px solid var(--line);border-radius:8px;cursor:pointer;font-family:Geist,sans-serif;font-size:13px;">▶ Show solution</button>');
+      html.push('<button onclick="(function(b){var s=b.nextElementSibling;s.style.display=s.style.display===\'none\'?\'block\':\'none\';b.textContent=s.style.display===\'none\'?\'\u25B6 Show solution\':\'\u25BC Hide solution\';if(window.renderMathInElement)window.renderMathInElement(s,{throwOnError:false});})(this)" style="padding:8px 14px;background:var(--bg);border:0.5px solid var(--line);border-radius:8px;cursor:pointer;font-family:Geist,sans-serif;font-size:13px;">\u25B6 Show solution</button>');
       html.push('<div class="we-solution" style="display:none;margin-top:12px;padding:12px 14px;background:var(--bg);border-radius:8px;font-size:14px;line-height:1.6;">');
       if (Array.isArray(we.steps)) {
         html.push('<ol style="padding-left:20px;margin:0 0 12px;">');
@@ -4322,7 +4322,7 @@ setView(state.view || 'mission');
         html.push('</ol>');
       }
       if (we.finalAnswer) {
-        html.push('<div style="margin-top:10px;padding:8px 12px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:6px;font-weight:500;">📦 ' + we.finalAnswer + '</div>');
+        html.push('<div style="margin-top:10px;padding:8px 12px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:6px;font-weight:500;">\uD83D\uDCE6 ' + we.finalAnswer + '</div>');
       }
       html.push('</div></div>');
     });
@@ -4330,7 +4330,7 @@ setView(state.view || 'mission');
     return html.join('');
   }
 
-  // Hook into openTopic — append worked examples after the theory body
+  // Hook into openTopic \u2014 append worked examples after the theory body
   const _origOpenTopicV20 = window.openTopic;
   window.openTopic = function(tfid) {
     _origOpenTopicV20(tfid);
@@ -4341,7 +4341,7 @@ setView(state.view || 'mission');
       if (!theoryEl) return;
       // Avoid double-injection
       if (theoryEl.querySelector('.we-block')) return;
-      // Insert worked examples BEFORE the CTA row (if present) so flow is theory → examples → CTAs
+      // Insert worked examples BEFORE the CTA row (if present) so flow is theory \u2192 examples \u2192 CTAs
       const ctaRow = theoryEl.querySelector('.theory-cta-row');
       const block = document.createElement('div');
       block.innerHTML = renderWorkedExamplesBlock(found.topic);
@@ -4357,14 +4357,14 @@ setView(state.view || 'mission');
 
 
 // V21 - v7 critic fixes:
-//   1. Worked examples: re-render KaTeX inside dynamically inserted HTML (was missing → math shown as raw $F$)
+//   1. Worked examples: re-render KaTeX inside dynamically inserted HTML (was missing \u2192 math shown as raw $F$)
 //   2. Mark scheme: ensure feedbackExplain shows checklist for PYQs (V17 wrap was getting swallowed)
 //   3. Nootan MCQ schema mismatch: handle q.options + q.correct cleanly (data fix already done; engine guard added)
 (function V21_PostNootanFixes() {
   if (typeof window === 'undefined' || !window.CONTENT) return;
 
   // ---- 1. Force KaTeX re-render after worked-example show/hide ----
-  // V20 inlined an onclick that calls renderMathInElement on the slot — but only if window.renderMathInElement exists.
+  // V20 inlined an onclick that calls renderMathInElement on the slot \u2014 but only if window.renderMathInElement exists.
   // Defensive wrap: also call renderMathIn() after openTopic completes, traversing all .we-block instances.
   const _origOpenTopicV21 = window.openTopic;
   window.openTopic = function(tfid) {
@@ -4397,7 +4397,7 @@ setView(state.view || 'mission');
             if (p.options.length < 2) p.options = [p.a[0], 'Other A', 'Other B', 'Other C'];
             p.correct = 0;
           } else {
-            // Skip this question — fast forward
+            // Skip this question \u2014 fast forward
             console.warn('[V21] Skipping malformed MCQ:', p.q?.slice(0,50));
             session.idx = Math.min(session.idx + 1, session.problems.length - 1);
             if (session.idx === session.problems.length - 1) return;
@@ -4583,9 +4583,9 @@ setView(state.view || 'mission');
   }, true);
 
   // 3. Ribbon resume: when user clicks "Resume" CTA, actually load the cursor's step
-  // The startRibbon already does runRibbonStep(chapterId) which uses cursor — should work.
+  // The startRibbon already does runRibbonStep(chapterId) which uses cursor \u2014 should work.
   // But the issue may be that the cursor was saved post-advance. Ensure it's not advanced beyond actual step.
-  // Add defensive log only — actual fix needs deeper trace.
+  // Add defensive log only \u2014 actual fix needs deeper trace.
 
   console.log('[V24 HardenBugs] active');
 })();
@@ -4618,7 +4618,7 @@ setView(state.view || 'mission');
     }
   });
 
-  // 2. KaTeX mojibake fix — scope only to elements that contain $ or \( delimiters
+  // 2. KaTeX mojibake fix \u2014 scope only to elements that contain $ or \( delimiters
   const _origRenderMathIn = window.renderMathIn;
   if (typeof _origRenderMathIn === 'function') {
     window.renderMathIn = function(el) {
@@ -4645,10 +4645,10 @@ setView(state.view || 'mission');
     setTimeout(function() {
       const fbAfter = document.getElementById('modalFeedback')?.classList?.contains('show');
       if (fbBefore === fbAfter) {
-        // Original didn't fire — force it ourselves
+        // Original didn't fire \u2014 force it ourselves
         const explainText = (p.explain ? '<div style="margin-bottom:10px;color:var(--ink-soft);">' + p.explain + '</div>' : '') + '<div style="font-size:12px;color:var(--ink-muted);">Self-mark with the criteria below.</div>';
         if (typeof showFeedback === 'function') {
-          showFeedback('correct', '✓ Self-marked', explainText, []);
+          showFeedback('correct', '\u2713 Self-marked', explainText, []);
         }
       }
     }, 80);
@@ -4659,7 +4659,7 @@ setView(state.view || 'mission');
 
 
 // V26 - v13 critic fixes:
-//   1. Theory-only topic stuck on "Loading..." — force Theory tab visible
+//   1. Theory-only topic stuck on "Loading..." \u2014 force Theory tab visible
 //   2. Stale ribbon resume cleared after page reload >24h old
 (function V26_StuckFix() {
   if (typeof window === 'undefined' || !window.CONTENT) return;
@@ -4732,7 +4732,7 @@ setView(state.view || 'mission');
           { left:'\\(', right:'\\)', display:false },
           { left:'\\[', right:'\\]', display:true }
         ],
-        // Don't process plain text — only matched math
+        // Don't process plain text \u2014 only matched math
         ignoredTags: ['script','noscript','style','textarea','pre','code','option']
       });
     } catch(e){}
@@ -4743,7 +4743,7 @@ setView(state.view || 'mission');
 
 
 // V28 - v15 critic fixes:
-//   1. Ribbon hijack still happening — defensively only auto-advance if VERY recent ribbon click (<10s)
+//   1. Ribbon hijack still happening \u2014 defensively only auto-advance if VERY recent ribbon click (<10s)
 //   2. PYQ intro gate: skip "Read first" banner when topic has actual questions (not theory-only)
 //   3. PYQ textarea placeholder: notes-copy on answer field
 (function V28_RibbonAndIntroFixes() {
@@ -4855,7 +4855,7 @@ setView(state.view || 'mission');
       const found = (typeof findTopic === 'function') ? findTopic(tfid) : null;
       if (!found) return;
       const tid = found.topic.id || '';
-      // P* = PYQ, B* = textbook practice, E* = exemplar — all should default to PRACTICE tab
+      // P* = PYQ, B* = textbook practice, E* = exemplar \u2014 all should default to PRACTICE tab
       const isPracticeKind = /^[PBE]\d/.test(tid);
       if (isPracticeKind && found.topic.questions && found.topic.questions.length > 0) {
         const pv = document.getElementById('practiceView');
@@ -4876,7 +4876,7 @@ setView(state.view || 'mission');
 // V32 - Nuclear ribbon fix: NEVER auto-advance ribbon on close. Only explicit ribbon button advances.
 (function V32_NoRibbonAutoAdvance() {
   if (typeof window === 'undefined') return;
-  // Restore plain closeModal — strip all auto-advance logic from prior wraps
+  // Restore plain closeModal \u2014 strip all auto-advance logic from prior wraps
   const _origCloseModalV32 = window.closeModal;
   window.closeModal = function() {
     // Just call previous wrappers but do NOT advance ribbon afterwards
@@ -4998,12 +4998,12 @@ setView(state.view || 'mission');
           tile.classList.add('theory-fallback');
           tile.style.cursor = 'pointer';
           tile.style.opacity = '1';
-          // Update status badge from ⏳ to letter+num
+          // Update status badge from \u23F3 to letter+num
           const statusEl = tile.querySelector('.topic-status');
           if (statusEl) statusEl.textContent = `${partLetter}${i+1}`;
           // Update meta
           const metaEl = tile.querySelector('.topic-meta');
-          if (metaEl) metaEl.textContent = 'theory · from chapter';
+          if (metaEl) metaEl.textContent = 'theory \u00B7 from chapter';
           // Add click
           tile.onclick = () => { try { sfx('click'); } catch(_){} openTopic(fullId); };
         }
@@ -5030,7 +5030,7 @@ setView(state.view || 'mission');
 
 // =========================================================================
 // V36 - Per-topic theory clipping
-// chapter.theory contains the full chapter (e.g. sections 1.1–1.9). Showing
+// chapter.theory contains the full chapter (e.g. sections 1.1\u20131.9). Showing
 // the whole thing on every topic is overwhelming. Clip to just the section
 // that matches the topic's numeric prefix: "1a. Foo" -> section X.1,
 // "2c. Bar" -> section X.2, etc. (X = chapter number)
@@ -5195,7 +5195,7 @@ setView(state.view || 'mission');
     // Strip leading "1a. " prefix and get plain title
     const stripped = name.replace(/^\d+[a-z]?\.\s*/, '').trim();
 
-    // Step 1: derive the section number from topic name "1a" → 1, then build canonical "X.Y"
+    // Step 1: derive the section number from topic name "1a" \u2192 1, then build canonical "X.Y"
     const m = name.match(/^(\d+)[a-z]?\b/);
     if (m && chapter && window.SECTION_KEYWORDS) {
       const chapterMap = window.SECTION_KEYWORDS[chapter.id];
@@ -5299,7 +5299,7 @@ setView(state.view || 'mission');
       }
       found.topic.questions = practice;
 
-      // Render the first problem so practice tab isn't stuck on "Loading…"
+      // Render the first problem so practice tab isn't stuck on "Loading\u2026"
       if (typeof loadProblem === 'function') {
         try { loadProblem(); } catch (e) { console.warn('[V38] loadProblem failed', e); }
       }
@@ -5341,7 +5341,7 @@ setView(state.view || 'mission');
   function pipHtml(level) {
     if (!level) return '';
     const filled = Math.max(0, Math.min(5, level));
-    const dots = '●'.repeat(filled) + '○'.repeat(5 - filled);
+    const dots = '\u25CF'.repeat(filled) + '\u25CB'.repeat(5 - filled);
     const label = DIFF_LABEL[level] || '';
     const color = DIFF_COLOR[level] || '#6b7280';
     return `<span class="diff-pip" title="Difficulty ${level}/5 (${label})" style="display:inline-flex;align-items:center;gap:6px;font-family:'Geist Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.04em;color:${color};margin-left:8px;background:${color}14;padding:3px 8px;border-radius:99px;border:1px solid ${color}33;"><span style="letter-spacing:1px;">${dots}</span><span style="text-transform:uppercase;">${label}</span></span>`;
@@ -5349,7 +5349,7 @@ setView(state.view || 'mission');
 
   function sectionHtml(section) {
     if (!section) return '';
-    return `<span class="section-tag" style="display:inline-flex;align-items:center;font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted,#6b6b6b);margin-left:8px;background:var(--bg,#f5f5f0);padding:3px 8px;border-radius:99px;border:1px solid var(--line,#e8e6e0);">§${section}</span>`;
+    return `<span class="section-tag" style="display:inline-flex;align-items:center;font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted,#6b6b6b);margin-left:8px;background:var(--bg,#f5f5f0);padding:3px 8px;border-radius:99px;border:1px solid var(--line,#e8e6e0);">\u00A7${section}</span>`;
   }
 
   // Inject CSS once (for any future style hooks)
@@ -5393,7 +5393,7 @@ setView(state.view || 'mission');
 
 // =========================================================================
 // V40 - Difficulty filter chips on the practice modal
-// Renders a 4-chip strip ("All / Recall · Easy / Standard / Hard · Edge")
+// Renders a 4-chip strip ("All / Recall \u00B7 Easy / Standard / Hard \u00B7 Edge")
 // at the top of the practice view. Clicking re-filters session.problems by
 // difficulty bucket. Preserves the original (unfiltered) list as
 // session._fullProblems so the user can switch back to All.
@@ -5406,10 +5406,10 @@ setView(state.view || 'mission');
 
   // Bucket definition: chip key -> matching difficulty levels
   const BUCKETS = {
-    all: { label: 'All', levels: [1,2,3,4,5], dot: '○○○○○' },
-    easy: { label: 'Recall · Easy', levels: [1,2], dot: '●●○○○' },
-    std: { label: 'Standard', levels: [3], dot: '●●●○○' },
-    hard: { label: 'Hard · Edge', levels: [4,5], dot: '●●●●●' },
+    all: { label: 'All', levels: [1,2,3,4,5], dot: '\u25CB\u25CB\u25CB\u25CB\u25CB' },
+    easy: { label: 'Recall \u00B7 Easy', levels: [1,2], dot: '\u25CF\u25CF\u25CB\u25CB\u25CB' },
+    std: { label: 'Standard', levels: [3], dot: '\u25CF\u25CF\u25CF\u25CB\u25CB' },
+    hard: { label: 'Hard \u00B7 Edge', levels: [4,5], dot: '\u25CF\u25CF\u25CF\u25CF\u25CF' },
   };
 
   function bucketize(problems) {
@@ -5440,7 +5440,7 @@ setView(state.view || 'mission');
       });
     }
     if (next.length === 0) {
-      showToast && showToast('default', '◌', 'No questions at this level — showing all');
+      showToast && showToast('default', '\u25CC', 'No questions at this level \u2014 showing all');
       next = all.slice();
       bucketKey = 'all';
     }
@@ -5510,7 +5510,7 @@ setView(state.view || 'mission');
 
 // =========================================================================
 // V41 - Pre-set preview on chapter tiles
-// On the chapter view, append a small "🟢2 🟡1 🔴2 · ~7 min" summary to each
+// On the chapter view, append a small "\uD83D\uDFE22 \uD83D\uDFE11 \uD83D\uDD342 \u00B7 ~7 min" summary to each
 // topic tile that has practice questions (skips theory-only topics, since
 // V38 attaches transient practice that varies per session).
 // Time budget: 25s easy, 50s standard, 90s hard, fallback 60s for untagged.
@@ -5542,10 +5542,10 @@ setView(state.view || 'mission');
   function renderPreview(s) {
     if (!s) return '';
     const parts = [];
-    if (s.counts.easy)   parts.push('<span style="color:#10b981;">●</span>'+s.counts.easy);
-    if (s.counts.std)    parts.push('<span style="color:#f59e0b;">●</span>'+s.counts.std);
-    if (s.counts.hard)   parts.push('<span style="color:#ef4444;">●</span>'+s.counts.hard);
-    if (s.counts.untagged) parts.push('<span style="color:var(--ink-muted,#6b6b6b);">○</span>'+s.counts.untagged);
+    if (s.counts.easy)   parts.push('<span style="color:#10b981;">\u25CF</span>'+s.counts.easy);
+    if (s.counts.std)    parts.push('<span style="color:#f59e0b;">\u25CF</span>'+s.counts.std);
+    if (s.counts.hard)   parts.push('<span style="color:#ef4444;">\u25CF</span>'+s.counts.hard);
+    if (s.counts.untagged) parts.push('<span style="color:var(--ink-muted,#6b6b6b);">\u25CB</span>'+s.counts.untagged);
     parts.push(`<span style="opacity:0.75;margin-left:4px;">~${s.minutes} min</span>`);
     return `<div class="tile-preview" style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.04em;display:inline-flex;gap:6px;align-items:center;margin-top:3px;color:var(--ink-muted,#6b6b6b);">${parts.join(' ')}</div>`;
   }
@@ -5617,9 +5617,9 @@ setView(state.view || 'mission');
 // =========================================================================
 // V43 - Adaptive difficulty ramping
 // Tracks per-level accuracy in state.difficultyAccuracy = {1:{correct,total},...}.
-// When user hits ≥5 attempts at a level with ≥80% accuracy, surface a toast:
+// When user hits \u22655 attempts at a level with \u226580% accuracy, surface a toast:
 // "Solid at Standard (5/6). Try Hard?" The user clicks the toast OR ignores it.
-// We never auto-advance — predictability matters for ADHD.
+// We never auto-advance \u2014 predictability matters for ADHD.
 // =========================================================================
 (function V43_AdaptiveRamping() {
   if (typeof window === 'undefined') return;
@@ -5656,7 +5656,7 @@ setView(state.view || 'mission');
     const label = LEVEL_NAME[lvl] || ('L' + lvl);
     const next = NEXT_NAME[lvl] || ('L' + (lvl + 1));
     if (typeof showToast === 'function') {
-      showToast('default', '◆', `Solid at ${label} (${stat.c}/${stat.t}). Ready for ${next}?`);
+      showToast('default', '\u25C6', `Solid at ${label} (${stat.c}/${stat.t}). Ready for ${next}?`);
     }
   }
 
@@ -5762,9 +5762,9 @@ setView(state.view || 'mission');
       const days = daysUntil(d.date);
       const urgent = days < 60;
       html += `<div style="flex:1;min-width:160px;padding:14px 18px;background:${urgent ? '#fef3c7' : 'var(--bg,#fafaf7)'};border-radius:12px;border:1px solid ${urgent ? '#fde68a' : 'var(--line,#e8e6e0)'};">
-        <div style="font-family:'Geist Mono',monospace;font-size:10px;color:${urgent ? '#92400e' : 'var(--ink-muted,#6b6b6b)'};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">${d.name} · ${d.tag}</div>
+        <div style="font-family:'Geist Mono',monospace;font-size:10px;color:${urgent ? '#92400e' : 'var(--ink-muted,#6b6b6b)'};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">${d.name} \u00B7 ${d.tag}</div>
         <div style="font-family:'Fraunces',serif;font-weight:600;font-size:34px;line-height:1;color:${urgent ? '#92400e' : 'var(--ink,#1a1a1a)'};">${days}</div>
-        <div style="font-size:12px;color:var(--ink-muted,#6b6b6b);margin-top:2px;">days · ${d.date}</div>
+        <div style="font-size:12px;color:var(--ink-muted,#6b6b6b);margin-top:2px;">days \u00B7 ${d.date}</div>
       </div>`;
     }
     html += '</div>';
@@ -5773,13 +5773,13 @@ setView(state.view || 'mission');
     html += '<div style="margin-bottom:24px;"><div style="font-family:\'Geist Mono\',monospace;font-size:10px;color:var(--ink-muted,#6b6b6b);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Subject mastery</div>';
     for (const sub of subjects) {
       const m = subjectMastery(sub);
-      const theme = themes[sub] || { color: '#1a1a1a', icon: '·' };
+      const theme = themes[sub] || { color: '#1a1a1a', icon: '\u00B7' };
       html += `<div style="display:flex;align-items:center;gap:14px;margin-bottom:8px;font-size:13px;">
         <span style="width:90px;color:var(--ink,#1a1a1a);font-weight:500;">${theme.icon} ${sub}</span>
         <div style="flex:1;height:10px;background:var(--line,#e8e6e0);border-radius:99px;overflow:hidden;">
           <div style="width:${m.pct}%;height:100%;background:${theme.color};transition:width 0.5s;"></div>
         </div>
-        <span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted,#6b6b6b);width:80px;text-align:right;">${m.done}/${m.total} · ${m.pct}%</span>
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted,#6b6b6b);width:80px;text-align:right;">${m.done}/${m.total} \u00B7 ${m.pct}%</span>
       </div>`;
     }
     html += '</div>';
@@ -5791,12 +5791,12 @@ setView(state.view || 'mission');
     for (const d of days30) {
       const heat = d.solved === 0 ? 0 : (d.solved < 5 ? 1 : (d.solved < 15 ? 2 : (d.solved < 30 ? 3 : 4)));
       const colors = ['var(--line,#e8e6e0)', '#bbf7d0', '#86efac', '#22c55e', '#15803d'];
-      html += `<div title="${d.iso} · ${d.solved} questions" style="aspect-ratio:1;background:${colors[heat]};border-radius:3px;"></div>`;
+      html += `<div title="${d.iso} \u00B7 ${d.solved} questions" style="aspect-ratio:1;background:${colors[heat]};border-radius:3px;"></div>`;
     }
     html += '</div>';
     const totalSolved30 = days30.reduce((s,d) => s + d.solved, 0);
     const activeDays = days30.filter(d => d.solved > 0).length;
-    html += `<div style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted,#6b6b6b);margin-top:8px;">${totalSolved30} questions across ${activeDays} active days · ${Math.round(activeDays / 30 * 100)}% consistency</div></div>`;
+    html += `<div style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted,#6b6b6b);margin-top:8px;">${totalSolved30} questions across ${activeDays} active days \u00B7 ${Math.round(activeDays / 30 * 100)}% consistency</div></div>`;
 
     // Per-difficulty accuracy
     const da = state.difficultyAccuracy || {};
@@ -5813,7 +5813,7 @@ setView(state.view || 'mission');
         const col = colors[lvl];
         html += `<div style="flex:1;min-width:100px;padding:10px 12px;background:${col}14;border:1px solid ${col}33;border-radius:10px;">
           <div style="font-family:'Geist Mono',monospace;font-size:10px;color:${col};text-transform:uppercase;letter-spacing:0.05em;font-weight:600;">${lbl}</div>
-          <div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:${col};line-height:1;margin-top:4px;">${acc != null ? acc + '%' : '—'}</div>
+          <div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:${col};line-height:1;margin-top:4px;">${acc != null ? acc + '%' : '\u2014'}</div>
           <div style="font-size:11px;color:var(--ink-muted,#6b6b6b);margin-top:2px;">${s.c}/${s.t}</div>
         </div>`;
       }
@@ -5867,7 +5867,7 @@ setView(state.view || 'mission');
 // startMistakeReview). Problem: it lives buried in a V2 button that injects
 // into "today" hero AFTER the start-session button. ADHD users need it FIRST.
 // V45 hoists a "Mistakes due" card right above the Today's Mission card,
-// only when due > 0. Empty state stays hidden — no nag when caught up.
+// only when due > 0. Empty state stays hidden \u2014 no nag when caught up.
 // =========================================================================
 (function V45_MistakesUpfront() {
   if (typeof window === 'undefined') return;
@@ -5888,11 +5888,11 @@ setView(state.view || 'mission');
     const html = `
       <section class="mistakes-upfront fade-in delay-1" style="margin-bottom:14px;padding:18px 22px;background:#fef2f2;border:1px solid #fecaca;border-left:4px solid #dc2626;border-radius:14px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
         <div style="flex:1;min-width:200px;">
-          <div style="font-family:'Geist Mono',monospace;font-size:10px;color:#991b1b;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;font-weight:600;">⚠ Mistakes due</div>
+          <div style="font-family:'Geist Mono',monospace;font-size:10px;color:#991b1b;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;font-weight:600;">\u26A0 Mistakes due</div>
           <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:#7f1d1d;">${due.length} question${due.length>1?'s':''} waiting</div>
-          <div style="font-size:13px;color:#991b1b;opacity:0.85;margin-top:2px;">Oldest is ${daysOld} day${daysOld>1?'s':''} old · ${total} total in your mistake bank</div>
+          <div style="font-size:13px;color:#991b1b;opacity:0.85;margin-top:2px;">Oldest is ${daysOld} day${daysOld>1?'s':''} old \u00B7 ${total} total in your mistake bank</div>
         </div>
-        <button onclick="startMistakeReview()" style="background:#dc2626;color:white;border:none;border-radius:99px;padding:11px 22px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">Review now →</button>
+        <button onclick="startMistakeReview()" style="background:#dc2626;color:white;border:none;border-radius:99px;padding:11px 22px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">Review now \u2192</button>
       </section>
     `;
 
@@ -5932,7 +5932,7 @@ setView(state.view || 'mission');
     // Filter out trivial tokens, single variables, pure numbers
     const stripped = latex.replace(/\\[a-zA-Z]+/g, '').replace(/[\s{}]/g, '');
     if (stripped.length < 3) return false;
-    if (!/[=≈≡∝]/.test(latex) && !/\\(approx|equiv|propto|implies|leftrightarrow)/.test(latex)) return false;
+    if (!/[=\u2248\u2261\u221D]/.test(latex) && !/\\(approx|equiv|propto|implies|leftrightarrow)/.test(latex)) return false;
     return true;
   }
 
@@ -6067,13 +6067,13 @@ setView(state.view || 'mission');
     if (!ch) return;
     const paper = buildSmartPaper(ch);
     if (paper.length === 0) {
-      showToast && showToast('default', '◌', 'No tagged questions for paper builder');
+      showToast && showToast('default', '\u25CC', 'No tagged questions for paper builder');
       return;
     }
     // Inject as a synthetic topic on the chapter so existing flow works
     let smartPart = ch.parts.find(p => p.id === 'smart_paper');
     if (!smartPart) {
-      smartPart = { id: 'smart_paper', name: '🎯 Smart paper', topics: [] };
+      smartPart = { id: 'smart_paper', name: '\uD83C\uDFAF Smart paper', topics: [] };
       ch.parts.push(smartPart);
     }
     smartPart.topics = [{ id: 'SP1', name: `Smart paper (${paper.length} Q)`, theory: '', questions: paper }];
@@ -6094,7 +6094,7 @@ setView(state.view || 'mission');
     const btn = document.createElement('button');
     btn.className = 'smart-paper-btn btn btn-ghost';
     btn.style.cssText = 'margin-top:14px;margin-left:8px;border:0.5px solid var(--line);background:var(--bg);';
-    btn.innerHTML = '🎯 Smart paper (~30 Q)';
+    btn.innerHTML = '\uD83C\uDFAF Smart paper (~30 Q)';
     btn.title = 'Auto-built paper-shaped set: 8 recall + 12 standard + 8 application + 2 edge';
     btn.onclick = () => openSmartPaper(ch.id);
     hero.appendChild(btn);
@@ -6113,7 +6113,7 @@ setView(state.view || 'mission');
 // =========================================================================
 // V48 - Session-count tracker (light-touch adaptive surfacing)
 // Tracks state.sessionsToday[date] and surfaces "Session N today" label on
-// the modal head. Doesn't truncate sessions — that's paternalistic for ADHD
+// the modal head. Doesn't truncate sessions \u2014 that's paternalistic for ADHD
 // users. Just surfaces information so user can self-regulate.
 // =========================================================================
 (function V48_SessionTracker() {
@@ -6149,7 +6149,7 @@ setView(state.view || 'mission');
       const n = bumpSession();
       setTimeout(() => injectBadge(n), 90);
       // Soft nudge for marathons
-      if (n === 5) showToast && showToast('default', '☾', '5th session today — strong day. Take a stretch?');
+      if (n === 5) showToast && showToast('default', '\u263E', '5th session today \u2014 strong day. Take a stretch?');
     };
   }
 
@@ -6163,7 +6163,7 @@ setView(state.view || 'mission');
 //   - section number + title
 //   - question count tagged to that section
 //   - difficulty distribution (mini coloured bar)
-//   - click → drill those questions
+//   - click \u2192 drill those questions
 // Surfaces on chapter view, between hero and parts list.
 // =========================================================================
 (function V49_SectionWheel() {
@@ -6211,14 +6211,14 @@ setView(state.view || 'mission');
       return meta && meta.section === sectionNum;
     });
     if (matched.length === 0) {
-      showToast && showToast('default', '◌', `No questions tagged to §${sectionNum}`);
+      showToast && showToast('default', '\u25CC', `No questions tagged to \u00A7${sectionNum}`);
       return;
     }
     // Easiest first
     matched.sort((a,b) => (window.getQuestionMeta(a)?.difficulty || 3) - (window.getQuestionMeta(b)?.difficulty || 3));
     let part = ch.parts.find(p => p.id === 'section_drill');
     if (!part) { part = { id: 'section_drill', name: 'Section drills', topics: [] }; ch.parts.push(part); }
-    part.topics = [{ id: `SD_${sectionNum.replace('.','_')}`, name: `§${sectionNum} drill`, theory: '', questions: matched.slice(0, 10) }];
+    part.topics = [{ id: `SD_${sectionNum.replace('.','_')}`, name: `\u00A7${sectionNum} drill`, theory: '', questions: matched.slice(0, 10) }];
     openTopic(fullTopicId(ch.id, part.topics[0].id));
   }
   window.drillSection = drillSection;
@@ -6252,7 +6252,7 @@ setView(state.view || 'mission');
       bar += '</div>';
       const disabled = total === 0;
       html += `<button type="button" onclick="drillSection('${ch.id}','${s.num}')" ${disabled?'disabled':''} style="text-align:left;padding:12px;background:var(--bg,#fafaf7);border:1px solid var(--line,#e8e6e0);border-radius:10px;cursor:${disabled?'not-allowed':'pointer'};opacity:${disabled?0.45:1};font-family:inherit;transition:all 0.15s;">
-        <div style="font-family:'Geist Mono',monospace;font-size:10px;color:var(--accent,#4F46E5);font-weight:600;">§${s.num}</div>
+        <div style="font-family:'Geist Mono',monospace;font-size:10px;color:var(--accent,#4F46E5);font-weight:600;">\u00A7${s.num}</div>
         <div style="font-family:'Fraunces',serif;font-size:14px;font-weight:500;line-height:1.3;margin-top:2px;color:var(--ink,#1a1a1a);">${s.title}</div>
         <div style="font-size:11px;color:var(--ink-muted,#6b6b6b);margin-top:4px;">${total} question${total!==1?'s':''}</div>
         ${bar}
@@ -6277,7 +6277,7 @@ setView(state.view || 'mission');
 
 // =========================================================================
 // V50 - "I don't know" skip (no accuracy hit)
-// Adds a small "Skip — I don't know" button next to Submit. Clicking advances
+// Adds a small "Skip \u2014 I don't know" button next to Submit. Clicking advances
 // to the next question without recording correct/wrong. Question is queued
 // for review in state.skipQueue so user sees it again later.
 // =========================================================================
@@ -6293,7 +6293,7 @@ setView(state.view || 'mission');
     const btn = document.createElement('button');
     btn.id = 'btnDontKnow';
     btn.type = 'button';
-    btn.textContent = "Skip · I don't know";
+    btn.textContent = "Skip \u00B7 I don't know";
     btn.style.cssText = 'background:transparent;color:var(--ink-muted,#6b6b6b);border:1px solid var(--line,#e8e6e0);border-radius:99px;padding:10px 18px;font-size:13px;font-family:inherit;cursor:pointer;margin-right:8px;';
     btn.onclick = () => {
       try {
@@ -6342,10 +6342,10 @@ setView(state.view || 'mission');
     const i = state.flaggedQuestions.findIndex(f => f.id === qid);
     if (i >= 0) {
       state.flaggedQuestions.splice(i, 1);
-      showToast && showToast('default', '✓', 'Flag removed');
+      showToast && showToast('default', '\u2713', 'Flag removed');
     } else {
       state.flaggedQuestions.push({ id: qid, text: (qText || '').slice(0, 80), at: Date.now() });
-      showToast && showToast('default', '⚐', 'Flagged for review');
+      showToast && showToast('default', '\u2690', 'Flagged for review');
     }
     saveState && saveState();
   }
@@ -6361,9 +6361,9 @@ setView(state.view || 'mission');
     const btn = document.createElement('button');
     btn.className = 'flag-btn';
     btn.type = 'button';
-    btn.title = flagged ? 'Flagged as broken — click to remove flag' : 'Flag this question as broken/garbled';
+    btn.title = flagged ? 'Flagged as broken \u2014 click to remove flag' : 'Flag this question as broken/garbled';
     btn.style.cssText = `margin-left:auto;background:transparent;border:none;cursor:pointer;font-size:14px;color:${flagged ? '#dc2626' : 'var(--ink-muted,#6b6b6b)'};padding:4px 8px;`;
-    btn.textContent = flagged ? '⚑' : '⚐';
+    btn.textContent = flagged ? '\u2691' : '\u2690';
     btn.onclick = (e) => {
       e.stopPropagation();
       toggleFlag(cur.id, cur.q || cur.text);
@@ -6407,7 +6407,7 @@ setView(state.view || 'mission');
     const lvl = meta.difficulty;
     const html = `<div class="rationale-debrief" style="margin-top:10px;padding:10px 14px;background:${colors[lvl]}10;border-left:3px solid ${colors[lvl]};border-radius:6px;font-size:12px;color:var(--ink,#1a1a1a);line-height:1.5;">
       <span style="font-family:'Geist Mono',monospace;font-size:10px;color:${colors[lvl]};font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">${labels[lvl] || 'Difficulty ' + lvl}</span>
-      <span style="opacity:0.8;margin-left:4px;">·</span>
+      <span style="opacity:0.8;margin-left:4px;">\u00B7</span>
       <span style="margin-left:4px;">${meta.rationale}</span>
     </div>`;
     fb.insertAdjacentHTML('beforeend', html);
@@ -6427,7 +6427,7 @@ setView(state.view || 'mission');
 
 // =========================================================================
 // V53 - ISC marks-weighted mastery + EV1/Boards coverage %
-// V44's mastery bars equal-weight every chapter. ISC paper doesn't —
+// V44's mastery bars equal-weight every chapter. ISC paper doesn't \u2014
 // Calculus is 35 marks, Optics 18, etc. Reweight bars by marks and surface
 // "covered X% of board paper marks" on each subject pill + deadline cards.
 // =========================================================================
@@ -6448,7 +6448,7 @@ setView(state.view || 'mission');
     return totalT ? doneT / totalT : 0;
   }
 
-  // Compute weighted mastery: Σ(chapter_mastery × marks) / Σ(marks)
+  // Compute weighted mastery: \u03A3(chapter_mastery \u00D7 marks) / \u03A3(marks)
   window.weightedSubjectMastery = function(sub) {
     const W = window.ISC_MARKS_WEIGHTS[sub];
     if (!W) return null;
@@ -6468,7 +6468,7 @@ setView(state.view || 'mission');
   };
 
   // Patch the mission-view subject cards. The base renderMission shows
-  // "X / Y topics" — append a marks-weighted overlay underneath.
+  // "X / Y topics" \u2014 append a marks-weighted overlay underneath.
   function injectMarksOverlay() {
     const subjGrid = document.querySelector('#view-mission .subjects-grid, #view-mission [class*="subject"]');
     if (!subjGrid) return;
@@ -6484,7 +6484,7 @@ setView(state.view || 'mission');
       const tag = document.createElement('div');
       tag.className = 'marks-overlay-injected';
       tag.style.cssText = "font-family:'Geist Mono',monospace;font-size:10px;color:var(--ink-muted,#6b6b6b);margin-top:4px;letter-spacing:0.04em;";
-      tag.textContent = `~${w.marks_covered}/${w.marks_total} marks · ${w.pct}% paper`;
+      tag.textContent = `~${w.marks_covered}/${w.marks_total} marks \u00B7 ${w.pct}% paper`;
       card.appendChild(tag);
       didAny = true;
     }
@@ -6503,13 +6503,13 @@ setView(state.view || 'mission');
     for (const sub of subjects) {
       const w = window.weightedSubjectMastery(sub);
       if (!w) continue;
-      const theme = themes[sub] || { color: '#1a1a1a', icon: '·' };
+      const theme = themes[sub] || { color: '#1a1a1a', icon: '\u00B7' };
       html += `<div style="display:flex;align-items:center;gap:14px;margin-bottom:8px;font-size:13px;">
         <span style="width:90px;color:var(--ink,#1a1a1a);font-weight:500;">${theme.icon} ${sub}</span>
         <div style="flex:1;height:10px;background:var(--line,#e8e6e0);border-radius:99px;overflow:hidden;">
           <div style="width:${w.pct}%;height:100%;background:${theme.color};transition:width 0.5s;"></div>
         </div>
-        <span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted,#6b6b6b);width:120px;text-align:right;">${w.marks_covered}/${w.marks_total} m · ${w.pct}%</span>
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted,#6b6b6b);width:120px;text-align:right;">${w.marks_covered}/${w.marks_total} m \u00B7 ${w.pct}%</span>
       </div>`;
     }
     html += '</div>';
@@ -6532,8 +6532,8 @@ setView(state.view || 'mission');
 
 // =========================================================================
 // V54 - Concept search (cross-chapter)
-// Adds a search box near the top of mission view. Type "coulomb" → see every
-// concept matching, click → drill those questions immediately.
+// Adds a search box near the top of mission view. Type "coulomb" \u2192 see every
+// concept matching, click \u2192 drill those questions immediately.
 // Backed by window.CONCEPT_INDEX (built by build_concept_index.js).
 // =========================================================================
 (function V54_ConceptSearch() {
@@ -6561,7 +6561,7 @@ setView(state.view || 'mission');
         }
       }
     }
-    if (!allQs.length) { showToast && showToast('default', '◌', 'No questions found'); return; }
+    if (!allQs.length) { showToast && showToast('default', '\u25CC', 'No questions found'); return; }
     // Sort easiest first
     allQs.sort((a, b) => (window.getQuestionMeta(a)?.difficulty || 3) - (window.getQuestionMeta(b)?.difficulty || 3));
     let part = ch.parts.find(p => p.id === 'concept_drill');
@@ -6578,7 +6578,7 @@ setView(state.view || 'mission');
     if (root.querySelector('.concept-search-box')) return;
     const html = `
       <div class="concept-search-box" style="margin:14px 0 18px;position:relative;">
-        <input type="text" id="conceptSearchInput" placeholder="🔍  Search any concept (e.g. Coulomb, Bayes, Aldol)…"
+        <input type="text" id="conceptSearchInput" placeholder="\uD83D\uDD0D  Search any concept (e.g. Coulomb, Bayes, Aldol)\u2026"
           style="width:100%;padding:12px 16px;border:1px solid var(--line,#e8e6e0);border-radius:99px;font-size:14px;font-family:inherit;background:var(--paper,#fff);color:var(--ink,#1a1a1a);" />
         <div id="conceptSearchResults" style="display:none;position:absolute;top:100%;left:0;right:0;margin-top:6px;background:var(--paper,#fff);border:1px solid var(--line,#e8e6e0);border-radius:14px;box-shadow:0 12px 28px rgba(15,15,20,0.08);max-height:380px;overflow-y:auto;z-index:50;"></div>
       </div>
@@ -6589,7 +6589,7 @@ setView(state.view || 'mission');
 
     const input = document.getElementById('conceptSearchInput');
     const out = document.getElementById('conceptSearchResults');
-    const SUBJECT_ICON = { Physics: '⚡', Chemistry: '🧪', Maths: '∫' };
+    const SUBJECT_ICON = { Physics: '\u26A1', Chemistry: '\uD83E\uDDEA', Maths: '\u222B' };
 
     input.addEventListener('input', function() {
       const v = this.value;
@@ -6598,10 +6598,10 @@ setView(state.view || 'mission');
       out.style.display = 'block';
       out.innerHTML = results.map(c => `
         <div data-concept="${c.id}" style="padding:11px 14px;cursor:pointer;border-bottom:1px solid var(--line,#e8e6e0);transition:background 0.15s;display:flex;align-items:center;gap:10px;">
-          <span style="font-size:14px;">${SUBJECT_ICON[c.subject] || '·'}</span>
+          <span style="font-size:14px;">${SUBJECT_ICON[c.subject] || '\u00B7'}</span>
           <div style="flex:1;min-width:0;">
             <div style="font-size:14px;color:var(--ink,#1a1a1a);font-weight:500;">${c.name}</div>
-            <div style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted,#6b6b6b);margin-top:2px;">${c.subject} · ${c.chapter_name} · §${c.section}</div>
+            <div style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-muted,#6b6b6b);margin-top:2px;">${c.subject} \u00B7 ${c.chapter_name} \u00B7 \u00A7${c.section}</div>
           </div>
           <div style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent,#4F46E5);background:var(--accent-soft,#eef2ff);padding:3px 9px;border-radius:99px;">${c.questionIds.length} Q</div>
         </div>
@@ -6636,7 +6636,7 @@ setView(state.view || 'mission');
 // =========================================================================
 // V55 - Personal difficulty drift
 // As Garvit accumulates accuracy data per question, recompute his personal
-// difficulty: aggregate his correct/total per question. Surface a "✓ mastered for me"
+// difficulty: aggregate his correct/total per question. Surface a "\u2713 mastered for me"
 // badge when his accuracy on that question is 100% over 2+ attempts.
 // =========================================================================
 (function V55_DifficultyDrift() {
@@ -6667,7 +6667,7 @@ setView(state.view || 'mission');
             const badge = document.createElement('span');
             badge.className = 'mastered-badge';
             badge.style.cssText = "margin-left:6px;font-family:'Geist Mono',monospace;font-size:10px;color:#10b981;background:#d1fae5;border:1px solid #6ee7b7;padding:2px 8px;border-radius:99px;";
-            badge.textContent = '✓ mastered';
+            badge.textContent = '\u2713 mastered';
             topicEl.appendChild(badge);
           }
         }
@@ -6681,7 +6681,7 @@ setView(state.view || 'mission');
 // =========================================================================
 // V56 - Mock paper history
 // Logs every smart-paper / mock session result. Shows a small history strip
-// on chapter view: "Last attempts: 47% → 62% → 71%". Trend visible.
+// on chapter view: "Last attempts: 47% \u2192 62% \u2192 71%". Trend visible.
 // =========================================================================
 (function V56_MockHistory() {
   if (typeof window === 'undefined') return;
@@ -6694,7 +6694,7 @@ setView(state.view || 'mission');
         if (typeof session !== 'undefined' && session && session.topicFullId &&
             session.problems && session.problems.length >= 8 &&
             session.idx >= session.problems.length - 1) {
-          // Substantial session completed — log it
+          // Substantial session completed \u2014 log it
           const tfid = session.topicFullId;
           // Match topic id pattern: phys_1_SP1 or phys_1_concept_drill_CD1
           const m = tfid.match(/^([a-z]+_\d+)_/);
@@ -6729,7 +6729,7 @@ setView(state.view || 'mission');
       const pct = Math.round(r.score / r.total * 100);
       const color = pct >= 75 ? '#10b981' : pct >= 50 ? '#f59e0b' : '#ef4444';
       html += `<span style="color:${color};font-weight:600;">${pct}%</span>`;
-      if (i < recent.length - 1) html += '<span style="color:var(--ink-muted,#6b6b6b);">›</span>';
+      if (i < recent.length - 1) html += '<span style="color:var(--ink-muted,#6b6b6b);">\u203A</span>';
     }
     html += '</section>';
     const hero = root.querySelector('.chapter-hero');
@@ -6783,21 +6783,21 @@ setView(state.view || 'mission');
     const btn = document.createElement('button');
     btn.id = 'ttsBtn';
     btn.type = 'button';
-    btn.textContent = '🔊 Read aloud';
+    btn.textContent = '\uD83D\uDD0A Read aloud';
     btn.style.cssText = "position:absolute;top:14px;right:60px;background:var(--bg,#fafaf7);border:1px solid var(--line,#e8e6e0);border-radius:99px;padding:6px 14px;font-size:12px;font-family:inherit;cursor:pointer;color:var(--ink,#1a1a1a);z-index:5;";
     btn.onclick = (e) => {
       e.stopPropagation();
       if (window.speechSynthesis.speaking) {
         window.speechSynthesis.cancel();
-        btn.textContent = '🔊 Read aloud';
+        btn.textContent = '\uD83D\uDD0A Read aloud';
         speaking = null;
         return;
       }
       const content = document.getElementById('theoryContent');
       if (!content) return;
-      btn.textContent = '⏸ Stop';
+      btn.textContent = '\u23F8 Stop';
       speaking = speak(content.innerHTML);
-      if (speaking) speaking.onend = () => { btn.textContent = '🔊 Read aloud'; };
+      if (speaking) speaking.onend = () => { btn.textContent = '\uD83D\uDD0A Read aloud'; };
     };
     // Make sure parent is positioned
     const parent = view.parentElement;
@@ -6840,14 +6840,14 @@ setView(state.view || 'mission');
     if (flagged.length === 0) return;
     let html = `<section class="flagged-queue" style="margin:14px 0;padding:14px 18px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-        <div style="font-family:'Geist Mono',monospace;font-size:11px;color:#92400e;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">⚐ Flagged questions (${flagged.length})</div>
+        <div style="font-family:'Geist Mono',monospace;font-size:11px;color:#92400e;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">\u2690 Flagged questions (${flagged.length})</div>
         <button onclick="state.flaggedQuestions=[];saveState();renderMission();" style="font-size:11px;background:transparent;border:none;color:#92400e;cursor:pointer;text-decoration:underline;">Clear all</button>
       </div>
       <div style="font-size:12px;color:#78350f;margin-bottom:8px;">Questions you flagged as broken or unclear. Use this list to triage and fix.</div>`;
     for (const f of flagged.slice(0, 8)) {
       const date = new Date(f.at).toISOString().slice(0, 10);
       html += `<div style="font-size:12px;padding:6px 0;border-top:1px solid #fde68a;color:#78350f;">
-        <span style="font-family:'Geist Mono',monospace;color:#92400e;font-size:10px;">${date}</span> · ${f.text || f.id}
+        <span style="font-family:'Geist Mono',monospace;color:#92400e;font-size:10px;">${date}</span> \u00B7 ${f.text || f.id}
       </div>`;
     }
     if (flagged.length > 8) html += `<div style="font-size:11px;color:#92400e;margin-top:8px;">+${flagged.length - 8} more</div>`;
@@ -6866,8 +6866,8 @@ setView(state.view || 'mission');
 
 // =========================================================================
 // V59 - Wrong-question repeat surfacing
-// Tracks per-question wrong attempts. Questions wrong on ≥2 different days
-// surface as "due for re-review" — prepended to the practice tab.
+// Tracks per-question wrong attempts. Questions wrong on \u22652 different days
+// surface as "due for re-review" \u2014 prepended to the practice tab.
 // =========================================================================
 (function V59_RepeatedWrongs() {
   if (typeof window === 'undefined') return;
@@ -6901,7 +6901,7 @@ setView(state.view || 'mission');
 // V60 - Per-chapter syllabus checklist
 // On chapter view, shows a short checklist for each section. User ticks "I'm
 // confident". Persisted in state.confidence[chId].sections[sectionNum] = true.
-// Doesn't replace mastery — supplements it with self-rated readiness.
+// Doesn't replace mastery \u2014 supplements it with self-rated readiness.
 // =========================================================================
 (function V60_SyllabusChecklist() {
   if (typeof window === 'undefined') return;
@@ -6941,7 +6941,7 @@ setView(state.view || 'mission');
       if (checked) confidentCount++;
       html += `<label style="display:flex;align-items:center;gap:9px;padding:8px 10px;background:${checked?'#d1fae5':'var(--bg,#fafaf7)'};border:1px solid ${checked?'#6ee7b7':'var(--line,#e8e6e0)'};border-radius:8px;cursor:pointer;font-size:13px;transition:all 0.15s;">
         <input type="checkbox" ${checked?'checked':''} data-section="${s.num}" style="margin:0;cursor:pointer;" />
-        <span style="font-family:'Geist Mono',monospace;font-size:10px;color:${checked?'#15803d':'var(--ink-muted,#6b6b6b)'};font-weight:600;">§${s.num}</span>
+        <span style="font-family:'Geist Mono',monospace;font-size:10px;color:${checked?'#15803d':'var(--ink-muted,#6b6b6b)'};font-weight:600;">\u00A7${s.num}</span>
         <span style="flex:1;color:${checked?'#15803d':'var(--ink,#1a1a1a)'};font-size:12px;line-height:1.3;">${s.title}</span>
       </label>`;
     }
@@ -6969,12 +6969,12 @@ setView(state.view || 'mission');
 
 // =========================================================================
 // V61 - Periodic Table widget for d-/f-block (chem_4) + Coordination (chem_5)
-// Adds a "📋 Periodic Table" button on those chapters' hero. Click opens a modal
+// Adds a "\uD83D\uDCCB Periodic Table" button on those chapters' hero. Click opens a modal
 // with the interactive periodic table from content/widgets/periodic_table.js.
 // =========================================================================
 (function () {
   if (typeof window === 'undefined' || !window.PERIODIC_TABLE) {
-    console.warn('[V61] PERIODIC_TABLE widget not loaded — skipping'); return;
+    console.warn('[V61] PERIODIC_TABLE widget not loaded \u2014 skipping'); return;
   }
   const TARGET_CHAPTERS = new Set(['chem_4', 'chem_5']);
 
@@ -6988,7 +6988,7 @@ setView(state.view || 'mission');
       const inner = document.createElement('div');
       inner.style.cssText = 'background:#fff;border-radius:10px;max-width:1100px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 25px 60px rgba(0,0,0,0.3);';
       const closer = document.createElement('button');
-      closer.textContent = '✕ close';
+      closer.textContent = '\u2715 close';
       closer.style.cssText = 'float:right;margin:10px 14px 0 0;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;padding:5px 12px;cursor:pointer;font-size:12px;color:#374151;';
       closer.onclick = () => modal.remove();
       const target = document.createElement('div');
@@ -7012,7 +7012,7 @@ setView(state.view || 'mission');
     const btn = document.createElement('button');
     btn.className = 'pt-btn btn btn-ghost';
     btn.style.cssText = 'margin-top:14px;margin-left:8px;border:0.5px solid var(--line);background:var(--bg);';
-    btn.innerHTML = '📋 Periodic Table';
+    btn.innerHTML = '\uD83D\uDCCB Periodic Table';
     btn.onclick = openPTModal;
     hero.appendChild(btn);
   };
@@ -7021,13 +7021,13 @@ setView(state.view || 'mission');
 
 // =========================================================================
 // V62 - Organic mechanism reference cards on chem_6 / _7 / _8 / _9
-// Adds an "🧪 Mechanisms" button on the chapter hero. Click opens a modal
+// Adds an "\uD83E\uDDEA Mechanisms" button on the chapter hero. Click opens a modal
 // with curated mechanism cards (SN1/SN2/E2/Aldol/Cannizzaro/Wurtz/Williamson/
 // Hoffmann/Sandmeyer/Reimer-Tiemann) filtered to the current chapter.
 // =========================================================================
 (function () {
   if (typeof window === 'undefined' || !window.ORGANIC_MECHANISMS) {
-    console.warn('[V62] ORGANIC_MECHANISMS widget not loaded — skipping'); return;
+    console.warn('[V62] ORGANIC_MECHANISMS widget not loaded \u2014 skipping'); return;
   }
   const TARGET_CHAPTERS = new Set(['chem_6', 'chem_7', 'chem_8', 'chem_9']);
 
@@ -7041,7 +7041,7 @@ setView(state.view || 'mission');
     const inner = document.createElement('div');
     inner.style.cssText = 'background:#fff;border-radius:10px;max-width:780px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 25px 60px rgba(0,0,0,0.3);';
     const closer = document.createElement('button');
-    closer.textContent = '✕ close';
+    closer.textContent = '\u2715 close';
     closer.style.cssText = 'float:right;margin:10px 14px 0 0;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;padding:5px 12px;cursor:pointer;font-size:12px;color:#374151;';
     closer.onclick = () => modal.remove();
     const target = document.createElement('div');
@@ -7065,7 +7065,7 @@ setView(state.view || 'mission');
     const btn = document.createElement('button');
     btn.className = 'mech-btn btn btn-ghost';
     btn.style.cssText = 'margin-top:14px;margin-left:8px;border:0.5px solid var(--line);background:var(--bg);';
-    btn.innerHTML = `🧪 Mechanisms (${mechs.length})`;
+    btn.innerHTML = `\uD83E\uDDEA Mechanisms (${mechs.length})`;
     btn.onclick = () => openMechModal(ch.id);
     hero.appendChild(btn);
   };
@@ -7074,12 +7074,12 @@ setView(state.view || 'mission');
 
 // =========================================================================
 // V63 - Physics diagram gallery on physics chapters
-// Adds "📐 Diagrams" button on chapter hero. Click opens modal with all
+// Adds "\uD83D\uDCD0 Diagrams" button on chapter hero. Click opens modal with all
 // SVG_TEMPLATES motifs whose META.chapters contains current chapter id.
 // =========================================================================
 (function () {
   if (typeof window === 'undefined' || !window.SVG_TEMPLATES_META) {
-    console.warn('[V63] SVG_TEMPLATES_META not loaded — skipping'); return;
+    console.warn('[V63] SVG_TEMPLATES_META not loaded \u2014 skipping'); return;
   }
   function chaptersForCurrent(id) {
     const out = [];
@@ -7099,11 +7099,11 @@ setView(state.view || 'mission');
     const inner = document.createElement('div');
     inner.style.cssText = 'background:#fff;border-radius:10px;max-width:980px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 25px 60px rgba(0,0,0,0.3);padding:14px;';
     const closer = document.createElement('button');
-    closer.textContent = '✕ close';
+    closer.textContent = '\u2715 close';
     closer.style.cssText = 'float:right;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;padding:5px 12px;cursor:pointer;font-size:12px;color:#374151;';
     closer.onclick = () => modal.remove();
     const title = document.createElement('div');
-    title.textContent = `Physics diagrams — ${motifs.length} for this chapter`;
+    title.textContent = `Physics diagrams \u2014 ${motifs.length} for this chapter`;
     title.style.cssText = 'font-weight:700;font-size:15px;color:#111827;margin-bottom:10px;';
     const grid = document.createElement('div');
     grid.style.cssText = 'display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:14px;';
@@ -7139,7 +7139,7 @@ setView(state.view || 'mission');
     const btn = document.createElement('button');
     btn.className = 'diagrams-btn btn btn-ghost';
     btn.style.cssText = 'margin-top:14px;margin-left:8px;border:0.5px solid var(--line);background:var(--bg);';
-    btn.innerHTML = `📐 Diagrams (${motifs.length})`;
+    btn.innerHTML = `\uD83D\uDCD0 Diagrams (${motifs.length})`;
     btn.onclick = () => openDiagramsModal(ch.id, motifs);
     hero.appendChild(btn);
   };
@@ -7158,8 +7158,8 @@ setView(state.view || 'mission');
 
   function norm(s) {
     return (s || '').toString().toLowerCase()
-      .replace(/[‑–—]/g, '-')        // unicode dashes
-      .replace(/ /g, ' ')       // nbsp
+      .replace(/[\u2011\u2013\u2014]/g, '-')        // unicode dashes
+      .replace(/\u00A0/g, ' ')       // nbsp
       .replace(/\s+/g, ' ')
       .trim();
   }
@@ -7195,7 +7195,7 @@ setView(state.view || 'mission');
     if (!el) return;
     // Clear stale injections so this is idempotent and re-fires for new theory content.
     // (Previously we used a dataset flag, but the same theoryContent element is reused
-    // across topics — the flag stuck after the first injection and blocked all subsequent ones.)
+    // across topics \u2014 the flag stuck after the first injection and blocked all subsequent ones.)
     el.querySelectorAll(':scope > figure.inline-diagram, :scope > .inline-mech, .inline-diagram, .inline-mech').forEach(n => n.remove());
 
     const headers = Array.from(el.querySelectorAll('h2, h3, h4'));
@@ -7245,7 +7245,7 @@ setView(state.view || 'mission');
     try { return state && state.currentChapterId; } catch (_) { return null; }
   }
 
-  // Wrap renderMathIn — called whenever theory innerHTML is loaded.
+  // Wrap renderMathIn \u2014 called whenever theory innerHTML is loaded.
   const _origRenderMathIn = window.renderMathIn;
   window.renderMathIn = function (el) {
     try { _origRenderMathIn && _origRenderMathIn(el); } catch (e) { console.error('[V64] orig renderMathIn err', e); }
@@ -7260,11 +7260,11 @@ setView(state.view || 'mission');
 // =========================================================================
 // V65 - Solutions/hints from content_solutions.js bundle
 // When user reveals answer or requests hint, surface agent-generated content.
-// Also injects a "💡 Hint" button on the practice question card.
+// Also injects a "\uD83D\uDCA1 Hint" button on the practice question card.
 // =========================================================================
 (function () {
   if (typeof window === 'undefined' || !window.SOLUTIONS) {
-    console.warn('[V65] SOLUTIONS bundle not loaded — skipping'); return;
+    console.warn('[V65] SOLUTIONS bundle not loaded \u2014 skipping'); return;
   }
   function getSolution(qid) { return (window.SOLUTIONS.byId || {})[qid]; }
 
@@ -7304,7 +7304,7 @@ setView(state.view || 'mission');
         const btn = document.createElement('button');
         btn.className = 'v65-mnem-btn btn btn-ghost';
         btn.style.cssText = 'margin-top:14px;margin-left:8px;border:0.5px solid var(--line);background:var(--bg);';
-        btn.innerHTML = `🧠 Mnemonics & Worked examples (${(data.mnemonics||[]).length}+${(data.worked_examples||[]).length})`;
+        btn.innerHTML = `\uD83E\uDDE0 Mnemonics & Worked examples (${(data.mnemonics||[]).length}+${(data.worked_examples||[]).length})`;
         btn.onclick = () => openMnemModal(ch, data);
         hero.appendChild(btn);
       } catch (e) {}
@@ -7320,15 +7320,15 @@ setView(state.view || 'mission');
     modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
     const inner = document.createElement('div');
     inner.style.cssText = 'background:#fff;border-radius:10px;max-width:780px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 25px 60px rgba(0,0,0,0.3);padding:18px;';
-    let html = `<button onclick="document.getElementById('v65-modal').remove()" style="float:right;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;padding:5px 12px;cursor:pointer;font-size:12px;color:#374151;">✕ close</button>`;
-    html += `<h3 style="font-size:17px;font-weight:700;margin:0 0 12px;color:#111827;">${ch.name} — Mnemonics + Worked Examples</h3>`;
+    let html = `<button onclick="document.getElementById('v65-modal').remove()" style="float:right;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;padding:5px 12px;cursor:pointer;font-size:12px;color:#374151;">\u2715 close</button>`;
+    html += `<h3 style="font-size:17px;font-weight:700;margin:0 0 12px;color:#111827;">${ch.name} \u2014 Mnemonics + Worked Examples</h3>`;
     if ((data.mnemonics||[]).length) {
-      html += '<div style="font-weight:600;margin-bottom:6px;color:#374151;">🧠 Mnemonics</div><ul style="margin:0 0 16px 18px;padding:0;">';
+      html += '<div style="font-weight:600;margin-bottom:6px;color:#374151;">\uD83E\uDDE0 Mnemonics</div><ul style="margin:0 0 16px 18px;padding:0;">';
       for (const m of data.mnemonics) html += `<li style="margin-bottom:6px;font-size:13px;color:#1f2937;">${m}</li>`;
       html += '</ul>';
     }
     if ((data.worked_examples||[]).length) {
-      html += '<div style="font-weight:600;margin-bottom:6px;color:#374151;">📝 Worked Examples</div>';
+      html += '<div style="font-weight:600;margin-bottom:6px;color:#374151;">\uD83D\uDCDD Worked Examples</div>';
       for (const ex of data.worked_examples) {
         html += `<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:10px 12px;margin-bottom:10px;">
           <div style="font-weight:600;font-size:13px;color:#111827;margin-bottom:4px;">${ex.title || 'Example'}</div>
@@ -7343,18 +7343,18 @@ setView(state.view || 'mission');
     renderMathIn && renderMathIn(inner);
   }
 
-  console.log('[V65 Solutions] active —', Object.keys(window.SOLUTIONS.byId).length, 'solutions,', Object.keys(window.SOLUTIONS.byChapter).length, 'chapter packs');
+  console.log('[V65 Solutions] active \u2014', Object.keys(window.SOLUTIONS.byId).length, 'solutions,', Object.keys(window.SOLUTIONS.byChapter).length, 'chapter packs');
 })();
 
 // =========================================================================
 // V66 - OCR confidence indicator (A5 partial fix)
-// Chapters flagged in _arihant oddities log get a small "⚠ OCR confidence" pill
+// Chapters flagged in _arihant oddities log get a small "\u26A0 OCR confidence" pill
 // on the chapter hero. Click expands the notes so user knows which questions
 // to verify against textbook.
 // =========================================================================
 (function () {
   if (typeof window === 'undefined' || !window.OCR_CONFIDENCE) {
-    console.warn('[V66] OCR_CONFIDENCE bundle not loaded — skipping'); return;
+    console.warn('[V66] OCR_CONFIDENCE bundle not loaded \u2014 skipping'); return;
   }
 
   function openConfModal(ch, info) {
@@ -7366,8 +7366,8 @@ setView(state.view || 'mission');
     modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
     const inner = document.createElement('div');
     inner.style.cssText = 'background:#fff;border-radius:10px;max-width:680px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 25px 60px rgba(0,0,0,0.3);padding:18px;';
-    let html = `<button onclick="document.getElementById('v66-modal').remove()" style="float:right;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;padding:5px 12px;cursor:pointer;font-size:12px;color:#374151;">✕ close</button>`;
-    html += `<h3 style="font-size:16px;font-weight:700;margin:0 0 10px;color:#92400e;">⚠ OCR confidence — ${ch.name}</h3>`;
+    let html = `<button onclick="document.getElementById('v66-modal').remove()" style="float:right;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;padding:5px 12px;cursor:pointer;font-size:12px;color:#374151;">\u2715 close</button>`;
+    html += `<h3 style="font-size:16px;font-weight:700;margin:0 0 10px;color:#92400e;">\u26A0 OCR confidence \u2014 ${ch.name}</h3>`;
     html += `<p style="font-size:13px;color:#374151;margin-bottom:12px;line-height:1.55;">During OCR + difficulty grading of this chapter, the agents flagged the following ${info.oddity_count} note${info.oddity_count>1?'s':''}. If a question seems garbled or wrong, cross-check the original Arihant book.</p>`;
     html += '<ul style="margin:0;padding:0 0 0 18px;font-size:12px;color:#1f2937;line-height:1.6;">';
     for (const n of info.notes) html += `<li style="margin-bottom:6px;">${n.replace(/[<>]/g, '')}</li>`;
@@ -7392,18 +7392,18 @@ setView(state.view || 'mission');
         const pill = document.createElement('button');
         pill.className = 'v66-pill';
         pill.style.cssText = 'margin-top:10px;background:#fef3c7;border:1px solid #fde68a;color:#92400e;border-radius:99px;padding:4px 10px;font-size:11px;cursor:pointer;';
-        pill.innerHTML = `⚠ ${info.oddity_count} OCR note${info.oddity_count>1?'s':''}`;
+        pill.innerHTML = `\u26A0 ${info.oddity_count} OCR note${info.oddity_count>1?'s':''}`;
         pill.title = 'Click to see OCR/grading notes for this chapter';
         pill.onclick = () => openConfModal(ch, info);
         hero.appendChild(pill);
       } catch (e) {}
     };
   }
-  console.log('[V66 OCRConfidence] active —', Object.keys(window.OCR_CONFIDENCE).length, 'chapters flagged');
+  console.log('[V66 OCRConfidence] active \u2014', Object.keys(window.OCR_CONFIDENCE).length, 'chapters flagged');
 })();
 
 // =========================================================================
-// V67 – DerivationDrills
+// V67 \u2013 DerivationDrills
 // Adds a "Drills" button to each chapter hero. Opens a modal listing every
 // derivation for that chapter (from window.DERIVATIONS). Each drill has a
 // countdown timer, step-by-step reveal, and self-rating stored in state.
@@ -7411,7 +7411,7 @@ setView(state.view || 'mission');
 (function () {
   'use strict';
 
-  // DERIVATIONS loads after engine.js — check lazily at render time, not at init time.
+  // DERIVATIONS loads after engine.js \u2014 check lazily at render time, not at init time.
 
   // --- helpers ---
   function getDrillsForChapter(chapterId) {
@@ -7512,7 +7512,7 @@ setView(state.view || 'mission');
       if (stepsShown === 0) {
         html += '<div style="background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:1px solid #BFDBFE;border-radius:10px;padding:18px;margin-bottom:20px;">';
         html += '<div style="font-weight:600;font-size:14px;color:#1e40af;margin-bottom:8px;">Write this derivation in your notebook</div>';
-        html += '<div style="font-size:13px;color:#1e3a8a;line-height:1.6;">You have <strong>' + d.time + ' minutes</strong>. Write out the complete derivation from memory. Don\'t peek at steps until you\'re done — or stuck.<br><br>ISC board examiners award <strong>' + totalMarks + ' marks</strong> using the step-by-step criteria below.</div>';
+        html += '<div style="font-size:13px;color:#1e3a8a;line-height:1.6;">You have <strong>' + d.time + ' minutes</strong>. Write out the complete derivation from memory. Don\'t peek at steps until you\'re done \u2014 or stuck.<br><br>ISC board examiners award <strong>' + totalMarks + ' marks</strong> using the step-by-step criteria below.</div>';
         html += '</div>';
         html += '<button id="v67-show-step" onclick="window._v67ShowNextStep()" style="width:100%;background:var(--ink);color:#fff;border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:12px;">Show Step 1 of ' + d.steps.length + ' &#8595;</button>';
       } else {
@@ -7636,12 +7636,12 @@ setView(state.view || 'mission');
     };
   }
 
-  console.log('[V67 DerivationDrills] active — derivation data loads after engine.js, checked lazily at render time');
+  console.log('[V67 DerivationDrills] active \u2014 derivation data loads after engine.js, checked lazily at render time');
 })();
 
 // =========================================================================
-// V68 – PYQWrittenMode
-// For any question with ._pyq metadata, adds a "Written ✏" toggle in the
+// V68 \u2013 PYQWrittenMode
+// For any question with ._pyq metadata, adds a "Written \u270F" toggle in the
 // practice modal. Written mode hides MCQ options, shows a blank-page prompt,
 // then reveals the full model answer + mark-scheme on demand, with
 // self-rating buttons (Correct / Partial / Wrong) feeding session.correct.
@@ -7673,7 +7673,7 @@ setView(state.view || 'mission');
     const toggle = document.createElement('div');
     toggle.className = 'v68-toggle';
     toggle.style.cssText = 'display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:10px 14px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;';
-    toggle.innerHTML = '<span style="font-size:12px;font-weight:600;color:#1e40af;flex:1;">&#9998; ISC ' + marks + '-mark written question — practice as board exam</span><button id="v68-toggle-btn" style="background:#1e40af;color:#fff;border:none;border-radius:6px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;">Switch to Written Mode</button>';
+    toggle.innerHTML = '<span style="font-size:12px;font-weight:600;color:#1e40af;flex:1;">&#9998; ISC ' + marks + '-mark written question \u2014 practice as board exam</span><button id="v68-toggle-btn" style="background:#1e40af;color:#fff;border:none;border-radius:6px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;">Switch to Written Mode</button>';
     toggle.querySelector('#v68-toggle-btn').onclick = function () { activateWrittenMode(p); };
     area.insertBefore(toggle, area.firstChild);
   }
@@ -7735,7 +7735,7 @@ setView(state.view || 'mission');
     }
 
     let html = '<div style="border:1px solid #bbf7d0;border-radius:10px;padding:16px;background:#f0fdf4;margin-bottom:12px;">';
-    html += '<div style="font-weight:700;font-size:13px;color:#15803d;margin-bottom:10px;">&#10003; Model Answer — ISC ' + year + ' Q' + qnum + ' (' + marks + ' marks)</div>';
+    html += '<div style="font-weight:700;font-size:13px;color:#15803d;margin-bottom:10px;">&#10003; Model Answer \u2014 ISC ' + year + ' Q' + qnum + ' (' + marks + ' marks)</div>';
     if (solutionHtml) {
       html += '<div id="v68-sol-content" style="font-size:13px;color:var(--ink);line-height:1.7;margin-bottom:10px;">' + solutionHtml + '</div>';
     } else {
@@ -7748,7 +7748,7 @@ setView(state.view || 'mission');
     html += '</div>';
 
     html += '<div style="border:1px solid #e5e7eb;border-radius:10px;padding:14px;background:var(--bg);margin-bottom:14px;">';
-    html += '<div style="font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-muted);margin-bottom:10px;">ISC Mark Scheme — tick off what you wrote</div>';
+    html += '<div style="font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-muted);margin-bottom:10px;">ISC Mark Scheme \u2014 tick off what you wrote</div>';
     markItems.forEach(function (mi) {
       html += '<div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;font-size:13px;"><span style="font-family:\'Geist Mono\',monospace;color:var(--accent);font-size:11px;font-weight:600;min-width:22px;padding-top:1px;">' + mi.m + 'm</span><span style="color:var(--ink-soft);">&#9744; ' + mi.t + '</span></div>';
     });
@@ -7793,26 +7793,26 @@ setView(state.view || 'mission');
 })();
 
 // =========================================================================
-// V69 – ExamSimulator
-// Full ISC paper mock: Part I (15 MCQ), Section A (2-mark written × 8,
-// attempt 7), Section B (3-mark × 7, attempt 5), Section C (5-mark derivations
-// × 5, attempt 4). 3-hour countdown. MCQ auto-scored; written self-rated.
+// V69 \u2013 ExamSimulator
+// Full ISC paper mock: Part I (15 MCQ), Section A (2-mark written \u00D7 8,
+// attempt 7), Section B (3-mark \u00D7 7, attempt 5), Section C (5-mark derivations
+// \u00D7 5, attempt 4). 3-hour countdown. MCQ auto-scored; written self-rated.
 // Results: estimated total, section breakdown, chapter weakness list.
 // =========================================================================
 (function () {
   'use strict';
 
   const ISC_FORMAT = {
-    I:  { label: 'Part I — MCQ',          qMarks: 1, total: 15, attempt: 15, mode: 'mcq'     },
-    IIA:{ label: 'Section A — Short answer', qMarks: 2, total: 8,  attempt: 7,  mode: 'written' },
-    IIB:{ label: 'Section B — Medium answer',qMarks: 3, total: 7,  attempt: 5,  mode: 'written' },
-    IIC:{ label: 'Section C — Derivations', qMarks: 5, total: 5,  attempt: 4,  mode: 'derivation' }
+    I:  { label: 'Part I \u2014 MCQ',          qMarks: 1, total: 15, attempt: 15, mode: 'mcq'     },
+    IIA:{ label: 'Section A \u2014 Short answer', qMarks: 2, total: 8,  attempt: 7,  mode: 'written' },
+    IIB:{ label: 'Section B \u2014 Medium answer',qMarks: 3, total: 7,  attempt: 5,  mode: 'written' },
+    IIC:{ label: 'Section C \u2014 Derivations', qMarks: 5, total: 5,  attempt: 4,  mode: 'derivation' }
   };
 
   let examState = null;
   let examTimerInterval = null;
 
-  // ── Add "Full Mock Exam" button to subject hero ──
+  // \u2500\u2500 Add "Full Mock Exam" button to subject hero \u2500\u2500
   const _origRS_V69 = window.renderSubject;
   if (typeof _origRS_V69 === 'function') {
     window.renderSubject = function () {
@@ -7859,11 +7859,11 @@ setView(state.view || 'mission');
     const subjectDerivations = (window.DERIVATIONS || []).filter(function (d) { return d.subject === sub; });
     let html = '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">';
     html += '<div><div style="font-family:\'Geist Mono\',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink-muted);">ISC Board Simulation</div>';
-    html += '<h3 style="font-size:20px;font-weight:700;color:var(--ink);margin:4px 0 0;">' + subLabel + ' — Full Mock Exam</h3></div>';
+    html += '<h3 style="font-size:20px;font-weight:700;color:var(--ink);margin:4px 0 0;">' + subLabel + ' \u2014 Full Mock Exam</h3></div>';
     html += '<button onclick="document.getElementById(\'v69-modal\').remove()" style="background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;padding:6px 14px;font-size:12px;cursor:pointer;">&#10005;</button></div>';
 
     html += '<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:16px;margin-bottom:20px;font-size:13px;color:#1e3a8a;line-height:1.7;">';
-    html += '<strong>Paper format (approx. ISC 2024–25):</strong><br>';
+    html += '<strong>Paper format (approx. ISC 2024\u201325):</strong><br>';
     Object.keys(ISC_FORMAT).forEach(function (k) {
       const s = ISC_FORMAT[k];
       const maxM = s.attempt * s.qMarks;
@@ -7874,11 +7874,11 @@ setView(state.view || 'mission');
     html += '</div>';
 
     html += '<div style="background:#fef3c7;border:1px solid #fde68a;border-radius:10px;padding:14px;margin-bottom:24px;font-size:13px;color:#92400e;">';
-    html += '<strong>Before you start:</strong><br>Get blank paper &amp; pen ready. MCQ sections are answered in the app. Written sections — write on paper, then tap "Show Answer" to self-rate.<br>';
+    html += '<strong>Before you start:</strong><br>Get blank paper &amp; pen ready. MCQ sections are answered in the app. Written sections \u2014 write on paper, then tap "Show Answer" to self-rate.<br>';
     html += 'The timer is real. Stop it only in genuine emergencies.';
     html += '</div>';
 
-    html += '<button onclick="window._v69StartExam()" style="width:100%;background:linear-gradient(135deg,#1e3a8a,#1e40af);color:#fff;border:none;border-radius:10px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(30,58,138,0.35);">&#9654; Start Exam — 3:00:00</button>';
+    html += '<button onclick="window._v69StartExam()" style="width:100%;background:linear-gradient(135deg,#1e3a8a,#1e40af);color:#fff;border:none;border-radius:10px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(30,58,138,0.35);">&#9654; Start Exam \u2014 3:00:00</button>';
     html += '<p style="text-align:center;font-size:12px;color:var(--ink-muted);margin-top:10px;">The timer starts immediately when you click</p>';
     return html;
   }
@@ -7983,7 +7983,7 @@ setView(state.view || 'mission');
       const tab = document.createElement('button');
       tab.id = 'v69-tab-' + i;
       tab.style.cssText = 'background:transparent;border:none;border-bottom:3px solid transparent;color:rgba(255,255,255,0.6);padding:10px 16px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 0.2s;';
-      tab.textContent = sec.fmt.label.split(' — ')[0];
+      tab.textContent = sec.fmt.label.split(' \u2014 ')[0];
       tab.onclick = function () { navigateToSection(i, 0); };
       tabs.appendChild(tab);
     });
@@ -8203,7 +8203,7 @@ setView(state.view || 'mission');
       if (!body) return;
 
       let rhtml = '<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:20px;">';
-      rhtml += '<div style="font-weight:700;font-size:14px;color:#15803d;margin-bottom:14px;">' + d.title + ' — Model Answer (' + d.marks + ' marks)</div>';
+      rhtml += '<div style="font-weight:700;font-size:14px;color:#15803d;margin-bottom:14px;">' + d.title + ' \u2014 Model Answer (' + d.marks + ' marks)</div>';
       d.steps.forEach(function (st, i) {
         rhtml += '<div style="border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:8px;border-left:3px solid #16a34a;">';
         rhtml += '<div style="display:flex;justify-content:space-between;margin-bottom:6px;">';
@@ -8283,7 +8283,7 @@ setView(state.view || 'mission');
     });
 
     const pct = totalPossible > 0 ? Math.round((totalEarned / totalPossible) * 100) : 0;
-    const grade = pct >= 90 ? 'A1 — Outstanding' : pct >= 80 ? 'A2 — Excellent' : pct >= 70 ? 'B1 — Very Good' : pct >= 60 ? 'B2 — Good' : pct >= 50 ? 'C1 — Satisfactory' : 'C2 — Needs work';
+    const grade = pct >= 90 ? 'A1 \u2014 Outstanding' : pct >= 80 ? 'A2 \u2014 Excellent' : pct >= 70 ? 'B1 \u2014 Very Good' : pct >= 60 ? 'B2 \u2014 Good' : pct >= 50 ? 'C1 \u2014 Satisfactory' : 'C2 \u2014 Needs work';
     const gradeColor = pct >= 90 ? '#15803d' : pct >= 80 ? '#1e40af' : pct >= 70 ? '#92400e' : '#991b1b';
 
     const modal = document.createElement('div');
@@ -8295,7 +8295,7 @@ setView(state.view || 'mission');
 
     let html = '<div style="text-align:center;margin-bottom:28px;">';
     html += '<div style="font-size:48px;margin-bottom:8px;">&#127941;</div>';
-    html += '<h2 style="font-size:24px;font-weight:700;color:var(--ink);margin:0 0 6px;">' + subLabel + ' Mock Exam — Done</h2>';
+    html += '<h2 style="font-size:24px;font-weight:700;color:var(--ink);margin:0 0 6px;">' + subLabel + ' Mock Exam \u2014 Done</h2>';
     html += '<div style="font-family:\'Geist Mono\',monospace;font-size:12px;color:var(--ink-muted);">Time used: ' + hU + 'h ' + mU + 'm</div>';
     html += '</div>';
 
@@ -8327,7 +8327,7 @@ setView(state.view || 'mission');
       html += '<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:14px;margin-bottom:20px;">';
       html += '<div style="font-weight:700;font-size:13px;color:#1e40af;margin-bottom:8px;">Focus areas for next session:</div>';
       weakSections.forEach(function (r) {
-        html += '<div style="font-size:13px;color:#1e3a8a;margin-bottom:4px;">&bull; ' + r.label + ' — drill more written questions and derivations</div>';
+        html += '<div style="font-size:13px;color:#1e3a8a;margin-bottom:4px;">&bull; ' + r.label + ' \u2014 drill more written questions and derivations</div>';
       });
       html += '</div>';
     }
@@ -8343,7 +8343,7 @@ setView(state.view || 'mission');
     examState = null;
   }
 
-  console.log('[V69 ExamSimulator] active — ISC full mock exam ready');
+  console.log('[V69 ExamSimulator] active \u2014 ISC full mock exam ready');
 })();
 
 
