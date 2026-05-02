@@ -1262,6 +1262,7 @@ function resetAll() {
   if (!confirm('Wipe all XP, streaks, mastery, achievements? This cannot be undone.')) return;
   localStorage.removeItem('studydeck_state');
   state = Object.assign({}, DEFAULT_STATE);
+  if (typeof window.v70ClearCloud === 'function') window.v70ClearCloud();
   saveState(); closeExport(); setView('mission');
   showToast('default', '✓', 'Reset to blank slate'); sfx('correct');
 }

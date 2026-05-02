@@ -183,6 +183,17 @@
       });
     }
 
+    // ── Cloud reset (called by resetAll in engine.js) ────────────────────────
+    window.v70ClearCloud = function () {
+      if (!uid) return Promise.resolve();
+      return db.doc('users/' + uid + '/data/state').delete().then(function () {
+        console.log('[Sync] Cloud state deleted');
+        setIcon('idle');
+      }).catch(function (e) {
+        console.warn('[Sync] Cloud delete failed:', e.message);
+      });
+    };
+
     // ── Patch saveState ──────────────────────────────────────────────────────
     function patchSaveState() {
       if (typeof window.saveState !== 'function') { setTimeout(patchSaveState, 200); return; }
