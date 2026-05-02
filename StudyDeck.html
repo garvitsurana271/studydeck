@@ -390,7 +390,7 @@
   .week-day .wd-name{font-family:'Geist Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-muted);font-weight:500;}
   .week-day .wd-num{font-family:'Fraunces',serif;font-weight:400;font-size:24px;margin:4px 0 6px;letter-spacing:-0.02em;}
   .week-day .wd-task{font-size:11px;color:var(--ink-soft);line-height:1.3;min-height:28px;}
-  .week-day.done .wd-num::after{content:' âœ“';color:var(--success);font-size:18px;}
+  .week-day.done .wd-num::after{content:' ✓';color:var(--success);font-size:18px;}
 
   /* POMODORO BLOCKS */
   .pomos{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
@@ -405,14 +405,14 @@
   .pomo.chemistry .p-subj{color:var(--success);}
   .pomo .p-check{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line);transition:all 0.2s;}
   .pomo.done .p-check{background:var(--success);border-color:var(--success);}
-  .pomo.done .p-check::after{content:'âœ“';color:white;font-size:12px;font-weight:700;display:block;text-align:center;line-height:18px;}
+  .pomo.done .p-check::after{content:'✓';color:white;font-size:12px;font-weight:700;display:block;text-align:center;line-height:18px;}
 
   /* PHASE TIMELINE */
   .phases{display:flex;flex-direction:column;gap:8px;}
   .phase-row{display:grid;grid-template-columns:50px 1fr 160px;gap:16px;align-items:center;background:var(--bg-elev);border:0.5px solid var(--line);border-radius:var(--radius-md);padding:14px 18px;transition:all 0.2s;}
   .phase-row.active{border-color:var(--accent);background:linear-gradient(90deg,var(--accent-soft),var(--bg-elev) 60%);box-shadow:0 0 0 3px var(--accent-soft);}
   .phase-row.past{opacity:0.55;}
-  .phase-row.past .phase-name::after{content:' âœ“';color:var(--success);}
+  .phase-row.past .phase-name::after{content:' ✓';color:var(--success);}
   .phase-num{font-family:'Fraunces',serif;font-weight:300;font-size:28px;color:var(--ink-muted);letter-spacing:-0.02em;}
   .phase-row.active .phase-num{color:var(--accent);font-weight:400;}
   .phase-name{font-family:'Fraunces',serif;font-weight:500;font-size:16px;letter-spacing:-0.01em;}
@@ -518,7 +518,7 @@
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal">
     <div class="modal-head">
-      <div class="modal-counter-wrap"><div class="modal-counter" id="modalCounter">Question 1 of 5</div><div class="modal-multiplier" id="modalMultiplier">Ã—1.5</div></div>
+      <div class="modal-counter-wrap"><div class="modal-counter" id="modalCounter">Question 1 of 5</div><div class="modal-multiplier" id="modalMultiplier">&times;1.5</div></div>
       <button class="modal-close" onclick="closeModal()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
     <div class="modal-tabs">
@@ -531,11 +531,11 @@
         <div class="modal-topic" id="modalTopic">Loading…</div>
         <h3 class="modal-question" id="modalQuestion">Loading…</h3>
         <div id="answerArea"></div>
-        <div class="modal-hint" id="modalHint" onclick="toggleHint()"><span style="opacity:0.6;">â†³</span><span id="hintLabel"> Show hint</span><div class="modal-hint-content" id="modalHintContent"></div></div>
+        <div class="modal-hint" id="modalHint" onclick="toggleHint()"><span style="opacity:0.6;">&#x21B3;</span><span id="hintLabel"> Show hint</span><div class="modal-hint-content" id="modalHintContent"></div></div>
         <div class="modal-feedback" id="modalFeedback"><div class="feedback-title" id="feedbackTitle"></div><div class="feedback-explain" id="feedbackExplain"></div><div class="feedback-bonus" id="feedbackBonus"></div></div>
       </div>
       <div id="theoryView" style="display:none;"><div class="theory-content" id="theoryContent"></div></div>
-      <div class="complete" id="completeView"><div class="complete-emoji">âœ¦</div><h3 class="complete-title">Topic <em>cleared</em></h3><p class="complete-sub">On a roll? Next topic auto-loaded.</p><div class="complete-stats"><div><div class="complete-stat-val" id="completeScore">0/0</div><div class="complete-stat-lbl">score</div></div><div><div class="complete-stat-val" id="completeXP">+0</div><div class="complete-stat-lbl">xp earned</div></div></div></div>
+      <div class="complete" id="completeView"><div class="complete-emoji">&#x2726;</div><h3 class="complete-title">Topic <em>cleared</em></h3><p class="complete-sub">On a roll? Next topic auto-loaded.</p><div class="complete-stats"><div><div class="complete-stat-val" id="completeScore">0/0</div><div class="complete-stat-lbl">score</div></div><div><div class="complete-stat-val" id="completeXP">+0</div><div class="complete-stat-lbl">xp earned</div></div></div></div>
     </div>
     <div class="modal-foot"><button class="btn btn-ghost" onclick="closeModal()">Exit</button><button class="btn btn-primary" id="modalSubmit" onclick="submitAnswer()">Check</button></div>
   </div>
@@ -590,8 +590,8 @@
       </div>
     </div>
     <div class="modal-foot">
-      <button class="btn btn-ghost" id="mockPrev" onclick="mockPrev()">â† Prev</button>
-      <button class="btn btn-primary" id="mockNext" onclick="mockNext()">Next â†’</button>
+      <button class="btn btn-ghost" id="mockPrev" onclick="mockPrev()">&#x2190; Prev</button>
+      <button class="btn btn-primary" id="mockNext" onclick="mockNext()">Next &#x2192;</button>
     </div>
   </div>
 </div>
@@ -634,43 +634,43 @@
 
 <div class="export-overlay" id="exportOverlay"><div class="export-box"><h3>Export your <em style="font-style:italic;color:var(--accent);">progress</em></h3><p>Copy this and paste it in your chat with Claude.</p><textarea class="export-text" id="exportText" readonly></textarea><div class="export-buttons"><button class="btn btn-ghost" onclick="resetAll()" style="color:var(--danger);">Reset all</button><button class="btn btn-ghost" onclick="closeExport()">Close</button><button class="btn btn-primary" onclick="copyExport()">Copy to clipboard</button></div></div></div>
 
-<div class="toast" id="toast"><span id="toastIcon">âœ¦</span><span id="toastText">+10 xp</span></div>
-<div class="ach-popup" id="achPopup"><div class="ach-popup-icon" id="achPopupIcon">â˜…</div><div><div class="ach-popup-meta">Achievement unlocked</div><div class="ach-popup-name" id="achPopupName">First Spark</div><div class="ach-popup-desc" id="achPopupDesc">First correct answer</div></div></div>
+<div class="toast" id="toast"><span id="toastIcon">&#x2726;</span><span id="toastText">+10 xp</span></div>
+<div class="ach-popup" id="achPopup"><div class="ach-popup-icon" id="achPopupIcon">&#x2605;</div><div><div class="ach-popup-meta">Achievement unlocked</div><div class="ach-popup-name" id="achPopupName">First Spark</div><div class="ach-popup-desc" id="achPopupDesc">First correct answer</div></div></div>
 
 <!-- Master content files: each ISC chapter has theory + Nootan/OP Malhotra textbook part + PYQ part -->
-<script src="content_phys_master.js?v=42p42"></script>
-<script src="content_chem_master.js?v=42p42"></script>
-<script src="content_math_master.js?v=42p42"></script>
+<script src="content_phys_master.js?v=42p55"></script>
+<script src="content_chem_master.js?v=42p55"></script>
+<script src="content_math_master.js?v=42p55"></script>
 <!-- NCERT Exemplar supplementary banks -->
 <script src="content_phys_exemplar.js"></script>
 <script src="content_chem_exemplar.js"></script>
 <script src="content_math_exemplar.js"></script>
 <!-- Arihant All-in-One MCQ banks (auto-generated, 549 verified MCQs) -->
-<script src="content_phys_arihant.js?v=42p29"></script>
-<script src="content_chem_arihant.js?v=42p29"></script>
-<script src="content_math_arihant.js?v=42p29"></script>
-<!-- Per-section keyword maps for V38 topicâ†’practice filtering -->
-<script src="content_keywords.js?v=42p29"></script>
+<script src="content_phys_arihant.js?v=42p55"></script>
+<script src="content_chem_arihant.js?v=42p55"></script>
+<script src="content_math_arihant.js?v=42p55"></script>
+<!-- Per-section keyword maps for V38 topic&#x2192;practice filtering -->
+<script src="content_keywords.js?v=42p55"></script>
 <!-- Per-question difficulty + section map (1797 questions, agent-graded) -->
-<script src="content_difficulty.js?v=42p29"></script>
+<script src="content_difficulty.js?v=42p55"></script>
 <!-- NCERT Exemplar difficulty tags (225 more questions) -->
-<script src="content_exemplar_difficulty.js?v=42p42"></script>
+<script src="content_exemplar_difficulty.js?v=42p55"></script>
 <!-- ISC PCM 2026-27 marks-weight per chapter -->
-<script src="content_isc_weights.js?v=42p29"></script>
+<script src="content_isc_weights.js?v=42p55"></script>
 <!-- Cross-chapter concept index (200 concepts) -->
-<script src="content_concept_index.js?v=42p29"></script>
+<script src="content_concept_index.js?v=42p55"></script>
 <!-- Auto-extracted glossary -->
-<script src="content_glossary.js?v=42p42"></script>
+<script src="content_glossary.js?v=42p55"></script>
 <!-- Agent-generated solutions/hints/mnemonics/worked-examples (V65) — 1737 entries, 36 chapters -->
-<script src="content_solutions.js?v=42p42"></script>
+<script src="content_solutions.js?v=42p55"></script>
 <!-- OCR confidence bundle (V66 A5 indicator) -->
-<script src="content_ocr_confidence.js?v=42p42"></script>
+<script src="content_ocr_confidence.js?v=42p55"></script>
 <!-- SVG diagram templates (39 Physics motifs + meta for V63 gallery) -->
-<script src="content/diagrams/svg_templates.js?v=42p42"></script>
+<script src="content/diagrams/svg_templates.js?v=42p55"></script>
 <!-- Periodic Table widget (V61: chem_4 d-/f-block + chem_5 coordination) -->
-<script src="content/widgets/periodic_table.js?v=42p42"></script>
+<script src="content/widgets/periodic_table.js?v=42p55"></script>
 <!-- Organic mechanism cards (V62: chem_6/_7/_8/_9) -->
-<script src="content/widgets/organic_mechanisms.js?v=42p42"></script>
+<script src="content/widgets/organic_mechanisms.js?v=42p55"></script>
 <!-- Engine -->
 <!-- ─── Firebase Cloud Sync — config auto-filled via CLI ─────────────── -->
 <script>
@@ -687,15 +687,15 @@ window.STUDYDECK_FIREBASE = {
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-<script src="engine.js?v=42p54"></script>
+<script src="engine.js?v=42p55"></script>
 <!-- Question/theory corrections — applied AFTER engine.js so V42 ids exist. Mutates window.CONTENT in place. -->
-<script src="content_corrections.js?v=42p42"></script>
+<script src="content_corrections.js?v=42p55"></script>
 <!-- Theory V2 — ISC-specific visual theory, replaces OCR'd Arihant text per chapter -->
-<script src="content_theory_v2.js?v=42p43"></script>
+<script src="content_theory_v2.js?v=42p55"></script>
 <!-- V67-V69 derivation data — must load after content bundles -->
-<script src="content_derivations.js?v=42p44"></script>
+<script src="content_derivations.js?v=42p55"></script>
 <!-- Cloud sync — loads after all content so saveState() is already defined -->
-<script src="firebase_sync.js?v=42p54"></script>
+<script src="firebase_sync.js?v=42p55"></script>
 </body>
 </html>
 
