@@ -1,9 +1,8 @@
 // StudyDeck — Firebase Cloud Sync (V70)
-// Requires window.STUDYDECK_FIREBASE config object in StudyDeck.html.
-// Provides: Google Sign-In, Firestore state sync, offline-first with debounced writes.
-// State is stored as a JSON string in users/{uid}/data/state to avoid Firestore map limits.
+// Uses Firestore REST API directly — avoids WebSocket/gRPC connection stalls.
+// Auth via Firebase Auth SDK (Google Sign-In). Data via plain fetch() HTTPS calls.
 //
-// ── Firestore Security Rules (paste into Firebase Console → Firestore → Rules) ──
+// Firestore Security Rules (Firebase Console → Firestore → Rules):
 // rules_version = '2';
 // service cloud.firestore {
 //   match /databases/{database}/documents {
@@ -16,27 +15,34 @@
 (function () {
   'use strict';
 
-  const CFG = window.STUDYDECK_FIREBASE;
+  var CFG = window.STUDYDECK_FIREBASE;
   if (!CFG || !CFG.apiKey) {
     console.log('[Sync] No Firebase config — running offline only');
     return;
   }
 
   function waitForSDK(cb) {
-    if (window.firebase && window.firebase.auth && window.firebase.firestore) { cb(); return; }
+    if (window.firebase && window.firebase.auth) { cb(); return; }
     setTimeout(function () { waitForSDK(cb); }, 60);
   }
 
   waitForSDK(function () {
     if (!firebase.apps.length) firebase.initializeApp(CFG);
     var auth = firebase.auth();
-    var db   = firebase.firestore();
-    // Auto-detect long-polling — avoids WebSocket/gRPC blocks on static hosting
-    db.settings({ experimentalAutoDetectLongPolling: true, merge: true });
 
     var uid       = null;
     var saveTimer = null;
-    var SAVE_DELAY = 5000; // ms — debounce cloud writes
+    var SAVE_DELAY = 5000;
+
+    // Firestore REST base — plain HTTPS, never stalls
+    var FS = 'https://firestore.googleapis.com/v1/projects/' + CFG.projectId +
+             '/databases/(default)/documents/users/';
+
+    function getToken() {
+      return auth.currentUser
+        ? auth.currentUser.getIdToken(false)
+        : Promise.reject(new Error('not-signed-in'));
+    }
 
     // ── Cloud icon SVG ──────────────────────────────────────────────────────
     function cloudSVG(color) {
@@ -59,7 +65,6 @@
       btn.innerHTML = cloudSVG('var(--ink-muted)');
       anchor.parentNode.insertBefore(btn, anchor);
 
-      // Pulse animation
       if (!document.getElementById('v70-style')) {
         var s = document.createElement('style');
         s.id = 'v70-style';
@@ -71,17 +76,23 @@
     function setIcon(status) {
       var btn = document.getElementById('v70-sync-btn');
       if (!btn) return;
-      var colors = { idle:'var(--ink-muted)', pending:'#f59e0b', synced:'#16a34a', error:'#ef4444', local:'var(--ink-muted)' };
+      var colors = {
+        idle:    'var(--ink-muted)',
+        pending: '#f59e0b',
+        synced:  '#16a34a',
+        error:   '#ef4444',
+        local:   'var(--ink-muted)'
+      };
       var titles = {
         idle:    'Sync — click to sign in with Google',
         pending: 'Syncing to cloud…',
         synced:  'Synced ✓ — all devices up to date',
         error:   'Sync failed — will retry',
-        local:   'Saved locally — will sync when connection is stable'
+        local:   'Saved locally — will sync when connected'
       };
-      btn.innerHTML        = cloudSVG(colors[status] || 'var(--ink-muted)');
-      btn.title            = titles[status]  || 'Sync';
-      btn.style.animation  = (status === 'pending') ? 'v70pulse 1.2s ease-in-out infinite' : '';
+      btn.innerHTML       = cloudSVG(colors[status] || 'var(--ink-muted)');
+      btn.title           = titles[status] || 'Sync';
+      btn.style.animation = (status === 'pending') ? 'v70pulse 1.2s ease-in-out infinite' : '';
     }
 
     // ── Sign-in / sign-out menu ──────────────────────────────────────────────
@@ -90,7 +101,6 @@
       if (existing) { existing.remove(); return; }
 
       if (!uid) {
-        // Not signed in — trigger Google popup
         var p = new firebase.auth.GoogleAuthProvider();
         auth.signInWithPopup(p).catch(function (e) {
           console.error('[Sync] Sign-in failed', e);
@@ -99,7 +109,6 @@
         return;
       }
 
-      // Already signed in — show mini menu
       var menu = document.createElement('div');
       menu.id = 'v70-menu';
       menu.style.cssText = 'position:fixed;top:52px;right:16px;background:var(--bg-elev);border:1px solid var(--line);border-radius:10px;padding:8px;z-index:9999;box-shadow:var(--shadow-md);min-width:190px;';
@@ -114,7 +123,6 @@
         auth.signOut();
       };
 
-      // Close on outside click
       setTimeout(function () {
         document.addEventListener('click', function dismiss(e) {
           if (!menu.contains(e.target)) { menu.remove(); document.removeEventListener('click', dismiss); }
@@ -122,48 +130,89 @@
       }, 10);
     }
 
+    // ── REST helpers ─────────────────────────────────────────────────────────
+    function fsGet() {
+      return getToken().then(function (token) {
+        return fetch(FS + uid + '/data/state', {
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+      });
+    }
+
+    function fsPatch(body) {
+      return getToken().then(function (token) {
+        return fetch(FS + uid + '/data/state', {
+          method: 'PATCH',
+          headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+      });
+    }
+
+    function fsDelete() {
+      return getToken().then(function (token) {
+        return fetch(FS + uid + '/data/state', {
+          method: 'DELETE',
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+      });
+    }
+
+    function toFsDoc(state) {
+      return {
+        fields: {
+          json: { stringValue: JSON.stringify(state) },
+          _ts:  { integerValue: String(state._ts || 0) }
+        }
+      };
+    }
+
+    function fromFsDoc(doc) {
+      var jsonField = doc && doc.fields && doc.fields.json && doc.fields.json.stringValue;
+      if (!jsonField) return null;
+      try { return JSON.parse(jsonField); } catch (e) { return null; }
+    }
+
     // ── Load state from Firestore ────────────────────────────────────────────
     function loadCloud() {
-      db.doc('users/' + uid + '/data/state').get().then(function (snap) {
-        if (!snap.exists) {
+      fsGet().then(function (r) {
+        if (r.status === 404) {
           console.log('[Sync] No cloud state yet — uploading local');
           writeToCloud();
-          return;
+          return null;
         }
-        var data = snap.data();
-        var cloudState;
-        try { cloudState = JSON.parse(data.json); } catch (e) { cloudState = null; }
-        if (!cloudState) { console.warn('[Sync] Cloud JSON invalid'); setIcon('error'); return; }
+        if (!r.ok) { return r.json().then(function (e) { throw new Error((e.error && e.error.message) || r.status); }); }
+        return r.json();
+      }).then(function (doc) {
+        if (!doc) return;
+        var cloudState = fromFsDoc(doc);
+        if (!cloudState) { writeToCloud(); return; }
 
         var localTs = (window.state && window.state._ts) || 0;
         var cloudTs = cloudState._ts || 0;
 
         if (cloudTs > localTs) {
-          console.log('[Sync] Cloud is newer — applying (cloud:', cloudTs, 'local:', localTs, ')');
-          // Merge into window.state
-          if (window.state) {
-            Object.keys(cloudState).forEach(function (k) { window.state[k] = cloudState[k]; });
-          }
-          // Persist to localStorage too
+          console.log('[Sync] Cloud newer — applying (cloud:', cloudTs, 'local:', localTs, ')');
+          Object.keys(cloudState).forEach(function (k) { window.state[k] = cloudState[k]; });
           try { localStorage.setItem('studydeck_state', JSON.stringify(window.state)); } catch (e) {}
-          // Re-render visible parts
           try { if (typeof renderHeaderStats === 'function') renderHeaderStats(); } catch (e) {}
           try {
             var pv = document.getElementById('view-plan');
             if (pv && pv.style.display !== 'none' && typeof renderPlan === 'function') renderPlan();
           } catch (e) {}
         } else {
-          console.log('[Sync] Local is newer or equal — pushing to cloud');
+          console.log('[Sync] Local newer — pushing to cloud');
           writeToCloud();
+          return;
         }
         setIcon('synced');
       }).catch(function (e) {
-        console.warn('[Sync] Load failed:', e.code, e.message);
+        console.warn('[Sync] Load failed:', e.message);
         setIcon('error');
       });
     }
 
-    // ── Write state to Firestore (debounced) ─────────────────────────────────
+    // ── Write state to Firestore ─────────────────────────────────────────────
     function scheduleWrite() {
       if (!uid) return;
       clearTimeout(saveTimer);
@@ -174,38 +223,21 @@
     function writeToCloud() {
       if (!uid || !window.state) return;
       window.state._ts = Date.now();
-      var payload = { json: JSON.stringify(window.state), _ts: window.state._ts };
-
-      var settled = false;
-      // If Firestore is offline the promise hangs indefinitely — bail after 10s
-      var timeoutId = setTimeout(function () {
-        if (settled) return;
-        settled = true;
-        console.warn('[Sync] Write timed out — saved locally, will retry when online');
-        setIcon('local');
-        setTimeout(writeToCloud, 30000);
-      }, 10000);
-
-      db.doc('users/' + uid + '/data/state').set(payload).then(function () {
-        if (settled) return;
-        settled = true;
-        clearTimeout(timeoutId);
+      fsPatch(toFsDoc(window.state)).then(function (r) {
+        if (!r.ok) { return r.json().then(function (e) { throw new Error((e.error && e.error.message) || r.status); }); }
         setIcon('synced');
         console.log('[Sync] Saved to cloud at', new Date(window.state._ts).toISOString());
       }).catch(function (e) {
-        if (settled) return;
-        settled = true;
-        clearTimeout(timeoutId);
-        console.warn('[Sync] Save failed:', e.code, e.message);
+        console.warn('[Sync] Save failed:', e.message);
         setIcon('error');
         setTimeout(writeToCloud, 20000);
       });
     }
 
-    // ── Cloud reset (called by resetAll in engine.js) ────────────────────────
+    // ── Cloud reset ──────────────────────────────────────────────────────────
     window.v70ClearCloud = function () {
       if (!uid) return Promise.resolve();
-      return db.doc('users/' + uid + '/data/state').delete().then(function () {
+      return fsDelete().then(function () {
         console.log('[Sync] Cloud state deleted');
         setIcon('idle');
       }).catch(function (e) {
