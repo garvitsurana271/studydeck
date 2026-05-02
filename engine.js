@@ -428,7 +428,7 @@ function renderChapter() {
 // ============= PLAN VIEW =============
 const PLAN_PHASES = [
   { num:0, name:'This Week',  desc:'App built · all 37 chapters live · EV1 push begins', start:'2026-04-27', end:'2026-04-30' },
-  { num:1, name:'First Pass', desc:'Cover EV1 chapters (Phys 1–5 · Chem 1–3 · Maths 1–6)', start:'2026-05-01', end:'2026-06-13' },
+  { num:1, name:'First Pass', desc:'Cover EV1 chapters (Phys 1–5 · Chem 1–3 · Maths 1–6)', start:'2026-05-03', end:'2026-06-13' },
   { num:2, name:'EV1 Revision', desc:'Written mode PYQs + derivation drills all EV1 chapters', start:'2026-06-14', end:'2026-06-27' },
   { num:3, name:'EV1 Mocks',   desc:'V69 full mocks · final weak-spot push · EV1 4 Jul', start:'2026-06-28', end:'2026-07-03' },
   { num:4, name:'Deep Dive',  desc:'ISC derivations · PYQ grind', start:'2026-07-08', end:'2026-10-31' },
@@ -460,24 +460,24 @@ const PLAN_POMOS = [
   { n:'05', time:'7:05–7:30', subj:'Chemistry', subjKey:'Chemistry', cls:'chemistry' },
 ];
 const PLAN_EV1_WEEKS = [
-  { w:1, start:'2026-05-02', dates:'May 2–8',      phase:'cover', chapters:['phys_1','chem_1','math_1'], phys:'Ch 1 · Electric Charges & Fields',      chem:'Ch 1 · Solutions',              math:'Ch 1 · Relations & Functions' },
-  { w:2, start:'2026-05-09', dates:'May 9–15',     phase:'cover', chapters:['phys_2','chem_1','math_2'], phys:'Ch 2 · Electrostatic Potential',         chem:'Ch 1 · Solutions (finish)',      math:'Ch 2 · Inverse Trig' },
-  { w:3, start:'2026-05-16', dates:'May 16–22',    phase:'cover', chapters:['phys_3','chem_2','math_3'], phys:'Ch 3 · Current Electricity',             chem:'Ch 2 · Electrochemistry',        math:'Ch 3 · Matrices' },
-  { w:4, start:'2026-05-23', dates:'May 23–29',    phase:'cover', chapters:['phys_4','chem_2','math_4'], phys:'Ch 4 · Moving Charges & Magnetism',      chem:'Ch 2 · Electrochemistry (finish)',math:'Ch 4 · Determinants' },
-  { w:5, start:'2026-05-30', dates:'May 30–Jun 5', phase:'cover', chapters:['phys_4','phys_5','chem_3','math_5'], phys:'Ch 4 finish + Ch 5 start',      chem:'Ch 3 · Chemical Kinetics',       math:'Ch 5 · Continuity & Differentiability' },
-  { w:6, start:'2026-06-06', dates:'Jun 6–13',     phase:'cover', chapters:['phys_5','chem_3','math_6'], phys:'Ch 5 · Magnetism & Matter (finish)',     chem:'Ch 3 · Chemical Kinetics (finish)',math:'Ch 6 · Application of Derivatives' },
+  { w:1, start:'2026-05-03', dates:'May 3–9',      phase:'cover', chapters:['phys_1','chem_1','math_1'], phys:'Ch 1 · Electric Charges & Fields',      chem:'Ch 1 · Solutions',              math:'Ch 1 · Relations & Functions' },
+  { w:2, start:'2026-05-10', dates:'May 10–16',    phase:'cover', chapters:['phys_2','chem_1','math_2'], phys:'Ch 2 · Electrostatic Potential',         chem:'Ch 1 · Solutions (finish)',      math:'Ch 2 · Inverse Trig' },
+  { w:3, start:'2026-05-17', dates:'May 17–23',    phase:'cover', chapters:['phys_3','chem_2','math_3'], phys:'Ch 3 · Current Electricity',             chem:'Ch 2 · Electrochemistry',        math:'Ch 3 · Matrices' },
+  { w:4, start:'2026-05-24', dates:'May 24–30',    phase:'cover', chapters:['phys_4','chem_2','math_4'], phys:'Ch 4 · Moving Charges & Magnetism',      chem:'Ch 2 · Electrochemistry (finish)',math:'Ch 4 · Determinants' },
+  { w:5, start:'2026-05-31', dates:'May 31–Jun 6', phase:'cover', chapters:['phys_4','phys_5','chem_3','math_5'], phys:'Ch 4 finish + Ch 5 start',      chem:'Ch 3 · Chemical Kinetics',       math:'Ch 5 · Continuity & Differentiability' },
+  { w:6, start:'2026-06-07', dates:'Jun 7–13',     phase:'cover', chapters:['phys_5','chem_3','math_6'], phys:'Ch 5 · Magnetism & Matter (finish)',     chem:'Ch 3 · Chemical Kinetics (finish)',math:'Ch 6 · Application of Derivatives' },
   { w:7, start:'2026-06-14', dates:'Jun 14–20',    phase:'revise', chapters:['phys_1','phys_2','phys_3','phys_4','phys_5','chem_1','chem_2','chem_3','math_1','math_2','math_3','math_4','math_5','math_6'], label:'Revision — all EV1 chapters · written mode + derivation drills (V67/V68)' },
   { w:8, start:'2026-06-21', dates:'Jun 21–27',    phase:'mock',   label:'Mocks — 2× full exam simulator (V69) + PYQ written drill every session' },
   { w:9, start:'2026-06-28', dates:'Jun 28–Jul 3', phase:'final',  label:'Final push — weak spots only · sleep by 10 PM on Jul 3' },
 ];
 const PLAN_THIS_WEEK = [
+  { date:'2026-05-03', name:'Sun', task:'Day 1 · explore the app · sign in with Google · plan W1',     stealthTask:'Setup + plan' },
   { date:'2026-05-04', name:'Mon', task:'EV1 W1 · Phys Ch 1 Electric Charges · Maths Ch 1 Relations', stealthTask:'Study session' },
   { date:'2026-05-05', name:'Tue', task:'EV1 W1 · Phys Ch 1 finish · Maths Ch 1 finish',              stealthTask:'Study session' },
   { date:'2026-05-06', name:'Wed', task:'EV1 W1 · Phys Ch 1 PYQ written mode · Maths Ch 1 practice',  stealthTask:'Study session' },
   { date:'2026-05-07', name:'Thu', task:'3 Pomos · Chem Ch 1 Solutions start',                         stealthTask:'Light study' },
   { date:'2026-05-08', name:'Fri', task:'EV1 W1 · Phys Ch 2 Capacitance · Maths Ch 2 Inv. Trig start', stealthTask:'Study session' },
   { date:'2026-05-09', name:'Sat', task:'EV1 W1 · Phys Ch 2 + Chem Ch 1 finish · Maths Ch 2',         stealthTask:'Study session' },
-  { date:'2026-05-10', name:'Sun', task:'W1 mock · review weakest topic · plan W2',                    stealthTask:'Review + plan' },
 ];
 function todayISO() { const d = new Date(); return d.toISOString().slice(0,10); }
 function getPlanCheck(date) { return state.planChecks[date] || { core:false, bonus:false, pomos:[false,false,false,false,false] }; }
