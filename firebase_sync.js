@@ -241,7 +241,7 @@
       fsPatch(toFsDoc(st)).then(function (r) {
         if (!r.ok) { return r.json().then(function (e) { throw new Error((e.error && e.error.message) || r.status); }); }
         setIcon('synced');
-        console.log('[Sync] Saved to cloud at', new Date(window.state._ts).toISOString());
+        console.log('[Sync] Saved to cloud at', new Date(st._ts).toISOString());
       }).catch(function (e) {
         console.warn('[Sync] Save failed:', e.message);
         setIcon('error');

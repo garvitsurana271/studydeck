@@ -488,7 +488,7 @@
     <div class="level-bar"><div class="level-bar-fill" id="levelBarFill" style="width:0%;"></div></div>
   </div>
 
-  <div class="day-warning" id="dayWarning" style="display:none;"><span style="font-size:20px;">ðŸ”¥</span><span class="day-warning-text">Your day-streak is about to break — solve one problem to keep it alive.</span></div>
+  <div class="day-warning" id="dayWarning" style="display:none;"><span style=”font-size:20px;”>&#x1F525;</span><span class="day-warning-text">Your day-streak is about to break — solve one problem to keep it alive.</span></div>
 
   <div class="nav-tabs fade-in delay-1">
     <button class="nav-tab active" id="navTabMission" onclick="setView('mission')"><span class="nav-dot"></span>Mission</button>
@@ -541,12 +541,12 @@
   </div>
 </div>
 
-<div class="mystery-overlay" id="mysteryOverlay"><div class="mystery-box"><div class="mystery-emoji" id="mysteryEmoji">ðŸŽ</div><h3 class="mystery-title">Mystery <em>reward</em></h3><p class="mystery-reward" id="mysteryReward">Loading…</p><button class="btn btn-primary" onclick="closeMystery()">Take it</button></div></div>
+<div class="mystery-overlay" id="mysteryOverlay"><div class="mystery-box"><div class="mystery-emoji" id="mysteryEmoji">&#x1F389;</div><h3 class="mystery-title">Mystery <em>reward</em></h3><p class="mystery-reward" id="mysteryReward">Loading…</p><button class="btn btn-primary" onclick="closeMystery()">Take it</button></div></div>
 
 <!-- MOCK CONFIG -->
 <div class="export-overlay" id="mockConfigOverlay">
   <div class="export-box" style="max-width:600px;">
-    <h3>ðŸŽ¯ Mock <em style="font-style:italic;color:var(--accent);">test</em></h3>
+    <h3>&#x1F3AF; Mock <em style="font-style:italic;color:var(--accent);">test</em></h3>
     <p>ISC-style mock paper. Pick chapters and length. You'll be timed.</p>
     <div style="margin-bottom:18px;">
       <div style="font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink-muted);margin-bottom:10px;">Length</div>
@@ -590,7 +590,7 @@
       </div>
     </div>
     <div class="modal-foot">
-      <button class="btn btn-ghost" id="mockPrev" onclick="mockPrev()">â† Prev</button>
+      <button class="btn btn-ghost" id="mockPrev" onclick="mockPrev()">â† Prev</button>
       <button class="btn btn-primary" id="mockNext" onclick="mockNext()">Next â†’</button>
     </div>
   </div>
@@ -687,7 +687,7 @@ window.STUDYDECK_FIREBASE = {
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-<script src="engine.js?v=42p53"></script>
+<script src="engine.js?v=42p54"></script>
 <!-- Question/theory corrections — applied AFTER engine.js so V42 ids exist. Mutates window.CONTENT in place. -->
 <script src="content_corrections.js?v=42p42"></script>
 <!-- Theory V2 — ISC-specific visual theory, replaces OCR'd Arihant text per chapter -->
@@ -695,7 +695,7 @@ window.STUDYDECK_FIREBASE = {
 <!-- V67-V69 derivation data — must load after content bundles -->
 <script src="content_derivations.js?v=42p44"></script>
 <!-- Cloud sync — loads after all content so saveState() is already defined -->
-<script src="firebase_sync.js?v=42p53"></script>
+<script src="firebase_sync.js?v=42p54"></script>
 </body>
 </html>
 
