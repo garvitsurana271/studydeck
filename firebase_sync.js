@@ -31,6 +31,8 @@
     if (!firebase.apps.length) firebase.initializeApp(CFG);
     var auth = firebase.auth();
     var db   = firebase.firestore();
+    // Force HTTPS long-polling — avoids WebSocket/gRPC blocks on static hosting
+    db.settings({ experimentalForceLongPolling: true, merge: true });
 
     var uid       = null;
     var saveTimer = null;
