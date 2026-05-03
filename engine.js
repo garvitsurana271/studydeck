@@ -588,6 +588,15 @@ function renderPlan() {
   // Build this-week strip dynamically from current EV1 week + ROTATION
   function buildThisWeekDynamic(evWeekIdx) {
     if (evWeekIdx < 0 || evWeekIdx >= PLAN_EV1_WEEKS.length) return null;
+    const ROTATION = {
+      1: { lead: 'Maths',   second: 'Physics', maint: 'Chemistry' },
+      2: { lead: 'Physics', second: 'Maths',   maint: 'Chemistry' },
+      3: { lead: 'Maths',   second: 'Physics', maint: 'Chemistry' },
+      4: { lead: null,      second: null,      maint: null, thursday: true },
+      5: { lead: 'Maths',   second: 'Physics', maint: 'Chemistry' },
+      6: { lead: 'Physics', second: 'Maths',   maint: 'Chemistry' },
+      0: { sunday: true },
+    };
     const w = PLAN_EV1_WEEKS[evWeekIdx];
     const startDate = new Date(w.start + 'T12:00:00'); // noon avoids DST edge cases
     const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
