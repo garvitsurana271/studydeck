@@ -15,7 +15,53 @@ window.CONTENT.Physics.push({
           "id": "T1",
           "name": "1a. Electric Charge and its Properties",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Which of the following is an example of charging by friction?",
+          "options": [
+                    "Earthing a conductor",
+                    "Rubbing a glass rod with silk",
+                    "Induction by a charged body",
+                    "Connecting a battery"
+          ],
+          "answer": 1,
+          "explain": "Rubbing glass with silk transfers electrons from glass to silk — classic triboelectric (friction) charging.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T1",
+          "id": "mcq_phys1_T1_1"
+},
+{
+          "type": "mcq",
+          "q": "The charge on one electron is:",
+          "options": [
+                    "+1.6×10⁻¹⁹ C",
+                    "−1.6×10⁻¹⁹ C",
+                    "+9.1×10⁻³¹ C",
+                    "−9.1×10⁻³¹ C"
+          ],
+          "answer": 1,
+          "explain": "The electron carries charge e = −1.6×10⁻¹⁹ C (negative, fundamental unit).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T1",
+          "id": "mcq_phys1_T1_2"
+},
+{
+          "type": "mcq",
+          "q": "A positively charged glass rod attracts a neutral paper scrap because:",
+          "options": [
+                    "Paper gets the same charge",
+                    "Paper becomes oppositely charged by induction",
+                    "Protons jump to paper",
+                    "No force acts between them"
+          ],
+          "answer": 1,
+          "explain": "The neutral paper develops an induced dipole — near surface gets opposite charge, far surface same charge — net attraction results.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T1",
+          "id": "mcq_phys1_T1_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T1_1",
@@ -47,7 +93,53 @@ window.CONTENT.Physics.push({
           "id": "T2",
           "name": "1b. Electric Charge and its Properties",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Which of the following charges is NOT allowed by quantisation?",
+          "options": [
+                    "3.2×10⁻¹⁹ C",
+                    "4.8×10⁻¹⁹ C",
+                    "1.6×10⁻²⁰ C",
+                    "6.4×10⁻¹⁹ C"
+          ],
+          "answer": 2,
+          "explain": "Charge must be q = ne (integer multiple of e = 1.6×10⁻¹⁹ C). 1.6×10⁻²⁰ = 0.1e — not an integer multiple.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T2",
+          "id": "mcq_phys1_T2_1"
+},
+{
+          "type": "mcq",
+          "q": "Two bodies carry charges +3 μC and −5 μC. The net charge of the system is:",
+          "options": [
+                    "+8 μC",
+                    "−8 μC",
+                    "+2 μC",
+                    "−2 μC"
+          ],
+          "answer": 3,
+          "explain": "Net charge = (+3) + (−5) = −2 μC (additive property — algebraic sum).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T2",
+          "id": "mcq_phys1_T2_2"
+},
+{
+          "type": "mcq",
+          "q": "When a charged conductor is connected to earth, its charge:",
+          "options": [
+                    "Doubles",
+                    "Is neutralised",
+                    "Reverses sign",
+                    "Remains unchanged"
+          ],
+          "answer": 1,
+          "explain": "Earth is an infinite reservoir. Excess charge flows to ground until the conductor is at Earth's potential (zero charge).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T2",
+          "id": "mcq_phys1_T2_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T2_1",
@@ -65,7 +157,53 @@ window.CONTENT.Physics.push({
           "id": "T3",
           "name": "2a. Coulomb's Law",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Coulomb's law gives the force between two point charges as F = kq₁q₂/r². The value of k in SI units is:",
+          "options": [
+                    "9×10⁹ N·m²/C²",
+                    "9×10⁻⁹ N·m²/C²",
+                    "8.85×10⁻¹² N·m²/C²",
+                    "1/(4π) N·m²/C²"
+          ],
+          "answer": 0,
+          "explain": "k = 1/(4πε₀) ≈ 9×10⁹ N·m²/C² in free space.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T3",
+          "id": "mcq_phys1_T3_1"
+},
+{
+          "type": "mcq",
+          "q": "Two charges +2 μC and +5 μC are 30 cm apart. The force between them is:",
+          "options": [
+                    "1.0 N repulsive",
+                    "1.0 N attractive",
+                    "0.1 N repulsive",
+                    "0.1 N attractive"
+          ],
+          "answer": 0,
+          "explain": "F = kq₁q₂/r² = 9×10⁹×2×10⁻⁶×5×10⁻⁶/0.09 = 1.0 N. Both positive → repulsive.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T3",
+          "id": "mcq_phys1_T3_2"
+},
+{
+          "type": "mcq",
+          "q": "The nature of Coulomb's force between unlike charges is:",
+          "options": [
+                    "Repulsive",
+                    "Attractive",
+                    "Perpendicular",
+                    "Zero"
+          ],
+          "answer": 1,
+          "explain": "Unlike (opposite sign) charges attract. Like charges repel — a fundamental property of charge.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T3",
+          "id": "mcq_phys1_T3_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T3_1",
@@ -86,7 +224,53 @@ window.CONTENT.Physics.push({
           "id": "T4",
           "name": "2b. Coulomb's Law",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "In vector form Coulomb's law is written as F₁₂ = kq₁q₂r̂₁₂/r². Here r̂₁₂ is the unit vector:",
+          "options": [
+                    "From q₁ to q₂",
+                    "From q₂ to q₁",
+                    "Perpendicular to the line joining charges",
+                    "Along the vertical"
+          ],
+          "answer": 1,
+          "explain": "r̂₁₂ points from q₂ towards q₁ (force on q₁ due to q₂). Direction convention: F₁₂ acts on q₁.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T4",
+          "id": "mcq_phys1_T4_1"
+},
+{
+          "type": "mcq",
+          "q": "Newton's third law in electrostatics (Coulomb) means:",
+          "options": [
+                    "F on q₁ due to q₂ ≠ F on q₂ due to q₁",
+                    "F₁₂ = −F₂₁ (equal magnitude, opposite direction)",
+                    "Forces act at different speeds",
+                    "Only one charge exerts force"
+          ],
+          "answer": 1,
+          "explain": "Coulomb forces form an action–reaction pair: equal in magnitude, opposite in direction, acting on different bodies.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T4",
+          "id": "mcq_phys1_T4_2"
+},
+{
+          "type": "mcq",
+          "q": "Coulomb's law is strictly valid for:",
+          "options": [
+                    "Point charges at rest",
+                    "Moving charges only",
+                    "Extended conductors",
+                    "Charges in vacuum only"
+          ],
+          "answer": 0,
+          "explain": "Coulomb's law applies to stationary (static) point charges. For moving charges, magnetic effects must also be considered.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T4",
+          "id": "mcq_phys1_T4_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T4_1",
@@ -105,7 +289,53 @@ window.CONTENT.Physics.push({
           "id": "T5",
           "name": "2c. Coulomb's Law",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "If the distance between two charges is tripled (charges unchanged), the force becomes:",
+          "options": [
+                    "3F",
+                    "F/3",
+                    "F/9",
+                    "9F"
+          ],
+          "answer": 2,
+          "explain": "F ∝ 1/r². Triple r → r² becomes 9r² → F becomes F/9.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T5",
+          "id": "mcq_phys1_T5_1"
+},
+{
+          "type": "mcq",
+          "q": "The Coulomb force between two charges in a medium of dielectric constant K = 4 is:",
+          "options": [
+                    "4F",
+                    "F/4",
+                    "F/2",
+                    "2F"
+          ],
+          "answer": 1,
+          "explain": "F_medium = F_vacuum/K = F/4. The medium reduces the force by factor K.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T5",
+          "id": "mcq_phys1_T5_2"
+},
+{
+          "type": "mcq",
+          "q": "Two charges are separated by distance r in air with force F. If one charge is doubled and the other halved:",
+          "options": [
+                    "F doubles",
+                    "F halves",
+                    "F stays the same",
+                    "F quadruples"
+          ],
+          "answer": 2,
+          "explain": "F ∝ q₁q₂. Doubling q₁ and halving q₂: new q₁q₂ = 2q₁ × q₂/2 = q₁q₂. Force unchanged.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T5",
+          "id": "mcq_phys1_T5_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T5_1",
@@ -124,7 +354,53 @@ window.CONTENT.Physics.push({
           "id": "T6",
           "name": "3a. Superposition Principle",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "The principle of superposition states that the net force on a charge due to multiple charges is:",
+          "options": [
+                    "The product of individual forces",
+                    "The vector sum of individual forces",
+                    "The scalar sum of individual forces",
+                    "Always zero"
+          ],
+          "answer": 1,
+          "explain": "Superposition: net force = Σ Fᵢ (vector sum). Each pair interaction is independent.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T6",
+          "id": "mcq_phys1_T6_1"
+},
+{
+          "type": "mcq",
+          "q": "Three equal positive charges are at the corners of an equilateral triangle. The net force on any one of them:",
+          "options": [
+                    "Is zero",
+                    "Points away from the opposite side midpoint (outward)",
+                    "Points inward",
+                    "Is directed along a side"
+          ],
+          "answer": 1,
+          "explain": "Each vertex feels two equal forces at 60° — their resultant points along the angle bisector, i.e. away from the triangle's centre.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T6",
+          "id": "mcq_phys1_T6_2"
+},
+{
+          "type": "mcq",
+          "q": "The superposition principle implies that the force between two charges:",
+          "options": [
+                    "Changes when a third charge is introduced",
+                    "Is independent of the presence of other charges",
+                    "Doubles with each additional charge",
+                    "Depends on the medium between them only"
+          ],
+          "answer": 1,
+          "explain": "Superposition: each pair interaction is unaffected by other charges. Forces are simply added vectorially.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T6",
+          "id": "mcq_phys1_T6_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T6_1",
@@ -144,7 +420,53 @@ window.CONTENT.Physics.push({
           "id": "T7",
           "name": "3b. Superposition Principle",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Two equal positive charges +Q are at x = 0 and x = d. For a charge placed at x = d/2 to be in equilibrium, it must be:",
+          "options": [
+                    "Positive",
+                    "Negative",
+                    "Either sign; its magnitude doesn't matter",
+                    "Zero charge"
+          ],
+          "answer": 1,
+          "explain": "The two +Q repel any +charge at midpoint outward; a −charge is attracted by both +Q equally and remains in equilibrium.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T7",
+          "id": "mcq_phys1_T7_1"
+},
+{
+          "type": "mcq",
+          "q": "Stable equilibrium for a charge in an electric field means:",
+          "options": [
+                    "It is at rest",
+                    "Any small displacement brings a restoring force back to the equilibrium position",
+                    "Any small displacement has no effect",
+                    "The field is zero everywhere"
+          ],
+          "answer": 1,
+          "explain": "Stable: if displaced, restoring force acts to return it. Unstable: if displaced, force pushes it further away.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T7",
+          "id": "mcq_phys1_T7_2"
+},
+{
+          "type": "mcq",
+          "q": "A negative charge is placed exactly at the midpoint between two equal positive charges. This equilibrium is:",
+          "options": [
+                    "Stable with respect to transverse displacement",
+                    "Unstable with respect to transverse displacement",
+                    "Stable in all directions",
+                    "Not an equilibrium position"
+          ],
+          "answer": 1,
+          "explain": "Along the line it's stable, but a transverse displacement breaks the symmetry and the charge moves off — unstable for transverse.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T7",
+          "id": "mcq_phys1_T7_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T7_1",
@@ -164,7 +486,53 @@ window.CONTENT.Physics.push({
           "id": "T8",
           "name": "4a. Electric Field",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Electric field intensity at a point is defined as:",
+          "options": [
+                    "Force × charge",
+                    "Force per unit positive test charge",
+                    "Charge per unit area",
+                    "Work per unit volume"
+          ],
+          "answer": 1,
+          "explain": "E = F/q₀ where q₀ is a small positive test charge. Units: N/C = V/m.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T8",
+          "id": "mcq_phys1_T8_1"
+},
+{
+          "type": "mcq",
+          "q": "The SI unit of electric field intensity is:",
+          "options": [
+                    "N·C",
+                    "N/C (= V/m)",
+                    "C/N",
+                    "J/C"
+          ],
+          "answer": 1,
+          "explain": "E = F/q → [N]/[C] = N/C. Also equal to V/m (volt per metre).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T8",
+          "id": "mcq_phys1_T8_2"
+},
+{
+          "type": "mcq",
+          "q": "The electric field at a point is a:",
+          "options": [
+                    "Scalar quantity with magnitude only",
+                    "Vector quantity with both magnitude and direction",
+                    "Dimensionless quantity",
+                    "Quantity measured in Coulombs"
+          ],
+          "answer": 1,
+          "explain": "E⃗ is a vector — it has both a magnitude (strength) and a direction (the direction a + charge would be pushed).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T8",
+          "id": "mcq_phys1_T8_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T8_1",
@@ -183,7 +551,53 @@ window.CONTENT.Physics.push({
           "id": "T9",
           "name": "4b. Electric Field",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "The electric field due to a point charge q at distance r is:",
+          "options": [
+                    "kq/r",
+                    "kq/r²",
+                    "kq²/r",
+                    "kq²/r²"
+          ],
+          "answer": 1,
+          "explain": "E = kq/r² (inverse square law). Derived from F = kqq₀/r² by dividing by test charge q₀.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T9",
+          "id": "mcq_phys1_T9_1"
+},
+{
+          "type": "mcq",
+          "q": "The electric field at a point due to a negative charge points:",
+          "options": [
+                    "Away from the negative charge",
+                    "Towards the negative charge",
+                    "Perpendicular to the line joining them",
+                    "In the same direction as the charge's motion"
+          ],
+          "answer": 1,
+          "explain": "E is defined as the direction of force on a +ve test charge. A −ve charge attracts the +ve test charge, so E points towards it.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T9",
+          "id": "mcq_phys1_T9_2"
+},
+{
+          "type": "mcq",
+          "q": "If the charge q is doubled with the same distance r, the field E:",
+          "options": [
+                    "Doubles",
+                    "Halves",
+                    "Quadruples",
+                    "Stays the same"
+          ],
+          "answer": 0,
+          "explain": "E = kq/r². E ∝ q, so doubling q doubles E.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T9",
+          "id": "mcq_phys1_T9_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T9_1",
@@ -201,7 +615,53 @@ window.CONTENT.Physics.push({
           "id": "T10",
           "name": "4c. Electric Field",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Linear charge density λ is defined as:",
+          "options": [
+                    "Charge per unit volume",
+                    "Charge per unit area",
+                    "Charge per unit length",
+                    "Force per unit charge"
+          ],
+          "answer": 2,
+          "explain": "λ = dq/dl — charge per unit length. SI unit: C/m.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T10",
+          "id": "mcq_phys1_T10_1"
+},
+{
+          "type": "mcq",
+          "q": "Surface charge density σ has SI unit:",
+          "options": [
+                    "C/m",
+                    "C/m²",
+                    "C/m³",
+                    "N/C"
+          ],
+          "answer": 1,
+          "explain": "σ = dq/dA — charge per unit area. SI unit: C/m².",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T10",
+          "id": "mcq_phys1_T10_2"
+},
+{
+          "type": "mcq",
+          "q": "The electric field from a continuous charge distribution is found by:",
+          "options": [
+                    "Multiplying all individual dE values",
+                    "Vector integrating dE over the distribution",
+                    "Applying Coulomb's law to the whole body as one charge",
+                    "Dividing total charge by distance"
+          ],
+          "answer": 1,
+          "explain": "E = ∫dE (vector integral). Each charge element dq contributes dE = k dq/r² r̂, and all contributions are added vectorially.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T10",
+          "id": "mcq_phys1_T10_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T10_1",
@@ -220,7 +680,53 @@ window.CONTENT.Physics.push({
           "id": "T11",
           "name": "5a. Electric Field Lines",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Electric field lines start from:",
+          "options": [
+                    "Negative charges",
+                    "Positive charges",
+                    "Neutral points",
+                    "Ground"
+          ],
+          "answer": 1,
+          "explain": "Convention: field lines start at + charges and terminate at − charges (or go to infinity if no − charge is present).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T11",
+          "id": "mcq_phys1_T11_1"
+},
+{
+          "type": "mcq",
+          "q": "The density (number per unit area) of field lines at a point is proportional to:",
+          "options": [
+                    "Electric potential",
+                    "Magnitude of E",
+                    "Distance from the charge",
+                    "Charge squared"
+          ],
+          "answer": 1,
+          "explain": "Closer-packed lines → stronger field. Line density ∝ |E|.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T11",
+          "id": "mcq_phys1_T11_2"
+},
+{
+          "type": "mcq",
+          "q": "On the surface of a conductor in electrostatic equilibrium, electric field lines are:",
+          "options": [
+                    "Tangential to the surface",
+                    "Parallel to the surface",
+                    "Perpendicular (normal) to the surface",
+                    "At 45° to the surface"
+          ],
+          "answer": 2,
+          "explain": "E inside conductor = 0. Just outside, E must be perpendicular to the surface (no tangential component, else charges would move).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T11",
+          "id": "mcq_phys1_T11_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T11_1",
@@ -239,7 +745,53 @@ window.CONTENT.Physics.push({
           "id": "T12",
           "name": "5b. Electric Field Lines",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Two electric field lines cannot intersect because:",
+          "options": [
+                    "They are always parallel",
+                    "The electric field is unique at every point (one direction only)",
+                    "Field lines are always straight",
+                    "Charges are fixed"
+          ],
+          "answer": 1,
+          "explain": "If two lines crossed, there would be two different field directions at one point — impossible since E⃗ is a unique vector at each point.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T12",
+          "id": "mcq_phys1_T12_1"
+},
+{
+          "type": "mcq",
+          "q": "Which of the following is NOT a valid property of electric field lines?",
+          "options": [
+                    "They start from + charge and end at − charge",
+                    "They can form closed loops in free space",
+                    "They never intersect each other",
+                    "Their density is proportional to |E|"
+          ],
+          "answer": 1,
+          "explain": "Field lines cannot form closed loops in static electricity — they always begin/end on charges or go to infinity. Closed loops occur only for magnetic fields or time-varying fields.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T12",
+          "id": "mcq_phys1_T12_2"
+},
+{
+          "type": "mcq",
+          "q": "In a uniform electric field, field lines are:",
+          "options": [
+                    "Curved towards the source",
+                    "Parallel and equally spaced",
+                    "Converging towards a point",
+                    "Circular"
+          ],
+          "answer": 1,
+          "explain": "Uniform field → same E everywhere → parallel equidistant lines (like between parallel plates far from edges).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T12",
+          "id": "mcq_phys1_T12_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T12_1",
@@ -259,7 +811,53 @@ window.CONTENT.Physics.push({
           "id": "T13",
           "name": "5c. Electric Field Lines",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Between two equal and like charges, field lines:",
+          "options": [
+                    "Connect the two charges directly",
+                    "Bend away from each other — no line connects them",
+                    "Form circles around each charge",
+                    "Are absent"
+          ],
+          "answer": 1,
+          "explain": "Like charges repel; field lines from each + charge repel each other and curve away. No field line can go from + to +.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T13",
+          "id": "mcq_phys1_T13_1"
+},
+{
+          "type": "mcq",
+          "q": "The neutral point (net E = 0) between two equal like charges lies at:",
+          "options": [
+                    "The midpoint between them",
+                    "Closer to the larger charge",
+                    "Outside the line joining them",
+                    "There is no neutral point"
+          ],
+          "answer": 0,
+          "explain": "By symmetry: at the midpoint, the equal-magnitude fields from the two like charges point in opposite directions and cancel.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T13",
+          "id": "mcq_phys1_T13_2"
+},
+{
+          "type": "mcq",
+          "q": "Between two equal and opposite charges (+q and −q), field lines:",
+          "options": [
+                    "All start at + and terminate at −",
+                    "Form closed loops",
+                    "Start and end on the same charge",
+                    "Are absent between them"
+          ],
+          "answer": 0,
+          "explain": "An electric dipole: all field lines go from +q to −q — they never form loops or start/end at the same charge.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T13",
+          "id": "mcq_phys1_T13_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T13_1",
@@ -278,7 +876,53 @@ window.CONTENT.Physics.push({
           "id": "T14",
           "name": "6a. Electric Dipole",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "The electric dipole moment p is defined as:",
+          "options": [
+                    "q × 2a (charge × separation)",
+                    "q / 2a",
+                    "2q + a",
+                    "q²/r"
+          ],
+          "answer": 0,
+          "explain": "p = q × 2a where q is the magnitude of either charge and 2a is the separation. Direction: from −q to +q.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T14",
+          "id": "mcq_phys1_T14_1"
+},
+{
+          "type": "mcq",
+          "q": "The direction of the electric dipole moment vector p⃗ is:",
+          "options": [
+                    "From +q to −q",
+                    "From −q to +q",
+                    "Perpendicular to the dipole axis",
+                    "Towards the larger charge"
+          ],
+          "answer": 1,
+          "explain": "By convention, p⃗ points from the negative charge to the positive charge (opposite to the electric field inside the dipole).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T14",
+          "id": "mcq_phys1_T14_2"
+},
+{
+          "type": "mcq",
+          "q": "The SI unit of electric dipole moment is:",
+          "options": [
+                    "C/m",
+                    "C·m",
+                    "N·m",
+                    "V·m"
+          ],
+          "answer": 1,
+          "explain": "p = q × d → Coulombs × metres = C·m.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T14",
+          "id": "mcq_phys1_T14_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T14_1",
@@ -297,7 +941,53 @@ window.CONTENT.Physics.push({
           "id": "T15",
           "name": "6b. Electric Dipole",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "On the axial line of a short dipole at large distance r, the electric field falls as:",
+          "options": [
+                    "1/r",
+                    "1/r²",
+                    "1/r³",
+                    "1/r⁴"
+          ],
+          "answer": 2,
+          "explain": "For a short dipole, E_axial = 2kp/r³ — falls as 1/r³ (faster than a point charge's 1/r²).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T15",
+          "id": "mcq_phys1_T15_1"
+},
+{
+          "type": "mcq",
+          "q": "On the equatorial line of an electric dipole, the field direction is:",
+          "options": [
+                    "Parallel to p⃗ (along dipole moment)",
+                    "Anti-parallel to p⃗ (opposite to dipole moment)",
+                    "Perpendicular to p⃗",
+                    "At 45° to p⃗"
+          ],
+          "answer": 1,
+          "explain": "E_equatorial = −kp/r³ (in vector form, anti-parallel to p⃗). Think: field opposes dipole between the charges on the perpendicular bisector.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T15",
+          "id": "mcq_phys1_T15_2"
+},
+{
+          "type": "mcq",
+          "q": "For a short dipole at the same distance r, the ratio E_axial / E_equatorial is:",
+          "options": [
+                    "1",
+                    "2",
+                    "1/2",
+                    "4"
+          ],
+          "answer": 1,
+          "explain": "E_axial = 2kp/r³ and E_equatorial = kp/r³, so ratio = 2.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T15",
+          "id": "mcq_phys1_T15_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T15_1",
@@ -316,7 +1006,53 @@ window.CONTENT.Physics.push({
           "id": "T16",
           "name": "7a. Dipole in a Uniform External Field",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Torque on a dipole in a uniform electric field E at angle θ to p⃗ is:",
+          "options": [
+                    "pE cosθ",
+                    "pE sinθ",
+                    "pE tanθ",
+                    "pE/(sinθ)"
+          ],
+          "answer": 1,
+          "explain": "τ = p × E → magnitude τ = pE sinθ. Maximum when p⃗ ⊥ E⃗ (θ = 90°).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T16",
+          "id": "mcq_phys1_T16_1"
+},
+{
+          "type": "mcq",
+          "q": "The torque on a dipole is maximum when the dipole makes an angle with the field of:",
+          "options": [
+                    "0°",
+                    "30°",
+                    "90°",
+                    "180°"
+          ],
+          "answer": 2,
+          "explain": "τ = pE sinθ is maximum when sinθ = 1, i.e. θ = 90° (dipole perpendicular to field).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T16",
+          "id": "mcq_phys1_T16_2"
+},
+{
+          "type": "mcq",
+          "q": "The torque on a dipole aligned parallel to the field (θ = 0°) is:",
+          "options": [
+                    "pE (maximum)",
+                    "Zero",
+                    "pE/2",
+                    "pE/√2"
+          ],
+          "answer": 1,
+          "explain": "τ = pE sin0° = 0. Parallel alignment is an equilibrium position (stable equilibrium).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T16",
+          "id": "mcq_phys1_T16_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T16_1",
@@ -335,7 +1071,53 @@ window.CONTENT.Physics.push({
           "id": "T17",
           "name": "7b. Dipole in a Uniform External Field",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "The potential energy of an electric dipole in external field E at angle θ is:",
+          "options": [
+                    "pE sinθ",
+                    "−pE cosθ",
+                    "pE/cosθ",
+                    "−pE sinθ"
+          ],
+          "answer": 1,
+          "explain": "U = −p⃗·E⃗ = −pE cosθ. Minimum (most stable) at θ = 0°, maximum at θ = 180°.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T17",
+          "id": "mcq_phys1_T17_1"
+},
+{
+          "type": "mcq",
+          "q": "Stable equilibrium of a dipole in a uniform field corresponds to:",
+          "options": [
+                    "θ = 0° (p parallel to E — lowest energy)",
+                    "θ = 90°",
+                    "θ = 180° (p anti-parallel to E)",
+                    "Any angle"
+          ],
+          "answer": 0,
+          "explain": "Stable: small displacement creates restoring torque. At θ = 0°, U = −pE (minimum) → stable.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T17",
+          "id": "mcq_phys1_T17_2"
+},
+{
+          "type": "mcq",
+          "q": "Work done to rotate a dipole from θ₁ = 0° to θ₂ = 90° in field E:",
+          "options": [
+                    "W = pE(cosθ₁ − cosθ₂) = pE",
+                    "W = pE sinθ₂ = pE",
+                    "W = 0",
+                    "W = 2pE"
+          ],
+          "answer": 0,
+          "explain": "W = pE(cosθ₁ − cosθ₂) = pE(cos0° − cos90°) = pE(1 − 0) = pE.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T17",
+          "id": "mcq_phys1_T17_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T17_1",
@@ -354,7 +1136,53 @@ window.CONTENT.Physics.push({
           "id": "T18",
           "name": "8a. Electric Flux and Gauss's Law",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Electric flux through a surface element dA⃗ due to field E⃗ is:",
+          "options": [
+                    "E⃗ × dA⃗ (cross product)",
+                    "E⃗ · dA⃗ (dot product = E dA cosθ)",
+                    "E/dA",
+                    "dA/E"
+          ],
+          "answer": 1,
+          "explain": "dΦ = E⃗ · dA⃗ = E dA cosθ, where θ is the angle between E⃗ and the outward normal dA⃗.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T18",
+          "id": "mcq_phys1_T18_1"
+},
+{
+          "type": "mcq",
+          "q": "Gauss's law states that the total electric flux through any closed surface is:",
+          "options": [
+                    "ε₀ × Q_enclosed",
+                    "Q_enclosed / ε₀",
+                    "Q_enclosed × ε₀²",
+                    "Zero always"
+          ],
+          "answer": 1,
+          "explain": "∮E⃗·dA⃗ = Q_enc/ε₀. The flux depends only on the charge enclosed, not the shape or size of the surface.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T18",
+          "id": "mcq_phys1_T18_2"
+},
+{
+          "type": "mcq",
+          "q": "The SI unit of electric flux is:",
+          "options": [
+                    "N/C",
+                    "N·m²/C (same as V·m)",
+                    "C/m²",
+                    "V/m"
+          ],
+          "answer": 1,
+          "explain": "Φ = E × A → [N/C] × [m²] = N·m²/C. Also written as V·m.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T18",
+          "id": "mcq_phys1_T18_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T18_1",
@@ -373,7 +1201,53 @@ window.CONTENT.Physics.push({
           "id": "T19",
           "name": "8b. Electric Flux and Gauss's Law",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "A point charge +q is at the centre of a spherical Gaussian surface of radius r. The total flux through the sphere is:",
+          "options": [
+                    "q/ε₀",
+                    "ε₀/q",
+                    "kq/r²",
+                    "4πkq"
+          ],
+          "answer": 0,
+          "explain": "By Gauss's law: Φ = Q_enc/ε₀ = q/ε₀. It does NOT depend on the radius r.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T19",
+          "id": "mcq_phys1_T19_1"
+},
+{
+          "type": "mcq",
+          "q": "Using Gauss's law, E due to a point charge at distance r is derived as:",
+          "options": [
+                    "kq/r²",
+                    "kq/r",
+                    "kq²/r²",
+                    "kq/r³"
+          ],
+          "answer": 0,
+          "explain": "E × 4πr² = q/ε₀ → E = q/(4πε₀r²) = kq/r².",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T19",
+          "id": "mcq_phys1_T19_2"
+},
+{
+          "type": "mcq",
+          "q": "A charge −3 μC sits at the centre of a Gaussian surface. The total flux through the surface is:",
+          "options": [
+                    "+3.39×10⁵ N·m²/C",
+                    "−3.39×10⁵ N·m²/C",
+                    "Zero",
+                    "Depends on surface shape"
+          ],
+          "answer": 1,
+          "explain": "Φ = Q/ε₀ = −3×10⁻⁶/(8.85×10⁻¹²) ≈ −3.39×10⁵ N·m²/C. Negative because charge is negative.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T19",
+          "id": "mcq_phys1_T19_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T19_1",
@@ -392,7 +1266,53 @@ window.CONTENT.Physics.push({
           "id": "T20",
           "name": "8c. Electric Flux and Gauss's Law",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "A charge +5 μC is placed just outside a closed Gaussian surface. The flux due to this charge through the surface is:",
+          "options": [
+                    "+5.65×10⁵ N·m²/C",
+                    "−5.65×10⁵ N·m²/C",
+                    "Zero",
+                    "Depends on the distance"
+          ],
+          "answer": 2,
+          "explain": "Charges outside contribute zero net flux through the surface — field lines enter and exit equally.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T20",
+          "id": "mcq_phys1_T20_1"
+},
+{
+          "type": "mcq",
+          "q": "In Gauss's law Q_enc refers to:",
+          "options": [
+                    "Total charge in the universe",
+                    "Charge enclosed by the Gaussian surface",
+                    "Charge on the surface itself",
+                    "Charge near the surface"
+          ],
+          "answer": 1,
+          "explain": "Only the charge inside the closed Gaussian surface determines the total flux through it.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T20",
+          "id": "mcq_phys1_T20_2"
+},
+{
+          "type": "mcq",
+          "q": "If the net flux through a closed Gaussian surface is zero, it means:",
+          "options": [
+                    "E = 0 everywhere on the surface",
+                    "Net enclosed charge = 0",
+                    "No charge exists anywhere near the surface",
+                    "The surface must be spherical"
+          ],
+          "answer": 1,
+          "explain": "Φ = Q_enc/ε₀ = 0 ⟹ Q_enc = 0. E can still be non-zero at points on the surface.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T20",
+          "id": "mcq_phys1_T20_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T20_1",
@@ -411,7 +1331,53 @@ window.CONTENT.Physics.push({
           "id": "T21",
           "name": "9a. Applications of Gauss's Law",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Using Gauss's law, the electric field at distance r from an infinite line charge of linear density λ is:",
+          "options": [
+                    "λ/(2πε₀r)",
+                    "λ/(4πε₀r²)",
+                    "λ/(2πε₀r²)",
+                    "2λ/(ε₀r)"
+          ],
+          "answer": 0,
+          "explain": "Cylindrical Gaussian surface: E × 2πrl = λl/ε₀ → E = λ/(2πε₀r). Falls as 1/r.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T21",
+          "id": "mcq_phys1_T21_1"
+},
+{
+          "type": "mcq",
+          "q": "The electric field due to an infinite line charge varies with distance r as:",
+          "options": [
+                    "1/r",
+                    "1/r²",
+                    "1/r³",
+                    "r"
+          ],
+          "answer": 0,
+          "explain": "E = λ/(2πε₀r) — inverse first power of distance (slower fall-off than a point charge).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T21",
+          "id": "mcq_phys1_T21_2"
+},
+{
+          "type": "mcq",
+          "q": "The Gaussian surface used to derive E for an infinite line charge is a:",
+          "options": [
+                    "Sphere centred on the wire",
+                    "Cylinder coaxial with the wire",
+                    "Flat disc",
+                    "Cube"
+          ],
+          "answer": 1,
+          "explain": "The cylindrical Gaussian surface exploits the line charge's cylindrical symmetry: E is radial and uniform on the curved surface.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T21",
+          "id": "mcq_phys1_T21_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T21_1",
@@ -430,7 +1396,53 @@ window.CONTENT.Physics.push({
           "id": "T22",
           "name": "9b. Applications of Gauss's Law",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "The electric field due to an infinite plane sheet of surface charge density σ is:",
+          "options": [
+                    "σ/ε₀",
+                    "σ/(2ε₀)",
+                    "2σ/ε₀",
+                    "σε₀"
+          ],
+          "answer": 1,
+          "explain": "Pillbox Gaussian surface: 2EA = σA/ε₀ → E = σ/(2ε₀). Factor 2 accounts for both faces of the pillbox.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T22",
+          "id": "mcq_phys1_T22_1"
+},
+{
+          "type": "mcq",
+          "q": "The electric field of an infinite plane sheet:",
+          "options": [
+                    "Decreases with distance",
+                    "Increases with distance",
+                    "Is independent of distance",
+                    "Is zero outside the sheet"
+          ],
+          "answer": 2,
+          "explain": "E = σ/(2ε₀) — constant, independent of how far you are from the sheet (for an ideal infinite plane).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T22",
+          "id": "mcq_phys1_T22_2"
+},
+{
+          "type": "mcq",
+          "q": "Between the plates of a parallel-plate capacitor (plate charge densities +σ and −σ), the field is:",
+          "options": [
+                    "σ/(2ε₀)",
+                    "σ/ε₀",
+                    "2σ/ε₀",
+                    "Zero"
+          ],
+          "answer": 1,
+          "explain": "Each plate contributes σ/(2ε₀) in the same direction between them: E_total = σ/(2ε₀) + σ/(2ε₀) = σ/ε₀.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T22",
+          "id": "mcq_phys1_T22_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T22_1",
@@ -450,7 +1462,53 @@ window.CONTENT.Physics.push({
           "id": "T23",
           "name": "9c. Applications of Gauss's Law",
           "theory": "",
-          "questions": [],
+          "questions": [
+{
+          "type": "mcq",
+          "q": "Inside a uniformly charged hollow spherical shell, the electric field is:",
+          "options": [
+                    "kQ/R²",
+                    "kQ/r² (r < R)",
+                    "Zero",
+                    "Maximum at centre"
+          ],
+          "answer": 2,
+          "explain": "Gaussian sphere inside the shell encloses zero charge → E × 4πr² = 0 → E = 0 inside.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T23",
+          "id": "mcq_phys1_T23_1"
+},
+{
+          "type": "mcq",
+          "q": "Outside a uniformly charged spherical shell of total charge Q, at distance r from the centre:",
+          "options": [
+                    "E = kQ/r²",
+                    "E = kQ/R²",
+                    "E = 0",
+                    "E = kQr/R³"
+          ],
+          "answer": 0,
+          "explain": "Shell acts like a point charge at its centre for any exterior point: E = kQ/r² (shell theorem).",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T23",
+          "id": "mcq_phys1_T23_2"
+},
+{
+          "type": "mcq",
+          "q": "The shell theorem implies that a uniform spherical shell exerts no electrostatic force on charges:",
+          "options": [
+                    "Outside the shell",
+                    "Inside the shell",
+                    "On its surface",
+                    "At infinity"
+          ],
+          "answer": 1,
+          "explain": "Inside the shell E = 0, so no force on any charge placed there — the contributions from all surface elements cancel exactly.",
+          "_section": "mcq",
+          "_source": "Authored for ISC phys_1 T23",
+          "id": "mcq_phys1_T23_3"
+}
+          ],
           "workedExamples": [
             {
               "id": "we_phys_1_T23_1",

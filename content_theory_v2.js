@@ -15863,5 +15863,5 @@
       });
     });
   });
-  console.log('[TheoryV2] patched ' + applied + ' chapters + ' + topicApplied + ' topics (v42p63)');
+  console.log('[TheoryV2] patched ' + applied + ' chapters + ' + topicApplied + ' topics (v42p64)');
 })();

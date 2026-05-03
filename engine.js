@@ -1389,10 +1389,8 @@ function copyExport() {
 function resetAll() {
   if (!confirm('Wipe all XP, streaks, mastery, achievements? This cannot be undone.')) return;
   localStorage.removeItem('studydeck_state');
-  state = Object.assign({}, DEFAULT_STATE);
   if (typeof window.v70ClearCloud === 'function') window.v70ClearCloud();
-  saveState(); closeExport(); setView('mission');
-  showToast('default', '\u2713', 'Reset to blank slate'); sfx('correct');
+  window.location.reload();
 }
 
 document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target.id === 'modalOverlay') closeModal(); });
@@ -3760,21 +3758,8 @@ setView(state.view || 'mission');
       const theoryTopicId = session.topicFullId;
       const ok = loadPracticeForTopic(theoryTopicId);
       if (!ok) {
-        const found = findTopic(theoryTopicId);
-        if (found) {
-          const txtPart = found.chapter.parts.find(function(p) { return p.id.indexOf('textbook') >= 0; });
-          const b1 = txtPart && txtPart.topics && txtPart.topics[0];
-          if (b1) {
-            session = { topicFullId: fullTopicId(found.chapter.id, b1.id), problems: b1.questions || [], idx:0, correct:0, xpEarned:0, mixed:false };
-            state.currentTopicId = session.topicFullId;
-            saveState();
-            document.getElementById('practiceView').style.display = 'block';
-            document.getElementById('theoryView').style.display = 'none';
-            document.getElementById('tabPractice').classList.add('active');
-            document.getElementById('tabTheory').classList.remove('active');
-            loadProblem();
-          }
-        }
+        // No questions for this topic yet — stay on theory tab, show toast
+        showToast('default', '📖', 'No practice questions for this topic yet — read the theory!');
       }
       return;
     }
