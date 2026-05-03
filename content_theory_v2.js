@@ -1245,6 +1245,7 @@
     <small style="color:var(--ink-soft)">Both $E^\\circ$ values are always quoted as <em>reduction potentials</em>.</small>
   </div>
   
+  <div class="sim-slot" data-sim="echem-cell"></div>
   <div class="th-h3">Electrochemical Series (Key Values for ISC)</div>
   <table class="th-table">
     <thead><tr><th>Half-Reaction (Reduction)</th><th>$E^\\circ$ (V)</th><th>ISC Usage</th></tr></thead>
@@ -1787,6 +1788,7 @@
     where $x$ = % reaction completed. &nbsp;&nbsp; Half-life: $t_{1/2} = \\dfrac{0.693}{k}$
   </div>
   
+  <div class="sim-slot" data-sim="rate-decay"></div>
   <div class="th-memo">
     <span class="th-label">Memory Trick — First-Order Half-Life</span>
     <strong>t½ for first order is ALWAYS 0.693/k — it does NOT change with concentration.</strong> This was directly asked in ISC 2023 MCQ! Memorise: "First order → fixed half-life."
@@ -2028,6 +2030,7 @@
     </tbody>
   </table>
   
+  <div class="sim-slot" data-sim="dblock-config"></div>
   <div class="th-h2">3. Variable Oxidation States</div>
   
   <div class="th-concept">
@@ -2399,6 +2402,7 @@
     <small style="color:var(--ink-soft)">Secondary valency determines geometry and is directed in space.</small>
   </div>
   
+  <div class="sim-slot" data-sim="crystal-field"></div>
   <div class="th-example">
     <span class="th-label">ISC 2019 — CoCl3·6NH3 precipitates 3 mol AgCl per mol compound</span>
     3 mol AgCl precipitated → 3 Cl⁻ are <em>outside</em> the coordination sphere (primary valency = 3).<br>
@@ -5174,6 +5178,7 @@
     $$\\vec{OM} = \\frac{\\vec{a} + \\vec{b}}{2}$$
   </div>
   
+  <div class="sim-slot" data-sim="vector-ops"></div>
   <div class="th-warn">
     ⚠ <strong>Internal vs External:</strong> Internal division has a <strong>plus</strong> sign in the denominator ($m+n$); external division has a <strong>minus</strong> sign ($m-n$). Mixing these is a common 1-mark error.
   </div>
@@ -5994,6 +5999,7 @@
     If an optimal solution to a Linear Programming Problem exists, it occurs at one of the <strong>corner points (vertices)</strong> of the feasible region. You never need to check interior points — only the vertices.
   </div>
   
+  <div class="sim-slot" data-sim="lin-prog"></div>
   <div class="th-h2">Step-by-Step Solution Method</div>
   
   <ol class="th-steps">
@@ -6597,6 +6603,7 @@
     </tbody>
   </table>
   
+  <div class="sim-slot" data-sim="inv-trig"></div>
   <div class="th-memo">
     <strong>Mnemonic — "Who gets what range?"</strong><br>
     <strong>sin⁻¹ &amp; cosec⁻¹</strong> → symmetric strip around 0: $\\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$ (with 0 excluded for cosec⁻¹)<br>
@@ -7663,6 +7670,7 @@
     <strong>Common Mistake 1:</strong> Checking only one side. You MUST compute BOTH LHL and RHL and verify they are equal before concluding continuity. Writing only LHL = f(a) is wrong — you need all three values.
   </div>
   
+  <div class="sim-slot" data-sim="tangent-line"></div>
   <div class="th-example">
     <span class="th-label">ISC 2024 — Find k for continuity: $f(x) = \\dfrac{(x+3)^2 - 36}{x-3},\\ x \\ne 3;\\ k,\\ x=3$</span>
     <strong>LHL = RHL = limit as $x \\to 3$:</strong><br>
@@ -8202,6 +8210,7 @@
     <strong>Increasing on $(-\\infty, -2) \\cup (2, \\infty)$</strong>
   </div>
   
+  <div class="sim-slot" data-sim="maxima-minima"></div>
   <div class="th-warn">
     ⚠ <strong>ISC MCQ trap:</strong> "Increasing" includes flat points (non-strictly), "strictly increasing" excludes them. When $f'(x) = 0$ at an isolated point but positive everywhere else in the interval, the function is still <em>increasing</em> on that interval (just not strictly). ISC 2025 MCQ Q1(iii) tested exactly this distinction.
   </div>
@@ -8995,12 +9004,13 @@
   </div>
   
   <div class="th-h2">Definite Integral Properties</div>
-  
+
   <div class="th-concept">
     <span class="th-label">Core Idea</span>
     These properties let you evaluate integrals that look impossible directly. ISC board <strong>specifically</strong> designs questions to require Property 4 (reflection) and Property 6 (odd/even). Recognise the pattern — don't try to integrate directly.
   </div>
-  
+
+  <div class="sim-slot" data-sim="riemann-sum"></div>
   <table class="th-table">
     <thead>
       <tr>
@@ -10011,7 +10021,8 @@
     $$F = k \\frac{q_1 q_2}{r^2} = \\frac{1}{4\\pi\\varepsilon_0} \\cdot \\frac{q_1 q_2}{r^2}$$
     where $k = \\dfrac{1}{4\\pi\\varepsilon_0} = 9 \\times 10^9\\ \\text{N m}^2\\text{C}^{-2}$ and $\\varepsilon_0 = 8.85 \\times 10^{-12}\\ \\text{C}^2\\text{N}^{-1}\\text{m}^{-2}$
   </div>
-  
+
+  <div class="sim-slot" data-sim="coulombs-law"></div>
   <div class="th-steps">
     <span class="th-label">Key Points</span>
     <ol>
@@ -10398,6 +10409,7 @@
     where $n_1$, $n_2$ are refractive indices; $v_1$, $v_2$ are speeds of light in medium 1 and 2.
   </div>
   
+  <div class="sim-slot" data-sim="ydse-fringes"></div>
   <div class="th-warn">
     When a wave goes from a rarer to a denser medium: speed $v$ decreases, wavelength $\\lambda$ decreases, but <strong>frequency stays the same</strong>. The wavefront bends toward the normal. In denser medium, wavelets are smaller — draw this clearly in the diagram.
   </div>
@@ -10868,6 +10880,7 @@
     At threshold ($\\nu = \\nu_0$): $KE_{max} = 0$ — electron just barely escapes with zero kinetic energy.
   </div>
   
+  <div class="sim-slot" data-sim="photoelectric"></div>
   <div class="th-formula">
     <span class="th-label">Stopping Potential</span>
     $$eV_0 = KE_{max}$$
@@ -11160,6 +11173,7 @@
     Key relations: $E_n \\propto -1/n^2$. Total energy is always <strong>negative</strong>.
   </div>
   
+  <div class="sim-slot" data-sim="bohr-model"></div>
   <div class="th-concept">
     <span class="th-label">Why is Total Energy Negative? (ISC 2025 — 1 mark)</span>
     The total energy of an orbiting electron is negative because the electron is in a <strong>bound state</strong>. The electron is held in the atom by the attractive Coulomb force. To free the electron from the atom (ionise it), energy must be <em>supplied</em> from outside. A bound system always has negative total energy by convention (zero energy = free particle at rest at infinity). The magnitude $|E_n|$ is the <strong>binding energy</strong> — the minimum energy needed to remove the electron from that orbit.
@@ -11947,6 +11961,7 @@
     When a p-type and n-type semiconductor are joined, electrons from the n-side diffuse into the p-side and recombine with holes. This leaves behind <strong>positive donor ions</strong> on the n-side and <strong>negative acceptor ions</strong> on the p-side near the junction. This charge-free region of immobile ions is called the <strong>depletion layer</strong> (width $\\approx 0.5$ μm in Si). It creates a built-in electric field pointing from n to p, which opposes further diffusion, establishing equilibrium. The built-in potential barrier is $\\approx 0.7$ V for Si and $\\approx 0.3$ V for Ge.
   </div>
   
+  <div class="sim-slot" data-sim="pn-junction"></div>
   <div class="th-h3">Forward Bias</div>
   
   <div class="th-concept">
@@ -12758,6 +12773,7 @@
     </tbody>
   </table>
   
+  <div class="sim-slot" data-sim="ohms-law"></div>
   <div class="th-h3">Temperature Variation of Resistance</div>
   
   <div class="th-formula">
@@ -13102,6 +13118,7 @@
     </ul>
   </div>
   
+  <div class="sim-slot" data-sim="lorentz-force"></div>
   <div class="th-concept">
     <span class="th-label">Direction: Right-Hand / Fleming's Left-Hand Rule</span>
     For a <strong>positive charge</strong>: stretch fingers of right hand along $\\vec{v}$, curl them toward $\\vec{B}$ — thumb points in direction of $\\vec{F}$.<br>
@@ -13875,6 +13892,7 @@
     For uniform change: $\\varepsilon = -N\\dfrac{\\Delta\\Phi}{\\Delta t} = -N\\dfrac{\\Phi_2 - \\Phi_1}{\\Delta t}$
   </div>
   
+  <div class="sim-slot" data-sim="faraday-emf"></div>
   <div class="th-example">
     <span class="th-label">Worked Example — ISC 2020 Style</span>
     <strong>Q:</strong> Magnetic flux through a circuit changes from 10 Wb to 4 Wb in 4 s. Find the induced EMF (single-turn coil).
@@ -14220,6 +14238,7 @@
     Phase angle: $\\tan\\phi = \\dfrac{X_L - X_C}{R}$ &nbsp;|&nbsp; Current amplitude: $I_0 = \\dfrac{V_0}{Z}$
   </div>
   
+  <div class="sim-slot" data-sim="ac-phasor"></div>
   <div class="th-h3">Resonance in Series LCR</div>
   
   <div class="th-concept">
@@ -14746,6 +14765,7 @@
     </tbody>
   </table>
   
+  <div class="sim-slot" data-sim="ray-diagram"></div>
   <div class="th-memo">
     <strong>Concave mirror summary mnemonic — "Beyond C → Between F&amp;C; At C → At C; Between F&amp;C → Beyond C".</strong><br>
     Object and image swap positions around C. If object goes inside F, image flips to virtual (behind mirror).
@@ -15246,13 +15266,602 @@
   </div>
   `;
 
+
+  /* ═════════════════════════════════════════════════���═════════
+     phys_1 — Electric Charges & Fields — per-topic theory
+     One concept per topic · ISC-board-aligned · pilot chapter
+  ═══════════════════════════════════════════════════════════ */
+
+  T['phys_1_T1'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  <strong>Charge basics appear in every Section A (MCQs)</strong> — quantization and conservation are guaranteed 1-mark questions.
+</div>
+<div class="th-h2">What is Electric Charge?</div>
+<div class="th-concept">
+  <span class="th-label">Definition</span>
+  <strong>Electric charge</strong> is the intrinsic property of matter responsible for electric and magnetic forces. It cannot be seen or weighed — only its effects are observable.
+  <br><br>
+  <strong>Two types:</strong> positive (proton) and negative (electron). Like charges repel; unlike charges attract.
+</div>
+<div class="th-h3">Conductors vs Insulators</div>
+<table class="th-table">
+  <thead><tr><th>Type</th><th>What it does</th><th>Examples</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Conductor</strong></td><td>Free electrons move easily — charge flows</td><td>Copper, silver, aluminium</td></tr>
+    <tr><td><strong>Insulator</strong></td><td>Electrons tightly bound — charge stays put</td><td>Glass, rubber, plastic, ebonite</td></tr>
+    <tr><td><strong>Semiconductor</strong></td><td>Controlled conductivity via doping</td><td>Silicon, germanium</td></tr>
+  </tbody>
+</table>
+<div class="th-formula">
+  <span class="th-label">SI Unit</span>
+  Charge is measured in <strong>Coulombs (C)</strong>. The charge of one electron $= -1.6 \\times 10^{-19}$ C.
+</div>
+<div class="th-memo">
+  <strong>How charge is created:</strong> Friction (triboelectric effect) — rubbing a glass rod with silk transfers electrons from glass to silk. Glass becomes positive, silk negative. Charge is <em>separated</em>, never created.
+</div>
+`;
+
+  T['phys_1_T2'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  <strong>Quantization formula q = ne</strong> is asked in numericals every 2–3 years. Conservation is tested in conceptual MCQs.
+</div>
+<div class="th-h2">Three Properties of Electric Charge</div>
+<div class="th-concept">
+  <span class="th-label">1. Additive Nature</span>
+  The total charge of a system is the <strong>algebraic sum</strong> of individual charges.
+  $$Q_{total} = q_1 + q_2 + q_3 + \\cdots$$
+  Charges with sign — positive adds, negative subtracts.
+</div>
+<div class="th-concept">
+  <span class="th-label">2. Conservation of Charge</span>
+  The total charge of an isolated system is <strong>always constant</strong>. Charge can be transferred but not created or destroyed.
+  <br><br>Example: When a glass rod is rubbed with silk, glass gains $+q$ and silk gains $-q$. Net charge = 0 (same as before rubbing).
+</div>
+<div class="th-concept">
+  <span class="th-label">3. Quantization of Charge</span>
+  Charge exists only in <strong>integer multiples</strong> of the elementary charge $e = 1.6 \\times 10^{-19}$ C.
+  $$q = ne \\quad n = 0, \\pm 1, \\pm 2, \\ldots$$
+</div>
+<div class="th-warn">
+  ⚠ <strong>Common error:</strong> Students write $q = me$ where m = mass. The symbol is $n$ (integer count of electrons transferred), not $m$.
+</div>
+`;
+
+  T['phys_1_T3'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Coulomb's Law numericals appear in <strong>every single paper</strong>. Force between two/three charges, finding unknown charge for equilibrium — 2–3 marks.
+</div>
+<div class="th-h2">Coulomb's Law</div>
+<div class="th-concept">
+  <span class="th-label">Statement</span>
+  The electrostatic force between two <strong>point charges</strong> is directly proportional to the product of their magnitudes and inversely proportional to the square of the distance between them. The force acts along the line joining them.
+</div>
+<div class="th-formula">
+  <span class="th-label">Scalar Form</span>
+  $$F = k \\frac{|q_1||q_2|}{r^2} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{|q_1||q_2|}{r^2}$$
+  where $k = 9 \\times 10^9$ N m² C⁻², $\\varepsilon_0 = 8.85 \\times 10^{-12}$ C² N⁻¹ m⁻².
+</div>
+<div class="th-memo">
+  <strong>Inverse-square law:</strong> Double the distance → force becomes $\\frac{1}{4}$. Triple the distance → force becomes $\\frac{1}{9}$.
+</div>
+<div class="th-warn">
+  ⚠ Always use <strong>magnitude</strong> of charges in the scalar formula ($|q_1||q_2|$). The sign of the charges tells you the <em>direction</em> (like = repel, unlike = attract) — not the magnitude.
+</div>
+`;
+
+  T['phys_1_T4'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Vector form is tested in 3-mark derivation problems — especially the <strong>superposition of forces on a charge due to two others</strong>.
+</div>
+<div class="th-h2">Coulomb's Law — Vector Form</div>
+<div class="th-concept">
+  <span class="th-label">Setup</span>
+  Force on charge $q_1$ due to $q_2$, where $\\hat{r}_{21}$ is the unit vector from $q_2$ to $q_1$ (direction from source to field point):
+</div>
+<div class="th-formula">
+  <span class="th-label">Vector Form</span>
+  $$\\vec{F}_{12} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_1 q_2}{r^2} \\hat{r}_{21}$$
+  If $q_1 q_2 > 0$ (like charges): force is along $\\hat{r}_{21}$ — repulsive.
+  If $q_1 q_2 < 0$ (unlike): force is opposite to $\\hat{r}_{21}$ — attractive.
+</div>
+<div class="th-memo">
+  <strong>Newton's third law applies:</strong> $\\vec{F}_{12} = -\\vec{F}_{21}$. The force on $q_1$ due to $q_2$ is equal in magnitude and opposite in direction to the force on $q_2$ due to $q_1$.
+</div>
+`;
+
+  T['phys_1_T5'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Comparison of Coulomb and gravity appears as <strong>MCQs or short-answer</strong>. Medium effect tested in numericals.
+</div>
+<div class="th-h2">Coulomb's Law — Key Comparisons</div>
+<div class="th-h3">Coulomb Force vs Gravitational Force</div>
+<table class="th-table">
+  <thead><tr><th>Property</th><th>Coulomb</th><th>Gravity</th></tr></thead>
+  <tbody>
+    <tr><td>Nature</td><td>Attractive or repulsive</td><td>Always attractive</td></tr>
+    <tr><td>Depends on</td><td>Charges, distance, medium</td><td>Masses, distance</td></tr>
+    <tr><td>Strength</td><td>$\\approx 10^{36}$ times stronger</td><td>Weakest force</td></tr>
+    <tr><td>Medium effect</td><td>Weakens in medium</td><td>Unaffected by medium</td></tr>
+  </tbody>
+</table>
+<div class="th-concept">
+  <span class="th-label">Effect of Medium (Dielectric)</span>
+  In a medium of relative permittivity (dielectric constant) $\\varepsilon_r$:
+  $$F_{medium} = \\frac{F_{vacuum}}{\\varepsilon_r} = \\frac{1}{4\\pi\\varepsilon_0\\varepsilon_r} \\frac{|q_1||q_2|}{r^2}$$
+  Water ($\\varepsilon_r \\approx 80$) reduces the force to $\\frac{1}{80}$ of its vacuum value.
+</div>
+`;
+
+  T['phys_1_T6'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Superposition with 3 charges — finding net force on the middle charge — is a <strong>standard 3-mark problem</strong>.
+</div>
+<div class="th-h2">Superposition Principle — Forces</div>
+<div class="th-concept">
+  <span class="th-label">Principle</span>
+  The net force on a charge due to a system of charges is the <strong>vector sum</strong> of the individual forces, each calculated as if the other charges were absent.
+  $$\\vec{F}_{net} = \\vec{F}_{12} + \\vec{F}_{13} + \\vec{F}_{14} + \\cdots$$
+</div>
+<div class="th-memo">
+  <strong>Key insight:</strong> Charges do not affect how the others exert forces — they act <em>independently</em>. Each pair interaction is calculated with Coulomb's law, then all forces are added vectorially.
+</div>
+<div class="th-steps">
+  <span class="th-label">Method for Superposition Problems</span>
+  <ol>
+    <li>Draw the arrangement — mark positions and charges clearly.</li>
+    <li>Calculate each individual Coulomb force (magnitude + direction).</li>
+    <li>Resolve all forces into x- and y-components.</li>
+    <li>Add components: $F_x = \\sum F_{ix}$, $F_y = \\sum F_{iy}$.</li>
+    <li>Net magnitude: $F = \\sqrt{F_x^2 + F_y^2}$. Angle: $\\theta = \\tan^{-1}(F_y/F_x)$.</li>
+  </ol>
+</div>
+`;
+
+  T['phys_1_T7'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  <strong>Equilibrium of three charges</strong> (find position of zero net force) appeared in ISC 2019, 2022. Standard 3-mark setup.
+</div>
+<div class="th-h2">Equilibrium Under Electrostatic Forces</div>
+<div class="th-concept">
+  <span class="th-label">Zero-Force Position</span>
+  For a charge $q_0$ placed between two fixed charges $q_1$ and $q_2$: the position where $\\vec{F}_{net} = 0$ requires the two forces to be equal and opposite.
+</div>
+<div class="th-steps">
+  <span class="th-label">Strategy for Two Like Charges ($q_1 = q_2 = Q$)</span>
+  <ol>
+    <li>Let the separation be $d$. Place $q_0$ at distance $x$ from $q_1$ (so $d-x$ from $q_2$).</li>
+    <li>Set $\\frac{kQq_0}{x^2} = \\frac{kQq_0}{(d-x)^2}$.</li>
+    <li>Solve: $x^2 = (d-x)^2$ → $x = d/2$ (midpoint).</li>
+  </ol>
+</div>
+<div class="th-warn">
+  ⚠ <strong>Stability trap:</strong> A charge at the midpoint between two <em>like</em> charges is in <strong>unstable</strong> equilibrium — any displacement makes the restoring force less. If the question asks for the condition, also state whether it is stable or unstable.
+</div>
+`;
+
+  T['phys_1_T8'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Electric field definition and units appear in <strong>Section A MCQs every year</strong>. Direction convention is frequently tested.
+</div>
+<div class="th-h2">Electric Field — Definition</div>
+<div class="th-concept">
+  <span class="th-label">Definition</span>
+  The <strong>electric field</strong> $\\vec{E}$ at a point is the electrostatic force experienced per unit <em>positive</em> test charge placed at that point:
+  $$\\vec{E} = \\frac{\\vec{F}}{q_0}$$
+  where $q_0$ is a small positive test charge (so small it does not disturb the source field).
+</div>
+<div class="th-formula">
+  <span class="th-label">Units</span>
+  Unit: $\\text{N C}^{-1}$ or equivalently $\\text{V m}^{-1}$. Electric field is a <strong>vector</strong>.
+</div>
+<div class="th-memo">
+  <strong>Direction convention:</strong>
+  <br>• Field points <em>away</em> from a positive source charge.
+  <br>• Field points <em>toward</em> a negative source charge.
+  <br>• This comes directly from the definition: positive test charge would be pushed away from $+q$ and pulled toward $-q$.
+</div>
+`;
+
+  T['phys_1_T9'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  E due to point charge appears in <strong>every paper</strong>. Watch out for sign of $r$ and direction. Superposition with E frequently tested as 3-mark.
+</div>
+<div class="th-h2">Electric Field due to a Point Charge</div>
+<div class="th-formula">
+  <span class="th-label">Formula</span>
+  $$E = \\frac{1}{4\\pi\\varepsilon_0} \\frac{|q|}{r^2} = \\frac{kq}{r^2}$$
+  where $r$ is the distance from the source charge $q$ to the field point. Direction: radially outward if $q > 0$, radially inward if $q < 0$.
+</div>
+<div class="th-concept">
+  <span class="th-label">Superposition for Fields</span>
+  At any point P, the net electric field due to a system of charges:
+  $$\\vec{E}_{net} = \\vec{E}_1 + \\vec{E}_2 + \\vec{E}_3 + \\cdots$$
+  Each $\\vec{E}_i$ calculated independently using the point-charge formula, then added <em>as vectors</em>.
+</div>
+<div class="th-warn">
+  ⚠ <strong>Distance must be measured from the charge to the field point</strong>, not between the charges. Draw a diagram and label $r$ clearly before calculating.
+</div>
+`;
+
+  T['phys_1_T10'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Continuous distributions are <strong>concept + formula only</strong> — ISC doesn't derive them but tests E on axis of ring and at a point above a disc in MCQs.
+</div>
+<div class="th-h2">Electric Field — Continuous Charge Distributions</div>
+<div class="th-h3">Types of Charge Distribution</div>
+<table class="th-table">
+  <thead><tr><th>Type</th><th>Symbol</th><th>Unit</th><th>Formula element</th></tr></thead>
+  <tbody>
+    <tr><td>Linear (wire)</td><td>$\\lambda$ (lambda)</td><td>C m⁻¹</td><td>$dq = \\lambda\\,dl$</td></tr>
+    <tr><td>Surface (sheet)</td><td>$\\sigma$ (sigma)</td><td>C m⁻²</td><td>$dq = \\sigma\\,dA$</td></tr>
+    <tr><td>Volume</td><td>$\\rho$ (rho)</td><td>C m⁻³</td><td>$dq = \\rho\\,dV$</td></tr>
+  </tbody>
+</table>
+<div class="th-concept">
+  <span class="th-label">Method (for ISC conceptual questions)</span>
+  Divide the extended object into tiny point charges $dq$. Each $dq$ produces a field $d\\vec{E}$ at point P. Integrate vectorially:
+  $$\\vec{E} = \\int d\\vec{E} = \\int \\frac{1}{4\\pi\\varepsilon_0} \\frac{dq}{r^2} \\hat{r}$$
+  <small style="color:var(--ink-soft)">ISC does not ask you to evaluate these integrals — just set up the expression and know the results for standard shapes.</small>
+</div>
+`;
+
+  T['phys_1_T11'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Properties of field lines appear as <strong>2-mark short answers and MCQs every year</strong>. Draw and identify patterns for 3-mark diagram questions.
+</div>
+<div class="th-h2">Electric Field Lines</div>
+<div class="th-concept">
+  <span class="th-label">Definition</span>
+  An <strong>electric field line</strong> is an imaginary curve drawn in space such that the tangent to it at any point gives the direction of the electric field at that point.
+</div>
+<div class="th-h3">Properties — Board Exam List</div>
+<div class="th-concept">
+  <span class="th-label">Six Key Properties</span>
+  <ol style="margin:8px 0 0;padding-left:18px;line-height:1.9;">
+    <li>Field lines <strong>start on positive charges</strong> and <strong>end on negative charges</strong>. (In an external field only, they may extend to infinity.)</li>
+    <li>Field lines <strong>never cross</strong> — two lines crossing would mean two directions at that point, which is impossible.</li>
+    <li>The <strong>density</strong> (number per unit area perpendicular to the field) is proportional to field strength.</li>
+    <li>Field lines are <strong>perpendicular</strong> to the surface of a conductor at every point.</li>
+    <li>Field lines do <strong>not pass through</strong> the interior of a conductor (field inside is zero in electrostatic equilibrium).</li>
+    <li>Field lines are <strong>continuous curves</strong> — no breaks in the middle of free space.</li>
+  </ol>
+</div>
+`;
+
+  T['phys_1_T12'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  <strong>Diagram questions</strong>: draw the field for a single positive/negative charge, two charges, uniform field. 1–2 marks per diagram.
+</div>
+<div class="th-h2">Field Line Patterns</div>
+<div class="th-h3">Single Charges</div>
+<div class="th-concept">
+  <span class="th-label">Isolated Positive Charge</span>
+  Radially outward, symmetric in all directions. Lines get sparser farther away (field weakens as $1/r^2$).
+</div>
+<div class="th-concept">
+  <span class="th-label">Isolated Negative Charge</span>
+  Radially inward, symmetric in all directions. Identical to positive but arrows reversed.
+</div>
+<div class="th-h3">Uniform Field</div>
+<div class="th-concept">
+  <span class="th-label">Uniform Electric Field</span>
+  Parallel, equally-spaced, equally-dense field lines. Produced between parallel plates of a capacitor (ignoring edge effects). $E$ is same in magnitude and direction everywhere in this region.
+</div>
+<div class="th-memo">
+  <strong>Drawing rule:</strong> For exam diagrams, always draw at least 4–6 field lines, with arrows showing direction. Spacing must be consistent (don't draw them unequally spaced for a uniform field).
+</div>
+`;
+
+  T['phys_1_T13'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  <strong>Neutral point position</strong> between two like charges is a 1–2 mark standard question. Dipole field line pattern also appears.
+</div>
+<div class="th-h2">Field Line Patterns — Multiple Charges</div>
+<div class="th-concept">
+  <span class="th-label">Two Like Charges (+q and +q)</span>
+  Field lines repel each other. A <strong>neutral point</strong> exists between them — exactly midway for equal charges — where the fields from both charges cancel:
+  $$E_1 = E_2 \\ \\Rightarrow\\ \\frac{kq}{x^2} = \\frac{kq}{(d-x)^2} \\ \\Rightarrow\\ x = \\frac{d}{2}$$
+  Lines between the charges curve outward; none connect the two charges directly.
+</div>
+<div class="th-concept">
+  <span class="th-label">Two Unlike Charges (+q and −q) — Electric Dipole Pattern</span>
+  Field lines emerge from $+q$ and curve around to enter $-q$. Lines are continuous arcs. The pattern is denser near the charges (strong field) and sparser farther away.
+</div>
+<div class="th-warn">
+  ⚠ At a neutral point the <strong>electric field is zero</strong> but the <strong>potential is not zero</strong>. These are different concepts — don't confuse them.
+</div>
+`;
+
+  T['phys_1_T14'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Dipole moment definition and direction is a <strong>guaranteed 1-mark MCQ/definition question</strong>. The formula $p = q \\cdot 2a$ is tested every year.
+</div>
+<div class="th-h2">Electric Dipole</div>
+<div class="th-concept">
+  <span class="th-label">Definition</span>
+  An <strong>electric dipole</strong> is a system of two equal and opposite point charges $+q$ and $-q$, separated by a small distance $2a$.
+</div>
+<div class="th-formula">
+  <span class="th-label">Dipole Moment</span>
+  $$\\vec{p} = q \\cdot 2a \\hat{n}$$
+  where $\\hat{n}$ is the unit vector pointing from $-q$ to $+q$.
+  <br>
+  Magnitude: $p = q \\times 2a$ &nbsp;·&nbsp; Unit: C·m
+</div>
+<div class="th-memo">
+  <strong>"P goes Plus-ward":</strong> Dipole moment points from the <em>negative</em> charge to the <em>positive</em> charge. Many students reverse this — it's the one direction trick worth memorising as a phrase.
+</div>
+<div class="th-warn">
+  ⚠ $2a$ is the <em>full</em> separation between charges (not half). If the problem says charges separated by distance $d$, then $2a = d$ and $p = qd$.
+</div>
+`;
+
+  T['phys_1_T15'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  <strong>Axial or equatorial field derivation is asked in EVERY ISC paper</strong> (3 marks). One of the two appears guaranteed — learn both cold.
+</div>
+<div class="th-h2">Electric Field of a Dipole</div>
+<div class="th-steps">
+  <span class="th-label">Axial Field — Derivation (3-mark)</span>
+  <ol>
+    <li>P is at distance $r$ from centre on the dipole axis. Force from $+q$ (at distance $r-a$) points away from $+q$ (toward P); force from $-q$ (at distance $r+a$) points toward $-q$ (also toward P — <em>same direction</em>!).</li>
+    <li>$E_+ = \\frac{kq}{(r-a)^2}$, $E_- = \\frac{kq}{(r+a)^2}$. Net field $= E_+ - E_-$ (subtract since they're antiparallel).</li>
+    <li>Simplify: $E_{axial} = \\frac{k \\cdot 2pr}{(r^2-a^2)^2} \\approx \\frac{2kp}{r^3}$ for $r \\gg a$.</li>
+  </ol>
+</div>
+<div class="th-steps">
+  <span class="th-label">Equatorial Field — Derivation (3-mark)</span>
+  <ol>
+    <li>P is on the perpendicular bisector at distance $r$. Both charges are equidistant at $\\sqrt{r^2+a^2}$.</li>
+    <li>$E_+ = E_- = \\frac{kq}{r^2+a^2}$. Vertical components cancel by symmetry; only horizontal (antiparallel to $\\vec{p}$) components survive.</li>
+    <li>$E_{eq} = 2E_+\\cos\\theta = \\frac{kp}{(r^2+a^2)^{3/2}} \\approx \\frac{kp}{r^3}$ for $r \\gg a$.</li>
+  </ol>
+</div>
+<div class="th-formula">
+  <span class="th-label">Short-dipole ($r \\gg a$) Comparison</span>
+  $$E_{axial} = \\frac{2kp}{r^3} \\quad (\\text{along } \\vec{p}) \\qquad E_{eq} = \\frac{kp}{r^3} \\quad (\\text{opposite to } \\vec{p})$$
+  $E_{axial} = 2 E_{eq}$ — the axial field is twice the equatorial field at the same distance.
+</div>
+`;
+
+  T['phys_1_T16'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Torque on dipole formula $\\tau = pE\\sin\\theta$ appears in <strong>3-mark derivations and MCQs</strong>. Stable/unstable equilibrium condition is a 1-mark standard question.
+</div>
+<div class="th-h2">Dipole in a Uniform External Field — Torque</div>
+<div class="th-concept">
+  <span class="th-label">Setup</span>
+  A dipole $\\vec{p}$ at angle $\\theta$ to a uniform field $\\vec{E}$. The $+q$ experiences force $+q\\vec{E}$ forward; $-q$ experiences $-q\\vec{E}$ backward. Equal magnitudes, opposite directions → a <strong>couple</strong> (torque, no net translational force).
+</div>
+<div class="th-formula">
+  <span class="th-label">Torque</span>
+  $$\\vec{\\tau} = \\vec{p} \\times \\vec{E} \\qquad |\\tau| = pE\\sin\\theta$$
+  Direction: tends to align $\\vec{p}$ with $\\vec{E}$ (i.e., torque acts to reduce $\\theta$).
+</div>
+<div class="th-h3">Equilibrium Positions</div>
+<table class="th-table">
+  <thead><tr><th>$\\theta$</th><th>$\\tau$</th><th>State</th></tr></thead>
+  <tbody>
+    <tr><td>$0°$</td><td>$0$</td><td><strong>Stable</strong> — any displacement brings it back</td></tr>
+    <tr><td>$180°$</td><td>$0$</td><td><strong>Unstable</strong> — any displacement takes it away</td></tr>
+    <tr><td>$90°$</td><td>$pE$ (max)</td><td>Maximum torque</td></tr>
+  </tbody>
+</table>
+`;
+
+  T['phys_1_T17'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Potential energy $U = -pE\\cos\\theta$ and work done formula appear in <strong>ISC 2022, 2024</strong> as 2–3 mark questions.
+</div>
+<div class="th-h2">Dipole in Uniform Field — Potential Energy</div>
+<div class="th-formula">
+  <span class="th-label">Potential Energy</span>
+  $$U = -\\vec{p} \\cdot \\vec{E} = -pE\\cos\\theta$$
+  Reference: $U = 0$ when $\\theta = 90°$ (dipole perpendicular to field).
+</div>
+<div class="th-concept">
+  <span class="th-label">Work Done to Rotate Dipole</span>
+  To rotate a dipole from angle $\\theta_1$ to $\\theta_2$ in field $E$:
+  $$W = U_2 - U_1 = pE(\\cos\\theta_1 - \\cos\\theta_2)$$
+</div>
+<div class="th-h3">Energy at Equilibrium Positions</div>
+<table class="th-table">
+  <thead><tr><th>$\\theta$</th><th>$U = -pE\\cos\\theta$</th><th>Stability</th></tr></thead>
+  <tbody>
+    <tr><td>$0°$</td><td>$-pE$ (minimum)</td><td>Stable</td></tr>
+    <tr><td>$90°$</td><td>$0$</td><td>Neutral</td></tr>
+    <tr><td>$180°$</td><td>$+pE$ (maximum)</td><td>Unstable</td></tr>
+  </tbody>
+</table>
+`;
+
+  T['phys_1_T18'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  <strong>Gauss's law statement + flux calculation</strong> is a guaranteed 2-mark question every year. Flux through a closed surface with $q$ inside.
+</div>
+<div class="th-h2">Electric Flux</div>
+<div class="th-formula">
+  <span class="th-label">Definition of Electric Flux</span>
+  $$\\Phi_E = \\vec{E} \\cdot \\vec{A} = EA\\cos\\theta$$
+  where $\\theta$ is the angle between $\\vec{E}$ and the area vector $\\hat{n}$ (outward normal to the surface).
+  Unit: N m² C⁻¹ or V m.
+</div>
+<div class="th-memo">
+  <strong>Sign of flux:</strong> Flux entering a surface = negative (field and $\\hat{n}$ are antiparallel). Flux leaving = positive. Net flux over a closed surface counts what <em>escapes minus what enters</em>.
+</div>
+<div class="th-h2">Gauss's Law</div>
+<div class="th-formula">
+  <span class="th-label">Statement</span>
+  The total electric flux through any closed surface (Gaussian surface) equals $\\frac{1}{\\varepsilon_0}$ times the net charge enclosed:
+  $$\\oint \\vec{E} \\cdot d\\vec{A} = \\frac{Q_{enc}}{\\varepsilon_0}$$
+</div>
+`;
+
+  T['phys_1_T19'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Proof of Gauss's law from Coulomb's law appears as a <strong>3-mark derivation question</strong> — write clearly that $\\oint d\\Omega = 4\\pi$.
+</div>
+<div class="th-h2">Proof of Gauss's Law</div>
+<div class="th-steps">
+  <span class="th-label">Derivation from Coulomb's Law (3-mark)</span>
+  <ol>
+    <li>Place charge $q$ at centre of a sphere of radius $r$. Field at every surface point: $E = \\frac{kq}{r^2}$, directed radially outward.</li>
+    <li>At every surface element $dA$, $\\vec{E}$ is parallel to $d\\vec{A}$ (both radially outward), so $\\cos\\theta = 1$.</li>
+    <li>Total flux: $\\Phi = \\oint E\\,dA = E \\oint dA = \\frac{kq}{r^2} \\cdot 4\\pi r^2 = 4\\pi kq$.</li>
+    <li>Substitute $k = \\frac{1}{4\\pi\\varepsilon_0}$: $\\Phi = \\frac{q}{\\varepsilon_0}$. ∎</li>
+  </ol>
+</div>
+<div class="th-concept">
+  <span class="th-label">Why the Shape of the Surface Doesn't Matter</span>
+  For any closed surface (not just a sphere), the solid angle subtended by $q$ at any surface element is the same. The $r^2$ in the area element cancels the $r^2$ in Coulomb's law. This is the deep reason: Gauss's law works because the field follows an <em>inverse-square law</em>.
+</div>
+`;
+
+  T['phys_1_T20'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  Choosing the right Gaussian surface is tested indirectly — <strong>exam problems give you the charge distribution and ask for E</strong>, so your surface choice determines whether the calculation is easy or impossible.
+</div>
+<div class="th-h2">Applying Gauss's Law — Strategy</div>
+<div class="th-concept">
+  <span class="th-label">Why Gauss's Law is Powerful (and Limited)</span>
+  Gauss's law is always true, but only gives a simple expression for $E$ when the field has <strong>high symmetry</strong> — so you can pull $E$ out of the integral ($E = $ constant on the surface).
+</div>
+<div class="th-h3">Three Canonical Geometries</div>
+<table class="th-table">
+  <thead><tr><th>Charge distribution</th><th>Symmetry</th><th>Gaussian surface</th></tr></thead>
+  <tbody>
+    <tr><td>Point charge / spherical shell</td><td>Spherical</td><td>Concentric sphere</td></tr>
+    <tr><td>Infinite line charge</td><td>Cylindrical</td><td>Coaxial cylinder</td></tr>
+    <tr><td>Infinite plane sheet</td><td>Planar</td><td>Pillbox (cylinder crossing the plane)</td></tr>
+  </tbody>
+</table>
+<div class="th-steps">
+  <span class="th-label">General Method</span>
+  <ol>
+    <li>Identify the symmetry of the charge distribution.</li>
+    <li>Choose a Gaussian surface where $E$ is constant and parallel to $d\\vec{A}$ (or zero and perpendicular).</li>
+    <li>Apply: $E \\cdot A_{surface} = Q_{enc}/\\varepsilon_0$, solve for $E$.</li>
+  </ol>
+</div>
+`;
+
+  T['phys_1_T21'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  E due to infinite line charge is a <strong>standard 3-mark derivation</strong>. Also appears as a numerical where you substitute $\\lambda$ and $r$.
+</div>
+<div class="th-h2">Application: E due to Infinite Line Charge</div>
+<div class="th-steps">
+  <span class="th-label">Derivation using Gauss's Law (3-mark)</span>
+  <ol>
+    <li>Charge on an infinite wire with linear charge density $\\lambda$ (C m⁻¹). By symmetry, $\\vec{E}$ is radially outward, perpendicular to the wire.</li>
+    <li>Choose a coaxial cylindrical Gaussian surface of radius $r$ and length $l$.</li>
+    <li>Flux through curved surface: $E \\cdot 2\\pi r l$ (E is constant and parallel to $dA$). Flux through flat ends = 0 (E is perpendicular to $dA$ there).</li>
+    <li>Charge enclosed: $Q_{enc} = \\lambda l$. Apply Gauss: $E \\cdot 2\\pi rl = \\lambda l / \\varepsilon_0$.</li>
+  </ol>
+</div>
+<div class="th-formula">
+  <span class="th-label">Result</span>
+  $$E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r}$$
+  Direction: radially outward for positive $\\lambda$; inward for negative $\\lambda$.
+  $E \\propto 1/r$ (not $1/r^2$ — it's a line, not a point).
+</div>
+`;
+
+  T['phys_1_T22'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  E due to infinite plane sheet appeared in <strong>ISC 2021, 2023</strong>. The result $E = \\sigma/2\\varepsilon_0$ must be stated with direction.
+</div>
+<div class="th-h2">Application: E due to Infinite Plane Sheet</div>
+<div class="th-steps">
+  <span class="th-label">Derivation (3-mark)</span>
+  <ol>
+    <li>Infinite sheet with uniform surface charge density $\\sigma$ (C m⁻²). By symmetry, $\\vec{E}$ is perpendicular to the sheet, pointing outward on both sides.</li>
+    <li>Choose a cylindrical "pillbox" Gaussian surface with cross-sectional area $A$, crossing the sheet symmetrically.</li>
+    <li>Flux through two flat ends: $E \\cdot A + E \\cdot A = 2EA$ (both ends contribute; curved surface flux = 0).</li>
+    <li>Charge enclosed: $Q_{enc} = \\sigma A$. Apply Gauss: $2EA = \\sigma A / \\varepsilon_0$.</li>
+  </ol>
+</div>
+<div class="th-formula">
+  <span class="th-label">Result</span>
+  $$E = \\frac{\\sigma}{2\\varepsilon_0}$$
+  <strong>Independent of distance</strong> from the sheet. The field is uniform on each side. Direction: away from sheet if $\\sigma > 0$.
+</div>
+<div class="th-memo">
+  <strong>Two parallel plates (capacitor):</strong> Between the plates, fields add → $E = \\sigma/\\varepsilon_0$. Outside, they cancel → $E = 0$.
+</div>
+`;
+
+  T['phys_1_T23'] = `
+<div class="th-pyq">
+  <span class="th-label">ISC Pattern</span>
+  E inside/outside a spherical shell is asked in <strong>every alternate year</strong>. Both cases (inside = 0, outside = kQ/r²) with derivation = 3 marks.
+</div>
+<div class="th-h2">Application: E due to Uniformly Charged Spherical Shell</div>
+<div class="th-steps">
+  <span class="th-label">Case 1 — Outside the shell ($r > R$)</span>
+  <ol>
+    <li>Draw a concentric spherical Gaussian surface of radius $r > R$.</li>
+    <li>By symmetry, $E$ is constant and radially outward on this surface.</li>
+    <li>Flux: $E \\cdot 4\\pi r^2 = Q/\\varepsilon_0$.</li>
+    <li>$E = \\frac{Q}{4\\pi\\varepsilon_0 r^2} = \\frac{kQ}{r^2}$ — same as a point charge at the centre.</li>
+  </ol>
+</div>
+<div class="th-steps">
+  <span class="th-label">Case 2 — Inside the shell ($r < R$)</span>
+  <ol>
+    <li>Draw a concentric Gaussian sphere of radius $r < R$.</li>
+    <li>No charge is enclosed: $Q_{enc} = 0$.</li>
+    <li>Gauss: $E \\cdot 4\\pi r^2 = 0$, so $E = 0$.</li>
+  </ol>
+</div>
+<div class="th-formula">
+  <span class="th-label">Summary</span>
+  $$E = \\begin{cases} 0 & r < R \\\\ \\frac{kQ}{r^2} & r \\geq R \\end{cases}$$
+</div>
+<div class="th-warn">
+  ⚠ <strong>Shell theorem:</strong> Inside is zero because the charge is uniformly spread on the surface — every small element's contribution cancels with the one on the opposite side. The key condition is <em>uniform distribution</em>. A non-uniform shell would not give $E = 0$ inside.
+</div>
+`;
+
   // ── Apply patches to CONTENT ──
-  let applied = 0;
+  let applied = 0, topicApplied = 0;
   const SUBS = Object.keys(window.CONTENT);
   SUBS.forEach(sub => {
     (window.CONTENT[sub] || []).forEach(ch => {
       if (T[ch.id]) { ch.theory = T[ch.id]; applied++; }
+      // Per-topic theory patch: T['phys_1_T1'] etc.
+      (ch.parts || []).forEach(part => {
+        (part.topics || []).forEach(topic => {
+          const key = ch.id + '_' + topic.id;
+          if (T[key] && (!topic.theory || topic.theory.length < 50)) {
+            topic.theory = T[key];
+            topicApplied++;
+          }
+        });
+      });
     });
   });
-  console.log('[TheoryV2] patched ' + applied + ' chapters with visual theory (v42p42)');
+  console.log('[TheoryV2] patched ' + applied + ' chapters + ' + topicApplied + ' topics (v42p63)');
 })();

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>StudyDeck — ISC PCM</title>
+<title>StudyDeck &mdash; ISC PCM</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%234F46E5' d='M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z'/></svg>" />
 <link rel="apple-touch-icon" href="icon-512.png" />
 <link rel="manifest" href="manifest.json" />
@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-<!-- NO body-level auto-render — engine.js controls KaTeX scope to avoid double-render bugs -->
+<!-- NO body-level auto-render &mdash; engine.js controls KaTeX scope to avoid double-render bugs -->
 <!-- The double-render was matching bare parentheses as math after \( markers got stripped on first pass -->
 
 <style>
@@ -36,6 +36,10 @@
   html,body{background:var(--bg);color:var(--ink);font-family:'Geist',system-ui,sans-serif;font-size:15px;line-height:1.5;letter-spacing:-0.005em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
   body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 800px 400px at 15% -10%,rgba(30,58,255,0.06),transparent 60%),radial-gradient(ellipse 600px 400px at 95% 110%,rgba(200,144,43,0.05),transparent 55%);pointer-events:none;z-index:0;}
   .app{max-width:1180px;margin:0 auto;padding:28px 32px 96px;position:relative;z-index:1;}
+  /* PWA Window Controls Overlay â€” hides OS title bar, adds safe padding */
+  @media (display-mode: window-controls-overlay) {
+    .app{padding-top:calc(env(titlebar-area-height, 30px) + 12px);}
+  }
 
   /* HEADER */
   .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:16px;flex-wrap:wrap;}
@@ -247,7 +251,7 @@
   .theory-content strong{font-weight:600;color:var(--accent);}
   .theory-content code{font-family:'Geist Mono',monospace;font-size:13px;background:var(--accent-soft);padding:2px 6px;border-radius:4px;color:var(--accent);}
   .theory-content .formula{display:block;font-family:'Geist Mono',monospace;font-size:16px;background:var(--bg);padding:14px 18px;border-radius:var(--radius-sm);margin:12px 0;border-left:2px solid var(--accent);}
-  /* ── THEORY V2 VISUAL SYSTEM ── */
+  /* &#x2500;&#x2500; THEORY V2 VISUAL SYSTEM &#x2500;&#x2500; */
   .th-h2{font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:var(--ink);margin:28px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--line);letter-spacing:-0.02em;}
   .th-h3{font-size:11px;font-weight:700;color:var(--ink-soft);margin:18px 0 8px;text-transform:uppercase;letter-spacing:0.1em;}
   .th-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;display:block;}
@@ -267,6 +271,7 @@
   .th-table tr:last-child td{border-bottom:none;}
   .th-table tr:nth-child(even) td{background:rgba(0,0,0,0.02);}
   .th-steps{list-style:none;margin:10px 0 14px;padding:0;counter-reset:th-step;}
+  .th-steps ol{list-style:none;padding:0;margin:6px 0 0;}
   .th-steps li{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:14px;line-height:1.6;counter-increment:th-step;}
   .th-steps li::before{content:counter(th-step);min-width:22px;height:22px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px;font-family:'Geist Mono',monospace;}
   .th-tag{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:600;padding:2px 8px;border-radius:100px;font-family:'Geist Mono',monospace;margin:2px;}
@@ -274,7 +279,7 @@
   .th-tag.green{background:var(--success-soft);color:var(--success);}
   .th-tag.red{background:var(--danger-soft);color:var(--danger);}
   .th-grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
-  /* ──────────────────────────────────── */
+  /* &#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500; */
   .modal-hint{font-size:13px;color:var(--ink-muted);margin-bottom:14px;cursor:pointer;user-select:none;}
   .modal-hint:hover{color:var(--ink-soft);}
   .modal-hint-content{display:none;padding:14px 18px;background:var(--gold-soft);border-radius:var(--radius-sm);font-size:13px;margin-top:8px;color:#6B4D14;border-left:2px solid var(--gold);}
@@ -390,7 +395,7 @@
   .week-day .wd-name{font-family:'Geist Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-muted);font-weight:500;}
   .week-day .wd-num{font-family:'Fraunces',serif;font-weight:400;font-size:24px;margin:4px 0 6px;letter-spacing:-0.02em;}
   .week-day .wd-task{font-size:11px;color:var(--ink-soft);line-height:1.3;min-height:28px;}
-  .week-day.done .wd-num::after{content:' ✓';color:var(--success);font-size:18px;}
+  .week-day.done .wd-num::after{content:' &#x2713;';color:var(--success);font-size:18px;}
 
   /* POMODORO BLOCKS */
   .pomos{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
@@ -405,14 +410,14 @@
   .pomo.chemistry .p-subj{color:var(--success);}
   .pomo .p-check{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line);transition:all 0.2s;}
   .pomo.done .p-check{background:var(--success);border-color:var(--success);}
-  .pomo.done .p-check::after{content:'✓';color:white;font-size:12px;font-weight:700;display:block;text-align:center;line-height:18px;}
+  .pomo.done .p-check::after{content:'&#x2713;';color:white;font-size:12px;font-weight:700;display:block;text-align:center;line-height:18px;}
 
   /* PHASE TIMELINE */
   .phases{display:flex;flex-direction:column;gap:8px;}
   .phase-row{display:grid;grid-template-columns:50px 1fr 160px;gap:16px;align-items:center;background:var(--bg-elev);border:0.5px solid var(--line);border-radius:var(--radius-md);padding:14px 18px;transition:all 0.2s;}
   .phase-row.active{border-color:var(--accent);background:linear-gradient(90deg,var(--accent-soft),var(--bg-elev) 60%);box-shadow:0 0 0 3px var(--accent-soft);}
   .phase-row.past{opacity:0.55;}
-  .phase-row.past .phase-name::after{content:' ✓';color:var(--success);}
+  .phase-row.past .phase-name::after{content:' &#x2713;';color:var(--success);}
   .phase-num{font-family:'Fraunces',serif;font-weight:300;font-size:28px;color:var(--ink-muted);letter-spacing:-0.02em;}
   .phase-row.active .phase-num{color:var(--accent);font-weight:400;}
   .phase-name{font-family:'Fraunces',serif;font-weight:500;font-size:16px;letter-spacing:-0.01em;}
@@ -458,6 +463,62 @@
   }
 
   @media (max-width:700px){.app{padding:20px 18px 80px;}.today{padding:32px 24px;border-radius:24px;}.subject-hero{padding:24px 20px;flex-direction:column;text-align:center;}.subject-hero-icon{font-size:48px;}.chapter-hero{padding:28px 24px;}.part{padding:22px 20px;border-radius:22px;}.header-stats{gap:6px;}.stat-chip{padding:7px 12px;font-size:12px;}}
+
+  /* â”€â”€ Coaching Layer (v57) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ELI5 block */
+  .th-eli5{background:linear-gradient(135deg,rgba(251,191,36,.12),rgba(245,158,11,.07));border:1.5px solid rgba(251,191,36,.32);border-radius:14px;padding:18px 20px;margin:0 0 22px;}
+  .eli5-head{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#92400e;margin-bottom:7px;opacity:.8;}
+  .eli5-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:9px;letter-spacing:-0.015em;}
+  .eli5-body{font-size:14px;color:var(--ink-soft);line-height:1.68;margin-bottom:12px;}
+  .eli5-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .eli5-cell{background:rgba(255,255,255,.6);border-radius:8px;padding:9px 12px;font-size:12.5px;color:var(--ink-soft);line-height:1.5;}
+  .eli5-cell strong{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#92400e;margin-bottom:3px;}
+  @media(prefers-color-scheme:dark){.th-eli5{background:linear-gradient(135deg,rgba(251,191,36,.08),rgba(245,158,11,.04));}.eli5-cell{background:rgba(0,0,0,.2);}}
+  @media(max-width:520px){.eli5-row{grid-template-columns:1fr;}}
+  /* WHY and MISTAKE inline blocks */
+  .th-why{background:rgba(30,58,255,.06);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:9px 14px;margin:10px 0 14px;font-size:13.5px;color:var(--ink-soft);line-height:1.6;}
+  .th-why::before{content:'WHY \2014\2003';font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);opacity:.8;}
+  .th-mistake{background:rgba(192,52,52,.07);border-left:3px solid var(--danger);border-radius:0 8px 8px 0;padding:9px 14px;margin:10px 0 14px;font-size:13.5px;color:var(--ink-soft);line-height:1.6;}
+  .th-mistake::before{content:'COMMON MISTAKE \2014\2003';font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--danger);}
+  /* Level toggle */
+  .theory-lv-bar{display:flex;align-items:center;gap:8px;padding:8px 0 12px;border-bottom:1px solid var(--line);margin-bottom:12px;flex-wrap:wrap;}
+  .theory-lv-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-muted);flex-shrink:0;}
+  .lv-pills{display:flex;gap:4px;}
+  .lv-pill{background:transparent;border:1.5px solid var(--line);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:600;color:var(--ink-muted);cursor:pointer;transition:all .15s;font-family:'Geist',sans-serif;}
+  .lv-pill.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .lv-pill:hover:not(.active){border-color:var(--accent);color:var(--accent);}
+  /* Level 1 shows ELI5 and WHY blocks; lv2 (default) hides them */
+  .lv1-only{display:none!important;}
+  #theoryView.lv1 .lv1-only{display:block!important;}
+  /* Micro-Practice */
+  .micro-practice{background:rgba(30,58,255,.04);border:1.5px dashed rgba(30,58,255,.2);border-radius:12px;padding:16px 18px;margin:24px 0 0;}
+  .mp-header{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;opacity:.8;}
+  .mp-card{background:var(--bg-elev);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:8px;}
+  .mp-card:last-child{margin-bottom:0;}
+  .mp-q{font-size:14px;color:var(--ink);margin-bottom:10px;line-height:1.55;}
+  .mp-opts{display:flex;flex-direction:column;gap:5px;}
+  .mp-opt{background:rgba(30,58,255,.05);border:1.5px solid transparent;border-radius:8px;padding:7px 12px;font-size:13px;color:var(--ink-soft);cursor:pointer;text-align:left;transition:all .14s;font-family:'Geist',sans-serif;display:flex;align-items:center;gap:8px;}
+  .mp-opt-letter{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;opacity:.5;flex-shrink:0;}
+  .mp-opt:hover:not(.disabled){border-color:var(--accent);}
+  .mp-opt.correct{background:var(--success-soft);border-color:var(--success);color:#0A5530;}
+  .mp-opt.wrong{background:var(--danger-soft);border-color:var(--danger);color:#8A1F1F;}
+  .mp-opt.disabled{pointer-events:none;}
+  /* Attention Reset Hook card */
+  #theoryView{position:relative;overflow:visible;}
+  .hook-card{position:sticky;bottom:16px;left:0;right:0;background:var(--bg-elev);border:2px solid var(--accent);border-radius:16px;padding:15px 18px;box-shadow:0 8px 32px rgba(30,58,255,.18),0 2px 8px rgba(15,15,20,.08);z-index:20;transform:translateY(20px);transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .35s;opacity:0;pointer-events:none;margin-top:8px;}
+  .hook-card.show{transform:translateY(0);opacity:1;pointer-events:auto;}
+  .hook-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;}
+  .hook-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+  .hook-skip{background:transparent;border:none;color:var(--ink-muted);font-size:12px;cursor:pointer;padding:0;font-family:'Geist',sans-serif;}
+  .hook-skip:hover{color:var(--ink-soft);}
+  .hook-q{font-size:14px;color:var(--ink);line-height:1.55;margin-bottom:10px;}
+  .hook-opts{display:flex;flex-direction:column;gap:5px;}
+  .hook-opt{background:rgba(30,58,255,.05);border:1.5px solid transparent;border-radius:8px;padding:7px 12px;font-size:13px;color:var(--ink-soft);cursor:pointer;text-align:left;transition:all .14s;font-family:'Geist',sans-serif;display:flex;align-items:center;gap:8px;}
+  .hook-opt-letter{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;opacity:.5;flex-shrink:0;}
+  .hook-opt:hover:not(.disabled){border-color:var(--accent);}
+  .hook-opt.correct{background:var(--success-soft);border-color:var(--success);color:#0A5530;}
+  .hook-opt.wrong{background:var(--danger-soft);border-color:var(--danger);}
+  .hook-opt.disabled{pointer-events:none;}
 </style>
 </head>
 <body>
@@ -470,10 +531,10 @@
       <div class="brand-name">Study<em>Deck</em></div>
     </div>
     <div class="header-stats">
-      <div class="stat-chip level-chip"><span class="icon">◆</span><span id="levelVal">1</span><span class="label" id="levelName">Initiate</span></div>
-      <div class="stat-chip streak-chip"><span class="icon">🔥</span><span id="streakVal">0</span><span class="label">day</span></div>
-      <div class="stat-chip"><span class="icon" style="color:var(--gold);">✦</span><span id="xpVal">0</span><span class="label">xp</span></div>
-      <div class="stat-chip shield-chip" id="shieldChip" style="display:none;"><span class="icon">🛡</span><span id="shieldVal">0</span></div>
+      <div class="stat-chip level-chip"><span class="icon">&#x25C6;</span><span id="levelVal">1</span><span class="label" id="levelName">Initiate</span></div>
+      <div class="stat-chip streak-chip"><span class="icon">&#x1F525;</span><span id="streakVal">0</span><span class="label">day</span></div>
+      <div class="stat-chip"><span class="icon" style="color:var(--gold);">&#x2726;</span><span id="xpVal">0</span><span class="label">xp</span></div>
+      <div class="stat-chip shield-chip" id="shieldChip" style="display:none;"><span class="icon">&#x1F6E1;</span><span id="shieldVal">0</span></div>
       <button class="icon-btn" onclick="openExport()" title="Export progress">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
       </button>
@@ -488,7 +549,7 @@
     <div class="level-bar"><div class="level-bar-fill" id="levelBarFill" style="width:0%;"></div></div>
   </div>
 
-  <div class="day-warning" id="dayWarning" style="display:none;"><span style=”font-size:20px;”>&#x1F525;</span><span class="day-warning-text">Your day-streak is about to break — solve one problem to keep it alive.</span></div>
+  <div class="day-warning" id="dayWarning" style="display:none;"><span style="font-size:20px;">&#x1F525;</span><span class="day-warning-text">Your day-streak is about to break &mdash; solve one problem to keep it alive.</span></div>
 
   <div class="nav-tabs fade-in delay-1">
     <button class="nav-tab active" id="navTabMission" onclick="setView('mission')"><span class="nav-dot"></span>Mission</button>
@@ -508,7 +569,7 @@
     <div class="section-header"><h2 class="section-title">Your <em>numbers</em></h2></div>
     <div class="stats-grid">
       <div class="stat-card"><div class="stat-card-label">Solved</div><div class="stat-card-value" id="solvedVal">0</div><div class="stat-card-sub">problems total</div></div>
-      <div class="stat-card"><div class="stat-card-label">Accuracy</div><div class="stat-card-value"><span id="accuracyVal">—</span></div><div class="stat-card-sub" id="accuracyDetail">no attempts yet</div></div>
+      <div class="stat-card"><div class="stat-card-label">Accuracy</div><div class="stat-card-value"><span id="accuracyVal">&mdash;</span></div><div class="stat-card-sub" id="accuracyDetail">no attempts yet</div></div>
       <div class="stat-card"><div class="stat-card-label">Best streak</div><div class="stat-card-value" id="bestStreakVal">0</div><div class="stat-card-sub">consecutive correct</div></div>
       <div class="stat-card"><div class="stat-card-label">Mastered</div><div class="stat-card-value"><span id="masteredVal">0</span><span style="color:var(--ink-muted);font-size:24px;" id="masteredTotal">/0</span></div><div class="stat-card-sub">topics complete</div></div>
     </div>
@@ -528,20 +589,31 @@
     <div class="timer-bar"><div class="timer-bar-fill" id="timerBarFill"></div></div>
     <div class="modal-body" id="modalBody">
       <div id="practiceView">
-        <div class="modal-topic" id="modalTopic">Loading…</div>
-        <h3 class="modal-question" id="modalQuestion">Loading…</h3>
+        <div class="modal-topic" id="modalTopic">Loading&hellip;</div>
+        <h3 class="modal-question" id="modalQuestion">Loading&hellip;</h3>
         <div id="answerArea"></div>
-        <div class="modal-hint" id="modalHint" onclick="toggleHint()"><span style="opacity:0.6;">&#x21B3;</span><span id="hintLabel"> Show hint</span><div class="modal-hint-content" id="modalHintContent"></div></div>
+        <div class="modal-hint" id="modalHint" onclick="stepHint()"><span style="opacity:0.6;">&#x21B3;</span><span id="hintLabel"> Need a nudge?</span><div class="modal-hint-content" id="modalHintContent"></div></div>
         <div class="modal-feedback" id="modalFeedback"><div class="feedback-title" id="feedbackTitle"></div><div class="feedback-explain" id="feedbackExplain"></div><div class="feedback-bonus" id="feedbackBonus"></div></div>
       </div>
-      <div id="theoryView" style="display:none;"><div class="theory-content" id="theoryContent"></div></div>
+      <div id="theoryView" style="display:none;">
+        <div class="theory-lv-bar">
+          <span class="theory-lv-label">Mode</span>
+          <div class="lv-pills">
+            <button class="lv-pill" id="lvPill1" onclick="setLevel(1)">Beginner</button>
+            <button class="lv-pill active" id="lvPill2" onclick="setLevel(2)">Core</button>
+            <button class="lv-pill" id="lvPill3" onclick="setLevel(3)">Exam</button>
+          </div>
+        </div>
+        <div class="theory-content" id="theoryContent"></div>
+        <div class="hook-card" id="hookCard"></div>
+      </div>
       <div class="complete" id="completeView"><div class="complete-emoji">&#x2726;</div><h3 class="complete-title">Topic <em>cleared</em></h3><p class="complete-sub">On a roll? Next topic auto-loaded.</p><div class="complete-stats"><div><div class="complete-stat-val" id="completeScore">0/0</div><div class="complete-stat-lbl">score</div></div><div><div class="complete-stat-val" id="completeXP">+0</div><div class="complete-stat-lbl">xp earned</div></div></div></div>
     </div>
     <div class="modal-foot"><button class="btn btn-ghost" onclick="closeModal()">Exit</button><button class="btn btn-primary" id="modalSubmit" onclick="submitAnswer()">Check</button></div>
   </div>
 </div>
 
-<div class="mystery-overlay" id="mysteryOverlay"><div class="mystery-box"><div class="mystery-emoji" id="mysteryEmoji">&#x1F389;</div><h3 class="mystery-title">Mystery <em>reward</em></h3><p class="mystery-reward" id="mysteryReward">Loading…</p><button class="btn btn-primary" onclick="closeMystery()">Take it</button></div></div>
+<div class="mystery-overlay" id="mysteryOverlay"><div class="mystery-box"><div class="mystery-emoji" id="mysteryEmoji">&#x1F389;</div><h3 class="mystery-title">Mystery <em>reward</em></h3><p class="mystery-reward" id="mysteryReward">Loading&hellip;</p><button class="btn btn-primary" onclick="closeMystery()">Take it</button></div></div>
 
 <!-- MOCK CONFIG -->
 <div class="export-overlay" id="mockConfigOverlay">
@@ -581,7 +653,7 @@
     <div class="modal-body" style="display:grid;grid-template-columns:1fr 140px;gap:20px;">
       <div>
         <div class="modal-topic" id="mockTopic" style="margin-bottom:14px;">Topic</div>
-        <h3 class="modal-question" id="mockQuestion">Loading…</h3>
+        <h3 class="modal-question" id="mockQuestion">Loading&hellip;</h3>
         <div id="mockAnswerArea"></div>
       </div>
       <div style="border-left:0.5px solid var(--line);padding-left:16px;">
@@ -601,8 +673,8 @@
   <div class="modal" style="width:min(640px, calc(100vw - 32px));">
     <div class="modal-head"><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--ink-soft);">Mock results</div><button class="modal-close" onclick="closeMockResults()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
     <div class="modal-body" style="text-align:center;">
-      <div style="font-family:'Fraunces',serif;font-size:56px;font-weight:300;line-height:1;margin-bottom:8px;letter-spacing:-0.03em;" id="mockResultPct">—</div>
-      <div style="font-family:'Geist Mono',monospace;font-size:14px;color:var(--ink-soft);margin-bottom:6px;" id="mockResultScore">— / —</div>
+      <div style="font-family:'Fraunces',serif;font-size:56px;font-weight:300;line-height:1;margin-bottom:8px;letter-spacing:-0.03em;" id="mockResultPct">&mdash;</div>
+      <div style="font-family:'Geist Mono',monospace;font-size:14px;color:var(--ink-soft);margin-bottom:6px;" id="mockResultScore">&mdash; / &mdash;</div>
       <div style="font-family:'Fraunces',serif;font-style:italic;font-size:20px;font-weight:400;margin-bottom:24px;" id="mockResultTitle">Result</div>
       <div style="text-align:left;">
         <div style="font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink-muted);margin-bottom:10px;">By section</div>
@@ -638,41 +710,41 @@
 <div class="ach-popup" id="achPopup"><div class="ach-popup-icon" id="achPopupIcon">&#x2605;</div><div><div class="ach-popup-meta">Achievement unlocked</div><div class="ach-popup-name" id="achPopupName">First Spark</div><div class="ach-popup-desc" id="achPopupDesc">First correct answer</div></div></div>
 
 <!-- Master content files: each ISC chapter has theory + Nootan/OP Malhotra textbook part + PYQ part -->
-<script src="content_phys_master.js?v=42p55"></script>
-<script src="content_chem_master.js?v=42p55"></script>
-<script src="content_math_master.js?v=42p55"></script>
+<script src="content_phys_master.js?v=42p63"></script>
+<script src="content_chem_master.js?v=42p63"></script>
+<script src="content_math_master.js?v=42p63"></script>
 <!-- NCERT Exemplar supplementary banks -->
 <script src="content_phys_exemplar.js"></script>
 <script src="content_chem_exemplar.js"></script>
 <script src="content_math_exemplar.js"></script>
 <!-- Arihant All-in-One MCQ banks (auto-generated, 549 verified MCQs) -->
-<script src="content_phys_arihant.js?v=42p55"></script>
-<script src="content_chem_arihant.js?v=42p55"></script>
-<script src="content_math_arihant.js?v=42p55"></script>
+<script src="content_phys_arihant.js?v=42p63"></script>
+<script src="content_chem_arihant.js?v=42p63"></script>
+<script src="content_math_arihant.js?v=42p63"></script>
 <!-- Per-section keyword maps for V38 topic&#x2192;practice filtering -->
-<script src="content_keywords.js?v=42p55"></script>
+<script src="content_keywords.js?v=42p63"></script>
 <!-- Per-question difficulty + section map (1797 questions, agent-graded) -->
-<script src="content_difficulty.js?v=42p55"></script>
+<script src="content_difficulty.js?v=42p63"></script>
 <!-- NCERT Exemplar difficulty tags (225 more questions) -->
-<script src="content_exemplar_difficulty.js?v=42p55"></script>
+<script src="content_exemplar_difficulty.js?v=42p63"></script>
 <!-- ISC PCM 2026-27 marks-weight per chapter -->
-<script src="content_isc_weights.js?v=42p55"></script>
+<script src="content_isc_weights.js?v=42p63"></script>
 <!-- Cross-chapter concept index (200 concepts) -->
-<script src="content_concept_index.js?v=42p55"></script>
+<script src="content_concept_index.js?v=42p63"></script>
 <!-- Auto-extracted glossary -->
-<script src="content_glossary.js?v=42p55"></script>
-<!-- Agent-generated solutions/hints/mnemonics/worked-examples (V65) — 1737 entries, 36 chapters -->
-<script src="content_solutions.js?v=42p55"></script>
+<script src="content_glossary.js?v=42p63"></script>
+<!-- Agent-generated solutions/hints/mnemonics/worked-examples (V65) &mdash; 1737 entries, 36 chapters -->
+<script src="content_solutions.js?v=42p63"></script>
 <!-- OCR confidence bundle (V66 A5 indicator) -->
-<script src="content_ocr_confidence.js?v=42p55"></script>
+<script src="content_ocr_confidence.js?v=42p63"></script>
 <!-- SVG diagram templates (39 Physics motifs + meta for V63 gallery) -->
-<script src="content/diagrams/svg_templates.js?v=42p55"></script>
+<script src="content/diagrams/svg_templates.js?v=42p63"></script>
 <!-- Periodic Table widget (V61: chem_4 d-/f-block + chem_5 coordination) -->
-<script src="content/widgets/periodic_table.js?v=42p55"></script>
+<script src="content/widgets/periodic_table.js?v=42p63"></script>
 <!-- Organic mechanism cards (V62: chem_6/_7/_8/_9) -->
-<script src="content/widgets/organic_mechanisms.js?v=42p55"></script>
+<script src="content/widgets/organic_mechanisms.js?v=42p63"></script>
 <!-- Engine -->
-<!-- ─── Firebase Cloud Sync — config auto-filled via CLI ─────────────── -->
+<!-- &#x2500;&#x2500;&#x2500; Firebase Cloud Sync &mdash; config auto-filled via CLI &#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500; -->
 <script>
 window.STUDYDECK_FIREBASE = {
   apiKey:            "AIzaSyASG33xEo6CXazYz2X-omV0hs-u3dWX3i8",
@@ -687,15 +759,24 @@ window.STUDYDECK_FIREBASE = {
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-<script src="engine.js?v=42p55"></script>
-<!-- Question/theory corrections — applied AFTER engine.js so V42 ids exist. Mutates window.CONTENT in place. -->
-<script src="content_corrections.js?v=42p55"></script>
-<!-- Theory V2 — ISC-specific visual theory, replaces OCR'd Arihant text per chapter -->
-<script src="content_theory_v2.js?v=42p55"></script>
-<!-- V67-V69 derivation data — must load after content bundles -->
-<script src="content_derivations.js?v=42p55"></script>
-<!-- Cloud sync — loads after all content so saveState() is already defined -->
-<script src="firebase_sync.js?v=42p55"></script>
+<script src="engine.js?v=42p63"></script>
+<!-- Question/theory corrections &mdash; applied AFTER engine.js so V42 ids exist. Mutates window.CONTENT in place. -->
+<script src="content_corrections.js?v=42p63"></script>
+<!-- Theory V2 &mdash; ISC-specific visual theory, replaces OCR'd Arihant text per chapter -->
+<script src="content_theory_v2.js?v=42p63"></script>
+<!-- V42p56 &mdash; 20 interactive simulators, one per key concept -->
+<script src="content_sims.js?v=42p63"></script>
+<!-- V42p57 coaching layer: ELI5 blocks &middot; level toggle &middot; attention hook &middot; micro-practice -->
+<script src="content_beginner.js?v=42p63"></script>
+<!-- V67-V69 derivation data &mdash; must load after content bundles -->
+<script src="content_derivations.js?v=42p63"></script>
+<!-- Cloud sync &mdash; loads after all content so saveState() is already defined -->
+<script src="firebase_sync.js?v=42p63"></script>
 </body>
 </html>
+
+
+
+
+
 

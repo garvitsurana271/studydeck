@@ -80,7 +80,8 @@ const DEFAULT_STATE = {
   chaptersExpanded: false,
   // ===== NEW: plan view =====
   stealth: false,
-  planChecks: {}, // { 'YYYY-MM-DD': { core: bool, bonus: bool, pomos: [bool\u00D75] } }
+  satHoliday: false, // true = this Saturday has no school (affects week strip + daily template)
+  planChecks: {}, // { 'YYYY-MM-DD': { core: bool, bonus: bool, pomos: [bool\u00D76] } }
 };
 let state = loadState();
 let session = { topicFullId: null, problems: [], idx: 0, correct: 0, xpEarned: 0, mixed: false };
@@ -444,13 +445,30 @@ const PLAN_BLOCKS = [
   { time:'8:30 PM',  label:'Optional 1 hr',     desc:'Light review or HW. Never new theory.', pill:'bonus', range:[20.5,21.5], stealthDesc:'Optional review' },
   { time:'12:00 AM', label:'Sleep',             desc:'Lights out.', pill:'rest', range:[0,6] },
 ];
+const PLAN_BLOCKS_SUN = [
+  { time:'Wake',     label:'Free morning',          desc:'No alarm. No school. Eat, scroll, exist.', pill:'rest', range:[0,15] },
+  { time:'3:00 PM',  label:'Mock test',             desc:'60 min · one full PYQ section or in-app mock · timer on, phone away.', pill:'core', range:[15,16], stealthDesc:'Study session' },
+  { time:'4:00 PM',  label:'Review + error analysis',desc:'30 min · mark every answer, find every gap, note the chapter.', pill:'core', range:[16,16.5], stealthDesc:'Review' },
+  { time:'4:30 PM',  label:'Drill weak topic',      desc:'30 min · StudyDeck drill mode · chapter you scored worst on.', pill:'core', range:[16.5,17], stealthDesc:'Drill session' },
+  { time:'5:00 PM',  label:'New chapter — theory',  desc:'30 min · open next week\'s chapter · read ELI5 + first two topics.', pill:'bonus', range:[17,17.5], stealthDesc:'Theory reading' },
+  { time:'5:30 PM',  label:'Practice MCQs',         desc:'30 min · drill the topics you just read · tap every one.', pill:'bonus', range:[17.5,18], stealthDesc:'Practice' },
+  { time:'6:00 PM',  label:'Evening free',          desc:'Done. 3 hrs done. Everything after is pure bonus.', pill:'rest', range:[18,24] },
+];
+const PLAN_BLOCKS_SAT_OFF = [
+  { time:'Wake',     label:'Free morning',          desc:'No school today. Lazy start.', pill:'rest', range:[0,14] },
+  { time:'2:00 PM',  label:'Decompress',            desc:'~90 min. No guilt.', pill:'sacred', range:[14,15.5], stealthDesc:'Break time' },
+  { time:'3:30 PM',  label:'Core block · 6×25 min', desc:'Two extra blocks vs weekday. Use them.', pill:'core', range:[15.5,18.5], stealthDesc:'Study session' },
+  { time:'6:30 PM',  label:'Dinner + chill',        desc:'Eat, breathe.', pill:'rest', range:[18.5,19.5] },
+  { time:'7:30 PM',  label:'Optional 1 hr',         desc:'Light review. Never new theory.', pill:'bonus', range:[19.5,20.5], stealthDesc:'Optional review' },
+  { time:'12:00 AM', label:'Sleep',                 desc:'Lights out.', pill:'rest', range:[0,6] },
+];
 const PLAN_RULES = [
   { t:'3:20\u20135 PM is sacred',  d:'Doomscroll without guilt. It\'s planned for.' },
   { t:'No zero days',         d:'5 PM block starts no matter what. One Pomodoro counts.' },
   { t:'One subject per block',d:'No mid-block switching. Ever.' },
   { t:'8:30 is bonus',        d:'Never a debt. Skip it freely.' },
   { t:'Hyperfocus = bonus',   d:'Low days = ONE block. The rule is: no zero.' },
-  { t:'Sunday plans the week',d:'Even 30 min. Non-negotiable.' },
+  { t:'Sunday = study day',    d:'Free morning. Same 5 PM core block. No planning sessions.' },
 ];
 const PLAN_POMOS = [
   { n:'01', time:'5:00\u20135:25', subj:'Maths',     subjKey:'Maths',     cls:'maths' },
@@ -458,6 +476,14 @@ const PLAN_POMOS = [
   { n:'03', time:'6:00\u20136:25', subj:'Maths',     subjKey:'Maths',     cls:'maths' },
   { n:'04', time:'6:35\u20137:00', subj:'Physics',   subjKey:'Physics',   cls:'physics' },
   { n:'05', time:'7:05\u20137:30', subj:'Chemistry', subjKey:'Chemistry', cls:'chemistry' },
+];
+const PLAN_POMOS_SUN = [
+  { n:'01', time:'3:00\u20134:00', subj:'Mock test',      cls:'physics',   desc:'Full PYQ section or in-app mock \u00b7 timer on, phone away' },
+  { n:'02', time:'4:00\u20134:30', subj:'Error analysis', cls:'maths',     desc:'Mark every answer \u00b7 find every gap \u00b7 note the chapter' },
+  { n:'03', time:'4:30\u20135:00', subj:'Drill weakness', cls:'chemistry', desc:'StudyDeck drill on the chapter you scored worst on' },
+  { n:'04', time:'5:00\u20135:30', subj:'New theory',     cls:'maths',     desc:'Next chapter \u00b7 ELI5 + first two topics only' },
+  { n:'05', time:'5:30\u20136:00', subj:'Practice MCQs',  cls:'physics',   desc:'MCQs on the topics you just read \u00b7 tap every one' },
+  { n:'06', time:'6:00+',          subj:'Bonus drill',    cls:'chemistry', desc:'Optional \u00b7 extra chapter or formula recall \u00b7 no pressure' },
 ];
 const PLAN_EV1_WEEKS = [
   { w:1, start:'2026-05-03', dates:'May 3\u20139',      phase:'cover', chapters:['phys_1','chem_1','math_1'], phys:'Ch 1 \u00B7 Electric Charges & Fields',      chem:'Ch 1 \u00B7 Solutions',              math:'Ch 1 \u00B7 Relations & Functions' },
@@ -492,6 +518,7 @@ function setPlanCheck(date, key, val) {
 function togglePomo(idx) { sfx('click'); const t = todayISO(); const c = getPlanCheck(t); setPlanCheck(t, idx, !c.pomos[idx]); renderPlan(); }
 function toggleDayDone(date) { sfx('click'); const c = getPlanCheck(date); setPlanCheck(date, 'core', !c.core); renderPlan(); }
 function toggleStealth() { sfx('click'); state.stealth = !state.stealth; saveState(); document.body.classList.toggle('stealth', state.stealth); renderPlan(); }
+function toggleSatHoliday() { sfx('click'); state.satHoliday = !state.satHoliday; saveState(); renderPlan(); }
 function currentPhaseIdx() {
   const t = todayISO();
   for (let i = 0; i < PLAN_PHASES.length; i++) {
@@ -502,8 +529,13 @@ function currentPhaseIdx() {
 }
 function currentBlockIdx() {
   const h = new Date().getHours() + new Date().getMinutes()/60;
-  for (let i = 0; i < PLAN_BLOCKS.length; i++) {
-    const [s,e] = PLAN_BLOCKS[i].range;
+  const dow = new Date().getDay();
+  let blocks;
+  if (dow === 0) blocks = PLAN_BLOCKS_SUN;
+  else if (dow === 6 && state.satHoliday) blocks = PLAN_BLOCKS_SAT_OFF;
+  else blocks = PLAN_BLOCKS;
+  for (let i = 0; i < blocks.length; i++) {
+    const [s,e] = blocks[i].range;
     if (s < e && h >= s && h < e) return i;
   }
   return -1;
@@ -517,6 +549,11 @@ function renderPlan() {
   const phaseIdx = currentPhaseIdx();
   const blockIdx = currentBlockIdx();
   const todayCheck = getPlanCheck(today);
+  const daysToEV1 = Math.max(0, Math.round((new Date('2026-07-04') - new Date(today)) / 86400000));
+  const currentEvWeekIdx = PLAN_EV1_WEEKS.findIndex((w, i) => {
+    const nextStart = PLAN_EV1_WEEKS[i + 1] ? PLAN_EV1_WEEKS[i + 1].start : '2026-07-04';
+    return today >= w.start && today < nextStart;
+  });
 
   const heroTitle = stealth
     ? 'Study <em>plan</em>'
@@ -548,9 +585,48 @@ function renderPlan() {
       ${targetsHTML}
     </section>`;
 
+  // Build this-week strip dynamically from current EV1 week + ROTATION
+  function buildThisWeekDynamic(evWeekIdx) {
+    if (evWeekIdx < 0 || evWeekIdx >= PLAN_EV1_WEEKS.length) return null;
+    const w = PLAN_EV1_WEEKS[evWeekIdx];
+    const startDate = new Date(w.start + 'T12:00:00'); // noon avoids DST edge cases
+    const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const subjLabel = { Physics: w.phys || '—', Maths: w.math || '—', Chemistry: w.chem || '—' };
+    const out = [];
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(startDate);
+      d.setDate(startDate.getDate() + i);
+      const dateISO = d.toISOString().slice(0, 10);
+      const dow = d.getDay();
+      let task, stealthTask;
+      if (dow === 0) {
+        task = 'Mock test (60 min) · error analysis · drill weakness · new chapter theory';
+        stealthTask = 'Mock + study · 3 hrs';
+      } else if (dow === 4) {
+        task = 'Thu (lighter) · 3 Pomos · ' + subjLabel.Chemistry;
+        stealthTask = 'Light study';
+      } else if (dow === 6 && state.satHoliday) {
+        const rot = ROTATION[dow];
+        task = 'School off · 6 blocks · ' + (rot && rot.lead ? rot.lead + ' + ' + rot.second : 'catch-up');
+        stealthTask = 'Holiday study';
+      } else {
+        const rot = ROTATION[dow];
+        if (rot && rot.lead) {
+          task = rot.lead + ' · ' + subjLabel[rot.lead] + ' · ' + rot.second + ' · ' + subjLabel[rot.second];
+        } else {
+          task = 'Study session';
+        }
+        stealthTask = 'Study session';
+      }
+      out.push({ date: dateISO, name: dayNames[dow], task, stealthTask });
+    }
+    return out;
+  }
+  const thisWeekData = buildThisWeekDynamic(currentEvWeekIdx) || PLAN_THIS_WEEK;
+
   // This week strip
   let weekHTML = '';
-  PLAN_THIS_WEEK.forEach(d => {
+  thisWeekData.forEach(d => {
     const c = getPlanCheck(d.date);
     const isToday = d.date === today;
     const cls = ['week-day'];
@@ -566,17 +642,30 @@ function renderPlan() {
     </div>`;
   });
 
-  // Today's pomodoros
+  // Today's pomodoros (Sunday uses mock-day blocks)
   let pomosHTML = '';
-  PLAN_POMOS.forEach((p, i) => {
-    const done = todayCheck.pomos[i];
-    pomosHTML += `<div class="pomo ${p.cls} ${done ? 'done' : ''}" onclick="togglePomo(${i})" title="Click to toggle done">
-      <div class="p-check"></div>
-      <div class="p-num">${p.n}</div>
-      <div class="p-time">${p.time}</div>
-      <div class="p-subj">${p.subj}</div>
-    </div>`;
-  });
+  if (isSunday) {
+    PLAN_POMOS_SUN.forEach((p, i) => {
+      const done = todayCheck.pomos[i];
+      pomosHTML += `<div class="pomo ${p.cls} ${done ? 'done' : ''}" onclick="togglePomo(${i})" title="Click to toggle done" style="min-width:0;flex:1 1 140px;">
+        <div class="p-check"></div>
+        <div class="p-num">${p.n}</div>
+        <div class="p-time">${p.time}</div>
+        <div class="p-subj">${p.subj}</div>
+        ${!stealth ? `<div style="font-size:10px;color:var(--ink-muted);margin-top:4px;line-height:1.4;">${p.desc}</div>` : ''}
+      </div>`;
+    });
+  } else {
+    PLAN_POMOS.forEach((p, i) => {
+      const done = todayCheck.pomos[i];
+      pomosHTML += `<div class="pomo ${p.cls} ${done ? 'done' : ''}" onclick="togglePomo(${i})" title="Click to toggle done">
+        <div class="p-check"></div>
+        <div class="p-num">${p.n}</div>
+        <div class="p-time">${p.time}</div>
+        <div class="p-subj">${p.subj}</div>
+      </div>`;
+    });
+  }
 
   // Phases
   let phasesHTML = '';
@@ -593,11 +682,6 @@ function renderPlan() {
   });
 
   // EV1 9-week chapter plan
-  const daysToEV1 = Math.max(0, Math.round((new Date('2026-07-04') - new Date(today)) / 86400000));
-  const currentEvWeekIdx = PLAN_EV1_WEEKS.findIndex((w, i) => {
-    const nextStart = PLAN_EV1_WEEKS[i + 1] ? PLAN_EV1_WEEKS[i + 1].start : '2026-07-04';
-    return today >= w.start && today < nextStart;
-  });
   const phaseColors = { cover:'#3b82f6', revise:'#8b5cf6', mock:'#f59e0b', final:'#ef4444' };
 
   // compute % of topics done for a list of chapter IDs
@@ -659,9 +743,16 @@ function renderPlan() {
     ev1HTML += `<div style="${rowStyle}">${wLabel}${contentHTML}</div>`;
   });
 
-  // Daily blocks
+  const isSunday = new Date().getDay() === 0;
+  const isSaturday = new Date().getDay() === 6;
+  const satHoliday = !!state.satHoliday;
+  // Daily blocks — Sunday = mock day, Sat holiday = off-school, else standard
+  let activeBlocks;
+  if (isSunday) activeBlocks = PLAN_BLOCKS_SUN;
+  else if (isSaturday && satHoliday) activeBlocks = PLAN_BLOCKS_SAT_OFF;
+  else activeBlocks = PLAN_BLOCKS;
   let blocksHTML = '';
-  PLAN_BLOCKS.forEach((b, i) => {
+  activeBlocks.forEach((b, i) => {
     const isNow = i === blockIdx;
     const desc = stealth && b.stealthDesc ? b.stealthDesc : b.desc;
     blocksHTML += `<div class="block-row ${isNow ? 'now' : ''}">
@@ -684,11 +775,11 @@ function renderPlan() {
   root.innerHTML = `
     ${heroHTML}
     <section class="plan-section fade-in delay-2">
-      <div class="plan-section-h">This <em>week</em><span class="plan-section-meta">tap a day to mark it done</span></div>
+      <div class="plan-section-h">This <em>week</em><span class="plan-section-meta">${currentEvWeekIdx >= 0 ? 'W' + PLAN_EV1_WEEKS[currentEvWeekIdx].w + ' · ' + PLAN_EV1_WEEKS[currentEvWeekIdx].dates : 'tap a day to mark it done'}</span></div>
       <div class="week-strip">${weekHTML}</div>
     </section>
     <section class="plan-section fade-in delay-3">
-      <div class="plan-section-h">Today's <em>5 Pomodoros</em><span class="plan-section-meta">${todayCheck.pomos.filter(Boolean).length} / 5 done</span></div>
+      <div class="plan-section-h">${isSunday ? 'Sunday <em>study day</em>' : 'Today\'s <em>5 Pomodoros</em>'}<span class="plan-section-meta">${todayCheck.pomos.filter(Boolean).length} / ${isSunday ? 6 : 5} done</span></div>
       <div class="pomos">${pomosHTML}</div>
     </section>
     <section class="plan-section fade-in delay-4">
@@ -701,7 +792,10 @@ function renderPlan() {
       <div style="margin-top:10px;font-size:11px;color:var(--ink-muted);font-family:'Geist Mono',monospace;">* Confirm exact EV1 chapters with your teacher \u2014 plan assumes Phys Ch 1\u20135, Chem Ch 1\u20133, Maths Ch 1\u20136</div>
     </section>
     <section class="plan-section fade-in delay-5">
-      <div class="plan-section-h">Daily <em>template</em><span class="plan-section-meta">Mon\u2013Sat</span></div>
+      <div class="plan-section-h">Daily <em>template</em>
+        <span class="plan-section-meta">${isSunday ? 'Sunday \u00b7 3 hrs \u00b7 3\u20136 PM' : (isSaturday ? (satHoliday ? 'Saturday (no school)' : 'Saturday (school on)') : 'Mon\u2013Sat')}</span>
+        <button onclick="toggleSatHoliday()" style="margin-left:auto;font-size:11px;font-weight:600;padding:4px 10px;border-radius:100px;border:1px solid var(--line);background:${satHoliday ? 'var(--accent)' : 'var(--bg)'};color:${satHoliday ? '#fff' : 'var(--ink-soft)'};cursor:pointer;" title="Toggle this Saturday: school on / school off">Sat ${satHoliday ? 'holiday \u2713' : 'school \u21ba'}</button>
+      </div>
       <div class="blocks">${blocksHTML}</div>
     </section>
     <section class="plan-section fade-in delay-6 stealth-hide">
@@ -826,9 +920,12 @@ function openTopic(topicFullId) {
   document.getElementById('tabTheory').classList.toggle('active', theoryFirst);
   const theoryEl0 = document.getElementById('theoryContent');
   // Fallback: if topic.theory empty (e.g. PYQ year buckets), show chapter-level theory
-  const _theoryHtml = (found.topic.theory && found.topic.theory.length > 50) ? found.topic.theory : (found.chapter.theory || '<p style="color:var(--ink-muted);">No theory written for this topic yet.</p>');
+  const _chTh = found.chapter.theory || '';
+  const _chThClean = (_chTh && !_chTh.includes('Source: Arihant')) ? _chTh : null;
+  const _theoryHtml = (found.topic.theory && found.topic.theory.length > 50) ? found.topic.theory : (_chThClean || '<p style="color:var(--ink-muted);">No theory written for this topic yet.</p>');
   theoryEl0.innerHTML = _theoryHtml;
   renderMathIn(theoryEl0);
+  if (theoryFirst && window._coachingHooks) window._coachingHooks.onTheoryTab(found.chapter.id);
   if (hasQuestions) loadProblem();
 }
 
@@ -873,17 +970,20 @@ function switchTab(tab) {
     document.getElementById('theoryView').style.display = 'none';
     document.getElementById('tabPractice').classList.add('active');
     document.getElementById('tabTheory').classList.remove('active');
+    if (window._coachingHooks) window._coachingHooks.onPracticeTab();
   } else {
     document.getElementById('practiceView').style.display = 'none';
     document.getElementById('theoryView').style.display = 'block';
     document.getElementById('tabTheory').classList.add('active');
     document.getElementById('tabPractice').classList.remove('active');
+    if (window._coachingHooks) window._coachingHooks.onTheoryTab(state.currentChapterId);
   }
 }
 
 function closeModal() {
   stopTimer();
   document.getElementById('modalOverlay').classList.remove('open');
+  if (window._coachingHooks) window._coachingHooks.onClose();
   // ===== NEW: end-of-session summary if meaningful work happened =====
   maybeShowSessionSummary();
   // Re-render whichever view is active
@@ -901,10 +1001,11 @@ function loadProblem() {
   mqEl.innerHTML = p.q;
   renderMathIn(mqEl);
   const mhEl = document.getElementById('modalHintContent');
-  mhEl.innerHTML = p.hint || 'No hint available.';
-  renderMathIn(mhEl);
+  mhEl.innerHTML = '';
+  session.hintText = p.hint || '';
+  session.hintStep = 0;
   document.getElementById('modalHint').classList.remove('shown');
-  document.getElementById('hintLabel').textContent = ' Show hint';
+  document.getElementById('hintLabel').textContent = ' Need a nudge?';
   document.getElementById('modalHint').style.display = p.hint ? 'block' : 'none';
   document.getElementById('modalFeedback').classList.remove('show', 'correct', 'wrong', 'crit');
   document.getElementById('feedbackBonus').innerHTML = '';
@@ -965,10 +1066,37 @@ function startTimer() {
 }
 function stopTimer() { if (timerInterval) { clearInterval(timerInterval); timerInterval = null; } }
 
-function toggleHint() {
+function toggleHint() { stepHint(); }
+
+function extractNudge(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html || '';
+  const text = (tmp.textContent || '').trim();
+  const dot = text.search(/[.!?]/);
+  if (dot > 15) return text.slice(0, dot + 1);
+  return text.slice(0, 90) + (text.length > 90 ? '…' : '');
+}
+
+function stepHint() {
   const h = document.getElementById('modalHint');
-  h.classList.toggle('shown');
-  document.getElementById('hintLabel').textContent = h.classList.contains('shown') ? ' Hide hint' : ' Show hint';
+  const hintContent = document.getElementById('modalHintContent');
+  const step = session.hintStep || 0;
+  if (step === 0) {
+    const nudge = extractNudge(session.hintText || '');
+    hintContent.innerHTML = '<span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.65;margin-right:4px;">Nudge</span>' + nudge;
+    h.classList.add('shown');
+    document.getElementById('hintLabel').textContent = ' Full hint →';
+    session.hintStep = 1;
+  } else if (step === 1) {
+    hintContent.innerHTML = session.hintText || 'No hint available.';
+    renderMathIn(hintContent);
+    document.getElementById('hintLabel').textContent = ' Hide hint';
+    session.hintStep = 2;
+  } else {
+    h.classList.remove('shown');
+    document.getElementById('hintLabel').textContent = ' Need a nudge?';
+    session.hintStep = 0;
+  }
 }
 
 function normalize(s) {
