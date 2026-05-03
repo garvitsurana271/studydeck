@@ -548,6 +548,9 @@ function renderPlan() {
   const today = todayISO();
   const phaseIdx = currentPhaseIdx();
   const blockIdx = currentBlockIdx();
+  const isSunday = new Date().getDay() === 0;
+  const isSaturday = new Date().getDay() === 6;
+  const satHoliday = !!state.satHoliday;
   const todayCheck = getPlanCheck(today);
   const daysToEV1 = Math.max(0, Math.round((new Date('2026-07-04') - new Date(today)) / 86400000));
   const currentEvWeekIdx = PLAN_EV1_WEEKS.findIndex((w, i) => {
@@ -752,9 +755,6 @@ function renderPlan() {
     ev1HTML += `<div style="${rowStyle}">${wLabel}${contentHTML}</div>`;
   });
 
-  const isSunday = new Date().getDay() === 0;
-  const isSaturday = new Date().getDay() === 6;
-  const satHoliday = !!state.satHoliday;
   // Daily blocks — Sunday = mock day, Sat holiday = off-school, else standard
   let activeBlocks;
   if (isSunday) activeBlocks = PLAN_BLOCKS_SUN;
