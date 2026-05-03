@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -36,7 +36,7 @@
   html,body{background:var(--bg);color:var(--ink);font-family:'Geist',system-ui,sans-serif;font-size:15px;line-height:1.5;letter-spacing:-0.005em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
   body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 800px 400px at 15% -10%,rgba(30,58,255,0.06),transparent 60%),radial-gradient(ellipse 600px 400px at 95% 110%,rgba(200,144,43,0.05),transparent 55%);pointer-events:none;z-index:0;}
   .app{max-width:1180px;margin:0 auto;padding:28px 32px 96px;position:relative;z-index:1;}
-  /* PWA Window Controls Overlay â€” hides OS title bar, adds safe padding */
+  /* PWA Window Controls Overlay — hides OS title bar, adds safe padding */
   @media (display-mode: window-controls-overlay) {
     .app{padding-top:calc(env(titlebar-area-height, 30px) + 12px);}
   }
@@ -464,7 +464,7 @@
 
   @media (max-width:700px){.app{padding:20px 18px 80px;}.today{padding:32px 24px;border-radius:24px;}.subject-hero{padding:24px 20px;flex-direction:column;text-align:center;}.subject-hero-icon{font-size:48px;}.chapter-hero{padding:28px 24px;}.part{padding:22px 20px;border-radius:22px;}.header-stats{gap:6px;}.stat-chip{padding:7px 12px;font-size:12px;}}
 
-  /* â”€â”€ Coaching Layer (v57) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Coaching Layer (v57) ─────────────────────────────────────────────────── */
   /* ELI5 block */
   .th-eli5{background:linear-gradient(135deg,rgba(251,191,36,.12),rgba(245,158,11,.07));border:1.5px solid rgba(251,191,36,.32);border-radius:14px;padding:18px 20px;margin:0 0 22px;}
   .eli5-head{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#92400e;margin-bottom:7px;opacity:.8;}
@@ -713,8 +713,16 @@
 <script src="content_phys_master.js?v=42p66"></script>
 <script src="content_chem_master.js?v=42p66"></script>
 <script src="content_math_master.js?v=42p66"></script>
-<!-- Per-topic MCQs: 3 ISC-pattern questions per topic across all 37 chapters -->
-<script src="content_topic_mcqs.js?v=42p67"></script>
+<!-- Per-topic MCQ data files (each sets window._MCQ_DATA entries) -->
+<script src="_mcq_phys2_3.js?v=42p68"></script>
+<script src="_mcq_phys7_9.js?v=42p68"></script>
+<script src="_mcq_phys10_12.js?v=42p68"></script>
+<script src="_mcq_phys13_14.js?v=42p68"></script>
+<script src="_mcq_chem3_5.js?v=42p68"></script>
+<script src="_mcq_math1_3.js?v=42p68"></script>
+<script src="_mcq_math4_6.js?v=42p68"></script>
+<!-- Per-topic MCQs orchestrator: merges window._MCQ_DATA + built-in chem_1+2 -->
+<script src="content_topic_mcqs.js?v=42p68"></script>
 <!-- NCERT Exemplar supplementary banks -->
 <script src="content_phys_exemplar.js"></script>
 <script src="content_chem_exemplar.js"></script>
